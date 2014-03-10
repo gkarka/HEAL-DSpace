@@ -35,12 +35,25 @@
         <profile>
             <id>dspace-xmlui</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+            <!-- modified by aanagnostopoulos: disabled default XMLUI -->
+                <activeByDefault>false</activeByDefault>
+			<!-- END: aanagnostopoulos -->
             </activation>
             <modules>
                 <module>xmlui</module>
             </modules>
         </profile>
+       <!-- modified by aanagnostopoulos: added HEAL specific XMLUI -->
+        <profile>
+            <id>dspace-heal-xmlui</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>heal-xmlui</module>
+            </modules>
+        </profile>
+        <!-- END: aanagnostopoulos -->
         <profile>
             <id>dspace-lni</id>
             <activation>
@@ -59,15 +72,17 @@
                 <module>oai</module>
             </modules>
         </profile>
+       <!-- modified by aanagnostopoulos: disabled JSPUI -->
         <profile>
             <id>dspace-jspui</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <modules>
                 <module>jspui</module>
             </modules>
         </profile>
+        <!-- END: aanagnostopoulos -->
         <profile>
             <id>dspace-sword</id>
             <activation>

@@ -74,6 +74,7 @@
 		<moduleSet>
 			<includes>
                             <include>org.dspace.modules:*:war:*</include>
+                            <include>gr.heal.dspace.modules:*:war:*</include>
 			</includes>
 
 			<binaries>

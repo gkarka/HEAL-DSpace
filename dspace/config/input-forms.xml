@@ -4,399 +4,2016 @@
 
 <input-forms>
 
- <!-- The form-map maps collection handles to forms. DSpace does not       -->
- <!-- require that a collection's name be unique, even within a community .-->
- <!-- DSpace does however insure that each collection's handle is unique.  -->
- <!-- Form-map provides the means to associate a unique collection name    -->
- <!-- with a form. The form-map also provides the special handle "default" -->
- <!-- (which is never a collection), here mapped to "traditional". Any     -->
- <!-- collection which does not appear in this map will be associated with -->
- <!-- the mapping for handle "default".                                    -->
+	<form-map>
+		<name-map collection-handle="default" form-name="heal" />
+	</form-map>
 
- <form-map>
-   <name-map collection-handle="default" form-name="traditional" />
- </form-map>
+	<form-definitions>
+
+		<form name="heal">
+
+			<page number="1">
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>type</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Item type</label>
+					<input-type value-pairs-name="itemType">dropdown</input-type>
+					<hint>
+						The type of the item you wish to submit.
+					</hint>
+					<required>You must select a type for the item you wish to submit.</required>
+				</field>
+
+				<field>
+<!-- 					<dc-schema>heal</dc-schema>
+					<dc-element>title</dc-element>
+ -->
+ 					<dc-schema>dc</dc-schema>
+					<dc-element>title</dc-element>
+ 					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Title</label>
+					<input-type>textarea</input-type>
+					<hint>
+						The official title of the work, given in one or more
+						languages.
+					</hint>
+					<required>You must enter at least one title for the item you wish
+						to submit.</required>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>secondaryTitle</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Alternative title / Subtitle</label>
+					<input-type>textarea</input-type>
+					<hint>
+						The secondary title or subtitle of the work, if such exists,
+						given in one or more languages.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+<!-- 					<dc-schema>heal</dc-schema>
+					<dc-element>creatorName</dc-element>
+ -->
+ 					<dc-schema>dc</dc-schema>
+					<dc-element>contributor</dc-element>
+ 					<dc-qualifier>author</dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Name(s) of creator(s)</label>
+					<input-type>name</input-type>
+					<hint>The names of the creators of the work submitted, given in one
+						or more languages.</hint>
+					<required>
+						You must enter the name of at least one creator.</required>
+					<i18n>true</i18n>
+				</field>
+
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>creatorId</dc-element> 
+					<dc-qualifier></dc-qualifier> <repeatable>true</repeatable> <label>Αναγνωριστικό 
+					Δημιουργού</label> <input-type value-pairs-name="creatorIdentifierList">qualdrop_value</input-type> 
+					<hint>Ένα αναγνωριστικό του δημιουργού του έργου, το οποίο μπορεί να χρησιμοποιηθεί 
+					για τον μονοσήμαντο προσδιορισμό ενός δημιουργού.</hint> </field> -->
+
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>creatorId</dc-element> 
+					<dc-qualifier>dhareID</dc-qualifier> <repeatable>true</repeatable> <label>Creator 
+					ID (DHARE)</label> <input-type>onebox</input-type> <hint></hint> </field> 
+					<field> <dc-schema>heal</dc-schema> <dc-element>creatorId</dc-element> <dc-qualifier>URI</dc-qualifier> 
+					<repeatable>true</repeatable> <label>Creator ID (URI)</label> <input-type>onebox</input-type> 
+					<hint></hint> </field> <field> <dc-schema>heal</dc-schema> <dc-element>creatorId</dc-element> 
+					<dc-qualifier>email</dc-qualifier> <repeatable>true</repeatable> <label>Creator 
+					ID (Email)</label> <input-type>onebox</input-type> <hint></hint> </field> 
+					<field> <dc-schema>heal</dc-schema> <dc-element>creatorId</dc-element> <dc-qualifier>other</dc-qualifier> 
+					<repeatable>true</repeatable> <label>Creator ID (Other)</label> <input-type>onebox</input-type> 
+					<hint></hint> </field> -->
+
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>classification</dc-element> 
+					<dc-qualifier>LCC</dc-qualifier> <repeatable>true</repeatable> <label>Classification 
+					(LCC)</label> <input-type>onebox</input-type> <hint></hint> </field> <field> 
+					<dc-schema>heal</dc-schema> <dc-element>classification</dc-element> <dc-qualifier>DDC</dc-qualifier> 
+					<repeatable>true</repeatable> <label>Classification (DDC)</label> <input-type>onebox</input-type> 
+					<hint></hint> </field> <field> <dc-schema>heal</dc-schema> <dc-element>classification</dc-element> 
+					<dc-qualifier>UDC</dc-qualifier> <repeatable>true</repeatable> <label>Classification 
+					(UDC)</label> <input-type>onebox</input-type> <hint></hint> </field> <field> 
+					<dc-schema>heal</dc-schema> <dc-element>classification</dc-element> <dc-qualifier>NLM</dc-qualifier> 
+					<repeatable>true</repeatable> <label>Classification (NLM)</label> <input-type>onebox</input-type> 
+					<hint></hint> </field> <field> <dc-schema>heal</dc-schema> <dc-element>classification</dc-element> 
+					<dc-qualifier>ACMCCS</dc-qualifier> <repeatable>true</repeatable> <label>Classification 
+					(ACMCCS)</label> <input-type>onebox</input-type> <hint></hint> </field> <field> 
+					<dc-schema>heal</dc-schema> <dc-element>classification</dc-element> <dc-qualifier>MSC</dc-qualifier> 
+					<repeatable>true</repeatable> <label>Classification (MSC)</label> <input-type>onebox</input-type> 
+					<hint></hint> </field> <field> <dc-schema>heal</dc-schema> <dc-element>classification</dc-element> 
+					<dc-qualifier>PACS</dc-qualifier> <repeatable>true</repeatable> <label>Classification 
+					(PACS)</label> <input-type>onebox</input-type> <hint></hint> </field> -->
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>classification</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Subject classification</label>
+					<!-- <input-type value-pairs-name="classificationSchemeList">qualdrop_value</input-type> -->
+					<input-type>onebox</input-type>
+					<hint>
+						The thematic category under which the subject of the work can
+						be classified,
+						e.g. Mathematics, Structural engineering etc.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>classificationURI</dc-element> 
+					<dc-qualifier></dc-qualifier> <repeatable>true</repeatable> <label>Classification 
+					URI</label> <input-type value-pairs-name="classificationSchemeList">qualdrop_value</input-type> 
+					<hint></hint> </field> -->
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>keyword</dc-element> 
+					<dc-qualifier></dc-qualifier> <repeatable>true</repeatable> <label>Keyword</label> 
+					<input-type value-pairs-name="subjectSchemeList">qualdrop_value</input-type> 
+					<hint></hint> </field> -->
+				<field>
+<!-- 					<dc-schema>heal</dc-schema>
+					<dc-element>keyword</dc-element>
+ -->
+ 					<dc-schema>dc</dc-schema>
+					<dc-element>subject</dc-element>
+ 					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Keywords</label>
+					<input-type>onebox</input-type>
+					<hint>
+						A keyword describing the subject of the item.
+					</hint>
+					<required>
+						You must enter at least one keyword.</required>
+					<i18n>true</i18n>
+				</field>
+
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>keywordURI</dc-element> 
+					<dc-qualifier></dc-qualifier> <repeatable>true</repeatable> <label>Keyword 
+					URI</label> <input-type value-pairs-name="subjectSchemeList">qualdrop_value</input-type> 
+					<hint></hint> </field> -->
+
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>contributorID</dc-element> 
+					<dc-qualifier></dc-qualifier> <repeatable>true</repeatable> <label>Αναγνωριστικό 
+					Συντελεστή</label> <input-type value-pairs-name="personIdentifierList">qualdrop_value</input-type> 
+					<hint>Ένα αναγνωριστικό του συντελεστή ενός έργου, το οποίο μπορεί να χρησιμοποιηθεί 
+					για τον μονοσήμαντο προσδιορισμό αυτού του συντελεστή.</hint> </field> -->
+
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>identifier</dc-element> 
+					<dc-qualifier>primary</dc-qualifier> <repeatable>false</repeatable> <label>Identifier 
+					(Primary)</label> <input-type>onebox</input-type> <hint>An identifier, allowing 
+					the item's unique identification. </hint> <required>You must enter an Identifier</required> 
+					</field> -->
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>identifier</dc-element>
+					<dc-qualifier>secondary</dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Item identifiers</label>
+					<input-type>onebox</input-type>
+					<hint>
+						One or more unique identifiers for the submission item (e.g.
+						a DOI for a publication or an ISBN for
+						a book).
+					</hint>
+				</field>
+
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>dateAvailable</dc-element> 
+					<dc-qualifier></dc-qualifier> <repeatable>false</repeatable> <label>Date 
+					Available</label> <input-type>date</input-type> <hint> The date after which 
+					the item is freely accessible via the repository. </hint> <required>You must 
+					enter at least the year.</required> </field> -->
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>language</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Item language</label>
+					<input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+					<hint>
+						The language(s) of the item's contents. More than one can be
+						selected in case of
+						multilingual content.
+					</hint>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>access</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Item access scheme</label>
+					<input-type value-pairs-name="accessTypeList">dropdown</input-type>
+					<hint>
+						The access scheme of the item's full text. Possible choices
+						include:
+						1) leaving the item accessible to the public,
+						2) allowing access to users that use an IP address within the
+						institutional IP range,
+						3) allowing access only to logged-in DSpace
+						users, and
+						4) setting a 6 months embargo period, during which the
+						full text of the item is not available.
+						When the embargo period
+						ends, the public access scheme is assigned to the item.
+					</hint>
+					<required>You must select an access scheme for the item you wish to
+						submit.</required>
+				</field>
+
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>accessText</dc-element> 
+					<dc-qualifier></dc-qualifier> <repeatable>false</repeatable> <label>Access 
+					Text</label> <input-type>textarea</input-type> <hint></hint> </field> -->
+
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>license</dc-element> 
+					<dc-qualifier></dc-qualifier> <repeatable>false</repeatable> <label>License</label> 
+					<input-type>textarea</input-type> <hint> The item's license description, 
+					using either free text or a hyper-link to the full license text. </hint> 
+					<required>You must describe the License.</required> <i18n>true</i18n> </field> -->
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>references</dc-element> 
+					<dc-qualifier></dc-qualifier> <repeatable>true</repeatable> <label>Referencees</label> 
+					<input-type>onebox</input-type> <hint> One or more item's referenced by the 
+					current item, declared, preferably, by a unique identifier. </hint> </field> -->
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>isReferencedBy</dc-element> 
+					<dc-qualifier></dc-qualifier> <repeatable>true</repeatable> <label>Is Referenced 
+					By</label> <input-type>onebox</input-type> <hint> One or more item's referencing 
+					the current item, declared, preferably, by a unique identifier. </hint> </field> -->
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>fileFormat</dc-element> 
+					<dc-qualifier></dc-qualifier> <repeatable>true</repeatable> <label>Μορφότυπο 
+					περιεχόμενου αρχείου</label> <input-type>onebox</input-type> <hint>Το μορφότυπο 
+					των αρχείων που αναπαριστούν το έργο. Η παρουσία του εν λόγω στοιχείου είναι 
+					προαιρετική, για να καλυφθεί το ενδεχόμενο ύπαρξης εγγραφών χωρίς συνοδευτικά 
+					αρχεία. </hint> </field> -->
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>recordProvider</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Institution and School/Department of submitter</label>
+					<input-type>onebox</input-type>
+					<hint>
+						The institution and school/department, in the collection of
+						which the item belongs.
+					</hint>
+					<required>
+						You must enter at least one pair of institution and
+						school/department.
+					</required>
+					<i18n>true</i18n>
+				</field>
+
+			</page>
+
+			<page number="2" type-name="">
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>contributorName</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Name(s) of contributor(s)</label>
+					<input-type>name</input-type>
+					<hint>
+						The names of contributors to this work (EXCEPT the thesis'
+						advisor or committee members).
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>generalDescription</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>General description / Additional comments</label>
+					<input-type>textarea</input-type>
+					<hint>General description or additional comments for the item you
+						wish to submit.</hint>
+					<i18n>true</i18n>
+				</field>
+
+			</page>
+
+			<page number="2" type-name="bachelorThesis">
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>publicationDate</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Thesis completion date</label>
+					<input-type>date</input-type>
+					<hint>The date printed on the thesis' front page.</hint>
+					<required>You must enter at least the year the thesis was completed
+						in.</required>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>abstract</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Abstract</label>
+					<input-type>textarea</input-type>
+					<hint>
+						The abstract of the thesis.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>tableOfContents</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Table of contents</label>
+					<input-type>textarea</input-type>
+					<hint>
+						The thesis' table of contents.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>sponsor</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Sponsor</label>
+					<input-type>textarea</input-type>
+					<hint>
+						A statement regarding the thesis' sponsors, if any.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>advisorName</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Advisor name</label>
+					<input-type>name</input-type>
+					<hint>
+						The name of the thesis' advisor.</hint>
+					<required>
+						You must enter the name of the advisor</required>
+					<i18n>true</i18n>
+				</field>
+
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>advisorID</dc-element> 
+					<dc-qualifier></dc-qualifier> <repeatable>true</repeatable> <label>Αναγνωριστικό 
+					Επιβλέποντος</label> <input-type value-pairs-name="creatorIdentifierList">qualdrop_value</input-type> 
+					<hint> Το αναγνωριστικό του επιβλέποντος μιας φοιτητικής εργασίας, το οποίο 
+					μπορεί να χρησιμοποιηθεί για τον μονοσήμαντο προσδιορισμό του επιβλέποντος.</hint> 
+					</field> -->
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>committeeMemberName</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Examining committee</label>
+					<input-type>name</input-type>
+					<hint>
+						The names of the members of the thesis' examining committee.
+					</hint>
+					<required>
+						You must enter the names of all examining committee
+						members.
+					</required>
+					<i18n>true</i18n>
+				</field>
+
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>committeeMemberID</dc-element> 
+					<dc-qualifier></dc-qualifier> <repeatable>true</repeatable> <label>Αναγνωριστικό 
+					Μέλους Εξεταστικής Επιτροπής</label> <input-type value-pairs-name="creatorIdentifierList">qualdrop_value</input-type> 
+					<hint>Το αναγνωριστικό ενός μέλους της εξεταστικής επιτροπής μιας φοιτητικής 
+					εργασίας, που μπορεί να χρησιμοποιηθεί για τον μονοσήμαντο προσδιορισμό του 
+					μέλους.</hint> </field> -->
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>academicPublisherID</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Publishing institution</label>
+					<input-type value-pairs-name="institutionList">dropdown</input-type>
+					<hint>
+						The institution the thesis was completed in. Please select
+						the same institution as in the first page.
+					</hint>
+					<required>
+						You must select an institution from the list.</required>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>academicPublisher</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Publishing department/division</label>
+					<input-type>onebox</input-type>
+					<hint>
+						The school/department of the institution the thesis was
+						carried out in. If the division and/or laboratory/research group
+						in
+						which the thesis was carried out are known, they are filled out
+						in the form "School/Department"."Division"."Laboratory", e.g.
+						School of Electrical &amp; Computer Engineering. Division Of
+						Computer Science. Knowledge &amp; Database Systems Laboratory.
+					</hint>
+					<required>
+						You must enter a value for the publishing department.</required>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>numberOfPages</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Number of Pages</label>
+					<input-type>onebox</input-type>
+					<hint>The thesis' number of pages.</hint>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>bibliographicCitation</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Bibliographic citation</label>
+					<input-type>onebox</input-type>
+					<hint>
+						The recommended citation format for the thesis. Usually,
+						citations are provided in the form: "Author Name", "Thesis title",
+						"School/Department","Institution","Year".
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>contributorName</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Name(s) of contributor(s)</label>
+					<input-type>name</input-type>
+					<hint>
+						Names of contributors to this thesis, if such exist (EXCEPT
+						the thesis'
+						advisor or committee members).
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>generalDescription</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>General Description / Additional Comments</label>
+					<input-type>textarea</input-type>
+					<hint></hint>
+					<i18n>true</i18n>
+				</field>
+
+			</page>
+
+			<page number="2" type-name="masterThesis">
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>publicationDate</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Thesis completion date</label>
+					<input-type>date</input-type>
+					<hint>The date printed on the thesis' front page.</hint>
+					<required>You must enter at least the year the thesis was completed
+						in.</required>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>abstract</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Abstract</label>
+					<input-type>textarea</input-type>
+					<hint>
+						The abstract of the thesis.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>tableOfContents</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Table of contents</label>
+					<input-type>textarea</input-type>
+					<hint>
+						The thesis' table of contents.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>sponsor</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Sponsor</label>
+					<input-type>textarea</input-type>
+					<hint>
+						A statement regarding the thesis' sponsors, if any.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>advisorName</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Advisor name</label>
+					<input-type>name</input-type>
+					<hint>
+						The name of the thesis' advisor.</hint>
+					<required>
+						You must enter the name of the advisor</required>
+					<i18n>true</i18n>
+				</field>
+
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>advisorID</dc-element> 
+					<dc-qualifier></dc-qualifier> <repeatable>true</repeatable> <label>Αναγνωριστικό 
+					Επιβλέποντος</label> <input-type value-pairs-name="creatorIdentifierList">qualdrop_value</input-type> 
+					<hint> Το αναγνωριστικό του επιβλέποντος μιας φοιτητικής εργασίας, το οποίο 
+					μπορεί να χρησιμοποιηθεί για τον μονοσήμαντο προσδιορισμό του επιβλέποντος.</hint> 
+					</field> -->
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>committeeMemberName</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Examining committee</label>
+					<input-type>name</input-type>
+					<hint>
+						The names of the members of the thesis' examining committee.
+					</hint>
+					<required>
+						You must enter the names of all examining committee
+						members.
+					</required>
+					<i18n>true</i18n>
+				</field>
+
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>committeeMemberID</dc-element> 
+					<dc-qualifier></dc-qualifier> <repeatable>true</repeatable> <label>Αναγνωριστικό 
+					Μέλους Εξεταστικής Επιτροπής</label> <input-type value-pairs-name="creatorIdentifierList">qualdrop_value</input-type> 
+					<hint>Το αναγνωριστικό ενός μέλους της εξεταστικής επιτροπής μιας φοιτητικής 
+					εργασίας, που μπορεί να χρησιμοποιηθεί για τον μονοσήμαντο προσδιορισμό του 
+					μέλους.</hint> </field> -->
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>academicPublisherID</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Thesis publishing institution</label>
+					<input-type value-pairs-name="institutionList">dropdown</input-type>
+					<hint>
+						The institution the thesis was completed in. Please select
+						the same institution as in the first page.
+					</hint>
+					<required>
+						You must select an institution.</required>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>academicPublisher</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Thesis publishing department/division</label>
+					<input-type>onebox</input-type>
+					<hint>
+						The school/department of the institution the thesis was
+						carried out in. If the division and/or laboratory/research group
+						in
+						which the thesis was carried out are known, they are filled out
+						in the form "School/Department"."Division"."Laboratory", e.g.
+						School of Electrical &amp; Computer Engineering. Division Of
+						Computer Science. Knowledge &amp; Database Systems Laboratory.
+					</hint>
+					<required>
+						You must enter a value for the publishing department.</required>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>numberOfPages</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Number of Pages</label>
+					<input-type>onebox</input-type>
+					<hint>The thesis' number of pages.</hint>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>bibliographicCitation</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Bibliographic citation</label>
+					<input-type>onebox</input-type>
+					<hint>
+						The recommended citation format for the thesis. Usually,
+						citations are provided in the form: "Author Name", "Thesis title",
+						"School/Department","Institution","Year".
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>contributorName</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Name(s) of contributor(s)</label>
+					<input-type>name</input-type>
+					<hint>
+						Names of contributors to this thesis, if such exist (EXCEPT
+						the thesis'
+						advisor or committee members).
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>generalDescription</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>General Description / Additional Comments</label>
+					<input-type>textarea</input-type>
+					<hint></hint>
+					<i18n>true</i18n>
+				</field>
+
+			</page>
+
+			<page number="2" type-name="doctoralThesis">
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>publicationDate</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Thesis completion date</label>
+					<input-type>date</input-type>
+					<hint>The date printed on the thesis' front page.</hint>
+					<required>You must enter at least the year the thesis was completed
+						in.</required>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>abstract</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Abstract</label>
+					<input-type>textarea</input-type>
+					<hint>
+						The abstract of the thesis.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>tableOfContents</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Table of contents</label>
+					<input-type>textarea</input-type>
+					<hint>
+						The thesis' table of contents.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>sponsor</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Sponsor</label>
+					<input-type>textarea</input-type>
+					<hint>
+						A statement regarding the thesis' sponsors, if any.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>advisorName</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Advisor name</label>
+					<input-type>name</input-type>
+					<hint>
+						The name of the thesis' advisor.</hint>
+					<required>
+						You must enter the name of the advisor</required>
+					<i18n>true</i18n>
+				</field>
+
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>advisorID</dc-element> 
+					<dc-qualifier></dc-qualifier> <repeatable>true</repeatable> <label>Αναγνωριστικό 
+					Επιβλέποντος</label> <input-type value-pairs-name="creatorIdentifierList">qualdrop_value</input-type> 
+					<hint> Το αναγνωριστικό του επιβλέποντος μιας φοιτητικής εργασίας, το οποίο 
+					μπορεί να χρησιμοποιηθεί για τον μονοσήμαντο προσδιορισμό του επιβλέποντος.</hint> 
+					</field> -->
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>committeeMemberName</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Examining committee</label>
+					<input-type>name</input-type>
+					<hint>
+						The names of the members of the thesis' examining committee.
+					</hint>
+					<required>
+						You must enter the names of all examining committee
+						members.
+					</required>
+					<i18n>true</i18n>
+				</field>
+
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>committeeMemberID</dc-element> 
+					<dc-qualifier></dc-qualifier> <repeatable>true</repeatable> <label>Αναγνωριστικό 
+					Μέλους Εξεταστικής Επιτροπής</label> <input-type value-pairs-name="creatorIdentifierList">qualdrop_value</input-type> 
+					<hint>Το αναγνωριστικό ενός μέλους της εξεταστικής επιτροπής μιας φοιτητικής 
+					εργασίας, που μπορεί να χρησιμοποιηθεί για τον μονοσήμαντο προσδιορισμό του 
+					μέλους.</hint> </field> -->
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>academicPublisherID</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Thesis publishing institution</label>
+					<input-type value-pairs-name="institutionList">dropdown</input-type>
+					<hint>
+						The institution the thesis was completed in. Please select
+						the same institution as in the first page.
+					</hint>
+					<required>
+						You must select an institution.</required>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>academicPublisher</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Thesis publishing department/division</label>
+					<input-type>onebox</input-type>
+					<hint>
+						The school/department of the institution the thesis was
+						carried out in. If the division and/or laboratory/research group
+						in
+						which the thesis was carried out are known, they are filled out
+						in the form "School/Department"."Division"."Laboratory", e.g.
+						School of Electrical &amp; Computer Engineering. Division Of
+						Computer Science. Knowledge &amp; Database Systems Laboratory.
+					</hint>
+					<required>
+						You must enter a value for the publishing department.</required>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>numberOfPages</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Number of Pages</label>
+					<input-type>onebox</input-type>
+					<hint>The thesis' number of pages.</hint>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>bibliographicCitation</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Bibliographic citation</label>
+					<input-type>onebox</input-type>
+					<hint>
+						The recommended citation format for the thesis. Usually,
+						citations are provided in the form: "Author Name", "Thesis title",
+						"School/Department","Institution","Year".
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>contributorName</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Name(s) of contributor(s)</label>
+					<input-type>name</input-type>
+					<hint>
+						Names of contributors to this thesis, if such exist (EXCEPT
+						the thesis'
+						advisor or committee members).
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>generalDescription</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>General Description / Additional Comments</label>
+					<input-type>textarea</input-type>
+					<hint></hint>
+					<i18n>true</i18n>
+				</field>
+
+			</page>
+
+			<page number="2" type-name="conferenceItem">
+
+				 <field>
+				    <dc-schema>heal</dc-schema>
+				    <dc-element>conferenceItemType</dc-element>
+				    <dc-qualifier></dc-qualifier>
+				    <repeatable>false</repeatable>
+				    <label>Type of the conference item</label>
+				    <input-type value-pairs-name="conferenceItemTypeList">dropdown</input-type>
+				    <hint>The type of the conference item you wish to submit</hint>
+				    <required>You must choose one of the available options.</required>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>publicationDate</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Publication date</label>
+					<input-type>date</input-type>
+					<hint>The publication date of the proceedings of the conference. If
+						the conference does not publish proceedings, then
+						the conference date should be entered.</hint>
+					<required>You must enter at least the year the item was published.</required>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>abstract</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Abstract</label>
+					<input-type>textarea</input-type>
+					<hint>
+						The item's abstract, if such exists.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>tableOfContents</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Table of contents</label>
+					<input-type>textarea</input-type>
+					<hint>
+						The item's table of contents, if such exists.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>sponsor</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Sponsor</label>
+					<input-type>textarea</input-type>
+					<hint>
+						A statement regarding the item's sponsors, if any.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>conferenceName</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Conference name</label>
+					<input-type>onebox</input-type>
+					<hint>
+					</hint>
+					<required>You must enter the conference name.</required>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>publisher</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Publisher</label>
+					<input-type>onebox</input-type>
+					<hint>
+						The publisher of the proceedings of the conference. If the
+						item is not part
+						of the conference proceedings, then leave blank.</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>fullTextAvailability</dc-element> 
+					<dc-qualifier></dc-qualifier> <repeatable>false</repeatable> <label>Full 
+					Text Availability</label> <input-type value-pairs-name="fullTextAvailabilityList">list</input-type> 
+					<hint> Indication as to whether the publication's full text is available 
+					or not. </hint> <required>You must select a value for Full Text Availability.</required> 
+					</field> -->
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>bibliographicCitation</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Bibliographic citation</label>
+					<input-type>onebox</input-type>
+					<hint>
+						The recommended citation format for the item. Usually,
+						citations are provided in the form: "Author Name", "Publication
+						title",
+						"Conference Name","Publisher","Year".</hint>
+					<required>You must fill in the bibliographic citation field.</required>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>contributorName</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Name(s) of contributor(s)</label>
+					<input-type>name</input-type>
+					<hint>
+						The names of contributors to this work.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>generalDescription</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>General description / Additional comments</label>
+					<input-type>textarea</input-type>
+					<hint>General description or additional comments for the item you
+						wish to submit.</hint>
+					<i18n>true</i18n>
+				</field>
+
+			</page>
+
+			<page number="2" type-name="journalArticle">
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>publicationDate</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Publication date</label>
+					<input-type>date</input-type>
+					<hint>The article's publication date.</hint>
+					<required>You must enter at least the year the article was
+						published.</required>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>abstract</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Abstract</label>
+					<input-type>textarea</input-type>
+					<hint>
+						The article's abstract.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>tableOfContents</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Table of contents</label>
+					<input-type>textarea</input-type>
+					<hint>
+						The article's table of contents.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>sponsor</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Sponsor</label>
+					<input-type>textarea</input-type>
+					<hint>
+						A statement regarding the article's sponsors, if any.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>publisher</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Publisher</label>
+					<input-type>onebox</input-type>
+					<hint>The publisher of the journal the article was published in.</hint>
+					<required>You must fill in the publisher of the article.</required>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>journalName</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Journal name</label>
+					<input-type>onebox</input-type>
+					<hint>
+					</hint>
+					<required>You must fill in the journal name.</required>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>journalType</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Journal type</label>
+					<input-type value-pairs-name="journalTypeList">dropdown</input-type>
+					<hint>
+						Classification of journals to those who follow a peer review
+						process for their articles and those who don't.</hint>
+				</field>
+
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>fullTextAvailability</dc-element> 
+					<dc-qualifier></dc-qualifier> <repeatable>false</repeatable> <label>Full 
+					Text Availability</label> <input-type value-pairs-name="fullTextAvailabilityList">list</input-type> 
+					<hint> Indication as to whether the publication's full text is available 
+					or not. </hint> <required>You must select a value for Full Text Availability.</required> 
+					</field> -->
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>bibliographicCitation</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Bibliographic citation</label>
+					<input-type>onebox</input-type>
+					<hint>
+						The recommended citation format for the article. Usually,
+						citations are provided in the form: "Author Name", "Article
+						title",
+						"Journal name","Volume (Issue)", "Page range",
+						"Publisher","Year".</hint>
+					<required>You must fill in the bibliographic citation field.</required>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>contributorName</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Name(s) of contributor(s)</label>
+					<input-type>name</input-type>
+					<hint>
+						The names of contributors to the article.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>generalDescription</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>General description / Additional comments</label>
+					<input-type>textarea</input-type>
+					<hint>General description or additional comments for the item you
+						wish to submit.</hint>
+					<i18n>true</i18n>
+				</field>
+
+			</page>
+
+			<page number="2" type-name="bookChapter">
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>publicationDate</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Publication date</label>
+					<input-type>date</input-type>
+					<hint>The chapter's publication date.</hint>
+					<required>You must enter at least the year the chapter was
+						published.</required>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>abstract</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Abstract</label>
+					<input-type>textarea</input-type>
+					<hint>
+						The chapter's abstract, if such exists.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>tableOfContents</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Table of contents</label>
+					<input-type>textarea</input-type>
+					<hint>
+						The chapter's table of contents, if such exists.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>sponsor</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Sponsor</label>
+					<input-type>textarea</input-type>
+					<hint>
+						A statement regarding the chapter's sponsors, if any.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>bookName</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Book name</label>
+					<input-type>onebox</input-type>
+					<hint>
+						The name of the book, part of which is the chapter.
+					</hint>
+					<required>You must enter the book name.</required>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>publisher</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Publisher</label>
+					<input-type>onebox</input-type>
+					<hint>
+						The book's publisher.</hint>
+					<required>You must fill in the publisher of the book.</required>
+					<i18n>true</i18n>
+				</field>
+
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>fullTextAvailability</dc-element> 
+					<dc-qualifier></dc-qualifier> <repeatable>false</repeatable> <label>Full 
+					Text Availability</label> <input-type value-pairs-name="fullTextAvailabilityList">list</input-type> 
+					<hint> Indication as to whether the publication's full text is available 
+					or not. </hint> <required>You must select a value for Full Text Availability.</required> 
+					</field> -->
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>bibliographicCitation</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Bibliographic citation</label>
+					<input-type>onebox</input-type>
+					<hint>
+						The recommended citation format for the chapter. Usually,
+						citations are provided in the form: "Author Name", "Chapter
+						title",
+						"Book name","Page range", "Publisher","Year".</hint>
+					<required>You must fill in the bibliographic citation field.</required>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>contributorName</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Name(s) of contributor(s)</label>
+					<input-type>name</input-type>
+					<hint>
+						The names of contributors to the chapter.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>generalDescription</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>General description / Additional comments</label>
+					<input-type>textarea</input-type>
+					<hint>General description or additional comments for the chapter
+						you wish to submit.</hint>
+					<i18n>true</i18n>
+				</field>
+
+			</page>
+
+			<page number="2" type-name="book">
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>publicationDate</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Publication date</label>
+					<input-type>date</input-type>
+					<hint>The book's publication date.</hint>
+					<required>You must enter at least the year the book was published.</required>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>abstract</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Abstract</label>
+					<input-type>textarea</input-type>
+					<hint>
+						The book's abstract or synopsis.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>tableOfContents</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Table of contents</label>
+					<input-type>textarea</input-type>
+					<hint>
+						The book's table of contents.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>sponsor</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Sponsor</label>
+					<input-type>textarea</input-type>
+					<hint>
+						A statement regarding the book's sponsors, if any.
+					</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>bookEdition</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Book edition</label>
+					<input-type>onebox</input-type>
+					<hint>
+						The book's edition, expressed as an integer number.
+					</hint>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>numberOfPages</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Number of pages</label>
+					<input-type>onebox</input-type>
+					<hint>The book's total number of pages.</hint>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>bookSeries</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Book series</label>
+					<input-type>onebox</input-type>
+					<hint>
+						The series of which the book is part.</hint>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>publisher</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Publisher</label>
+					<input-type>onebox</input-type>
+					<hint>
+						The book's publisher.</hint>
+					<required>You must enter the publisher.</required>
+					<i18n>true</i18n>
+				</field>
+
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>bibliographicCitation</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Bibliographic citation</label>
+					<input-type>onebox</input-type>
+					<hint>
+						The recommended citation format for the book. Usually,
+						citations are provided in the form: "Author Name", "Book name",
+						"Series","Publisher","Year".</hint>
+					<required>You must fill in the bibliographic citation field.</required>
+					<i18n>true</i18n>
+				</field>
 
 
- <!-- The form-definitions map lays out the detailed definition of all the -->
- <!-- submission forms.Each separate form set has a unique name as an      -->
- <!-- attribute. This name matches one of the names in the form-map. One   -->
- <!-- named form set has the name "traditional"; as this name suggests,    -->
- <!-- it is the old style and is also the default, which gets used when    -->
- <!-- the specified collection has no correspondingly named form set.      -->
- <!--                                                                      -->
- <!-- Each form set contains an ordered set of pages; each page defines    -->
- <!-- one submission metadata entry screen. Each page has an ordered list  -->
- <!-- of field definitions, Each field definition corresponds to one       -->
- <!-- metatdata entry (a so-called row), which has a DC element name, a    -->
- <!-- displayed label, a text string prompt which is called a hint , and   -->
- <!-- an input-type. Each field also may hold optional elements: DC        -->
- <!-- qualifier name, a repeatable flag, and a text string whose presence  -->
- <!-- serves as a 'this field is required' flag.                           -->
 
- <form-definitions>
+				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>fullTextAvailability</dc-element> 
+					<dc-qualifier></dc-qualifier> <repeatable>false</repeatable> <label>Full 
+					Text Availability</label> <input-type value-pairs-name="fullTextAvailabilityList">list</input-type> 
+					<hint> Indication as to whether the publication's full text is available 
+					or not. </hint> <required>You must select a value for Full Text Availability.</required> 
+					</field> -->
 
-   <form name="traditional">
-     <page number="1">
-       <field>
-		 <dc-schema>dc</dc-schema>
-         <dc-element>contributor</dc-element>
-         <dc-qualifier>author</dc-qualifier>
-         <repeatable>true</repeatable>
-         <label>Authors</label>
-         <input-type>name</input-type>
-         <hint>Enter the names of the authors of this item below.</hint>
-         <required></required>
-       </field>
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>contributorName</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Name(s) of contributor(s)</label>
+					<input-type>name</input-type>
+					<hint>
+						The names of contributors to this book.
+					</hint>
+					<i18n>true</i18n>
+				</field>
 
-       <field>
-		 <dc-schema>dc</dc-schema>
-         <dc-element>title</dc-element>
-         <dc-qualifier></dc-qualifier>
-         <repeatable>false</repeatable>
-         <label>Title</label>
-         <input-type>onebox</input-type>
-         <hint>Enter the main title of the item.</hint>
-         <required>You must enter a main title for this item.</required>
-       </field>
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>generalDescription</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>General description / Additional comments</label>
+					<input-type>textarea</input-type>
+					<hint>General description or additional comments for the book you
+						wish to submit.</hint>
+					<i18n>true</i18n>
+				</field>
 
-       <field>
-		 <dc-schema>dc</dc-schema>
-         <dc-element>title</dc-element>
-         <dc-qualifier>alternative</dc-qualifier>
-         <repeatable>true</repeatable>
-         <label>Other Titles</label>
-         <input-type>onebox</input-type>
-         <hint>If the item has any alternative titles, please enter them below.</hint>
-         <required></required>
-       </field>
+			</page>
 
-       <field>
-		 <dc-schema>dc</dc-schema>
-         <dc-element>date</dc-element>
-         <dc-qualifier>issued</dc-qualifier>
-         <repeatable>false</repeatable>
-         <label>Date of Issue</label>
-         <input-type>date</input-type>
-         <hint>Please give the date of previous publication or public distribution
-                        below.  You can leave out the day and/or month if they aren't
-                        applicable.</hint>
-         <required>You must enter at least the year.</required>
-       </field>
+			<page number="2" type-name="learningMaterial">
 
-       <field>
-		 <dc-schema>dc</dc-schema>
-         <dc-element>publisher</dc-element>
-         <dc-qualifier></dc-qualifier>
-         <repeatable>false</repeatable>
-         <label>Publisher</label>
-         <input-type>onebox</input-type>
-         <hint>Enter the name of the publisher of the previously issued instance of this item.</hint>
-         <required></required>
-       </field>
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>learningResourceType</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Educational material type</label>
+					<input-type value-pairs-name="learningResourceTypeList">dropdown</input-type>
+					<hint></hint>
+					<required>You must select a value for the type of the educational
+						material.</required>
+				</field>
 
-       <field>
-		 <dc-schema>dc</dc-schema>
-         <dc-element>identifier</dc-element>
-         <dc-qualifier>citation</dc-qualifier>
-         <repeatable>false</repeatable>
-         <label>Citation</label>
-         <input-type>onebox</input-type>
-         <hint>Enter the standard citation for the previously issued instance of this item.</hint>
-         <required></required>
-       </field>
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>academicPublisherID</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Publishing institution</label>
+					<input-type value-pairs-name="institutionList">dropdown</input-type>
+					<hint>
+						The institution, in the courses of which the material is
+						used.</hint>
+					<required>You must select an institution from the list.</required>
+				</field>
 
-       <field>
-		 <dc-schema>dc</dc-schema>
-         <dc-element>relation</dc-element>
-         <dc-qualifier>ispartofseries</dc-qualifier>
-         <repeatable>true</repeatable>
-         <label>Series/Report No.</label>
-         <input-type>series</input-type>
-         <hint>Enter the series and number assigned to this item by your community.</hint>
-         <required></required>
-       </field>
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>academicPublisher</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Publishing department/division</label>
+					<input-type>onebox</input-type>
+					<hint>
+						The school/department of the institution for courses of which
+						the material was prepared.
+					</hint>
+					<!-- <required>You must enter at least one Academic Publisher.</required> -->
+					<i18n>true</i18n>
+				</field>
 
-       <field>
-		 <dc-schema>dc</dc-schema>
-         <dc-element>identifier</dc-element>
-         <dc-qualifier></dc-qualifier>
-         <!-- An input-type of qualdrop_value MUST be marked as repeatable -->
-         <repeatable>true</repeatable>
-         <label>Identifiers</label>
-         <input-type value-pairs-name="common_identifiers">qualdrop_value</input-type>
-         <hint>If the item has any identification numbers or codes associated with
-it, please enter the types and the actual numbers or codes below.</hint>
-         <required></required>
-       </field>
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>dateCreated</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Date created</label>
+					<input-type>date</input-type>
+					<hint>
+						The material's creation date.</hint>
+				</field>
 
-       <field>
-		 <dc-schema>dc</dc-schema>
-         <dc-element>type</dc-element>
-         <dc-qualifier></dc-qualifier>
-         <repeatable>true</repeatable>
-         <label>Type</label>
-         <input-type value-pairs-name="common_types">dropdown</input-type>
-         <hint> Select the type(s) of content of the item. To select more than one value in the list, you may have to hold down the "CTRL" or "Shift" key.</hint>
-         <required></required>
-       </field>
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>tableOfContents</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Table of contents</label>
+					<input-type>textarea</input-type>
+					<hint>
+						The item's table of contents, if such exists.
+					</hint>
+					<i18n>true</i18n>
+				</field>
 
-       <field>
-		 <dc-schema>dc</dc-schema>
-         <dc-element>language</dc-element>
-         <dc-qualifier>iso</dc-qualifier>
-         <repeatable>false</repeatable>
-         <label>Language</label>
-         <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
-         <hint>Select the language of the main content of the item.  If the language does not appear in the list below, please select 'Other'.  If the content does not really have a language (for example, if it is a dataset or an image) please select 'N/A'.</hint>
-         <required></required>
-       </field>
-     </page>
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>courseDetails</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Course details</label>
+					<input-type>textarea</input-type>
+					<hint>
+						Details for the course(s) supporting the described material.
+						The value of this field includes the course name,
+						the semester, as
+						well as the course level (undergraduate or
+						postgraduate), in the
+						form "Course Name" ["Semester", "Course
+						Level"],e.g. Differential
+						Equations[3rd semester, undergraduate].
+					</hint>
+					<i18n>true</i18n>
+				</field>
 
-     <page number="2">
-       <field>
-		 <dc-schema>dc</dc-schema>
-         <dc-element>subject</dc-element>
-         <dc-qualifier></dc-qualifier>
-         <!-- An input-type of twobox MUST be marked as repeatable -->
-         <repeatable>true</repeatable>
-         <label>Subject Keywords</label>
-         <input-type>twobox</input-type>
-         <hint> Enter appropriate subject keywords or phrases below. </hint>
-         <required></required>
-         <vocabulary>srsc</vocabulary>
-       </field>
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>contributorName</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Name(s) of contributor(s)</label>
+					<input-type>name</input-type>
+					<hint>
+						Names of contributors to this material.
+					</hint>
+					<i18n>true</i18n>
+				</field>
 
-       <field>
-		 <dc-schema>dc</dc-schema>
-         <dc-element>description</dc-element>
-         <dc-qualifier>abstract</dc-qualifier>
-         <repeatable>false</repeatable>
-         <label>Abstract</label>
-         <input-type>textarea</input-type>
-         <hint> Enter the abstract of the item below. </hint>
-         <required></required>
-       </field>
+				<field>
+					<dc-schema>heal</dc-schema>
+					<dc-element>generalDescription</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>General Description / Additional Comments</label>
+					<input-type>textarea</input-type>
+					<hint>General description or additional comments for the material
+						you wish to submit.</hint>
+					<i18n>true</i18n>
+				</field>
 
-       <field>
-		 <dc-schema>dc</dc-schema>
-         <dc-element>description</dc-element>
-         <dc-qualifier>sponsorship</dc-qualifier>
-         <repeatable>false</repeatable>
-         <label>Sponsors</label>
-         <input-type>textarea</input-type>
-         <hint> Enter the names of any sponsors and/or funding codes in the box below. </hint>
-         <required></required>
-       </field>
+			</page>
 
-       <field>
-		 <dc-schema>dc</dc-schema>
-         <dc-element>description</dc-element>
-         <dc-qualifier></dc-qualifier>
-         <repeatable>false</repeatable>
-         <label>Description</label>
-         <input-type>textarea</input-type>
-         <hint> Enter any other description or comments in this box. </hint>
-         <required></required>
-       </field>
-     </page>
-   </form>
+		</form>
 
-   <form name="one">
-     <page number="1">
-       <field>
-		 <dc-schema>dc</dc-schema>
-         <dc-element>contributor</dc-element>
-         <dc-qualifier>author</dc-qualifier>
-         <repeatable>true</repeatable>
-         <label>One: Authors</label>
-                 <input-type>name</input-type>
-         <hint>Enter the names of the authors of this item below.</hint>
-         <required></required>
-       </field>
-      </page>
-    </form>
- </form-definitions>
+	</form-definitions>
+
+	<form-value-pairs>
+
+		<value-pairs value-pairs-name="itemType" dc-term="type">
+
+			<pair>
+				<displayed-value>Bachelor thesis</displayed-value>
+				<stored-value>bachelorThesis</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Master thesis</displayed-value>
+				<stored-value>masterThesis</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Doctoral thesis</displayed-value>
+				<stored-value>doctoralThesis</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Conference presentation</displayed-value>
+				<stored-value>conferenceItem</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Journal article</displayed-value>
+				<stored-value>journalArticle</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Book chapter</displayed-value>
+				<stored-value>bookChapter</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Book</displayed-value>
+				<stored-value>book</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technical Report</displayed-value>
+				<stored-value>report</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Educational material</displayed-value>
+				<stored-value>learningMaterial</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Dataset</displayed-value>
+				<stored-value>dataset</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Other</displayed-value>
+				<stored-value>other</stored-value>
+			</pair>
+
+		</value-pairs>
+
+		<value-pairs value-pairs-name="classificationSchemeList"
+			dc-term="classification">
+
+			<pair>
+				<displayed-value>LCC</displayed-value>
+				<stored-value>LCC</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>DDC</displayed-value>
+				<stored-value>DDC</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>UDC</displayed-value>
+				<stored-value>UDC</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>NLM</displayed-value>
+				<stored-value>NLM</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>ACMCCS</displayed-value>
+				<stored-value>ACMCCS</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>MSC</displayed-value>
+				<stored-value>MSC</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>PACS</displayed-value>
+				<stored-value>PACS</stored-value>
+			</pair>
+
+		</value-pairs>
+
+		<value-pairs value-pairs-name="subjectSchemeList" dc-term="keyword">
+
+			<pair>
+				<displayed-value>LCSH</displayed-value>
+				<stored-value>LCSH</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>MeSH</displayed-value>
+				<stored-value>MeSH</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>STW</displayed-value>
+				<stored-value>STW</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>AAT</displayed-value>
+				<stored-value>AAT</stored-value>
+			</pair>
+
+		</value-pairs>
+
+		<!-- <value-pairs value-pairs-name="creatorIdentifierList" dc-term="creatorID"> 
+			<pair> <displayed-value>DHARE ID</displayed-value> <stored-value>dhareID</stored-value> 
+			</pair> <pair> <displayed-value>URI</displayed-value> <stored-value>URI</stored-value> 
+			</pair> <pair> <displayed-value>Email</displayed-value> <stored-value>email</stored-value> 
+			</pair> <pair> <displayed-value>Other</displayed-value> <stored-value>other</stored-value> 
+			</pair> </value-pairs> -->
 
 
- <!-- form-value-pairs populate dropdown and qualdrop-value lists.          -->
- <!-- The form-value-pairs element holds child elements named 'value-pairs' -->
- <!-- A 'value-pairs' element has a value-pairs-name and a dc-term          -->
- <!-- attribute. The dc-term attribute specifies which to which Dublin Core -->
- <!-- Term this set of value-pairs applies.                                 -->
- <!--     Current dc-terms are: identifier-pairs, type-pairs, and           -->
- <!--     language_iso-pairs. The name attribute matches a name             -->
- <!--     in the form-map, above.                                           -->
- <!-- A value-pair contains one 'pair' for each value displayed in the list -->
- <!-- Each pair contains a 'displayed-value' element and a 'stored-value'   -->
- <!-- element. A UI list displays the displayed-values, but the program     -->
- <!-- stores the associated stored-values in the database.                  -->
+		<!-- <value-pairs value-pairs-name="personIdentifierList" dc-term="contributorID"> 
+			<pair> <displayed-value>DHARE ID</displayed-value> <stored-value>dhareID</stored-value> 
+			</pair> <pair> <displayed-value>URI</displayed-value> <stored-value>URI</stored-value> 
+			</pair> <pair> <displayed-value>Email</displayed-value> <stored-value>email</stored-value> 
+			</pair> <pair> <displayed-value>Other</displayed-value> <stored-value>other</stored-value> 
+			</pair> </value-pairs> -->
 
- <form-value-pairs>
-   <value-pairs value-pairs-name="common_identifiers" dc-term="identifier">
-     <pair>
-       <displayed-value>ISSN</displayed-value>
-       <stored-value>issn</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Other</displayed-value>
-       <stored-value>other</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>ISMN</displayed-value>
-       <stored-value>ismn</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Gov't Doc #</displayed-value>
-       <stored-value>govdoc</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>URI</displayed-value>
-       <stored-value>uri</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>ISBN</displayed-value>
-       <stored-value>isbn</stored-value>
-     </pair>
-   </value-pairs>
+		<value-pairs value-pairs-name="common_iso_languages"
+			dc-term="language">
+			<pair>
+				<displayed-value>N/A</displayed-value>
+				<stored-value></stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Greek</displayed-value>
+				<stored-value>el</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>English</displayed-value>
+				<stored-value>en</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>German</displayed-value>
+				<stored-value>de</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>French</displayed-value>
+				<stored-value>fr</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Other</displayed-value>
+				<stored-value>other</stored-value>
+			</pair>
+		</value-pairs>
 
-   <value-pairs value-pairs-name="common_types" dc-term="type">
-     <pair>
-       <displayed-value>Animation</displayed-value>
-       <stored-value>Animation</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Article</displayed-value>
-       <stored-value>Article</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Book</displayed-value>
-       <stored-value>Book</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Book chapter</displayed-value>
-       <stored-value>Book chapter</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Dataset</displayed-value>
-       <stored-value>Dataset</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Learning Object</displayed-value>
-       <stored-value>Learning Object</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Image</displayed-value>
-       <stored-value>Image</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Image, 3-D</displayed-value>
-       <stored-value>Image, 3-D</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Map</displayed-value>
-       <stored-value>Map</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Musical Score</displayed-value>
-       <stored-value>Musical Score</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Plan or blueprint</displayed-value>
-       <stored-value>Plan or blueprint</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Preprint</displayed-value>
-       <stored-value>Preprint</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Presentation</displayed-value>
-       <stored-value>Presentation</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Recording, acoustical</displayed-value>
-       <stored-value>Recording, acoustical</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Recording, musical</displayed-value>
-       <stored-value>Recording, musical</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Recording, oral</displayed-value>
-       <stored-value>Recording, oral</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Software</displayed-value>
-       <stored-value>Software</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Technical Report</displayed-value>
-       <stored-value>Technical Report</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Thesis</displayed-value>
-       <stored-value>Thesis</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Video</displayed-value>
-       <stored-value>Video</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Working Paper</displayed-value>
-       <stored-value>Working Paper</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Other</displayed-value>
-       <stored-value>Other</stored-value>
-     </pair>
-   </value-pairs>
+		<value-pairs value-pairs-name="accessTypeList" dc-term="access">
 
-   <!-- default language order: (from dspace 1.2.1)
-        "en_US", "en", "es", "de", "fr", "it", "ja", "zh", "other", ""
-     -->
-   <value-pairs value-pairs-name="common_iso_languages" dc-term="language_iso">
-     <pair>
-       <displayed-value>N/A</displayed-value>
-       <stored-value></stored-value>
-     </pair>
-     <pair>
-       <displayed-value>English (United States)</displayed-value>
-       <stored-value>en_US</stored-value>
-      </pair>
-     <pair>
-       <displayed-value>English</displayed-value>
-       <stored-value>en</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Spanish</displayed-value>
-       <stored-value>es</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>German</displayed-value>
-       <stored-value>de</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>French</displayed-value>
-       <stored-value>fr</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Italian</displayed-value>
-       <stored-value>it</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Japanese</displayed-value>
-       <stored-value>ja</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Chinese</displayed-value>
-       <stored-value>zh</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>(Other)</displayed-value>
-       <stored-value>other</stored-value>
-     </pair>
-   </value-pairs>
+			<pair>
+				<displayed-value>Publicly accessible</displayed-value>
+				<stored-value>free</stored-value>
+			</pair>
 
-    </form-value-pairs>
+			<pair>
+				<displayed-value>Institutional IP-based access</displayed-value>
+				<stored-value>campus</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Accessible to logged-in DSpace users</displayed-value>
+				<stored-value>account</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Embargo (6 months)</displayed-value>
+				<stored-value>embargo</stored-value>
+			</pair>
+
+			<!-- <pair> <displayed-value>Other</displayed-value> <stored-value>other</stored-value> 
+				</pair> -->
+
+		</value-pairs>
+
+		<value-pairs value-pairs-name="institutionList" dc-term="healID">
+
+			<pair>
+				<displayed-value>Athens School of Fine Arts</displayed-value>
+				<stored-value>asfa</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>School of Pedagogical and Technological Education</displayed-value>
+				<stored-value>aspete</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Aristotle Unversity of Thessaloniki</displayed-value>
+				<stored-value>auth</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Agricultural University of Athens</displayed-value>
+				<stored-value>aua</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Demokritos University of Thrace</displayed-value>
+				<stored-value>duth</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>International Hellenic University</displayed-value>
+				<stored-value>ihu</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>National and Kapodestrian University of Athens</displayed-value>
+				<stored-value>uoa</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>National Technical University of Athens</displayed-value>
+				<stored-value>ntua</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Hellenic Open University</displayed-value>
+				<stored-value>eap</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Ionian University</displayed-value>
+				<stored-value>ionio</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Athens University of Economics and Business</displayed-value>
+				<stored-value>aueb</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>University of Western Greece</displayed-value>
+				<stored-value>uwg</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>University of Western Macedonia</displayed-value>
+				<stored-value>uowm</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>University of Thessaly</displayed-value>
+				<stored-value>uth</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>University of Ioannina</displayed-value>
+				<stored-value>uoi</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>University of Crete</displayed-value>
+				<stored-value>uoc</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>University of Macedonia</displayed-value>
+				<stored-value>uom</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>University of Central Greece</displayed-value>
+				<stored-value>ucg</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>University of Patras</displayed-value>
+				<stored-value>upatras</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>University of Piraeus</displayed-value>
+				<stored-value>unipi</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>University of Peloponnese</displayed-value>
+				<stored-value>uop</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Panteion University</displayed-value>
+				<stored-value>panteion</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technical University of Crete</displayed-value>
+				<stored-value>tuc</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Harokopion University</displayed-value>
+				<stored-value>hua</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Athens</displayed-value>
+				<stored-value>teiath</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Western
+					Macedonia</displayed-value>
+				<stored-value>teikoz</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Epirus Institute of Technology</displayed-value>
+				<stored-value>teiep</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Thessaloniki</displayed-value>
+				<stored-value>teithe</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institution of Ionian
+					Islands</displayed-value>
+				<stored-value>teiion</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Kavala Institute of Technology</displayed-value>
+				<stored-value>teikav</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Kalamata</displayed-value>
+				<stored-value>teikal</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Crete</displayed-value>
+				<stored-value>teicrete</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Lamia</displayed-value>
+				<stored-value>teilam</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Larissa</displayed-value>
+				<stored-value>teilar</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Messolonghi</displayed-value>
+				<stored-value>teimes</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Patras</displayed-value>
+				<stored-value>teipat</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Piraeus</displayed-value>
+				<stored-value>teipir</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Serres</displayed-value>
+				<stored-value>teiser</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Chalkida</displayed-value>
+				<stored-value>teihal</stored-value>
+			</pair>
+
+		</value-pairs>
+
+		<!-- <value-pairs value-pairs-name="fullTextAvailabilityList" dc-term="fullTextAvailability"> 
+			<pair> <displayed-value>Available</displayed-value> <stored-value>true</stored-value> 
+			</pair> <pair> <displayed-value>Not Available</displayed-value> <stored-value>false</stored-value> 
+			</pair> </value-pairs> -->
+
+		<value-pairs value-pairs-name="journalTypeList" dc-term="journalType">
+
+			<pair>
+				<displayed-value>With a review process (peer
+					review)</displayed-value>
+				<stored-value>peer-reviewed</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Without a review process.</displayed-value>
+				<stored-value>non peer-reviewed</stored-value>
+			</pair>
+
+		</value-pairs>
+
+		<value-pairs value-pairs-name="learningResourceTypeList"
+			dc-term="learningResourceType">
+
+			<pair>
+				<displayed-value>Lecture Notes</displayed-value>
+				<stored-value>lectureNotes</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Lecture Slides</displayed-value>
+				<stored-value>slides</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Processed Examples/Exercises</displayed-value>
+				<stored-value>exercise</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Other</displayed-value>
+				<stored-value>other</stored-value>
+			</pair>
+
+		</value-pairs>
+
+		<value-pairs value-pairs-name="conferenceItemTypeList"
+			dc-term="conferenceItemType">
+
+			<pair>
+				<displayed-value>Poster</displayed-value>
+				<stored-value>poster</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Full Paper</displayed-value>
+				<stored-value>full paper</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Demo</displayed-value>
+				<stored-value>demo</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Short Paper</displayed-value>
+				<stored-value>short paper</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Abstract</displayed-value>
+				<stored-value>abstract</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Tutorial</displayed-value>
+				<stored-value>tutorial</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Other</displayed-value>
+				<stored-value>other</stored-value>
+			</pair>
+
+		</value-pairs>
+
+	</form-value-pairs>
 
 </input-forms>

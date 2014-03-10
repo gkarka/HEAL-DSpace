@@ -42,9 +42,10 @@
         <!--Which sidebar facets are to be displayed-->
         <property name="sidebarFacets">
             <list>
+                <ref bean="sidebarFacetType" />
                 <ref bean="sidebarFacetAuthor" />
-                <ref bean="sidebarFacetSubject" />
                 <ref bean="sidebarFacetDateIssued" />
+                <ref bean="sidebarFacetSubject" />
             </list>
         </property>
         <!--The search filters which can be used on the discovery search page-->
@@ -54,6 +55,7 @@
                 <ref bean="searchFilterAuthor" />
                 <ref bean="searchFilterSubject" />
                 <ref bean="searchFilterIssued" />
+                <ref bean="searchFilterType" />
             </list>
         </property>
         <!--The sort filters for the discovery search-->
@@ -66,6 +68,7 @@
                     <list>
                         <ref bean="sortTitle" />
                         <ref bean="sortDateIssued" />
+                        <ref bean="sortType" />
                     </list>
                 </property>
             </bean>
@@ -95,6 +98,7 @@
         <property name="metadataFields">
             <list>
                 <value>dc.title</value>
+                <!-- <value>heal.title</value> -->
             </list>
         </property>
         <property name="fullAutoComplete" value="false"/>
@@ -105,7 +109,9 @@
         <property name="metadataFields">
             <list>
                 <value>dc.contributor.author</value>
-                <value>dc.creator</value>
+                <!-- <value>heal.creatorName</value> -->
+                <value>heal.advisorName</value>
+                <value>heal.committeeMemberName</value>
             </list>
         </property>
         <property name="fullAutoComplete" value="true"/>
@@ -116,6 +122,7 @@
         <property name="metadataFields">
             <list>
                 <value>dc.subject.*</value>
+                <!-- <value>heal.keyword.*</value> -->
             </list>
         </property>
         <property name="fullAutoComplete" value="true"/>
@@ -132,6 +139,15 @@
         <property name="fullAutoComplete" value="false"/>
     </bean>
 
+    <bean id="searchFilterType" class="org.dspace.discovery.configuration.DiscoverySearchFilter">
+        <property name="indexFieldName" value="type"/>
+        <property name="metadataFields">
+            <list>
+                <value>heal.type</value>
+            </list>
+        </property>
+        <property name="fullAutoComplete" value="true"/>
+    </bean>
 
 
     <!--Sidebar facet configuration beans-->
@@ -140,7 +156,9 @@
         <property name="metadataFields">
             <list>
                 <value>dc.contributor.author</value>
-                <value>dc.creator</value>
+                <!-- <value>heal.creatorName</value> -->
+                <value>heal.advisorName</value>
+                <value>heal.committeeMemberName</value>
             </list>
         </property>
         <property name="facetLimit" value="10"/>
@@ -152,6 +170,7 @@
         <property name="metadataFields">
             <list>
                 <value>dc.subject.*</value>
+                <!-- <value>heal.keyword.*</value> -->
             </list>
         </property>
         <property name="facetLimit" value="10"/>
@@ -169,9 +188,21 @@
         <property name="sortOrder" value="VALUE"/>
     </bean>
 
+    <bean id="sidebarFacetType" class="org.dspace.discovery.configuration.SidebarFacetConfiguration">
+        <property name="indexFieldName" value="type"/>
+        <property name="metadataFields">
+            <list>
+                <value>heal.type</value>
+            </list>
+        </property>
+        <property name="facetLimit" value="10"/>
+        <property name="sortOrder" value="COUNT"/>
+    </bean>
+
 
     <!--Sort properties-->
     <bean id="sortTitle" class="org.dspace.discovery.configuration.DiscoverySortFieldConfiguration">
+        <!-- <property name="metadataField" value="heal.title"/> -->
         <property name="metadataField" value="dc.title"/>
     </bean>
 
@@ -179,4 +210,9 @@
         <property name="metadataField" value="dc.date.issued"/>
         <property name="type" value="date"/>
     </bean>
+
+    <bean id="sortType" class="org.dspace.discovery.configuration.DiscoverySortFieldConfiguration">
+        <property name="metadataField" value="heal.type"/>
+    </bean>
+
 </beans>

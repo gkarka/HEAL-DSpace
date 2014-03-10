@@ -1,0 +1,631 @@
+<?xml version="1.0"?>
+
+<!-- start of XML -->
+
+<dspace-dc-types>
+
+	<dspace-header>
+		<title>Heal Meta Types Registry</title>
+		<contributor.author>Dimitris Spanos</contributor.author>
+		<contributor.author>Periklis Stavrou</contributor.author>
+		<contributor.author>Angelos Anagnostopoulos</contributor.author>
+		<contributor.editor>$Author: aanagnostopoulos $</contributor.editor>
+		<date.created>$Date: 2012-03-15$</date.created>
+		<description>
+			$Log$
+
+			Revision 1 2012/03/15 00:00:00 aanagnostopoulos
+			First revision
+
+		</description>
+		<description.version>$Revision: 1 $</description.version>
+	</dspace-header>
+
+	<dc-schema>
+		<name>heal</name>
+		<namespace>http://seab.lib.ntua.gr/standards/heal/</namespace>
+	</dc-schema>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>type</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>title</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>secondaryTitle</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>creatorName</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>creatorId</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>creatorId</element>
+		<qualifier>dhareID</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>creatorId</element>
+		<qualifier>URI</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>creatorId</element>
+		<qualifier>email</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>creatorId</element>
+		<qualifier>other</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>generalDescription</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>classification</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>classification</element>
+		<qualifier>LCC</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>classification</element>
+		<qualifier>DDC</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>classification</element>
+		<qualifier>UDC</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>classification</element>
+		<qualifier>NLM</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>classification</element>
+		<qualifier>ACMCCS</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>classification</element>
+		<qualifier>MSC</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>classification</element>
+		<qualifier>PACS</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>classificationURI</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>classificationURI</element>
+		<qualifier>LCC</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>classificationURI</element>
+		<qualifier>DDC</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>classificationURI</element>
+		<qualifier>UDC</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>classificationURI</element>
+		<qualifier>NLM</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>classificationURI</element>
+		<qualifier>ACMCCS</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>classificationURI</element>
+		<qualifier>MSC</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>classificationURI</element>
+		<qualifier>PACS</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>keyword</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>keyword</element>
+		<qualifier>LCSH</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>keyword</element>
+		<qualifier>MeSH</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>keyword</element>
+		<qualifier>STW</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>keyword</element>
+		<qualifier>AAT</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>keywordURI</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>keywordURI</element>
+		<qualifier>LCSH</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>keywordURI</element>
+		<qualifier>MeSH</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>keywordURI</element>
+		<qualifier>STW</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>keywordURI</element>
+		<qualifier>AAT</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>contributorName</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>contributorID</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>contributorID</element>
+		<qualifier>dhareID</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>contributorID</element>
+		<qualifier>URI</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>contributorID</element>
+		<qualifier>email</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>contributorID</element>
+		<qualifier>other</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>identifier</element>
+		<qualifier>primary</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>identifier</element>
+		<qualifier>secondary</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>dateAvailable</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>language</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>access</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>accessText</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>license</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>references</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>isReferencedBy</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>fileFormat</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>recordProvider</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>publicationDate</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>bibliographicCitation</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>abstract</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>tableOfContents</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>sponsor</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>advisorName</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>advisorID</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>advisorID</element>
+		<qualifier>dhareID</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>advisorID</element>
+		<qualifier>URI</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>advisorID</element>
+		<qualifier>email</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>advisorID</element>
+		<qualifier>other</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>committeeMemberName</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>committeeMemberID</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>committeeMemberID</element>
+		<qualifier>dhareID</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>committeeMemberID</element>
+		<qualifier>URI</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>committeeMemberID</element>
+		<qualifier>email</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>committeeMemberID</element>
+		<qualifier>other</qualifier>
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>academicPublisher</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>academicPublisherID</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>academicPublisherDhareID</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>numberOfPages</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>publisher</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>journalName</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>journalType</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>fullTextAvailability</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>conferenceName</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>conferenceItemType</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>bookName</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>bookEdition</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>bookSeries</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>learningResourceType</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>dateCreated</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+	<dc-type>
+		<schema>heal</schema>
+		<element>courseDetails</element>
+		<!-- unqualified -->
+		<scope_note></scope_note>
+	</dc-type>
+
+</dspace-dc-types>
