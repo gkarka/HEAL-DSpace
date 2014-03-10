@@ -119,6 +119,18 @@
          <groupId>org.dspace</groupId>
          <artifactId>dspace-oai-api</artifactId>
       </dependency>
+	<!-- modified by aanagnostopoulos -->
+    <dependency>
+		<groupId>gr.heal.dspace</groupId>
+		<artifactId>dspace-heal-api</artifactId>
+		<version>1.8.2</version>
+	</dependency>
+	<dependency>
+		<groupId>com.sun.xsom</groupId>
+		<artifactId>xsom</artifactId>
+		<version>20110809</version>
+	</dependency>
+	<!-- END aanagnostopoulos -->      
    </dependencies>
 
 </project>
