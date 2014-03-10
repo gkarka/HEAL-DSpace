@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>gr.heal.dspace</groupId>
+	<artifactId>dspace-heal-xmlui-api</artifactId>
+	<name>DSpace HEAL XML-UI (Manakin) :: API and Core Aspects</name>
+	<description>
+        DSpace/Manakin HEAL specific XML UI Based APIs and components using the Cocoon
+        and Wing frameworks.
+    </description>
+
+	<parent>
+		<groupId>org.dspace</groupId>
+		<artifactId>dspace-xmlui</artifactId>
+		<version>1.8.2</version>
+		<relativePath>..</relativePath>
+	</parent>
+
+	<scm>
+		<connection>scm:svn:https://scm.dspace.org/svn/repo/tags/dspace-1.8.2</connection>
+		<developerConnection>scm:svn:https://scm.dspace.org/svn/repo/tags/dspace-1.8.2
+        </developerConnection>
+		<url>http://scm.dspace.org/svn/repo/tags/dspace-1.8.2</url>
+	</scm>
+
+	<dependencies>
+
+		<!-- modified by aanagnostopoulos: replaced WING dependency witch custom 
+			HEAL Wing -->
+
+		<dependency>
+			<groupId>gr.heal.dspace</groupId>
+			<artifactId>dspace-heal-xmlui-wing</artifactId>
+			<version>1.8.2</version>
+		</dependency>
+		<!-- END aanagnostopoulos -->
+
+		<dependency>
+			<groupId>org.dspace</groupId>
+			<artifactId>dspace-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.dspace</groupId>
+			<artifactId>dspace-api-lang</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.dspace</groupId>
+			<artifactId>dspace-services-impl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.dspace</groupId>
+			<artifactId>dspace-services-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.dspace</groupId>
+			<artifactId>dspace-services-utils</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.dspace</groupId>
+			<artifactId>dspace-stats</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.3</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.yahoo.platform.yui</groupId>
+			<artifactId>yuicompressor</artifactId>
+			<version>2.3.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>gr.heal.dspace</groupId>
+			<artifactId>dspace-heal-api</artifactId>
+			<version>1.8.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.dspace</groupId>
+			<artifactId>dspace-xmlui-api</artifactId>
+			<version>1.8.2</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.dspace</groupId>
+					<artifactId>dspace-xmlui-wing</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+	</dependencies>
+
+</project>

@@ -28,9 +28,15 @@
    </scm>
    
    <modules>
-      <module>dspace-xmlui-wing</module>
+	<!-- modified by aanagnostopoulos: Wing module commented out, replaced by 
+		HEAL Wing module -->
+	<!-- <module>dspace-xmlui-wing</module> -->
+	<!-- END aanagnostopoulos -->
+      <module>dspace-heal-xmlui-wing</module>
       <module>dspace-xmlui-api</module>
       <module>dspace-xmlui-webapp</module>
+      <module>dspace-heal-xmlui-api</module>
+      <module>dspace-heal-xmlui-webapp</module>
    </modules>
 
 </project>
