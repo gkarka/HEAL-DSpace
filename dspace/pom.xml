@@ -31,9 +31,43 @@
 		<default.dspace.dir>/dspace</default.dspace.dir>
 		<default.mail.server>smtp.example.com</default.mail.server>
 		<default.solr.server>http://localhost:8080/solr</default.solr.server>
+		
+		<default.dspace.hostname>localhost</default.dspace.hostname>				
+		<default.dspace.baseUrl>http://${default.dspace.hostname}:${default.dspace.port}</default.dspace.baseUrl>
+		<default.dspace.url>${default.dspace.baseUrl}/</default.dspace.url>
 	</properties>
 
 	<profiles>
+		<profile>
+			<id>common-settings</id>
+			<properties>					
+				<dspace.baseUrl>http://${dspace.hostname}</dspace.baseUrl>
+				<dspace.url>http://${dspace.hostname}/${dspace.shortname}</dspace.url>
+				
+				<!-- default. properties, same values as those without the default. prefix -->
+				<default.dspace.hostname>${dspace.hostname}</default.dspace.hostname>								
+				<default.dspace.baseUrl>${dspace.baseUrl}</default.dspace.baseUrl>
+				<default.dspace.url>${dspace.url}</default.dspace.url>
+			</properties>
+		</profile>
+		<profile>
+			<id>azure</id>
+			<properties>		
+				<dspace.hostname>dspace-ntua.cloudapp.net</dspace.hostname>
+				<dspace.port>8088</dspace.port>
+				
+				<dspace.shortname>heal-xmlui</dspace.shortname>				
+			</properties>
+		</profile>
+		<profile>
+			<id>production</id>
+			<properties>		
+				<dspace.hostname>dspace.lib.ntua.gr</dspace.hostname>
+				<dspace.port>8088</dspace.port>
+				
+				<dspace.shortname></dspace.shortname>				
+			</properties>
+		</profile>
 
 		<!-- This profile is used by all children such that when activated a dspace.config 
 			configuration file location passed on the commandline (-Ddspace.config=...) 
