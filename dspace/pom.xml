@@ -34,20 +34,32 @@
 		
 		<default.dspace.hostname>localhost</default.dspace.hostname>				
 		<default.dspace.baseUrl>http://${default.dspace.hostname}:${default.dspace.port}</default.dspace.baseUrl>
-		<default.dspace.url>${default.dspace.baseUrl}/</default.dspace.url>
+		<default.dspace.url>${default.dspace.baseUrl}</default.dspace.url>
 	</properties>
 
 	<profiles>
 		<profile>
 			<id>common-settings</id>
 			<properties>					
+				<dspace.dir>/dspace</dspace.dir>
 				<dspace.baseUrl>http://${dspace.hostname}</dspace.baseUrl>
 				<dspace.url>http://${dspace.hostname}/${dspace.shortname}</dspace.url>
 				
 				<!-- default. properties, same values as those without the default. prefix -->
+				<default.dspace.dir>${dspace.dir}</default.dspace.dir>
 				<default.dspace.hostname>${dspace.hostname}</default.dspace.hostname>								
 				<default.dspace.baseUrl>${dspace.baseUrl}</default.dspace.baseUrl>
 				<default.dspace.url>${dspace.url}</default.dspace.url>
+			</properties>
+		</profile>
+		<profile>
+			<id>dev</id>
+			<properties>		
+				<dspace.hostname>localhost</dspace.hostname>
+				<dspace.port>8080</dspace.port>				
+				<dspace.shortname>heal-xmlui</dspace.shortname>				
+				
+				<dspace.url>http://localhost:8080/heal-xmlui</dspace.url>
 			</properties>
 		</profile>
 		<profile>
@@ -62,10 +74,11 @@
 		<profile>
 			<id>production</id>
 			<properties>		
+				<dspace.dir>/dspacenew</dspace.dir>
 				<dspace.hostname>dspace.lib.ntua.gr</dspace.hostname>
 				<dspace.port>8088</dspace.port>
-				
-				<dspace.shortname></dspace.shortname>				
+										
+				<dspace.url>http://${dspace.hostname}</dspace.url>				
 			</properties>
 		</profile>
 
