@@ -73,10 +73,11 @@
             </modules>
         </profile>
        <!-- modified by aanagnostopoulos: disabled JSPUI -->
+	   <!-- modified by gkarka: reenabled JSPUI -->
         <profile>
             <id>dspace-jspui</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <activeByDefault>true</activeByDefault>
             </activation>
             <modules>
                 <module>jspui</module>
