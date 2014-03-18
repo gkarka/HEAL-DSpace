@@ -247,6 +247,7 @@
                     both columns of the list. -->
             </xsl:otherwise>
         </xsl:choose>
+        <xsl:if test="dri:field/@required='yes'"><span style="color:red">*</span></xsl:if>
     </xsl:template>
 
     <xsl:template match="dri:list[@type='form']/dri:label" priority="3">
