@@ -10,7 +10,6 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 
 import org.apache.log4j.Logger;
-import org.dspace.AbstractUnitTest;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
