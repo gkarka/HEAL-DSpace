@@ -1257,6 +1257,9 @@
 	<message key="xmlui.administrative.item.AddBitstreamForm.bundle.THUMBNAIL">Εικονίδια</message>
 	<message key="xmlui.administrative.item.AddBitstreamForm.bundle.LICENSE">Άδειες</message>
 	<message key="xmlui.administrative.item.AddBitstreamForm.bundle.CC-LICENSE">Άδειες Creative Commons</message>
+	<!-- modified by aanagnostopoulos -->
+	<message key="xmlui.administrative.item.AddBitstreamForm.bundle.HIDDEN">Κρυφά Αρχεία</message>
+	<!-- end aanagnostopoulos -->
 	<message key="xmlui.administrative.item.AddBitstreamForm.file_label">Αρχείο</message>
 	<message key="xmlui.administrative.item.AddBitstreamForm.file_help">Παρακαλώ εισάγετε το όνομα του αρχείου στον υπολογιστή σας που αντιστοιχεί στο τεκμήριο. Εάν κλικάρετε "Περιήγηση...", ένα νέο παράθυρο θα εμφανιστεί στο οποίο μπορείτε να τοποθετήσετε και να επιλέξετε το αρχείο από τον υπολογιστή σας.</message>
 	<message key="xmlui.administrative.item.AddBitstreamForm.description_label">Περιγραφή</message>
