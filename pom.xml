@@ -110,6 +110,15 @@
                 <module>dspace-api</module>
             </modules>
         </profile>
+        <profile>
+            <id>dspace-heal-api</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>dspace-heal-api</module>
+            </modules>
+        </profile>
 
         <!--
            Builds DSpace Solr Stats for DSpace
@@ -242,6 +251,7 @@
          </activation>
          <modules>
             <module>dspace-api</module>
+			      <module>dspace-heal-api</module>
             <module>dspace-stats</module>
             <module>dspace-discovery</module>
             <module>dspace-jspui</module>
@@ -324,6 +334,11 @@
          <dependency>
             <groupId>org.dspace</groupId>
             <artifactId>dspace-api</artifactId>
+            <version>${project.version}</version>
+         </dependency>
+		 <dependency>
+            <groupId>gr.heal.dspace</groupId>
+            <artifactId>dspace-heal-api</artifactId>
             <version>${project.version}</version>
          </dependency>
           <dependency>

@@ -55,6 +55,7 @@
 		<profile>
 			<id>dev</id>
 			<properties>		
+				<dspace.dir>c:/dspace</dspace.dir>
 				<dspace.hostname>localhost</dspace.hostname>
 				<dspace.port>8080</dspace.port>				
 				<dspace.shortname>heal-xmlui</dspace.shortname>				
