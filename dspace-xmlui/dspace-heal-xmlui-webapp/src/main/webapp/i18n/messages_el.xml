@@ -64,6 +64,9 @@
     <message key="xmlui.feed.header">RSS Feeds</message>
 	<message key="xmlui.feed.logo_title">Κανάλι Εικόνων</message>
 	<message key="xmlui.feed.untitled">Χωρίς Τίτλο</message>
+	<!-- modified by aanagnostopoulos -->
+	<message key="xmlui.feed.submit">Ξεκινήστε μια νέα υποβολή</message>
+	<!-- END aanagnostopoulos -->	
 
 	<!--
 		Default notice header
