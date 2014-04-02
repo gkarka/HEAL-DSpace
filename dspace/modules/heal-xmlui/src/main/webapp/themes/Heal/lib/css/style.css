@@ -220,6 +220,10 @@ select.multiple {
     padding: 0;
 }
 
+#ds-options h1 {
+    margin-bottom: 0;
+}
+
 h1.ds-option-set-head {
     margin-top: 20px;
     background-color: #f0f2f5;
