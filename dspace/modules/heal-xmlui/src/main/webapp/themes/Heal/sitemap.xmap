@@ -11,7 +11,11 @@
 <map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
 
     <map:components>
-        <map:readers>
+      <map:transformers>
+        <map:transformer name="CommunityBrowser" src="org.dspace.app.xmlui.aspect.artifactbrowser.CommunityBrowser"/>
+      </map:transformers>
+
+      <map:readers>
             <map:reader name="ConcatenationReader" src="org.dspace.app.xmlui.cocoon.ConcatenationReader"/>
         </map:readers>
     </map:components>
@@ -118,10 +122,16 @@
         
 				<!-- Step 1: Generate the DRI page -->
 				<map:generate type="file" src="cocoon://DRI/{1}"/>
-        
+
         <!-- gkarka - augment DRI -->
+        <map:match pattern="">
+          <map:transform type="CommunityBrowser">
+            <map:parameter name="depth" value="2"/>
+          </map:transform>        
+        </map:match>        
         <map:transform src="augmentDRI.xsl"/>
 				
+        
         <!-- Step 2 Add page metadata -->
 
                 <!--3 different IncludePageMeta transformers to ensure that the
@@ -132,7 +142,7 @@
                     <map:parameter name="stylesheet.screen#3" value="lib/css/helper.css"/>
                     <map:parameter name="stylesheet.screen#4" value="lib/css/jquery-ui-1.8.15.custom.css"/>
                     <map:parameter name="stylesheet.screen#5" value="lib/css/style.css"/>
-                    <map:parameter name="stylesheet.screen#6" value="lib/css/authority-control.css"/>
+                    <map:parameter name="stylesheet.screen#6" value="lib/css/authority-control.css"/>                    
                 </map:transform>
 
                 <map:transform type="IncludePageMeta">

@@ -60,11 +60,11 @@
 	<!--
 		This section is for feed syndications (RSS, atom, etc)
 	-->
-	<message key="xmlui.feed.general_description">Welcome to the HEAL Institutional Repository. The DSpace digital repository system captures, stores, indexes, preserves, and distributes digital research material.</message>
+	<message key="xmlui.feed.general_description">Καλώς ήρθατε στο Ψηφιακό Αποθετήριο της Κεντρικής Βιβλιοθήκης του ΕΜΠ. Μέσω του DSpace@NTUA συλλέγεται, αποθηκεύεται, ευρετηριάζεται, διατηρείται και διανέμεται ψηφιακά το ερευνητικό έργο των μελών της Ακαδημαϊκής Κοινότητας του ΕΜΠ. Συγκεκριμένα λειτουργεί ως Ιδρυματικό Αποθετήριο για τις διπλωματικές και μεταπτυχιακές εργασίες, διδακτορικές διατριβές, καθώς και τις δημοσιεύσεις σε περιοδικά και πρακτικά συνεδρίων των μελών ΔΕΠ. Επίσης περιλαμβάνεται ψηφιοποιημένο υλικό (βιβλία και περιοδικά) από την Ιστορική Βιβλιοθήκη του ΕΜΠ.</message>
     <message key="xmlui.feed.header">RSS Feeds</message>
 	<message key="xmlui.feed.logo_title">The Channel Image</message>
 	<message key="xmlui.feed.untitled">Untitled</message>
-
+  <message key="xmlui.feed.submit">Start new submission</message>
 	<!--
 		Default notice header
 	 	-->
