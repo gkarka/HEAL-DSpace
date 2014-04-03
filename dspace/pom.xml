@@ -44,12 +44,14 @@
 				<dspace.dir>/dspace</dspace.dir>
 				<dspace.baseUrl>http://${dspace.hostname}</dspace.baseUrl>
 				<dspace.url>http://${dspace.hostname}/${dspace.shortname}</dspace.url>
-				
+				<db.password>dspace</db.password>
+	
 				<!-- default. properties, same values as those without the default. prefix -->
 				<default.dspace.dir>${dspace.dir}</default.dspace.dir>
 				<default.dspace.hostname>${dspace.hostname}</default.dspace.hostname>								
 				<default.dspace.baseUrl>${dspace.baseUrl}</default.dspace.baseUrl>
 				<default.dspace.url>${dspace.url}</default.dspace.url>
+				<default.db.password>${db.password}</default.db.password>
 			</properties>
 		</profile>
 		<profile>
@@ -69,7 +71,8 @@
 				<dspace.hostname>dspace-ntua.cloudapp.net</dspace.hostname>
 				<dspace.port>8088</dspace.port>
 				
-				<dspace.shortname>heal-xmlui</dspace.shortname>				
+				<dspace.shortname>heal-xmlui</dspace.shortname>
+				<db.password>d$p@c3</db.password>
 			</properties>
 		</profile>
 		<profile>
@@ -122,7 +125,7 @@
 					jdbc:postgresql://localhost:5432/dspace
 				</default.db.url>
 				<default.db.username>dspace</default.db.username>
-				<default.db.password>dspace</default.db.password>
+				<!--<default.db.password>dspace</default.db.password>-->
 			</properties>
 		</profile>
 
