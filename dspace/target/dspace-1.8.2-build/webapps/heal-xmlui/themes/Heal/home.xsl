@@ -24,24 +24,28 @@
 
   <xsl:template match="dri:body/dri:div[@n='front-page-search']">
   </xsl:template>
-
+  
+    
+  <xsl:template match="dri:body/dri:div[@n='site-home']">
+  </xsl:template>
   
   <xsl:template match="dri:body">
     <xsl:copy>
       <xsl:apply-templates />
 
       <div id="aspect.artifactbrowser.CommunityViewer.div.community-view" rend="secondary" n="community-view">
-        <referenceSet id="aspect.artifactbrowser.CommunityViewer.referenceSet.community-view" n="community-view" type="detailView">
-          <reference repositoryID="123456789" type="DSpace Community" url="/metadata/handle/123456789/1/mets.xml">
-            <referenceSet rend="hierarchy" type="summaryList">
-              <head>
-                <i18n:text catalogue="default">xmlui.ArtifactBrowser.CommunityViewer.head_sub_collections</i18n:text>
-              </head>
-              <reference repositoryID="123456789" type="DSpace Collection" url="/metadata/handle/123456789/2/mets.xml"/>
-            </referenceSet>
-          </reference>
-        </referenceSet>
-      </div>
+         <referenceSet id="aspect.artifactbrowser.CommunityViewer.referenceSet.community-view" n="community-view" type="detailView">
+           <reference repositoryID="123456789" type="DSpace Community" url="/metadata/handle/123456789/1/mets.xml">
+             <referenceSet rend="hierarchy" type="summaryList">
+               <head>
+                 <i18n:text catalogue="default">xmlui.ArtifactBrowser.CommunityViewer.head_sub_collections</i18n:text>
+               </head>
+               <reference repositoryID="123456789" type="DSpace Collection" url="/metadata/handle/123456789/320/mets.xml"/>
+               <reference repositoryID="123456789" type="DSpace Collection" url="/metadata/handle/123456789/71/mets.xml"/>
+             </referenceSet>
+           </reference>
+         </referenceSet>
+       </div>
     </xsl:copy>
   </xsl:template>
 </xsl:stylesheet>
