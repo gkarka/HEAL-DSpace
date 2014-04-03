@@ -13,6 +13,7 @@
     <map:components>
       <map:transformers>
         <map:transformer name="CommunityBrowser" src="org.dspace.app.xmlui.aspect.artifactbrowser.CommunityBrowser"/>
+        <map:transformer name="CommunityViewer" src="org.dspace.app.xmlui.aspect.artifactbrowser.CommunityViewer"/>
       </map:transformers>
 
       <map:readers>
@@ -125,9 +126,11 @@
 
         <!-- gkarka - augment DRI -->
         <map:match pattern="">
-          <map:transform type="CommunityBrowser">
+          <!--<map:transform type="CommunityBrowser">
             <map:parameter name="depth" value="2"/>
-          </map:transform>        
+          </map:transform>-->
+          
+          <map:transform src="home.xsl"/>
         </map:match>        
         <map:transform src="augmentDRI.xsl"/>
 				

@@ -21,11 +21,14 @@
         
   <xsl:template match="dri:list[@n='statistics']">
   </xsl:template>
-  
+
+
   <xsl:template match="dri:options">
     <xsl:copy>
       <xsl:apply-templates />
-      
+
+      <list id="guideLinks" n="guideLinks">
+      </list>
       <list id="externalLinks" n="externalLinks">
         <head>Links</head>
         <item>
