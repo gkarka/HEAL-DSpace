@@ -11,6 +11,10 @@
  * Primary Styles
  */
 
+body {
+    background-color: #565656;    
+}
+
 /*Font size percentages based on the tables at developer.yahoo.com/yui/fonts/ */
 h1 {
     font-size: 182%;
@@ -38,11 +42,16 @@ h5, h6 {
 height if it's not explicitly set this shouldn't be noticeable in
 other browsers*/
 select {
-    height: 20px;
+    /*height: 20px;*/
+    height: 28px;    
 }
 
 select.multiple {
     height: auto;
+}
+
+input {
+    width: auto;
 }
 
 #ds-header-wrapper {
@@ -55,7 +64,7 @@ select.multiple {
 
 #ds-header-logo-link {
     text-decoration: none;
-    cursor: pointer;
+    cursor: pointer;    
 }
 
 #ds-header-logo {
@@ -125,7 +134,7 @@ select.multiple {
 }
 
 #ds-language-selection {
-	float: right;
+	float: right;    
 	margin-right: 5px;
     margin-top: 3px;
 	line-height: 35px;   
@@ -135,6 +144,7 @@ select.multiple {
 #ds-language-selection a, #ds-language-selection a:focus, #ds-language-selection a:hover {
     color: white;
 }
+
 
 #ds-header-wrapper,
 #ds-trail-wrapper,
@@ -165,28 +175,46 @@ select.multiple {
 }
 
 #ds-footer-wrapper {
-    margin-top: 40px;
+    /*margin-top: 40px;*/    
 }
 
 #ds-footer {
-    border-top: 1px solid #9CACBA;
-    padding-top: 10px;
+    background-color: white;
+    color: #ddd;
+    /*min-width: 950px;    */
+    height: 160px;
+    text-align: center;
+    /*border-top: 1px solid #9CACBA;*/
+    padding-top: 40px;    
     font-size: 93%;
     line-height: 1.6em;
 }
 
 #ds-footer-left {
-    float: left;
+    background: url(../../images/footer-gradient.png) repeat-y;        
+    /*float: left;*/
+    /*float:none;
+    padding-left: 10px;
+    background-color: ActiveCaption;*/
 }
+    #ds-footer-left a, #ds-footer-left a.hover {
+        color: #fff;
+    }
+    #ds-footer-links a, #ds-footer-links a.hover {
+        color: #fff;
+    }
 
 #ds-footer-right {
-    float:right;
+    /*float:right;*/    
+    /*padding-right: 10px;*/
+    /*align-content: center;*/
+    padding: 20px 0;    
 }
 
-#ds-footer-right span.theme-by{
+/*#ds-footer-right span.theme-by{
     display: inline-block;
-    vertical-align: top;
-}
+    vertical-align: top;    
+}*/
 
 #ds-footer-logo-link {
     text-decoration:none;
@@ -194,16 +222,20 @@ select.multiple {
     cursor: pointer;
 }
 
-#ds-footer-logo {
+/*#ds-footer-logo {
     display: inline-block;
     background: url('../../images/@mirelogo-small.png');
     background-repeat: no-repeat;
     width: 79px;
     height: 40px;
-}
+}*/
 
 #ds-footer-links {
-    clear: left;
+    /*padding-left: 10px;*/
+    /*clear: left;*/       
+    color: white;
+    background: url(../../images/footer-gradient.png) repeat-y;
+    text-align: center;
 }
 
 .ie6 #ds-footer-links {
@@ -216,18 +248,22 @@ select.multiple {
     visibility: hidden;
 }
 
+#ds-content {
+    background-color: white;    
+}
 
 #ds-body {
     float: right;
     width: 705px;
     /*padding-top: 10px;*/
-    padding: 10px; 5px;
+    padding: 10px 5px;
 }
 
 #ds-options-wrapper {
     float: left;
     width: 249px;
-    padding-top:10px;
+    padding-top: 10px;
+    padding-left: 10px;
 }
 
 #ds-options {
@@ -294,11 +330,12 @@ div#ds-feed-option a
 }
 
 #ds-search-form input.ds-text-field{
-    width: 169px;
+    /*width: 169px;*/    
+    width:auto;
 }
 
 #ds-search-form input.ds-button-field {
-    margin-left: 6px;
+    margin-left: 6px;    
 }
 
 #ds-search-form input.ds-text-field,
@@ -340,6 +377,7 @@ td {
     color: #FFFFFF;
     font-weight: bold;
     cursor: pointer;
+    height: 28px;
 }
 
 .ds-button-field[disabled="disabled"],
@@ -874,7 +912,7 @@ form.search .ds-form-item select{
 }
 
 form.search label.ds-composite-component .ds-select-field{
-    margin-top: 6px;
+    margin-top: 5px;
 }
 
 form.search .ds-form-item label {
@@ -1185,4 +1223,13 @@ li.ds-form-item .ds-select-lang{
     border: 2px solid #487792;
     padding: 5px;
     margin:0;
+}
+
+.help-tip-button {
+    margin-left: 4px;
+}
+
+.ui-cluetip-header, .ui-cluetip-content {
+    overflow: auto;
+    max-height: 32em;    
 }

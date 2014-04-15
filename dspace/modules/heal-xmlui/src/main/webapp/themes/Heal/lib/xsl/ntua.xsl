@@ -17,7 +17,7 @@
       <xsl:attribute name="help">
         <xsl:value-of select="."/>
       </xsl:attribute>
-      <xsl:attribute name="i18n:attr">help</xsl:attribute>
+      <xsl:attribute name="i18n:attr">help</xsl:attribute>      
       <xsl:apply-templates/>
     </span>
   </xsl:template>
@@ -63,5 +63,67 @@
     </xsl:if>
   </xsl:template>
 
+    <!--<xsl:template name="pick-label">
+      <xsl:choose>
+            <xsl:when test="dri:field/dri:label">
+                <label class="ds-form-label">
+                        <xsl:choose>
+                                <xsl:when test="./dri:field/@id">
+                                        <xsl:attribute name="for">
+                                                <xsl:value-of select="translate(./dri:field/@id,'.','_')"/>
+                                        </xsl:attribute>
+                                </xsl:when>
+                                <xsl:otherwise></xsl:otherwise>
+                        </xsl:choose>
+                    <xsl:apply-templates select="dri:field/dri:label" mode="formComposite"/>
+                    <xsl:text>:</xsl:text>
+                </label>
+            </xsl:when>
+            <xsl:when test="string-length(string(preceding-sibling::*[1][local-name()='label'])) > 0">
+                <xsl:choose>
+                        <xsl:when test="./dri:field/@id">
+                                <label>
+                                        <xsl:apply-templates select="preceding-sibling::*[1][local-name()='label']"/>
+                                    <xsl:text>:</xsl:text>
+                                </label>
+                        </xsl:when>
+                        <xsl:otherwise>
+                                <span>
+                                        <xsl:apply-templates select="preceding-sibling::*[1][local-name()='label']"/>
+                                    <xsl:text>:</xsl:text>
+                                </span>
+                        </xsl:otherwise>
+                </xsl:choose>
+                
+            </xsl:when>
+            <xsl:when test="dri:field">
+                <xsl:choose>
+                        <xsl:when test="preceding-sibling::*[1][local-name()='label']">
+                                <label class="ds-form-label">
+                                        <xsl:choose>
+                                                <xsl:when test="./dri:field/@id">
+                                                        <xsl:attribute name="for">
+                                                                <xsl:value-of select="translate(./dri:field/@id,'.','_')"/>
+                                                        </xsl:attribute>
+                                                </xsl:when>
+                                                <xsl:otherwise></xsl:otherwise>
+                                        </xsl:choose>
+                                    <xsl:apply-templates select="preceding-sibling::*[1][local-name()='label']"/>&#160;
+                                </label>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:apply-templates select="preceding-sibling::*[1][local-name()='label']"/>&#160;
+                                -<xsl:apply-templates select="preceding-sibling::*[1][local-name()='label']"/>&#160;-
+                            </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:otherwise>
+                --><!-- If the label is empty and the item contains no field, omit the label. This is to
+                    make the text inside the item (since what else but text can be there?) stretch across
+                    both columns of the list. --><!--
+            </xsl:otherwise>
+        </xsl:choose>
+        <xsl:if test="dri:field/@required='yes'"><span style="color:red">*</span></xsl:if>
+    </xsl:template>-->
 
 </xsl:stylesheet>
