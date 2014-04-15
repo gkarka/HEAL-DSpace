@@ -65,9 +65,9 @@
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_dc.title_browse">Περιήγηση ανά: Τίτλο</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_dc.subject_browse">Περιήγηση ανά: Θέμα</message>
         
-    <message key="xmlui.ArtifactBrowser.AbstractSearch.type_dc.description.abstract_browse">Περιήγηση ανά: Επιτομή</message>
+    <message key="xmlui.ArtifactBrowser.AbstractSearch.type_dc.description.abstract_browse">Περιήγηση ανά: Περίληψη</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_series_browse">Περιήγηση ανά: Σειρά</message>
-    <message key="xmlui.ArtifactBrowser.AbstractSearch.type_sponsor_browse">BΠεριήγηση ανά: Χορηγό</message>
+    <message key="xmlui.ArtifactBrowser.AbstractSearch.type_sponsor_browse">Περιήγηση ανά: Χορηγό</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_identifier_browse">Περιήγηση ανά: Αναγνωριστικό</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_language_browse">Περιήγηση ανά: Γλώσσα (ISO)</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_keyword_browse">Περιήγηση ανά: Λέξη-κλειδί</message>
@@ -75,7 +75,7 @@
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_contributor_browse">Περιήγηση ανά: Συντελεστή</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_creator_browse">Περιήγηση ανά: Δημιουργό</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_subject_browse">Περιήγηση ανά: Θέμα</message>
-    <message key="xmlui.ArtifactBrowser.AbstractSearch.type_description_browse">Περιήγηση ανά: Περιγρφαή</message>
+    <message key="xmlui.ArtifactBrowser.AbstractSearch.type_description_browse">Περιήγηση ανά: Περιγραφή</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_relation_browse">Περιήγηση ανά: Σχέση </message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_mime_browse">Περιήγηση ανά: Mime-Type</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_other_browse">Περιήγηση ανά: Άλλους Συντελεστές</message>
@@ -116,10 +116,10 @@
 	<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.heal.type_sort">Τύπος Έργου</message>
 	<!-- END aanagnostopoulos -->
 
-    <message key="xmlui.discovery.SearchFacetFilter.no-results">Δεν βρέθηκαν τιμές για τα φίλτρα</message>
+    <message key="xmlui.discovery.SearchFacetFilter.no-results">Δεν βρέθηκαν αποτελέσματα</message>
 
     <message key="xmlui.discovery.AbstractFiltersTransformer.filters.head">Εντοπισμός</message>
-    <message key="xmlui.discovery.AbstractFiltersTransformer.filters.view-more">... Προβολή Περισσότερων</message>
+    <message key="xmlui.discovery.AbstractFiltersTransformer.filters.view-more">... Προβολή Περισσοτέρων</message>
 
 
     <message key="xmlui.discovery.SimpleSearch.search_label">Αναζήτηση</message>
