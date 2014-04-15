@@ -62,7 +62,7 @@
 	-->
 	<message key="xmlui.feed.general_description">Καλώς ήλθατε στο Ιδρυματικό Αποθετήριο DSpace του ΣΕΑΒ. Το Ιδρυματικό Αποθετήριο DSpace συλλέγει, αποθηκεύει, ευρετηριάζει, διατηρεί, και διανέμει ψηφιακό ερευνητικό υλικό.</message>
     <message key="xmlui.feed.header">RSS Feeds</message>
-	<message key="xmlui.feed.logo_title">Κανάλι Εικόνων</message>
+	<message key="xmlui.feed.logo_title">Channel Image</message>
 	<message key="xmlui.feed.untitled">Χωρίς Τίτλο</message>
 	<!-- modified by aanagnostopoulos -->
 	<message key="xmlui.feed.submit">Ξεκινήστε μια νέα υποβολή</message>
