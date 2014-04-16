@@ -254,14 +254,14 @@ input {
 
 #ds-body {
     float: right;
-    width: 705px;
+    width: 765px;
     /*padding-top: 10px;*/
     padding: 10px 5px;
 }
 
 #ds-options-wrapper {
     float: left;
-    width: 249px;
+    width: 189px;
     padding-top: 10px;
     padding-left: 10px;
 }
@@ -278,10 +278,11 @@ h1.ds-option-set-head {
     margin-top: 20px;
     background-color: #d5dcdf;
     /*background-color: #f0f2f5;*/
-    padding: 3px 10px;
+    padding: 0 10px;
     border: 1px solid #d8e8eb;
     border-bottom: none;
     font-size: 108%;
+    line-height: 32px;
 }
 
 #ds-search-option-head{
@@ -298,6 +299,7 @@ div.ds-option-set ul {
     margin-left: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
+    padding-right: 5px;
 }
 
 div.ds-option-set .ds-sublist-head {
@@ -306,7 +308,7 @@ div.ds-option-set .ds-sublist-head {
 }
 
 div.ds-option-set ul.sublist {
-    margin-left: 20px;
+    margin-left: 10px;
     padding-top: 0;
     padding-bottom: 0;
 }
@@ -330,17 +332,18 @@ div#ds-feed-option a
 }
 
 #ds-search-form input.ds-text-field{
-    /*width: 169px;*/    
-    width:auto;
+    /*width: 169px;*/        
+    width:95%;    
 }
 
 #ds-search-form input.ds-button-field {
-    margin-left: 6px;    
+    margin-left: 0px;   
+    width: auto; 
 }
 
 #ds-search-form input.ds-text-field,
 #ds-search-form input.ds-button-field{
-    margin-bottom: 10px;
+    margin-bottom: 10px;    
 }
 
 p {
