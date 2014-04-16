@@ -555,13 +555,34 @@
         </div>
         <div id="ds-footer-right">
           <a href="http://ec.europa.eu/regional_policy/thefunds/regional/index_el.cfm" target="_blank">
-            <img src="themes/Heal/images/tameio.png" alt="tameio"/>
+            <img alt="tameio">
+                <xsl:attribute name="src">
+                  <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                  <xsl:text>/themes/</xsl:text>
+                  <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
+                  <xsl:text>/images/tameio.png</xsl:text>
+                </xsl:attribute>            
+            </img>
           </a>
           <a href="http://www.digitalplan.gov.gr/portal/" target="_blank">
-            <img src="themes/Heal/images/psifiaki.png" alt="psifiaki"/>
+            <img alt="psifiaki">
+                <xsl:attribute name="src">
+                  <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                  <xsl:text>/themes/</xsl:text>
+                  <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
+                  <xsl:text>/images/psifiaki.png</xsl:text>
+                </xsl:attribute>            
+            </img>
           </a>
           <a href="http://www.espa.gr/el/Pages/Default.aspx" target="_blank">
-            <img src="themes/Heal/images/espa.png" alt="espa"/>
+            <img alt="espa">
+                <xsl:attribute name="src">
+                  <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                  <xsl:text>/themes/</xsl:text>
+                  <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
+                  <xsl:text>/images/espa.png</xsl:text>
+                </xsl:attribute>
+            </img>
           </a>
         </div>
         <!--<div id="ds-footer-right">
