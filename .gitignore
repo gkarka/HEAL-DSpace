@@ -3,3 +3,8 @@ target
 .settings
 .classpath
 .metadata
+dspace-xmlui/dspace-heal-xmlui-webapp/work/
+Servers/
+DSpaceHeal.sln
+h
+pom.xml.orig
