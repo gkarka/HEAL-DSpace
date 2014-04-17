@@ -21,6 +21,7 @@
 
   <xsl:template match="dri:body/dri:div[@n='comunity-browser']">
   </xsl:template>
+    
 
   <xsl:template match="dri:body/dri:div[@n='front-page-search']">
   </xsl:template>

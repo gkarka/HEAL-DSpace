@@ -13,6 +13,11 @@
 
 body {
     background-color: #565656;    
+
+    font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+    /*font-family: "Segoe UI Light", "Segoe UI", "Helvetica Neue", Calibri, Candara, Arial, sans-serif;*/
+    /*font-family: "Helvetica Neue", Calibri, Candara, Arial, sans-serif;*/
+    font-size: 14px;
 }
 
 /*Font size percentages based on the tables at developer.yahoo.com/yui/fonts/ */
@@ -107,15 +112,25 @@ input {
     /*border-top: 1px solid #9cacba;
     border-bottom: 1px solid #9cacba;*/
     min-width: 950px;
-    height: 40px;
+    height: 42px;
     vertical-align: central;
 }
+#ds-search-form-trail {    
+    display:inline;  
+    float:right;
+    padding: 6px 3px 0 0;
+    vertical-align: middle;
+}
+
+    #ds-search-form-trail input.ds-text-field-trail {
+        width: 100px;
+    }
 
 #ds-trail {
     list-style: none;
     line-height: 138.5%;
     margin: 0;
-    padding: 3px 5px;
+    padding: 3px 15px;
     width: 700px;
     position: relative;
 }
@@ -143,6 +158,22 @@ input {
 
 #ds-language-selection a, #ds-language-selection a:focus, #ds-language-selection a:hover {
     color: white;
+}
+#ds-tools-trail > .btn-group {
+    float: right;
+    margin-right: 5px;
+    margin-top: 4px;
+    line-height: 35px;
+    /*color: white;*/
+}
+#ds-tools-trail > .btn-group > a {
+    color: #ddd;
+    background:none;
+    border:none;
+    box-shadow:none;
+}
+#ds-tools-trail > .btn-group > a.divider {    
+    border-left: 1px solid #ddd;    
 }
 
 
@@ -254,15 +285,15 @@ input {
 
 #ds-body {
     float: right;
-    width: 765px;
+    width: 735px;
     /*padding-top: 10px;*/
-    padding: 10px 5px;
+    padding: 0px 20px 0px 10px;
 }
 
 #ds-options-wrapper {
     float: left;
     width: 189px;
-    padding-top: 10px;
+    padding-top: 0px;
     padding-left: 10px;
 }
 
@@ -275,7 +306,7 @@ input {
 }
 
 h1.ds-option-set-head {
-    margin-top: 20px;
+    margin-top: 15px;
     background-color: #d5dcdf;
     /*background-color: #f0f2f5;*/
     padding: 0 10px;

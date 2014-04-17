@@ -122,11 +122,11 @@
     <message key="xmlui.discovery.AbstractFiltersTransformer.filters.view-more">... Προβολή Περισσότερων</message>
 
 
-    <message key="xmlui.discovery.SimpleSearch.search_label">Αναζήτηση</message>
+    <message key="xmlui.discovery.SimpleSearch.search_label">Αναζήτηση</message> 
     <message key="xmlui.Discovery.SimpleSearch.filter_head">Φίλτρα</message>
-    <message key="xmlui.Discovery.SimpleSearch.filter_add">Προσθήκη Φίλτρων</message>
+    <message key="xmlui.Discovery.SimpleSearch.filter_add">Προσθήκη Φίλτρων</message> 
     <!--<message key="xmlui.Discovery.SimpleSearch.filter_help">Χρησιμοποιήστε φίλτρα για να περιορίσετε τα αποτελέσματα της αναζήτησης</message>-->
-    <message key="xmlui.Discovery.SimpleSearch.filter_help">Χρησιμοποιήστε φίλτρα για να περιορίσετε τα αποτελέσματα της αναζήτησης|static/help/help1.html</message>
+    <message key="xmlui.Discovery.SimpleSearch.filter_help">Χρησιμοποιήστε φίλτρα για να περιορίσετε τα αποτελέσματα της αναζήτησης|Αναζήτηση|static/help/help-search-filter-el.html</message>
     <message key="xmlui.Discovery.SimpleSearch.filter_apply">Ανανέωση φίλτρου</message>
 
     <message key="xmlui.Discovery.SimpleSearch.sort_head">Επιλογές ταξινόμησης</message>

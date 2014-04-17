@@ -2057,4 +2057,11 @@
   <message key="xmlui.ChoiceLookupTransformer.field.dc_contributor_author.title">LC Name Authority author lookup</message>
   <message key="xmlui.ChoiceLookupTransformer.field.dc_contributor_author.nonauthority">Local value "@1@" (not in Naming Authority)</message>
 
+
+  <message key="xmlui.links.head">Links</message>
+
+  <message key="xmlui.guide.head">Guides / Help</message>
+  <message key="xmlui.guide.faq">FAQ</message>
+  <message key="xmlui.guide.submission">Submission Guide</message>
+  <message key="xmlui.guide.help">User Guide</message>
 </catalogue>

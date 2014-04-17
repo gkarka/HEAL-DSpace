@@ -122,7 +122,8 @@
     <message key="xmlui.discovery.SimpleSearch.search_label">Search</message>
     <message key="xmlui.Discovery.SimpleSearch.filter_head">Filters</message>
     <message key="xmlui.Discovery.SimpleSearch.filter_add">Add Filters</message>
-    <message key="xmlui.Discovery.SimpleSearch.filter_help">Use filters to refine the search results.</message>
+    <message key="xmlui.Discovery.SimpleSearch.filter_help">Use filters to refine the search results.|Search|static/help/help-search-filter.html</message>
+    <!--<message key="xmlui.Discovery.SimpleSearch.filter_help">Use filters to refine the search results|static/help/help-search-filter.html</message>-->
     <message key="xmlui.Discovery.SimpleSearch.filter_apply">Update filters</message>
 
     <message key="xmlui.Discovery.SimpleSearch.sort_head">Sort options</message>

@@ -76,11 +76,13 @@
         </xsl:when>
         <xsl:otherwise>
           <div id="ds-main">
+            <!--The trail is built by applying a template over pageMeta's trail children. -->
+            <xsl:call-template name="buildTrail"/>
+
+            
             <!--The header div, complete with title, subtitle and other junk-->
             <xsl:call-template name="buildHeader"/>
 
-            <!--The trail is built by applying a template over pageMeta's trail children. -->
-            <xsl:call-template name="buildTrail"/>
 
             <!--javascript-disabled warning, will be invisible if javascript is enabled-->
             <div id="no-js-warning-wrapper" class="hidden">
@@ -168,7 +170,8 @@
         </xsl:attribute>
       </meta>
       <!-- Add stylsheets -->
-      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.no-responsive.no-icons.min.css"/>
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css"/>
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"/>      
 
 
       <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='stylesheet']">
@@ -348,7 +351,7 @@
         </h2>
 
 
-        <xsl:choose>
+        <!--<xsl:choose>
           <xsl:when test="/dri:document/dri:meta/dri:userMeta/@authenticated = 'yes'">
             <div id="ds-user-box">
               <p>
@@ -388,7 +391,7 @@
               </p>
             </div>
           </xsl:otherwise>
-        </xsl:choose>
+        </xsl:choose>-->
 
       </div>
     </div>
@@ -401,20 +404,133 @@
     <div id="ds-trail-wrapper">
       <!--  modified by aanagnostopoulos -->
       <!-- Display a language selection if more than 1 language is supported -->
-      <xsl:if test="$request-uri='' and count(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='page'][@qualifier='supportedLocale']) &gt; 1">
+      <!--<xsl:if test="count(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='page'][@qualifier='supportedLocale']) &gt; 1">        
         <div id="ds-language-selection">
           <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='page'][@qualifier='supportedLocale']">
+            <xsl:if test="position() &gt; 1"> / </xsl:if>
             <xsl:variable name="locale" select="."/>
             <a>
-              <xsl:attribute name="href">
-                <xsl:value-of select="concat($context-path,'/?locale-attribute=')"/>
-                <xsl:value-of select="$locale"/>
-              </xsl:attribute>
-              <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='supportedLocale'][@qualifier=$locale]"/>
+              <xsl:attribute name="href"><xsl:text>?locale-attribute=</xsl:text><xsl:value-of select="$locale"/></xsl:attribute>
+              <xsl:choose>
+                <xsl:when test="$locale='el'">ΕΛ</xsl:when>
+                <xsl:when test="$locale='en'">ENG</xsl:when>
+                <xsl:otherwise>
+                  <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='supportedLocale'][@qualifier=$locale]"/>                
+                </xsl:otherwise>
+              </xsl:choose>              
             </a>
           </xsl:for-each>
         </div>
-      </xsl:if>
+      </xsl:if>-->
+      <div class="btn-toolbar" id="ds-tools-trail">
+        <div class="btn-group">          
+          <xsl:if test="count(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='page'][@qualifier='supportedLocale']) &gt; 1">                
+            <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='page'][@qualifier='supportedLocale']">                  
+                <xsl:variable name="locale" select="."/>                  
+                <a>
+                  <xsl:attribute name="class">btn <xsl:if test="position() &gt; 1">divider</xsl:if></xsl:attribute>
+                  <xsl:attribute name="href"><xsl:text>?locale-attribute=</xsl:text><xsl:value-of select="$locale"/></xsl:attribute>                  
+                  <xsl:choose>
+                    <xsl:when test="$locale='el'">ΕΛ</xsl:when>
+                    <xsl:when test="$locale='en'">ENG</xsl:when>
+                    <xsl:otherwise>
+                      <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='supportedLocale'][@qualifier=$locale]"/>                
+                    </xsl:otherwise>
+                  </xsl:choose>              
+                </a>                  
+              </xsl:for-each>        
+          </xsl:if>                  
+          <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user icon-white">&#160;</i><span class="caret inverse">&#160;</span></a>
+          <ul class="dropdown-menu">
+            <xsl:choose>
+              <xsl:when test="/dri:document/dri:meta/dri:userMeta/@authenticated = 'yes'">                              
+                <li>
+                  <a>
+                    <xsl:attribute name="href">
+                      <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/
+                                          dri:metadata[@element='identifier' and @qualifier='url']"/>
+                    </xsl:attribute>
+                    <i18n:text>xmlui.dri2xhtml.structural.profile</i18n:text>
+                    <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/
+                                      dri:metadata[@element='identifier' and @qualifier='firstName']"/>
+                    <xsl:text> </xsl:text>
+                    <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/
+                                      dri:metadata[@element='identifier' and @qualifier='lastName']"/>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <xsl:attribute name="href">
+                      <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/
+                                          dri:metadata[@element='identifier' and @qualifier='logoutURL']"/>
+                    </xsl:attribute>
+                    <i18n:text>xmlui.dri2xhtml.structural.logout</i18n:text>
+                  </a>                
+                </li>
+              </xsl:when>
+              <xsl:otherwise>              
+                <li>
+                  <a>
+                    <xsl:attribute name="href">
+                      <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/
+                                          dri:metadata[@element='identifier' and @qualifier='loginURL']"/>
+                    </xsl:attribute>                
+                    <i18n:text>xmlui.dri2xhtml.structural.login</i18n:text>
+                  </a>
+                </li>
+              </xsl:otherwise>
+            </xsl:choose>
+          </ul>
+        </div>        
+      </div>
+      
+      <div id="ds-search-form-trail">
+        <form name="searchFormTrail" method="post">
+          <xsl:attribute name="action">
+              <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath']"/>
+              <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='simpleURL']"/>
+          </xsl:attribute>
+          <fieldset>
+            <div class="input-append">            
+              <input class="ds-text-field-trail input-medium" type="text" i18n:attr="placeholder" placeholder="xmlui.general.search">
+                  <xsl:attribute name="name">
+                      <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='queryField']"/>
+                  </xsl:attribute>
+              </input>
+              <a class="btn add-on" href="#" onclick="document.searchFormTrail.submit()"><i class="icon-search">&#160;</i></a>
+              <div class="btn-group">                
+                <a class="btn add-on dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret inverse">&#160;</span></a>
+                  <ul class="dropdown-menu">
+                    <xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='advancedURL'] != /dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='simpleURL']">
+                      <!-- The "Advanced search" link, to be perched underneath the search box -->
+                      <li>
+                        <a>
+                          <xsl:attribute name="href">
+                            <xsl:value-of
+                                    select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='advancedURL']"/>
+                          </xsl:attribute>
+                          <i18n:text>xmlui.dri2xhtml.structural.search-advanced</i18n:text>
+                        </a>
+                      </li>
+                    </xsl:if>
+                  </ul>
+                </div>
+              <!--<a href="#" onclick="document.searchFormTrail.submit()" class="btn add-on"><i class="icon-search">&#160;</i></a>-->
+            </div>     
+            
+            <!--<xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='advancedURL'] != /dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='simpleURL']">
+              --><!-- The "Advanced search" link, to be perched underneath the search box --><!--
+              <a>
+                  <xsl:attribute name="href">
+                      <xsl:value-of
+                              select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='advancedURL']"/>
+                  </xsl:attribute>
+                  <i18n:text>xmlui.dri2xhtml.structural.search-advanced</i18n:text>
+              </a>
+            </xsl:if>-->
+          </fieldset>
+        </form>        
+      </div>
       <!-- END aanagnostopoulos -->
       <ul id="ds-trail">
         <xsl:choose>

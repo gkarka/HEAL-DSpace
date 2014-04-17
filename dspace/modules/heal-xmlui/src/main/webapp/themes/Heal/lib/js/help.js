@@ -38,13 +38,12 @@ $(document).ready(function () {
         var help = $(this).attr('help');
         if (help != undefined) {
             var parts = help.split('|');
-            //var a = $('<a/>').attr('href', parts[1]).text(parts[0]);
-            var span = $('<span>' + parts[0] + '</span>');            
-            var img = $('<img>').attr('rel', parts[1]).attr('title', parts[0]).attr('src', 'themes/Heal/images/information.png').addClass('help-tip-button data-tip').text(' ');            
-            img.appendTo(span);
-            //span.html(img);
-            $(this).html(span);
-            //$(this).html(a);
+            if (parts.length > 1) {
+                var span = $('<span>' + parts[0] + '</span>');
+                var img = $('<img>').attr('rel', parts[2]).attr('title', parts[1]).attr('src', 'themes/Heal/images/information.png').addClass('help-tip-button data-tip').text(' ');
+                img.appendTo(span);
+                $(this).html(span);
+            }
         }
     });
 

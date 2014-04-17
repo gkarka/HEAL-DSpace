@@ -46,12 +46,12 @@
             <div id="ds-options">
                
               
-                <h1 id="ds-search-option-head" class="ds-option-set-head">
+                <!--<h1 id="ds-search-option-head" class="ds-option-set-head">
                     <i18n:text>xmlui.dri2xhtml.structural.search</i18n:text>
                 </h1>
                 <div id="ds-search-option" class="ds-option-set">
-                    <!-- The form, complete with a text box and a button, all built from attributes referenced
-                 from under pageMeta. -->
+                    --><!-- The form, complete with a text box and a button, all built from attributes referenced
+                 from under pageMeta. --><!--
                     <form id="ds-search-form" method="post">
                         <xsl:attribute name="action">
                             <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath']"/>
@@ -67,11 +67,11 @@
                                 </xsl:attribute>
                             </input>                            
                             
-                          <!--<input class="btn" name="submit" type="button" i18n:attr="value" value="xmlui.general.search"/>-->
+                          --><!--<input class="btn" name="submit" type="button" i18n:attr="value" value="xmlui.general.search"/>--><!--
                         
                             <input class="ds-button-field " name="submit" type="submit" i18n:attr="value"
                                    value="xmlui.general.search"/>
-                            <!--<input class="ds-button-field " name="submit" type="submit" i18n:attr="value"
+                            --><!--<input class="ds-button-field " name="submit" type="submit" i18n:attr="value"
                                    value="xmlui.general.search">
                                 <xsl:attribute name="onclick">
                                 <xsl:text>
@@ -117,12 +117,12 @@
 
                                     </xsl:choose>
                                 </label>
-                            </xsl:if>-->
+                            </xsl:if>--><!--
                         </fieldset>
                     </form>
-                    <!--Only add if the advanced search url is different from the simple search-->
+                    --><!--Only add if the advanced search url is different from the simple search--><!--
                     <xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='advancedURL'] != /dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='simpleURL']">
-                        <!-- The "Advanced search" link, to be perched underneath the search box -->
+                        --><!-- The "Advanced search" link, to be perched underneath the search box --><!--
                         <a>
                             <xsl:attribute name="href">
                                 <xsl:value-of
@@ -131,14 +131,14 @@
                             <i18n:text>xmlui.dri2xhtml.structural.search-advanced</i18n:text>
                         </a>
                     </xsl:if>
-                </div>
+                </div>-->
 
                 <!-- Once the search box is built, the other parts of the options are added -->
               <!--<xsl:apply-templates select="dri:list[not(@n='statistics')]"/>-->
                 
-              <div id="accordionroot">
+              <!--<div id="accordionroot">-->
                 <xsl:apply-templates/>            
-              </div>
+              <!--</div>-->
               
 
                 <!-- DS-984 Add RSS Links to Options Box -->

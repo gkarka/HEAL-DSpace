@@ -19,8 +19,11 @@
       </xsl:copy>    
   </xsl:template>
         
-  <xsl:template match="dri:list[@n='statistics']">
+  <xsl:template match="dri:list[@n='statistics']">    
   </xsl:template>
+
+  <!--<xsl:template match="dri:list[@n='account']">
+  </xsl:template>-->
   
   <xsl:template match="dri:item/dri:field[@id='aspect.discovery.SimpleSearch.field.scope']">
   </xsl:template>
@@ -31,9 +34,30 @@
       <xsl:apply-templates />
 
       <list id="guideLinks" n="guideLinks">
+        <head>
+          <i18n:text>xmlui.guide.head</i18n:text>
+        </head>
+        <item>
+          <xref target="submission-guide.html">
+            <i18n:text>xmlui.guide.submission</i18n:text>
+          </xref>
+        </item>
+        <item>
+          <xref target="help.html">
+            <i18n:text>xmlui.guide.help</i18n:text>
+          </xref>
+        </item>
+        <item>
+          <xref target="faq.html">
+            <i18n:text>xmlui.guide.faq</i18n:text>
+          </xref>
+        </item>      
       </list>
-      <list id="externalLinks" n="externalLinks">
-        <head>Links</head>
+      
+        <list id="externalLinks" n="externalLinks">
+        <head>
+          <i18n:text>xmlui.links.head</i18n:text>
+        </head>
         <item>
           <xref target="http://www.sherpa.ac.uk/romeo/‎">SHERPA/RoMEO</xref>
         </item>
