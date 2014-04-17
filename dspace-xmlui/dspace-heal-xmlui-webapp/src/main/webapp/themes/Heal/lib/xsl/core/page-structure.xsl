@@ -398,21 +398,18 @@
         <div id="ds-trail-wrapper">
         	<!--  modified by aanagnostopoulos -->
         	<!-- Display a language selection if more than 1 language is supported -->
-			<xsl:if test="$request-uri='' and count(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='page'][@qualifier='supportedLocale']) &gt; 1">
+			<xsl:if test="count(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='page'][@qualifier='supportedLocale']) &gt; 1">        
 				<div id="ds-language-selection">
-					<xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='page'][@qualifier='supportedLocale']">
-						<xsl:variable name="locale" select="."/>
-						<a>
-						<xsl:attribute name="href">
-   							<xsl:value-of select="concat($context-path,'/?locale-attribute=')"/>
-       						<xsl:value-of select="$locale"/>
-						</xsl:attribute>
-						<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='supportedLocale'][@qualifier=$locale]"/>
-						</a>
-					</xsl:for-each>
+				  <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='page'][@qualifier='supportedLocale']">
+					<xsl:variable name="locale" select="."/>
+					<a>
+					  <xsl:attribute name="href"><xsl:text>?locale-attribute=</xsl:text><xsl:value-of select="$locale"/></xsl:attribute>
+					  <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='supportedLocale'][@qualifier=$locale]"/>
+					</a>
+				  </xsl:for-each>
 				</div>
 			</xsl:if>
-        	<!-- END aanagnostopoulos -->
+			<!-- END aanagnostopoulos -->
             <ul id="ds-trail">
                 <xsl:choose>
                     <xsl:when test="starts-with($request-uri, 'page/about')">
