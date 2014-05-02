@@ -12,11 +12,21 @@ import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 import javax.mail.internet.MimeUtility;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import ntua.lib.dspace.INtuaDspaceConstants;
+import ntua.lib.dspace.PolicyUtil;
+import ntua.lib.dspace.TarUtil;
+import ntua.lib.dspace.TocUtil;
+import ntua.lib.dspace.policy.IPolicy;
+import ntua.lib.dspace.toc.Book;
 
 import org.apache.avalon.excalibur.pool.Recyclable;
 import org.apache.avalon.framework.parameters.Parameters;
@@ -184,12 +194,17 @@ public class BitstreamReader extends AbstractReader implements Recyclable
             
             int sequence = par.getParameterAsInteger("sequence", -1);
             String name = par.getParameter("name", null);
+            
+            String page = request.getParameter("page");
         
             this.isSpider = par.getParameter("userAgent", "").equals("spider");
 
             // Reslove the bitstream
             Bitstream bitstream = null;
             DSpaceObject dso = null;
+            
+            Bitstream policyBitstream = null;
+            Bitstream tocBitstream = null;
             
             if (bitstreamID > -1)
             {
@@ -268,6 +283,52 @@ public class BitstreamReader extends AbstractReader implements Recyclable
 
             // Is there a User logged in and does the user have access to read it?
             boolean isAuthorized = AuthorizeManager.authorizeActionBoolean(context, bitstream, Constants.READ);
+
+            // modified by gkarka
+            /* locate Policy XML file (if uploaded by user) */
+			/*
+			 * String policyXML = name +
+			 * INtuaDspaceConstants.POLICY_FILE_EXTENSION;
+			 */			
+			policyBitstream = findBitstreamByExtension(item, INtuaDspaceConstants.POLICY_FILE_EXTENSION);
+			
+			if (policyBitstream != null)
+			{
+				IPolicy policy = retrievePolicy(policyBitstream);
+				if (policy == null) {
+					isAuthorized = false;							
+				} 
+				else 
+				{
+					/* use the dc.date.available.field as the initial date */
+					DCValue[] dates = item.getDC("date", "available", Item.ANY);
+					/*
+					 * there should at least be one date.available field. Either way,
+					 * use the first one found
+					 */
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+					String initialDateString = dates[0].value;
+					if (initialDateString.contains("T")) {
+						initialDateString = initialDateString.substring(0,
+								initialDateString.indexOf("T"));
+					}
+
+					Date initialDate = null;
+					try {
+						initialDate = df.parse(initialDateString);
+					} catch (ParseException e) {
+						log.error("Invalid date.available field");
+					}
+					
+					if (initialDate != null) {
+						isAuthorized = PolicyUtil.isAccessAuthorized(policy,
+								request.getRemoteAddr(), initialDate);
+					}
+				}
+			}			
+			
+			// END gkarka
+			
             // modified by aanagnostopoulos
 			if (item != null && !AuthorizeManager.isAdmin(context)) {
 
@@ -339,6 +400,36 @@ public class BitstreamReader extends AbstractReader implements Recyclable
                 }
             }
 
+            // gkarka
+            String bitstreamName = bitstream.getName();
+			if (bitstreamName.endsWith(INtuaDspaceConstants.BOOK_FILE_EXTENSION)) 
+			{
+				/* locate TOC XML file (if uploaded by user) */				
+				int dotIndex = bitstreamName.indexOf(".");
+				String tocXml = bitstreamName.substring(0, dotIndex);
+				tocXml = tocXml + INtuaDspaceConstants.TOC_FILE_EXTENSION;
+				tocBitstream = findBitstreamByName(item, tocXml);
+				
+				/* bitstream is a book, forward to the book display page */
+				if (tocBitstream != null)
+				{
+					Book book = retrieveToc(bitstream, tocBitstream, item);
+					
+					if (page == null || page == "")
+					{
+						page = "0";
+					}
+					log.debug("Retrieving bitstream...");
+					InputStream is = bitstream.retrieve();
+				    log.debug("Retrieving image...");
+				    TarUtil tarutil = new TarUtil(is);
+				    response.setContentType("image/jpeg");
+				    tarutil.writeImage(page, response.getOutputStream());
+				    log.debug("End retrieving image...");
+				    return;
+				}
+			}
+			// END gkarka
             
             // Success, bitstream found and the user has access to read it.
             // Store these for later retreval:
@@ -511,6 +602,63 @@ public class BitstreamReader extends AbstractReader implements Recyclable
         return null;
     }
     
+    // modified by gkarka
+    private Bitstream findBitstreamByExtension(Item item, String extension) throws SQLException
+    {
+    	if (extension == null || item == null)
+        {
+            return null;
+        }
+    	Bundle[] bundles = item.getBundles();
+        for (Bundle bundle : bundles)
+        {
+            Bitstream[] bitstreams = bundle.getBitstreams();
+
+            for (Bitstream bitstream : bitstreams)
+            {
+                if (bitstream.getName().endsWith(extension))
+                {
+                	return bitstream;
+                }
+            }
+        }
+        return null;    
+    }
+    
+    private IPolicy retrievePolicy(Bitstream policyBitStream)
+			throws IOException, SQLException, AuthorizeException {
+		IPolicy policy = null;
+
+		log.debug("Retrieving policy...");
+		if (policyBitStream != null) {
+			InputStream policyStream = policyBitStream.retrieve();
+			policy = PolicyUtil.parsePolicyXml(policyStream);
+		} else {
+			return null;
+		}
+
+		log.debug("End retrieving policy...");
+		return policy;
+	}
+
+    private Book retrieveToc(Bitstream bitstream, Bitstream tocBitstream,
+			Item item) throws AuthorizeException, SQLException, IOException {
+		Book book = null;
+
+		log.debug("Retrieving toc...");
+		if (tocBitstream != null) {
+			InputStream tocStream = tocBitstream.retrieve();
+			book = TocUtil.parseTocXml(tocStream, bitstream.retrieve());
+		} else {
+			InputStream bookstream = bitstream.retrieve();
+			book = TocUtil.parseBitstream(bookstream, item);
+		}
+
+		log.debug("End retrieving toc...");
+
+		return book;
+	}
+    // END gkarka
     
     /**
          * Write the actual data out to the response.

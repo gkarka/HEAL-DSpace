@@ -73,6 +73,12 @@
 		</dependency>
 
 		<dependency>
+        	<groupId>javatar</groupId>
+        	<artifactId>javatar</artifactId>
+        	<version>2.5</version>
+      	</dependency>
+
+		<dependency>
 			<groupId>gr.heal.dspace</groupId>
 			<artifactId>dspace-heal-api</artifactId>
 			<version>1.8.2</version>
