@@ -37,7 +37,7 @@
     <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dc.date.issued">Ημερομηνία Έκδοσης</message>
     <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dateIssued">Ημερομηνία Έκδοσης</message>
 	<!-- modified by aanagnostopoulos -->
-	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_type">Τύπος Έργου</message>
+	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_type">Τύπος Τεκμηρίου</message>
 	<!-- END aanagnostopoulos -->
 
     <!-- Site Leve Recently Added Content -->
@@ -88,8 +88,8 @@
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.subject">Θέμα</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dateIssued">Ημερομηνία Έκδοσης</message>
 	<!-- modified by aanagnostopoulos -->
-	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.type">Τύπος Έργου</message>
-	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.type_filter">Τύπος Έργου</message>
+	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.type">Τύπος Τεκμηρίου</message>
+	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.type_filter">Τύπος Τεκμηρίου</message>
 	<!-- END aanagnostopoulos -->
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.selected">Επιλεγμένα Φίλτρα</message>
 
@@ -113,7 +113,7 @@
     <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dc.date.issued_dt">Ημερομηνία Έκδοσης</message>
 	<!-- modified by aanagnostopoulos -->
 	<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.heal.title_sort">Τίτλος</message>
-	<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.heal.type_sort">Τύπος Έργου</message>
+	<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.heal.type_sort">Τύπος Τεκμηρίου</message>
 	<!-- END aanagnostopoulos -->
 
     <message key="xmlui.discovery.SearchFacetFilter.no-results">Δεν βρέθηκαν αποτελέσματα</message>

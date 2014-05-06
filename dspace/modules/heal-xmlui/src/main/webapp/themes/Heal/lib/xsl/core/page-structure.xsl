@@ -295,6 +295,9 @@
           <xsl:when test="starts-with($request-uri, 'page/about')">
             <xsl:text>About This Repository</xsl:text>
           </xsl:when>
+          <xsl:when test="starts-with($request-uri, 'page/faq')">
+            <xsl:text>Συχνές Ερωτήσεις</xsl:text>
+          </xsl:when>
           <xsl:when test="not($page_title)">
             <xsl:text>  </xsl:text>
           </xsl:when>
@@ -537,6 +540,26 @@
           <xsl:when test="starts-with($request-uri, 'page/about')">
             <xsl:text>About This Repository</xsl:text>
           </xsl:when>
+
+          <xsl:when test="starts-with($request-uri, 'page/submission-guide')">
+            <li class="ds-trail-link first-link"><i18n:text>xmlui.guide.head</i18n:text> → </li>
+            <li class="ds-trail-link">
+              <i18n:text>xmlui.guide.submission</i18n:text>
+            </li>
+          </xsl:when>
+          <xsl:when test="starts-with($request-uri, 'page/help')">
+            <li class="ds-trail-link first-link"><i18n:text>xmlui.guide.head</i18n:text> → </li>
+            <li class="ds-trail-link">
+              <i18n:text>xmlui.guide.help</i18n:text>
+            </li>
+          </xsl:when>
+          <xsl:when test="starts-with($request-uri, 'page/faq')">
+            <li class="ds-trail-link first-link"><i18n:text>xmlui.guide.head</i18n:text> → </li>
+            <li class="ds-trail-link">
+              <i18n:text>xmlui.guide.faq</i18n:text>
+            </li>
+          </xsl:when>
+
           <xsl:when test="count(/dri:document/dri:meta/dri:pageMeta/dri:trail) = 0">
             <li class="ds-trail-link first-link">-</li>
           </xsl:when>
@@ -755,6 +778,15 @@
               under the URI prefix of page/.
             </p>
           </div>
+        </xsl:when>
+        <xsl:when test="starts-with($request-uri, 'page/submission-guide')">
+          <xsl:copy-of select="document('../../../../../static/help/submission.html')" />        
+        </xsl:when>
+        <xsl:when test="starts-with($request-uri, 'page/help')">
+          <xsl:copy-of select="document('../../../../../static/help/help.html')" />        
+        </xsl:when>
+        <xsl:when test="starts-with($request-uri, 'page/faq')">
+          <xsl:copy-of select="document('../../../../../static/help/faq.html')" />        
         </xsl:when>
         <!-- Otherwise use default handling of body -->
         <xsl:otherwise>

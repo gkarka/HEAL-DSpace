@@ -38,17 +38,20 @@
           <i18n:text>xmlui.guide.head</i18n:text>
         </head>
         <item>
-          <xref target="submission-guide.html">
+          <xref>
+            <xsl:attribute name="target"><xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>/page/submission-guide</xsl:attribute>
             <i18n:text>xmlui.guide.submission</i18n:text>
           </xref>
         </item>
         <item>
-          <xref target="help.html">
+          <xref>
+            <xsl:attribute name="target"><xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>/page/help</xsl:attribute>
             <i18n:text>xmlui.guide.help</i18n:text>
           </xref>
         </item>
         <item>
-          <xref target="faq.html">
+          <xref>
+            <xsl:attribute name="target"><xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>/page/faq</xsl:attribute>
             <i18n:text>xmlui.guide.faq</i18n:text>
           </xref>
         </item>      
@@ -58,12 +61,33 @@
         <head>
           <i18n:text>xmlui.links.head</i18n:text>
         </head>
-        <item>
-          <xref target="http://www.sherpa.ac.uk/romeo/‎">SHERPA/RoMEO</xref>
+        <item>          
+          <figure target="http://www.sherpa.ac.uk/romeo/‎" rend="_new">
+            <xsl:attribute name="source"><xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>/static/icons/SHERPA-RoMEO-long-logo.gif</xsl:attribute>
+            SHERPA/RoMEO
+          </figure>
         </item>
-        <item>
+        <item>          
+          <figure target="http://phdtheses.ekt.gr/eadd/" rend="_new">
+            <xsl:attribute name="source"><xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>/static/icons/logo_eadd.png</xsl:attribute>
+            ΕΚΤ - Εθνικό Αρχείο Διδακτορικών Διατριβών
+          </figure>
+        </item>
+        <item>          
+          <figure target="https://www.openaire.eu/" rend="_new">
+            <xsl:attribute name="source"><xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>/static/icons/OpenAIREplus_logo.png</xsl:attribute>
+            OpenAIRE
+          </figure>
+        </item>
+        <item>          
+          <figure target="http://www.europeana.eu/portal/" rend="_new">
+            <xsl:attribute name="source"><xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>/static/icons/europeana-logo-2.png</xsl:attribute>
+            Europeana
+          </figure>
+        </item>          
+        <!--<item>
           <figure source="http://www.ntua.gr/gold_pyrforos_small301.png" target="http://www.ntua.gr" rend="_new">NTUA</figure>
-        </item>
+        </item>-->
       </list>
     
     </xsl:copy>
