@@ -49,6 +49,7 @@
 				<!-- default. properties, same values as those without the default. prefix -->
 				<default.dspace.dir>${dspace.dir}</default.dspace.dir>
 				<default.dspace.hostname>${dspace.hostname}</default.dspace.hostname>								
+				<default.dspace.port>${dspace.port}</default.dspace.port>								
 				<default.dspace.baseUrl>${dspace.baseUrl}</default.dspace.baseUrl>
 				<default.dspace.url>${dspace.url}</default.dspace.url>
 				<default.db.password>${db.password}</default.db.password>
