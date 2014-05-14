@@ -6,7 +6,31 @@
 
 	<form-map>
 		<name-map collection-handle="default" form-name="heal" />
-	</form-map>
+    <!--<name-map collection-handle="123456789/2" form-name="collection1Test" />
+    <name-map collection-handle="123456789/83" form-name="collection1Test" />
+    <name-map collection-handle="123456789/4057" form-name="conf_paper" />
+    <name-map collection-handle="123456789/3604" form-name="journal_paper" />
+    <name-map collection-handle="123456789/321" form-name="ETD" />-->
+    <name-map collection-handle="123456789/398" form-name="bachelorThesis" />
+    <!--<name-map collection-handle="123456789/399" form-name="ETD" />
+    <name-map collection-handle="123456789/521" form-name="article" />
+    <name-map collection-handle="123456789/522" form-name="article" />
+    <name-map collection-handle="123456789/523" form-name="article" />
+    <name-map collection-handle="123456789/569" form-name="article" />
+    <name-map collection-handle="123456789/653" form-name="article" />
+    <name-map collection-handle="123456789/659" form-name="article" />
+    <name-map collection-handle="123456789/861" form-name="article" />
+    <name-map collection-handle="123456789/1003" form-name="article" />
+    <name-map collection-handle="123456789/1013" form-name="article" />
+    <name-map collection-handle="123456789/1433" form-name="article" />
+    <name-map collection-handle="123456789/1605" form-name="article" />
+    <name-map collection-handle="123456789/1609" form-name="article" />
+    <name-map collection-handle="123456789/1411" form-name="article" />
+    <name-map collection-handle="123456789/1317" form-name="article" />
+    <name-map collection-handle="123456789/521" form-name="article" />
+    <name-map collection-handle="123456789/522" form-name="article" />
+    <name-map collection-handle="123456789/523" form-name="article" />-->
+  </form-map>
 
 	<form-definitions>
 
@@ -1532,6 +1556,367 @@
 
 		</form>
 
+
+    <form name="bachelorThesis">
+      <page number="1">
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>type</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Item type</label>
+          <input-type value-pairs-name="itemType">dropdown</input-type>
+          <hint>
+            The type of the item you wish to submit.
+          </hint>
+          <required>You must select a type for the item you wish to submit.</required>
+        </field>
+
+        <field>        
+          <dc-schema>dc</dc-schema>
+          <dc-element>title</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Title</label>
+          <input-type>textarea</input-type>
+          <hint>
+            The official title of the work, given in one or more
+            languages.
+          </hint>
+          <required>
+            You must enter at least one title for the item you wish
+            to submit.
+          </required>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>secondaryTitle</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Alternative title / Subtitle</label>
+          <input-type>textarea</input-type>
+          <hint>
+            The secondary title or subtitle of the work, if such exists,
+            given in one or more languages.
+          </hint>
+          <i18n>true</i18n>
+        </field>
+
+        <field>          
+          <dc-schema>dc</dc-schema>
+          <dc-element>contributor</dc-element>
+          <dc-qualifier>author</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Name(s) of creator(s)</label>
+          <input-type>name</input-type>
+          <hint>
+            The names of the creators of the work submitted, given in one
+            or more languages.
+          </hint>
+          <required>
+            You must enter the name of at least one creator.
+          </required>
+          <i18n>true</i18n>
+        </field>
+       
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>classification</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Subject classification</label>
+          <!-- <input-type value-pairs-name="classificationSchemeList">qualdrop_value</input-type> -->
+          <input-type>onebox</input-type>
+          <hint>
+            The thematic category under which the subject of the work can
+            be classified,
+            e.g. Mathematics, Structural engineering etc.
+          </hint>
+          <i18n>true</i18n>
+        </field>
+
+        <field>          
+          <dc-schema>dc</dc-schema>
+          <dc-element>subject</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Keywords</label>
+          <input-type>onebox</input-type>
+          <hint>
+            A keyword describing the subject of the item.
+          </hint>
+          <required>
+            You must enter at least 5 keyword in Greek and 5 keywords in English.
+          </required>
+          <i18n>true</i18n>
+        </field>
+        
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>identifier</dc-element>
+          <dc-qualifier>secondary</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Item identifiers</label>
+          <input-type>onebox</input-type>
+          <hint>
+            One or more unique identifiers for the submission item (e.g.
+            a DOI for a publication or an ISBN for
+            a book).
+          </hint>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>language</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Item language</label>
+          <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+          <hint>
+            The language(s) of the item's contents. More than one can be
+            selected in case of
+            multilingual content.
+          </hint>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>access</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Item access scheme</label>
+          <input-type value-pairs-name="accessTypeList">dropdown</input-type>
+          <hint>
+            The access scheme of the item's full text. Possible choices
+            include:
+            1) leaving the item accessible to the public,
+            2) allowing access to users that use an IP address within the
+            institutional IP range,
+            3) allowing access only to logged-in DSpace
+            users, and
+            4) setting a 6 months embargo period, during which the
+            full text of the item is not available.
+            When the embargo period
+            ends, the public access scheme is assigned to the item.
+          </hint>
+          <required>
+            You must select an access scheme for the item you wish to
+            submit.
+          </required>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>recordProvider</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Institution and School/Department of submitter</label>
+          <input-type>onebox</input-type>
+          <hint>
+            The institution and school/department, in the collection of
+            which the item belongs.
+          </hint>
+          <required>
+            You must enter at least one pair of institution and
+            school/department.
+          </required>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>contributor</dc-element>
+          <dc-qualifier>department</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Department</label>
+          <input-type value-pairs-name="ntua_departments">dropdown</input-type>
+          <hint>Select the relevant university department.</hint>
+          <required></required>
+        </field>
+      </page>
+
+      <page number="2" type-name="bachelorThesis">
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>publicationDate</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Thesis completion date</label>
+          <input-type>date</input-type>
+          <hint>The date printed on the thesis' front page.</hint>
+          <required>
+            You must enter at least the year the thesis was completed
+            in.
+          </required>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>abstract</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Abstract</label>
+          <input-type>textarea</input-type>
+          <hint>
+            The abstract of the thesis.
+          </hint>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>tableOfContents</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Table of contents</label>
+          <input-type>textarea</input-type>
+          <hint>
+            The thesis' table of contents.
+          </hint>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>sponsor</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Sponsor</label>
+          <input-type>textarea</input-type>
+          <hint>
+            A statement regarding the thesis' sponsors, if any.
+          </hint>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>advisorName</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Advisor name</label>
+          <input-type>name</input-type>
+          <hint>
+            The name of the thesis' advisor.
+          </hint>
+          <required>
+            You must enter the name of the advisor
+          </required>
+          <i18n>true</i18n>
+        </field>
+        
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>committeeMemberName</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Examining committee</label>
+          <input-type>name</input-type>
+          <hint>
+            The names of the members of the thesis' examining committee.
+          </hint>
+          <required>
+            You must enter the names of all examining committee
+            members.
+          </required>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>academicPublisherID</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Publishing institution</label>
+          <input-type value-pairs-name="institutionList">dropdown</input-type>
+          <hint>
+            The institution the thesis was completed in. Please select
+            the same institution as in the first page.
+          </hint>
+          <required>
+            You must select an institution from the list.
+          </required>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>academicPublisher</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Publishing department/division</label>
+          <input-type>onebox</input-type>
+          <hint>
+            The school/department of the institution the thesis was
+            carried out in. If the division and/or laboratory/research group
+            in
+            which the thesis was carried out are known, they are filled out
+            in the form "School/Department"."Division"."Laboratory", e.g.
+            School of Electrical &amp; Computer Engineering. Division Of
+            Computer Science. Knowledge &amp; Database Systems Laboratory.
+          </hint>
+          <required>
+            You must enter a value for the publishing department.
+          </required>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>numberOfPages</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Number of Pages</label>
+          <input-type>onebox</input-type>
+          <hint>The thesis' number of pages.</hint>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>bibliographicCitation</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Bibliographic citation</label>
+          <input-type>onebox</input-type>
+          <hint>
+            The recommended citation format for the thesis. Usually,
+            citations are provided in the form: "Author Name", "Thesis title",
+            "School/Department","Institution","Year".
+          </hint>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>contributorName</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Name(s) of contributor(s)</label>
+          <input-type>name</input-type>
+          <hint>
+            Names of contributors to this thesis, if such exist (EXCEPT
+            the thesis'
+            advisor or committee members).
+          </hint>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>generalDescription</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>General Description / Additional Comments</label>
+          <input-type>textarea</input-type>
+          <hint></hint>
+          <i18n>true</i18n>
+        </field>
+
+      </page>
+    </form>
 	</form-definitions>
 
 	<form-value-pairs>
@@ -1595,6 +1980,14 @@
 
 		</value-pairs>
 
+
+    <value-pairs value-pairs-name="itemType-bachelorThesis" dc-term="type">
+      <pair>
+        <displayed-value>Bachelor thesis</displayed-value>
+        <stored-value>bachelorThesis</stored-value>
+      </pair>
+    </value-pairs>
+    
 		<value-pairs value-pairs-name="classificationSchemeList"
 			dc-term="classification">
 
@@ -2014,6 +2407,54 @@
 
 		</value-pairs>
 
-	</form-value-pairs>
+    <value-pairs value-pairs-name="ntua_departments" dc-term="department">
+      <pair>
+        <displayed-value>N/A</displayed-value>
+        <stored-value></stored-value>
+      </pair>
+      <pair>
+        <displayed-value>Σχολή Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών</displayed-value>
+        <stored-value>Σχολή Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών</stored-value>
+      </pair>
+      <pair>
+        <displayed-value>Σχολή Μηχανολόγων Μηχανικών</displayed-value>
+        <stored-value>Σχολή Μηχανολόγων Μηχανικών</stored-value>
+      </pair>
+      <pair>
+        <displayed-value>Σχολή Αρχιτεκτόνων Μηχανικών</displayed-value>
+        <stored-value>Σχολή Αρχιτεκτόνων Μηχανικών</stored-value>
+      </pair>
+      <pair>
+        <displayed-value>Σχολή Πολιτικών Μηχανικών</displayed-value>
+        <stored-value>Σχολή Πολιτικών Μηχανικών</stored-value>
+      </pair>
+      <pair>
+        <displayed-value>Σχολή Χημικών Μηχανικών</displayed-value>
+        <stored-value>Σχολή Χημικών Μηχανικών</stored-value>
+      </pair>
+      <pair>
+        <displayed-value>Σχολή Αγρονόμων και Τοπογράφων Μηχανικών</displayed-value>
+        <stored-value>Σχολή Αγρονόμων και Τοπογράφων Μηχανικών</stored-value>
+      </pair>
+      <pair>
+        <displayed-value>Σχολή Μηχανικών Μεταλλείων Μεταλλουργών</displayed-value>
+        <stored-value>Σχολή Μηχανικών Μεταλλείων Μεταλλουργών</stored-value>
+      </pair>
+      <pair>
+        <displayed-value>Σχολή Ναυπηγών Μηχανολόγων Μηχανικών</displayed-value>
+        <stored-value>Σχολή Ναυπηγών Μηχανολόγων Μηχανικών</stored-value>
+      </pair>
+      <pair>
+        <displayed-value>Σχολή Εφαρμοσμένων Μαθηματικών και Φυσικών Επιστημών</displayed-value>
+        <stored-value>Σχολή Εφαρμοσμένων Μαθηματικών και Φυσικών Επιστημών</stored-value>
+      </pair>
+      <pair>
+        <displayed-value>(Other)</displayed-value>
+        <stored-value>other</stored-value>
+      </pair>
+    </value-pairs>
+
+
+  </form-value-pairs>
 
 </input-forms>

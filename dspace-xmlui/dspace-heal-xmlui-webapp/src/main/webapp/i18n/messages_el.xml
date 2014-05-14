@@ -403,7 +403,7 @@
 	<message key="xmlui.EPerson.PasswordLogin.forgot_link"> Ξεχάσατε τον κωδικό σας;</message>
 	<message key="xmlui.EPerson.PasswordLogin.submit">Σύνδεση</message>
 	<message key="xmlui.EPerson.PasswordLogin.head2">Εγγραφή νέου χρήστη</message>
-	<message key="xmlui.EPerson.PasswordLogin.para1">Δημιουργήστε έναν λογαριασμό για να εγγραφείτε σε συλλογές για ενημέρωση μέσω ηλεκτρονικού ταχυδρομείου, και για να υποβάλετε νέα τεκμήρια στο DSpace.</message>
+	<message key="xmlui.EPerson.PasswordLogin.para1">Δημιουργήστε έναν λογαριασμό για να εγγραφείτε σε συλλογές για ενημέρωση μέσω ηλεκτρονικού ταχυδρομείου, και για να υποβάλλετε νέα τεκμήρια στο DSpace.</message>
 	<message key="xmlui.EPerson.PasswordLogin.register_link">Κλικάρετε εδώ για εγγραφή.</message>
 
 	<!-- org.dspace.app.xmlui.eperson.LDAPLogin.java -->
@@ -609,7 +609,7 @@
 	<!-- org.dspace.app.xmlui.Submission.submit.SelectCollection -->
 	<message key="xmlui.Submission.submit.SelectCollection.head">Επιλογή συλλογής</message>
 	<message key="xmlui.Submission.submit.SelectCollection.collection">Συλλογή</message>
-	<message key="xmlui.Submission.submit.SelectCollection.collection_help">Επιλέξτε τη συλλογή στην οποία επιθυμείτε να υποβάλετε ένα τεκμήριο.</message>
+	<message key="xmlui.Submission.submit.SelectCollection.collection_help">Επιλέξτε τη συλλογή στην οποία επιθυμείτε να υποβάλλετε ένα τεκμήριο.</message>
 	<message key="xmlui.Submission.submit.SelectCollection.collection_default">Επιλέξτε μια συλλογή...</message>
 
 	<!-- org.dspace.app.xmlui.Submission.submit.SaveOrRemoveStep -->
@@ -652,7 +652,7 @@
 	<!-- org.dspace.app.xmlui.Submission.submit.UploadStep -->
 	<message key="xmlui.Submission.submit.UploadStep.head">Ανέβασμα Αρχείου(ων)</message>
 	<message key="xmlui.Submission.submit.UploadStep.file">Αρχείο</message>
-	<message key="xmlui.Submission.submit.UploadStep.file_help">Παρακαλώ εισάγετε το πλήρες όνομα του αρχείου στον υπολογιστή σας που αντιστοιχεί στο τεκμήριό σας. Εάν κλικάρετε "Περιήγηση...", ένα νέο παρα΄θυρο θα σας επιτρέψει να επιλέξετε το αρχείο από τον υπολογιστή σας.</message>
+	<message key="xmlui.Submission.submit.UploadStep.file_help">Επιλέξτε το αρχείο που επιθυμείτε από τον υπολογιστή σας.</message>
 	<message key="xmlui.Submission.submit.UploadStep.file_error">Το τεκμήριο πρέπει να περιέχει τουλάχιστον ένα αρχείο.</message>
 	<message key="xmlui.Submission.submit.UploadStep.upload_error">Υπήρξε πρόβλημα κατά το ανέβασμα του αρχείου σας. Είτε το όνομα του αρχείου που δώσατε ήταν λάθος, είτε υπήρχε πρόβλημα με το δίκτυο που εμπόδισε το αρχείο να ανέβει σωστά, είτε έχετε προσπαθήσει να ανεβάσετε ένα αρχείο του οποίου το μορφότυπο είναι για εσωτερική χρήση του συστήματος. Παρακαλώ προσπαθήστε ξανά.</message>
 	<message key="xmlui.Submission.submit.UploadStep.virus_error">Το αρχείο δεν ανέβηκε καθώς φαίνεται ότι περιέχει ιό. Παρακαλώ επικοινωνήστε με τον διαχειριστή του συστήματος.</message>
@@ -742,7 +742,7 @@
 	<message key="xmlui.Submission.submit.CompletedStep.head">Η υποβολή ολοκληρώθηκε</message>
 	<message key="xmlui.Submission.submit.CompletedStep.info1">Η υποβολή σας θα επεξεργαστεί για αυτή τη συλλογή. Θα λάβετε ηλεκτρονικό μήνυμα ειδοποίησης όταν η υποβολή σας συμπεριληφθεί στην συλλογή, ή εάν υπάρξει κάποιο πρόβλημα με την υποβολή σας. Μπορείτε επίσης να ελέγξετε την κατάσταση της υποβολής σας εάν επισκεφθείτε την σελίδα υποβολής.</message>
 	<message key="xmlui.Submission.submit.CompletedStep.go_submission">Πηγαίνετε στην σελίδα Υποβολής</message>
-	<message key="xmlui.Submission.submit.CompletedStep.submit_again">Υποβάλετε ένα άλλο τεκμήριο</message>
+	<message key="xmlui.Submission.submit.CompletedStep.submit_again">Υποβάλλετε ένα άλλο τεκμήριο</message>
 
 	<!-- org.dspace.app.xmlui.Submission.workflow.PerformTaskStep -->
 	<message key="xmlui.Submission.workflow.PerformTaskStep.info1">Οι ενέργειες που μπορείτε να κάνετε σε αυτή τη εργασία είναι να:</message>

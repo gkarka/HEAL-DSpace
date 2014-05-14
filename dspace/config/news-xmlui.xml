@@ -9,7 +9,7 @@
 			</p>
 			<p>
 				<hi rend="bold">
-					<xref target="/xmlui/submit">
+					<xref target="submit">
 						<i18n:text catalogue="default">xmlui.feed.submit</i18n:text>
 					</xref>
 				</hi>

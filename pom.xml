@@ -120,16 +120,6 @@
             </modules>
         </profile>
 
-        <profile>
-            <id>dspace-heal-api</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <modules>
-                <module>dspace-heal-api</module>
-            </modules>
-        </profile>
-
         
         <!--
            Builds DSpace Solr Stats for DSpace
@@ -262,7 +252,7 @@
          </activation>
          <modules>
             <module>dspace-api</module>
-	    <module>dspace-heal-api</module>
+			<module>dspace-heal-api</module>
             <module>dspace-stats</module>
             <module>dspace-discovery</module>
             <module>dspace-jspui</module>

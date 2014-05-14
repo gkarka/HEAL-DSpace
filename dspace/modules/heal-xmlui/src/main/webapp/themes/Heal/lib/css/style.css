@@ -651,7 +651,7 @@ li.ds-form-item label.ds-composite-component{
 
 li.ds-form-item label.ds-composite-component input.ds-text-field{
     font-size: 100%;
-    width: 242px;
+    width: 202px;
 }
 
 li.ds-form-item .ds-select-field {
@@ -662,6 +662,7 @@ li.ds-form-item .ds-select-field {
 label.ds-composite-component .ds-select-field {
     margin-top: 6px;
     margin-bottom: 6px;
+    width: 150px;
 }
 
 li.ds-form-item label.ds-composite-component.last{
