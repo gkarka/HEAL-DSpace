@@ -71,7 +71,7 @@
 			<properties>		
 				<dspace.hostname>dspace-ntua.cloudapp.net</dspace.hostname>
 				<dspace.port>8088</dspace.port>
-				
+				<dspace.url>http://dspace-ntua.cloudapp.net:8080/heal-xmlui</dspace.url>
 				<dspace.shortname>heal-xmlui</dspace.shortname>
 				<db.password>d$p@c3</db.password>
 			</properties>
