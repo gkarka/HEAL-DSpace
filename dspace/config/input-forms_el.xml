@@ -2990,7 +2990,7 @@
 		</value-pairs>
 
     
-    <value-pairs value-pairs-name="ntua_departments" dc-term="department">
+    <value-pairs value-pairs-name="ntua_departments" dc-term="academicPublisher">
      <pair>
        <displayed-value>N/A</displayed-value>
        <stored-value></stored-value>
