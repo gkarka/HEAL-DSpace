@@ -75,7 +75,7 @@
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_contributor_browse">Περιήγηση ανά: Συντελεστή</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_creator_browse">Περιήγηση ανά: Δημιουργό</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_subject_browse">Περιήγηση ανά: Θέμα</message>
-    <message key="xmlui.ArtifactBrowser.AbstractSearch.type_description_browse">Περιήγηση ανά: Περιγρφαή</message>
+    <message key="xmlui.ArtifactBrowser.AbstractSearch.type_description_browse">Περιήγηση ανά: Περιγραφή</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_relation_browse">Περιήγηση ανά: Σχέση </message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_mime_browse">Περιήγηση ανά: Mime-Type</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_other_browse">Περιήγηση ανά: Άλλους Συντελεστές</message>
