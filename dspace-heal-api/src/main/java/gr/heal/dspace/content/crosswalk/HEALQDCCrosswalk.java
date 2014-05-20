@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.StringReader;
+import java.math.BigInteger;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -21,8 +22,10 @@ import java.util.Map;
 import java.util.Properties;
 
 import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.dspace.authorize.AuthorizeException;
+import org.dspace.content.DCDate;
 import org.dspace.content.DCValue;
 import org.dspace.content.DSpaceObject;
 import org.dspace.content.Item;
@@ -138,6 +141,8 @@ public class HEALQDCCrosswalk extends SelfNamedPlugin implements
 	private static final Namespace DCTERMS_NS = Namespace.getNamespace(
 			"dcterms", "http://purl.org/dc/terms/");
 
+	private static Namespace healNamespace = null;
+
 	// sentinal: done init?
 	private boolean inited = false;
 
@@ -154,8 +159,10 @@ public class HEALQDCCrosswalk extends SelfNamedPlugin implements
 
 	/* mofified by aanagnostopoulos */
 	private Map<String, String[]> itemTypeHierarchyMap = new HashMap<String, String[]>();
+
+	private String institutionAcronym = null;
 	/* END aanagnostopoulos */
-	
+
 	/**
 	 * Fill in the plugin-name table from DSpace configuration entries for
 	 * configuration files for flavors of QDC crosswalk:
@@ -173,6 +180,7 @@ public class HEALQDCCrosswalk extends SelfNamedPlugin implements
 			}
 		}
 		aliases = (String[]) aliasList.toArray(new String[aliasList.size()]);
+
 	}
 
 	public static String[] getPluginNames() {
@@ -262,6 +270,13 @@ public class HEALQDCCrosswalk extends SelfNamedPlugin implements
 		schemaLocation = ConfigurationManager.getProperty(CONFIG_PREFIX
 				+ ".schemaLocation." + myName);
 
+		for (Namespace namespace : nsList) {
+			if (namespace.getPrefix().equals("heal")) {
+				healNamespace = namespace;
+				break;
+			}
+		}
+
 		// read properties
 		String cmPropName = CONFIG_PREFIX + ".properties." + myName;
 		String propsFilename = ConfigurationManager.getProperty(cmPropName);
@@ -322,88 +337,381 @@ public class HEALQDCCrosswalk extends SelfNamedPlugin implements
 			}
 		}
 		/* modified by aanagnostopoulos */
-		//init the item type hierarchy map
-		//TODO: improve this by dynamically parsing the XSD and building the hierarchy
-		itemTypeHierarchyMap.put("bachelorThesis", new String[] {"publishedWorksContent", "scholarlyWorkContent"});
-		itemTypeHierarchyMap.put("masterThesis", new String[] {"publishedWorksContent", "scholarlyWorkContent"});
-		itemTypeHierarchyMap.put("doctoralThesis", new String[] {"publishedWorksContent", "scholarlyWorkContent"});
-		itemTypeHierarchyMap.put("conferenceItem", new String[] {"publishedWorksContent", "conferenceContent"});
-		itemTypeHierarchyMap.put("journalArticle", new String[] {"publishedWorksContent", "journalContent"});
-		itemTypeHierarchyMap.put("bookChapter", new String[] {"publishedWorksContent", "bookChapterContent"});
-		itemTypeHierarchyMap.put("book", new String[] {"publishedWorksContent", "bookContent"});
+		institutionAcronym = StringUtils.trimToEmpty(ConfigurationManager
+				.getProperty(CONFIG_PREFIX + ".institution"));
+
+		// init the item type hierarchy map
+		// TODO: improve this by dynamically parsing the XSD and building the
+		// hierarchy
+		itemTypeHierarchyMap.put("bachelorThesis", new String[] {
+				"publishedWorksContent", "scholarlyWorkContent" });
+		itemTypeHierarchyMap.put("masterThesis", new String[] {
+				"publishedWorksContent", "scholarlyWorkContent" });
+		itemTypeHierarchyMap.put("doctoralThesis", new String[] {
+				"publishedWorksContent", "scholarlyWorkContent" });
+		itemTypeHierarchyMap.put("conferenceItem", new String[] {
+				"publishedWorksContent", "conferenceContent" });
+		itemTypeHierarchyMap.put("journalArticle", new String[] {
+				"publishedWorksContent", "journalContent" });
+		itemTypeHierarchyMap.put("bookChapter", new String[] {
+				"publishedWorksContent", "bookChapterContent" });
+		itemTypeHierarchyMap.put("book", new String[] {
+				"publishedWorksContent", "bookContent" });
 		itemTypeHierarchyMap.put("report", new String[] {});
-		itemTypeHierarchyMap.put("learningMaterial", new String[] {"learningMaterialContent"});
+		itemTypeHierarchyMap.put("learningMaterial",
+				new String[] { "learningMaterialContent" });
 		itemTypeHierarchyMap.put("dataset", new String[] {});
 		itemTypeHierarchyMap.put("other", new String[] {});
 		/* END aanagnostopoulos */
 	}
 
-	private List<Element> sortMetadataElements(List<Element> metadataElements) throws Exception{
-			XSOMParser parser = new XSOMParser();
-			//TODO: parse XSD from remote location
-//			parser.parse(new File(
-//					"/home/aanagnostopoulos/workspace/healMeta/heal_v1.3.xsd"));
+	private List<Element> cleanUpElements(List<Element> metadataElements,
+			XSSchema schema) throws Exception {
 
-			parser.parse(new URL(schemaLocation.split(" ")[1]));
-			List<Element> sortedElements = new ArrayList<Element>();
+		Map<String, XSModelGroupDecl> modelGroupDecls = schema
+				.getModelGroupDecls();
+		String itemType = null; // stores the item's type, for later
+								// discrimination during sorting
+		for (Element metadataElement : metadataElements) {
+			if (metadataElement.getName().equals("type")) {
+				// hold on to the item type
+				itemType = metadataElement.getValue();
+			}
+		}
+		if (itemType == null) {
+			// no point in trying any further, item contains incomplete HEAL
+			// metadata, return original, unsorted, data
+			return metadataElements;
+		}
 
-			XSSchema schema = parser.getResult().getSchema(1);
-			Map<String, XSModelGroupDecl> modelGroupDecls = schema.getModelGroupDecls();
-			String itemType = null; //stores the item's type, for later discrimination during sorting
+		log.debug("cleaning up common content");
+		// always sort the common content elements first
+		XSModelGroupDecl commonContent = modelGroupDecls.get("commonContent");
+		XSParticle[] xsParticles = commonContent.getModelGroup().getChildren();
+		log.debug(xsParticles);
+		for (XSParticle xsParticle : xsParticles) {
+			XSTerm term = xsParticle.getTerm();
+			String name = term.asElementDecl().getName();
 			for (Element metadataElement : metadataElements) {
-				if(metadataElement.getName().equals("type")) {
-					//hold on to the item type
-					itemType = metadataElement.getValue();
+				if (metadataElement.getName().equals(name)) {
+					cleanUp(metadataElement, xsParticle);
 				}
 			}
-			if(itemType==null) {
-				//no point in trying any further, item contains incomplete HEAL metadata, return original, unsorted, data
-				return metadataElements;
-			}
-			String[] groupHierarchy = itemTypeHierarchyMap.get(itemType);
-			if(groupHierarchy==null) {
-				return metadataElements;
-			}
-			if(groupHierarchy.length==0) {
-				//no hierarchy defined, return original, unsorted, data
-				return metadataElements;
-			}
-			
-			//always sort the common content elements first 
-			XSModelGroupDecl commonContent = modelGroupDecls.get("commonContent");
-			XSParticle[] xsParticles = commonContent.getModelGroup().getChildren();
-			log.info(xsParticles);
+		}
+
+		String[] groupHierarchy = itemTypeHierarchyMap.get(itemType);
+		if (groupHierarchy == null) {
+			return metadataElements;
+		}
+		if (groupHierarchy.length == 0) {
+			// no hierarchy defined, return original, unsorted, data
+			return metadataElements;
+		}
+
+		// iterate over the group hierachy and sort elements belonging to each
+		// group
+		log.debug("cleaning up common group hierarchy");
+		for (String group : groupHierarchy) {
+			XSModelGroupDecl xsModelGroupDecl = modelGroupDecls.get(group);
+			xsParticles = xsModelGroupDecl.getModelGroup().getChildren();
 			for (XSParticle xsParticle : xsParticles) {
 				XSTerm term = xsParticle.getTerm();
+				log.debug("cleaning up term:" + term);
+				if (term.isModelGroupDecl() || term.isModelGroup()) {
+					log.debug("is model group, skipping");
+					// ignore model groups (i.e. choice elements)
+					continue;
+				}
 				String name = term.asElementDecl().getName();
 				for (Element metadataElement : metadataElements) {
-					if(metadataElement.getName().equals(name)) {
+					if (metadataElement.getName().equals(name)) {
+						cleanUp(metadataElement, xsParticle);
+					}
+				}
+			}
+		}
+
+		return metadataElements;
+
+	}
+
+	private List<Element> sortMetadataElements(List<Element> metadataElements,
+			XSSchema schema) throws Exception {
+
+		List<Element> sortedElements = new ArrayList<Element>();
+
+		Map<String, XSModelGroupDecl> modelGroupDecls = schema
+				.getModelGroupDecls();
+		String itemType = null; // stores the item's type, for later
+								// discrimination during sorting
+		for (Element metadataElement : metadataElements) {
+			if (metadataElement.getName().equals("type")) {
+				// hold on to the item type
+				itemType = metadataElement.getValue();
+			}
+		}
+		if (itemType == null) {
+			// no point in trying any further, item contains incomplete HEAL
+			// metadata, return original, unsorted, data
+			return metadataElements;
+		}
+
+		// always sort the common content elements first
+		XSModelGroupDecl commonContent = modelGroupDecls.get("commonContent");
+		XSParticle[] xsParticles = commonContent.getModelGroup().getChildren();
+		log.debug(xsParticles);
+		for (XSParticle xsParticle : xsParticles) {
+			XSTerm term = xsParticle.getTerm();
+			String name = term.asElementDecl().getName();
+			for (Element metadataElement : metadataElements) {
+				if (metadataElement.getName().equals(name)) {
+					sortedElements.add(metadataElement);
+				}
+			}
+		}
+
+		String[] groupHierarchy = itemTypeHierarchyMap.get(itemType);
+		if (groupHierarchy == null) {
+			return sortedElements;
+		}
+		if (groupHierarchy.length == 0) {
+			// no hierarchy defined, append remaining elements to the sorted
+			// common content
+			// return sortedElements;
+			List<Element> mergedElements = new ArrayList<Element>();
+			mergedElements.addAll(sortedElements);
+			for (Element element : metadataElements) {
+				boolean found = false;
+				for (Element sortedElement : sortedElements) {
+					if (sortedElement.equals(element)) {
+						found = true;
+						break;
+					}
+				}
+				if (!found) {
+					mergedElements.add(element);
+				}
+			}
+			return mergedElements;
+		}
+
+		// iterate over the group hierachy and sort elements belonging to each
+		// group
+		for (String group : groupHierarchy) {
+			XSModelGroupDecl xsModelGroupDecl = modelGroupDecls.get(group);
+			xsParticles = xsModelGroupDecl.getModelGroup().getChildren();
+			for (XSParticle xsParticle : xsParticles) {
+				XSTerm term = xsParticle.getTerm();
+				if (term.isModelGroup() || term.isModelGroupDecl()) {
+					// ignore model groups (i.e. choice elements)
+					continue;
+				}
+				String name = term.asElementDecl().getName();
+				for (Element metadataElement : metadataElements) {
+					if (metadataElement.getName().equals(name)) {
 						sortedElements.add(metadataElement);
 					}
 				}
 			}
-			
-			//iterate over the group hierachy and sort elements belonging to each group
-			for (String group : groupHierarchy) {
-				XSModelGroupDecl xsModelGroupDecl = modelGroupDecls.get(group);
-				xsParticles = xsModelGroupDecl.getModelGroup().getChildren();
-				for (XSParticle xsParticle : xsParticles) {
-					XSTerm term = xsParticle.getTerm();
-					if(term.isModelGroup()){
-						//ignore model groups (i.e. choice elements)
-						continue;
-					}
-					String name = term.asElementDecl().getName();
-					for (Element metadataElement : metadataElements) {
-						if(metadataElement.getName().equals(name)) {
-							sortedElements.add(metadataElement);
-						}
-					}
+		}
+
+		return sortedElements;
+
+	}
+
+	private List<Element> addMissingDefaultValues(
+			List<Element> metadataElements, XSSchema schema) throws Exception {
+
+		List<Element> missingElements = new ArrayList<Element>();
+
+		Map<String, XSModelGroupDecl> modelGroupDecls = schema
+				.getModelGroupDecls();
+		String itemType = null; // stores the item's type, for later
+								// discrimination during sorting
+		for (Element metadataElement : metadataElements) {
+			if (metadataElement.getName().equals("type")) {
+				// hold on to the item type
+				itemType = metadataElement.getValue();
+			}
+		}
+		if (itemType == null) {
+			// no point in trying any further, item contains incomplete HEAL
+			// metadata, return original, unsorted, data
+			return metadataElements;
+		}
+
+		// add default values for common content elements first
+		log.debug("adding missing values for commont content");
+		XSModelGroupDecl commonContent = modelGroupDecls.get("commonContent");
+		XSParticle[] xsParticles = commonContent.getModelGroup().getChildren();
+		for (XSParticle xsParticle : xsParticles) {
+			XSTerm term = xsParticle.getTerm();
+			String name = term.asElementDecl().getName();
+			log.debug("Element Name:" + name);
+			BigInteger minOccurs = xsParticle.getMinOccurs();
+			BigInteger maxOccurs = xsParticle.getMaxOccurs();
+			log.debug("Min/Max occurs:" + minOccurs + "/" + maxOccurs);
+			boolean found = false;
+			for (Element metadataElement : metadataElements) {
+				if (metadataElement.getName().equals(name)) {
+					found = true;
+					missingElements.add(metadataElement);
+					break;
 				}
 			}
-			
-			return sortedElements;
 
+			if (found) {
+				// element already exists, skip
+				continue;
+			}
+
+			// add default value, if required
+			if (minOccurs.intValue() > 0) {
+				Element element = createDefaultValue(term);
+				missingElements.add(element);
+				log.debug("Added element: " + element.getName());
+			}
+
+		}
+
+		String[] groupHierarchy = itemTypeHierarchyMap.get(itemType);
+		if (groupHierarchy == null) {
+			return missingElements;
+		}
+		if (groupHierarchy.length == 0) {
+			// no hierarchy defined, return original, unsorted, data
+			return missingElements;
+		}
+
+		// iterate over the group hierachy and sort elements belonging to each
+		// group
+		log.debug("adding missing values for group hierarchy");
+		for (String group : groupHierarchy) {
+			XSModelGroupDecl xsModelGroupDecl = modelGroupDecls.get(group);
+			xsParticles = xsModelGroupDecl.getModelGroup().getChildren();
+			for (XSParticle xsParticle : xsParticles) {
+				XSTerm term = xsParticle.getTerm();
+				log.debug(term.toString());
+				String name = null;
+				if (term.isElementDecl()) {
+					name = term.asElementDecl().getName();
+				} else if (term.isModelGroup() || term.isModelGroupDecl()) {
+					// skip, only applies to 'relationalContent' group, which
+					// contains optional elements
+					continue;
+				}
+				log.debug("Element Name:" + name);
+				BigInteger minOccurs = xsParticle.getMinOccurs();
+				BigInteger maxOccurs = xsParticle.getMaxOccurs();
+				log.debug("Min/Max occurs:" + minOccurs + "/" + maxOccurs);
+
+				boolean found = false;
+				for (Element metadataElement : metadataElements) {
+					if (metadataElement.getName().equals(name)) {
+						found = true;
+						missingElements.add(metadataElement);
+						break;
+					}
+				}
+
+				if (found) {
+					// element already exists, skip
+					continue;
+				}
+
+				// add default value, if required
+				if (minOccurs.intValue() > 0) {
+					Element element = createDefaultValue(term);
+					missingElements.add(element);
+					log.debug("Added element: " + element.getName());
+				}
+
+			}
+		}
+
+		return missingElements;
+
+	}
+
+	private Element createDefaultValue(XSTerm term) {
+		XSElementDecl elementDecl = term.asElementDecl();
+		String elementType = elementDecl.getType().getName();
+		log.debug("element type:" + elementType);
+		Element element = new Element(elementDecl.getName(), healNamespace);
+
+		// TODO: replace ifs with something more elegant (e.g. a factory)
+		if (elementType.equals("languageLiteral")
+				|| elementType.equals("plainTextClassification")
+				|| elementType.equals("plainTextKeyword")) {
+			element = element.setAttribute("lang", "en",
+					Namespace.XML_NAMESPACE);
+			element.setText("N/A");
+		} else if (elementType.equals("anyURI")) {
+			element.setText("n:a");
+		} else if (elementType.equals("itemType")) {
+			element.setText("other");
+		} else if (elementType.equals("dateType")) {
+			element.setText("1970-01-01");
+		} else if (elementType.equals("accessTypeList")) {
+			element.setText("free");
+		} else if (elementType.equals("boolean")) {
+			element.setText("false");
+		} else if (elementType.equals("learningResourceList")) {
+			element.setText("other");
+		} else if (elementType.equals("institutionList")) {
+			element.setText(institutionAcronym);
+		} else if (elementType.equals("integer")) {
+			element.setText("0");
+		} else if (elementType.equals("language")) {
+			element.setText("und");
+		} else {
+			element.setText("N/A");
+		}
+
+		return element;
+	}
+
+	private void cleanUp(Element metadataElement, XSParticle xsParticle) {
+		XSTerm term = xsParticle.getTerm();
+		if (term.isModelGroup()) {
+			// nothing to do
+			return;
+		}
+		String elementType = term.asElementDecl().getType().getName();
+
+		if (metadataElement.getAttribute("lang", Namespace.XML_NAMESPACE) != null) {
+			if (!elementType.equals("languageLiteral")) {
+				metadataElement
+						.removeAttribute("lang", Namespace.XML_NAMESPACE);
+			} else {
+				String value = metadataElement.getAttribute("lang",
+						Namespace.XML_NAMESPACE).getValue();
+				if (value.isEmpty()) {
+					metadataElement = metadataElement.setAttribute("lang",
+							"und", Namespace.XML_NAMESPACE);
+
+				} else if (value.contains("_")) {
+					metadataElement = metadataElement.setAttribute("lang",
+							value.substring(0, value.lastIndexOf("_")),
+							Namespace.XML_NAMESPACE);
+				}
+			}
+		}
+
+		if (metadataElement.getAttribute("lang", Namespace.XML_NAMESPACE) == null
+				&& (elementType.equals("languageLiteral") || (elementType
+						.equals("languageLiteral")
+						|| elementType.equals("plainTextClassification") || elementType
+							.equals("plainTextKeyword")))) {
+			metadataElement.setAttribute("lang", "en", Namespace.XML_NAMESPACE);
+		}
+
+		if (elementType.equals("dateType")) {
+			if (metadataElement.getText().contains("T")) {
+				metadataElement.setText(metadataElement.getText().substring(0,
+						metadataElement.getText().indexOf("T")));
+			}
+		}
 	}
 
 	public Namespace[] getNamespaces() {
@@ -443,10 +751,12 @@ public class HEALQDCCrosswalk extends SelfNamedPlugin implements
 
 		DCValue[] dc = item.getMetadata(Item.ANY, Item.ANY, Item.ANY, Item.ANY);
 		/* modified by aanagnostopoulos */
+		log.debug("Disseminating object:" + dso.getHandle());
 		// create a parent 'heal:meta' element, under which all other metadata
 		// elements will fall
 		List<Element> parentElement = new ArrayList<Element>();
-		Element healRoot = new Element("healMeta", "heal", schemaLocation.split(" ")[0]);
+		Element healRoot = new Element("healMeta", "heal",
+				schemaLocation.split(" ")[0]);
 		healRoot.setAttribute("schemaLocation", schemaLocation, XSI_NS);
 		parentElement.add(healRoot);
 		/* END aanagnostopoulos */
@@ -474,7 +784,7 @@ public class HEALQDCCrosswalk extends SelfNamedPlugin implements
 					qe.setAttribute("schemaLocation", schemaLocation, XSI_NS);
 				}
 				/* modified by aanagnostopoulos */
-				//TODO: perform special formatting for 'heal.dateAvailable' element
+				// element
 				if (dc[i].language != null && !dc[i].language.equals(Item.ANY))
 				/* END aanagnostopoulos */
 				{
@@ -486,12 +796,72 @@ public class HEALQDCCrosswalk extends SelfNamedPlugin implements
 		}
 		/* modified by aanagnostopoulos */
 
+		XSOMParser parser = new XSOMParser();
+		XSSchema schema = null;
+		try {
+			parser.parse(new URL(schemaLocation.split(" ")[1]));
+			schema = parser.getResult().getSchema(1);
+		} catch (SAXException e) {
+			log.error(e);
+			throw new CrosswalkException(e);
+		}
+
+		//custom handling for 'heal.dateAvailable', since it's required by the XSD
+		Element dateAvailableElement = null;
+		for (Element element : result) {
+			if(element.getName().equals("dateAvailable")) {
+				dateAvailableElement = element;
+				break;
+			}
+		}
+		if(dateAvailableElement==null) {
+			//no heal.dateAvailable value exists for item, use 'dc.date.issued' instead
+			DCValue[] dcDateIssuedValues = item.getMetadata("dc.date.issued");
+			String dateAvailableValue = null;
+			if (dcDateIssuedValues.length == 1) {// set the date to the existing
+													// dc.date.issued value
+	
+
+						dateAvailableValue = dcDateIssuedValues[0].value;
+	
+			} else { // set date available to the current date
+				DCDate now = DCDate.getCurrent();
+				DCDate dateAvailable = new DCDate(now.getYear(), now.getMonth(),
+						now.getDay(), -1, -1, -1);
+				dateAvailableValue = dateAvailable.toString();
+			}
+			dateAvailableElement = new Element("dateAvailable", healNamespace);
+			dateAvailableElement.setText(dateAvailableValue);
+			result.add(dateAvailableElement);
+		}
+		
+		// clean up values for existing metadata
+		List<Element> cleanedUpElements = null;
+		try {
+			cleanedUpElements = cleanUpElements(result, schema);
+		} catch (Exception e) {
+			log.error(e);
+			throw new CrosswalkException(e);
+		}
+
+		// add default values for missing metadata, according to the XSD schema
+		List<Element> elementsWithDefaultValues = null;
+		try {
+			elementsWithDefaultValues = addMissingDefaultValues(
+					cleanedUpElements, schema);
+		} catch (Exception e) {
+			log.error(e);
+			throw new CrosswalkException(e);
+		}
+
 		// sort the metadata, according to the XSD schema
 		List<Element> sortMetadataElements = null;
 		try {
-			sortMetadataElements = sortMetadataElements(result);
+			sortMetadataElements = sortMetadataElements(
+					elementsWithDefaultValues, schema);
 		} catch (Exception e) {
 			log.error(e);
+			throw new CrosswalkException(e);
 		}
 
 		// 'hang' all metadata elements under parent 'heal:meta' element
