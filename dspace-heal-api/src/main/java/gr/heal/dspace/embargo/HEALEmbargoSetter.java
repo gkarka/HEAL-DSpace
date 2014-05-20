@@ -93,10 +93,6 @@ public class HEALEmbargoSetter extends DefaultEmbargoSetter {
 				DCDate date = null;
 				if(dateAvailable.length>0) {
 					date = new DCDate(dateAvailable[0].value);
-				}else {
-					Date futureDate = DateUtils.add(new Date(), Calendar.MINUTE, 5);
-					futureDate = DateUtils.truncate(futureDate, Calendar.SECOND);
-					date = new DCDate(futureDate);
 				}
 				
 				return date;

@@ -157,25 +157,6 @@ public class ProcessMetadataStep extends DescribeStep {
 					healCreatorName.language, healCreatorName.value);
 		}
 
-		// set heal.dateAvailable based on the dc.dateIssued value. Might be
-		// overridden later by the embargo setter.
-//		DCValue[] dcDateIssuedValues = item.getMetadata("dc.date.issued");
-//		if (dcDateIssuedValues.length == 1) {// set the date to the existing
-//												// dc.date.issued value
-//
-//			item.addMetadata(HEAL_SCHEMA, "dateAvailable", null, null,
-//					dcDateIssuedValues[0].value);
-//
-//		} else { // set date available to the current date (essentially same as
-//					// dc.date.issued that will be set during the item
-//					// installation)
-//			DCDate now = DCDate.getCurrent();
-//			DCDate dateAvailable = new DCDate(now.getYear(), now.getMonth(),
-//					now.getDay(), -1, -1, -1);
-//			item.addMetadata(HEAL_SCHEMA, "dateAvailable", null, null,
-//					dateAvailable.toString());
-//		}
-
 		/* tweak elements, to make them adhere to the HEAL XML schema */
 
 		// heal:type
@@ -190,18 +171,26 @@ public class ProcessMetadataStep extends DescribeStep {
 			String value = null;
 			String uri = null;
 			if (dcValue.value.contains(SOURCE_PREFIX)) {
+				try {
 				value = dcValue.value.substring(0,
 						dcValue.value.lastIndexOf(SOURCE_PREFIX));
 				uri = dcValue.value.substring(
 						(dcValue.value.lastIndexOf(SOURCE_PREFIX)+SOURCE_PREFIX.length()-1),
 						dcValue.value.lastIndexOf(SOURCE_SUFFIX));
+				}catch(Exception e) { //handle any bad user input
+					value = dcValue.value;
+//					uri = SOURCE_DUMMY + dcValue.value;
+				}
+				
 			} else {
 				value = dcValue.value;
-				uri = SOURCE_DUMMY + dcValue.value;
+//				uri = SOURCE_DUMMY + dcValue.value;
 			}
 			item.addMetadata(HEAL_SCHEMA, "classification", null, dcValue.language,
 					value);
-			item.addMetadata(HEAL_SCHEMA, "classificationURI", null, null, uri);
+			if(uri!=null) {
+				item.addMetadata(HEAL_SCHEMA, "classificationURI", null, null, uri);
+			}
 		}
 
 
@@ -214,21 +203,26 @@ public class ProcessMetadataStep extends DescribeStep {
 			String value = null;
 			String uri = null;
 			if (dcValue.value.contains(SOURCE_PREFIX)) {
-				value = dcValue.value.substring(0,
-						dcValue.value.lastIndexOf(SOURCE_PREFIX));
-				uri = dcValue.value.substring(
-						(dcValue.value.lastIndexOf(SOURCE_PREFIX)+SOURCE_PREFIX.length()-1),
-						dcValue.value.lastIndexOf(SOURCE_SUFFIX));
+				try {				
+					value = dcValue.value.substring(0,
+							dcValue.value.lastIndexOf(SOURCE_PREFIX));
+					uri = dcValue.value.substring(
+							(dcValue.value.lastIndexOf(SOURCE_PREFIX)+SOURCE_PREFIX.length()-1),
+							dcValue.value.lastIndexOf(SOURCE_SUFFIX));
+				}catch(Exception e) { //handle any bad user input
+					value = dcValue.value;
+				}
+
 			} else {
 				value = dcValue.value;
-				uri = SOURCE_DUMMY + dcValue.value;
+//				uri = SOURCE_DUMMY + dcValue.value;
 			}
 			// add keyword to DC schema, to preserver system integrity
 			item.addMetadata(MetadataSchema.DC_SCHEMA, "subject", null,
 					dcValue.language, value);
-//			item.addMetadata(HEAL_SCHEMA, "keyword", null, dcValue.language,
-//					value);
-			item.addMetadata(HEAL_SCHEMA, "keywordURI", null, null, uri);
+			if(uri!=null) {
+				item.addMetadata(HEAL_SCHEMA, "keywordURI", null, null, uri);
+			}
 		}
 
 		// heal:contributorID
