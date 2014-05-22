@@ -480,18 +480,9 @@ public class HEALQDCCrosswalk extends SelfNamedPlugin implements
 			// return sortedElements;
 			List<Element> mergedElements = new ArrayList<Element>();
 			mergedElements.addAll(sortedElements);
-			for (Element element : metadataElements) {
-				boolean found = false;
-				for (Element sortedElement : sortedElements) {
-					if (sortedElement.equals(element)) {
-						found = true;
-						break;
-					}
-				}
-				if (!found) {
-					mergedElements.add(element);
-				}
-			}
+			metadataElements.removeAll(sortedElements);
+			mergedElements.addAll(metadataElements);
+			
 			return mergedElements;
 		}
 
@@ -556,7 +547,6 @@ public class HEALQDCCrosswalk extends SelfNamedPlugin implements
 				if (metadataElement.getName().equals(name)) {
 					found = true;
 					missingElements.add(metadataElement);
-					break;
 				}
 			}
 
@@ -575,12 +565,13 @@ public class HEALQDCCrosswalk extends SelfNamedPlugin implements
 		}
 
 		String[] groupHierarchy = itemTypeHierarchyMap.get(itemType);
-		if (groupHierarchy == null) {
-			return missingElements;
-		}
-		if (groupHierarchy.length == 0) {
-			// no hierarchy defined, return original, unsorted, data
-			return missingElements;
+		if (groupHierarchy == null || groupHierarchy.length==0) {
+			// no hierarchy defined, merge missing/default values with remaining elements
+			List<Element> mergedElements = new ArrayList<Element>();
+			mergedElements.addAll(missingElements);
+			metadataElements.removeAll(missingElements);
+			mergedElements.addAll(metadataElements);
+			return mergedElements;
 		}
 
 		// iterate over the group hierachy and sort elements belonging to each
@@ -610,7 +601,7 @@ public class HEALQDCCrosswalk extends SelfNamedPlugin implements
 					if (metadataElement.getName().equals(name)) {
 						found = true;
 						missingElements.add(metadataElement);
-						break;
+//						break;
 					}
 				}
 
