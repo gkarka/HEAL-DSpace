@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wf-config>
     <workflow-map>
-        <name-map collection="default" workflow="default"/>
-        <name-map collection="123456789/398" workflow="selectSingleReviewer"/>
-        <!--<name-map collection="123456789/5" workflow="scoreReview"/>-->
+      <!--<name-map collection="default" workflow="default"/>-->
+      <name-map collection="default" workflow="selectSingleReviewer"/>
+      <name-map collection="123456789/321" workflow="selectSingleReviewer"/>
+      <name-map collection="123456789/398" workflow="selectSingleReviewer"/>
+      <name-map collection="123456789/399" workflow="selectSingleReviewer"/>
+      <!--<name-map collection="123456789/5" workflow="scoreReview"/>-->
     </workflow-map>
 
     <!--Standard workflow step-->
