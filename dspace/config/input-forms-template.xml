@@ -1,0 +1,890 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE input-forms SYSTEM "input-forms.dtd">
+
+
+<input-forms>
+
+	<form-map>
+		<name-map collection-handle="default" form-name="heal" />
+    <!--<name-map collection-handle="123456789/2" form-name="collection1Test" />
+    <name-map collection-handle="123456789/83" form-name="collection1Test" />
+    <name-map collection-handle="123456789/4057" form-name="conf_paper" />
+    <name-map collection-handle="123456789/3604" form-name="journal_paper" />
+    <name-map collection-handle="123456789/321" form-name="ETD" />-->
+    <name-map collection-handle="123456789/398" form-name="bachelorThesis" />
+    <!--<name-map collection-handle="123456789/399" form-name="ETD" />
+    <name-map collection-handle="123456789/521" form-name="article" />
+    <name-map collection-handle="123456789/522" form-name="article" />
+    <name-map collection-handle="123456789/523" form-name="article" />
+    <name-map collection-handle="123456789/569" form-name="article" />
+    <name-map collection-handle="123456789/653" form-name="article" />
+    <name-map collection-handle="123456789/659" form-name="article" />
+    <name-map collection-handle="123456789/861" form-name="article" />
+    <name-map collection-handle="123456789/1003" form-name="article" />
+    <name-map collection-handle="123456789/1013" form-name="article" />
+    <name-map collection-handle="123456789/1433" form-name="article" />
+    <name-map collection-handle="123456789/1605" form-name="article" />
+    <name-map collection-handle="123456789/1609" form-name="article" />
+    <name-map collection-handle="123456789/1411" form-name="article" />
+    <name-map collection-handle="123456789/1317" form-name="article" />
+    <name-map collection-handle="123456789/521" form-name="article" />
+    <name-map collection-handle="123456789/522" form-name="article" />
+    <name-map collection-handle="123456789/523" form-name="article" />-->
+  </form-map>
+
+	<form-definitions>
+    <form name="heal">
+      <page number="1">
+
+        <field>
+          <dc-schema>a</dc-schema>
+          <dc-element>a</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>a</label>
+          <label-el></label-el>
+          <input-type>onebox</input-type>
+          <hint></hint>
+          <hint-el></hint-el>
+          <required></required>
+          <required-el></required-el>
+        </field>
+        <!--<field>
+          <dc-schema></dc-schema>
+          <dc-element></dc-element>    
+          <dc-qualifier></dc-qualifier>
+          <repeatable></repeatable>
+          <label></label>
+          <input-type></input-type>
+          <hint></hint>
+        </field>-->
+
+      </page>
+    </form>
+    
+		<form name="{itemType}">
+
+      <page number="1">
+                
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>type</dc-element>
+          <dc-qualifier></dc-qualifier>          
+          <repeatable>false</repeatable>
+          <label>Item type</label>
+          <label-el>Είδος τεκμηρίου</label-el>
+          <input-type value-pairs-name="itemType{itemType}">dropdown</input-type>
+          <hint>The type of the item you wish to submit.</hint>
+          <hint-el>Το είδος του τεκμηρίου.</hint-el>
+          <required>You must select a type for the item you wish to submit.</required>
+          <required-el>Πρέπει να επιλέξετε το είδος του τεκμηρίου που υποβάλλετε.</required-el>
+        </field>
+
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>title</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Title</label>
+          <label-el>Τίτλος</label-el>
+          <input-type>textarea</input-type>
+          <hint>The official title of the work, given in one or more languages.</hint>
+          <hint-el>Ο επίσημος τίτλος του έργου σε μία ή περισσότερες γλώσσες.</hint-el>
+          <required>You must enter at least one title for the item you wish to submit.</required>
+          <required-el>Πρέπει να εισαγάγετε τουλάχιστον έναν τίτλο για το τεκμήριο που υποβάλλετε.</required-el>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>secondaryTitle</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Alternative title / Subtitle</label>
+          <label-el>Συμπληρωματικός/δευτερεύων τίτλος</label-el>
+          <input-type>textarea</input-type>
+          <hint>The secondary title or subtitle of the work, if such exists, given in one or more languages.</hint>
+          <hint-el>Ο δευτερεύων ή συμπληρωματικός τίτλος του έργου, αν υπάρχει, σε μία ή περισσότερες γλώσσες.</hint-el>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>contributor</dc-element>
+          <dc-qualifier>author</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Name(s) of creator(s)</label>
+          <label-el>Ονόματα δημιουργών</label-el>
+          <input-type>name</input-type>
+          <hint>The names of the creators of the work submitted, given in one or more languages.</hint>
+          <hint-el>Τα ονόματα των δημιουργών του έργου σε μία ή περισσότερες γλώσσες.</hint-el>
+          <required>You must enter the name of at least one creator.</required>
+          <required-el>Πρέπει να εισαγάγετε το όνομα τουλάχιστον ενός δημιουργού.</required-el>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>classification</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Subject classification</label>
+          <label-el>Θεματική κατηγορία</label-el>
+          <input-type>onebox</input-type>
+          <hint>The thematic category under which the subject of the work can be classified, e.g. Mathematics, Structural engineering etc.</hint>
+          <hint-el>Η θεματική κατηγορία στην οποία ανήκει το έργο, π.χ. Μαθηματικά, Δομική Μηχανική κτλ. Μπορούν να επιλεγούν και παραπάνω από μία.</hint-el>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>subject</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Keywords</label>
+          <label-el>Λέξεις-κλειδιά</label-el>
+          <input-type>onebox</input-type>
+          <hint>A keyword describing the subject of the item.</hint>
+          <hint-el>Μια λέξη-κλειδί που περιγράφει το αντικείμενο του έργου.</hint-el>
+          <required>You must enter at least 5 keyword in Greek and 5 keywords in English.</required>
+          <required-el>Πρέπει να εισάγετε τουλάχιστον μια λέξη-κλεδί.</required-el>
+          <i18n>true</i18n>
+        </field>
+
+        <!--<field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>identifier</dc-element>
+          <dc-qualifier>secondary</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Item identifiers</label>
+          <label-el>Αναγνωριστικά έργου</label-el>
+          <input-type>onebox</input-type>
+          <hint>One or more unique identifiers for the submission item (e.g. a DOI for a publication or an ISBN for a book).</hint>
+          <hint-el>Ένα ή περισσότερα μοναδικά αναγνωριστικά που πιθανώς χαρακτηρίζουν το υποβαλλόμενο τεκμήριο (π.χ. DOI για μια δημοσίευση ή ISBN για ένα βιβλίο/μονογραφία).</hint-el>
+        </field>-->
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>language</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Item language</label>
+          <label-el>Γλώσσα τεκμηρίου</label-el>
+          <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+          <hint>The language(s) of the item's contents. More than one can be selected in case of multilingual content.</hint>
+          <hint-el>Μία ή περισσότερες γλώσσες στις οποίες είναι γραμμένο το έργο.</hint-el>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>access</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Item access scheme</label>
+          <label-el>Δικαιώματα πρόσβασης στο τεκμήριο</label-el>
+          <input-type value-pairs-name="accessTypeList">dropdown</input-type>
+          <hint>
+            The access scheme of the item's full text. Possible choices
+            include:
+            1) leaving the item accessible to the public,
+            2) allowing access to users that use an IP address within the
+            institutional IP range,            
+            3) setting a 12 months embargo period, during which the
+            full text of the item is not available.
+            When the embargo period ends, the public access scheme is assigned to the item.
+          </hint>
+          <hint-el>
+            Επιλέξτε μια από τις ακόλουθες πολιτικές πρόσβασης. Είναι προεπιλεγμένη η παγκόσμια-ελεύθερη πρόσβαση.
+            Εναλλακτικά μπορείτε να επιλέξετε «ΕΜΠ πρόσβαση», ισχύει για 3 χρόνια ή «Έλλειψη πρόσβασης» ισχύει
+            για 1 χρόνο και μετά γίνεται αυτόματα ΕΜΠ πρόσβαση για άλλα 3 χρόνια.
+          </hint-el>
+          <required>You must select an access scheme for the item you wish to submit.</required>
+          <required-el>Πρέπει να επιλέξετε τα δικαιώματα πρόσβασης για το τεκμήριο που υποβάλλετε.</required-el>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>recordProvider</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Institution and School/Department of submitter</label>
+          <label-el>Ίδρυμα του υποβάλλοντος</label-el>
+          <input-type value-pairs-name="institutionList">dropdown</input-type>
+          <hint>The institution and school/department, in the collection of which the item belongs.</hint>
+          <hint-el>Το όνομα του ιδρύματος που διαθέτει το συγκεκριμένο τεκμήριο.</hint-el>
+          <required>You must enter at least one pair of institution and school/department.</required>
+          <required-el>You must enter at least one pair of institution and school/department.</required-el>
+          <i18n>true</i18n>
+        </field>
+
+      </page>
+
+      <page number="2" type-name="{itemType}">
+        
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>publicationDate</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Thesis completion date</label>
+          <label-el>Ημερομηνία ολοκλήρωσης εργασίας</label-el>
+          <input-type>date</input-type>
+          <hint>The date printed on the thesis' front page.</hint>
+          <hint-el>Η ημερομηνία παρουσίασης της εργασίας.</hint-el>
+          <required>You must enter at least the year the thesis was completed in.</required>
+          <required-el>Πρέπει να εισαγάγετε τουλάχιστον το έτος ολοκλήρωσης της εργασίας.</required-el>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>abstract</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Abstract</label>
+          <label-el>Περίληψη</label-el>
+          <input-type>textarea</input-type>
+          <hint>The abstract of the thesis.</hint>
+          <hint-el>Η περίληψη της εργασίας.</hint-el>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>sponsor</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Sponsor</label>
+          <label-el>Χορηγός</label-el>
+          <input-type>textarea</input-type>
+          <hint>A statement regarding the thesis' sponsors, if any.</hint>
+          <hint-el>Μια δήλωση σχετική με πιθανούς χορηγούς που χρηματοδότησαν την εκπόνηση της εργασίας (π.χ. μέσω χορήγησης υποτροφίας).</hint-el>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>advisorName</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Advisor name</label>
+          <label-el>Όνομα επιβλέποντος</label-el>
+          <input-type>name</input-type>
+          <hint>The name of the thesis' advisor.</hint>
+          <hint-el>Το όνομα του επιβλέποντος μέλους ΔΕΠ της εργασίας.</hint-el>
+          <required>You must enter the name of the advisor</required>
+          <required-el>Πρέπει να εισαγάγετε το όνομα του επιβλέποντος.</required-el>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>committeeMemberName</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Examining committee</label>
+          <label-el>Εξεταστική επιτροπή</label-el>
+          <input-type>name</input-type>
+          <hint>The names of the members of the thesis' examining committee.</hint>
+          <hint-el>Τα ονόματα των μελών της εξεταστικής επιτροπής της εργασίας.</hint-el>
+          <required>You must enter the names of all examining committee members.</required>
+          <required-el>Πρέπει να εισαγάγετε τα ονόματα όλων των μελών της εξεταστικής επιτροπής της εργασίας.</required-el>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>academicPublisherID</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Publishing institution</label>
+          <label-el>Εκδίδον ίδρυμα</label-el>
+          <input-type value-pairs-name="institutionList">dropdown</input-type>
+          <hint>The institution the thesis was completed in. Please select the same institution as in the first page.</hint>          
+          <hint-el>Το ίδρυμα στο οποίο εκπονήθηκε η εργασία.</hint-el>
+          <required>You must select an institution from the list.</required>
+          <required-el>Πρέπει να επιλέξετε ένα ίδρυμα από τη λίστα.</required-el>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>academicPublisher</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>School</label>
+          <label-el>Σχολή</label-el>
+          <input-type value-pairs-name="ntua_departments">dropdown</input-type>
+          <hint>The school of the institution the thesis was carried out in.</hint>          
+          <hint-el>Η Σχολή του ιδρύματος στο οποίο εκπονήθηκε η εργασία.</hint-el>
+          <required>You must enter a value for the publishing school.</required>
+          <required-el>Πρέπει να εισαγάγετε Σχολή</required-el>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>numberOfPages</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Number of Pages</label>
+          <label-el>Αριθμός σελίδων</label-el>
+          <input-type>onebox</input-type>
+          <hint>Ο αριθμός σελίδων της εργασίας.</hint>
+          <hint-el>The thesis' number of pages.</hint-el>
+        </field>        
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>generalDescription</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>General Description / Additional Comments</label>
+          <label-el>Γενική περιγραφή / Συμπληρωματικά σχόλια</label-el>
+          <input-type>textarea</input-type>
+          <hint></hint>
+          <hint-el></hint-el>
+          <i18n>true</i18n>
+        </field>
+      </page>
+
+		</form>
+    
+	</form-definitions>
+
+	<form-value-pairs>
+
+		<value-pairs value-pairs-name="itemType" dc-term="type">
+
+			<pair>
+				<displayed-value>Bachelor thesis</displayed-value>
+				<stored-value>bachelorThesis</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Master thesis</displayed-value>
+				<stored-value>masterThesis</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Doctoral thesis</displayed-value>
+				<stored-value>doctoralThesis</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Conference presentation</displayed-value>
+				<stored-value>conferenceItem</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Journal article</displayed-value>
+				<stored-value>journalArticle</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Book chapter</displayed-value>
+				<stored-value>bookChapter</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Book</displayed-value>
+				<stored-value>book</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technical Report</displayed-value>
+				<stored-value>report</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Educational material</displayed-value>
+				<stored-value>learningMaterial</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Dataset</displayed-value>
+				<stored-value>dataset</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Other</displayed-value>
+				<stored-value>other</stored-value>
+			</pair>
+
+		</value-pairs>
+
+
+    <value-pairs value-pairs-name="itemType-bachelorThesis" dc-term="type">
+      <pair>
+        <displayed-value>Bachelor thesis</displayed-value>
+        <stored-value>bachelorThesis</stored-value>
+      </pair>
+    </value-pairs>
+    
+		<value-pairs value-pairs-name="classificationSchemeList"
+			dc-term="classification">
+
+			<pair>
+				<displayed-value>LCC</displayed-value>
+				<stored-value>LCC</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>DDC</displayed-value>
+				<stored-value>DDC</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>UDC</displayed-value>
+				<stored-value>UDC</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>NLM</displayed-value>
+				<stored-value>NLM</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>ACMCCS</displayed-value>
+				<stored-value>ACMCCS</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>MSC</displayed-value>
+				<stored-value>MSC</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>PACS</displayed-value>
+				<stored-value>PACS</stored-value>
+			</pair>
+
+		</value-pairs>
+
+		<value-pairs value-pairs-name="subjectSchemeList" dc-term="keyword">
+
+			<pair>
+				<displayed-value>LCSH</displayed-value>
+				<stored-value>LCSH</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>MeSH</displayed-value>
+				<stored-value>MeSH</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>STW</displayed-value>
+				<stored-value>STW</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>AAT</displayed-value>
+				<stored-value>AAT</stored-value>
+			</pair>
+
+		</value-pairs>
+
+		<!-- <value-pairs value-pairs-name="creatorIdentifierList" dc-term="creatorID"> 
+			<pair> <displayed-value>DHARE ID</displayed-value> <stored-value>dhareID</stored-value> 
+			</pair> <pair> <displayed-value>URI</displayed-value> <stored-value>URI</stored-value> 
+			</pair> <pair> <displayed-value>Email</displayed-value> <stored-value>email</stored-value> 
+			</pair> <pair> <displayed-value>Other</displayed-value> <stored-value>other</stored-value> 
+			</pair> </value-pairs> -->
+
+
+		<!-- <value-pairs value-pairs-name="personIdentifierList" dc-term="contributorID"> 
+			<pair> <displayed-value>DHARE ID</displayed-value> <stored-value>dhareID</stored-value> 
+			</pair> <pair> <displayed-value>URI</displayed-value> <stored-value>URI</stored-value> 
+			</pair> <pair> <displayed-value>Email</displayed-value> <stored-value>email</stored-value> 
+			</pair> <pair> <displayed-value>Other</displayed-value> <stored-value>other</stored-value> 
+			</pair> </value-pairs> -->
+
+		<value-pairs value-pairs-name="common_iso_languages"
+			dc-term="language">
+			<pair>
+				<displayed-value>N/A</displayed-value>
+				<stored-value></stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Greek</displayed-value>
+				<stored-value>el</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>English</displayed-value>
+				<stored-value>en</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>German</displayed-value>
+				<stored-value>de</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>French</displayed-value>
+				<stored-value>fr</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Other</displayed-value>
+				<stored-value>other</stored-value>
+			</pair>
+		</value-pairs>
+
+		<value-pairs value-pairs-name="accessTypeList" dc-term="access">
+
+			<pair>
+				<displayed-value>Publicly accessible</displayed-value>
+				<stored-value>free</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Institutional IP-based access</displayed-value>
+				<stored-value>campus</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Accessible to logged-in DSpace users</displayed-value>
+				<stored-value>account</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Embargo (6 months)</displayed-value>
+				<stored-value>embargo</stored-value>
+			</pair>
+
+			<!-- <pair> <displayed-value>Other</displayed-value> <stored-value>other</stored-value> 
+				</pair> -->
+
+		</value-pairs>
+
+		<value-pairs value-pairs-name="institutionList" dc-term="healID">
+
+			<pair>
+				<displayed-value>Athens School of Fine Arts</displayed-value>
+				<stored-value>asfa</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>School of Pedagogical and Technological Education</displayed-value>
+				<stored-value>aspete</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Aristotle Unversity of Thessaloniki</displayed-value>
+				<stored-value>auth</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Agricultural University of Athens</displayed-value>
+				<stored-value>aua</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Demokritos University of Thrace</displayed-value>
+				<stored-value>duth</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>International Hellenic University</displayed-value>
+				<stored-value>ihu</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>National and Kapodestrian University of Athens</displayed-value>
+				<stored-value>uoa</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>National Technical University of Athens</displayed-value>
+				<stored-value>ntua</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Hellenic Open University</displayed-value>
+				<stored-value>eap</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Ionian University</displayed-value>
+				<stored-value>ionio</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Athens University of Economics and Business</displayed-value>
+				<stored-value>aueb</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>University of Western Greece</displayed-value>
+				<stored-value>uwg</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>University of Western Macedonia</displayed-value>
+				<stored-value>uowm</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>University of Thessaly</displayed-value>
+				<stored-value>uth</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>University of Ioannina</displayed-value>
+				<stored-value>uoi</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>University of Crete</displayed-value>
+				<stored-value>uoc</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>University of Macedonia</displayed-value>
+				<stored-value>uom</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>University of Central Greece</displayed-value>
+				<stored-value>ucg</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>University of Patras</displayed-value>
+				<stored-value>upatras</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>University of Piraeus</displayed-value>
+				<stored-value>unipi</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>University of Peloponnese</displayed-value>
+				<stored-value>uop</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Panteion University</displayed-value>
+				<stored-value>panteion</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technical University of Crete</displayed-value>
+				<stored-value>tuc</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Harokopion University</displayed-value>
+				<stored-value>hua</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Athens</displayed-value>
+				<stored-value>teiath</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Western
+					Macedonia</displayed-value>
+				<stored-value>teikoz</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Epirus Institute of Technology</displayed-value>
+				<stored-value>teiep</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Thessaloniki</displayed-value>
+				<stored-value>teithe</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institution of Ionian
+					Islands</displayed-value>
+				<stored-value>teiion</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Kavala Institute of Technology</displayed-value>
+				<stored-value>teikav</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Kalamata</displayed-value>
+				<stored-value>teikal</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Crete</displayed-value>
+				<stored-value>teicrete</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Lamia</displayed-value>
+				<stored-value>teilam</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Larissa</displayed-value>
+				<stored-value>teilar</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Messolonghi</displayed-value>
+				<stored-value>teimes</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Patras</displayed-value>
+				<stored-value>teipat</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Piraeus</displayed-value>
+				<stored-value>teipir</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Serres</displayed-value>
+				<stored-value>teiser</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Technological Educational Institute of Chalkida</displayed-value>
+				<stored-value>teihal</stored-value>
+			</pair>
+
+		</value-pairs>
+
+		<!-- <value-pairs value-pairs-name="fullTextAvailabilityList" dc-term="fullTextAvailability"> 
+			<pair> <displayed-value>Available</displayed-value> <stored-value>true</stored-value> 
+			</pair> <pair> <displayed-value>Not Available</displayed-value> <stored-value>false</stored-value> 
+			</pair> </value-pairs> -->
+
+		<value-pairs value-pairs-name="journalTypeList" dc-term="journalType">
+
+			<pair>
+				<displayed-value>With a review process (peer
+					review)</displayed-value>
+				<stored-value>peer-reviewed</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Without a review process.</displayed-value>
+				<stored-value>non peer-reviewed</stored-value>
+			</pair>
+
+		</value-pairs>
+
+		<value-pairs value-pairs-name="learningResourceTypeList"
+			dc-term="learningResourceType">
+
+			<pair>
+				<displayed-value>Lecture Notes</displayed-value>
+				<stored-value>lectureNotes</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Lecture Slides</displayed-value>
+				<stored-value>slides</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Processed Examples/Exercises</displayed-value>
+				<stored-value>exercise</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Other</displayed-value>
+				<stored-value>other</stored-value>
+			</pair>
+
+		</value-pairs>
+
+		<value-pairs value-pairs-name="conferenceItemTypeList"
+			dc-term="conferenceItemType">
+
+			<pair>
+				<displayed-value>Poster</displayed-value>
+				<stored-value>poster</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Full Paper</displayed-value>
+				<stored-value>full paper</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Demo</displayed-value>
+				<stored-value>demo</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Short Paper</displayed-value>
+				<stored-value>short paper</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Abstract</displayed-value>
+				<stored-value>abstract</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Tutorial</displayed-value>
+				<stored-value>tutorial</stored-value>
+			</pair>
+
+			<pair>
+				<displayed-value>Other</displayed-value>
+				<stored-value>other</stored-value>
+			</pair>
+
+		</value-pairs>
+
+    <value-pairs value-pairs-name="ntua_departments" dc-term="department">
+      <pair>
+        <displayed-value>N/A</displayed-value>
+        <stored-value></stored-value>
+      </pair>
+      <pair>
+        <displayed-value>Σχολή Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών</displayed-value>
+        <stored-value>Σχολή Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών</stored-value>
+      </pair>
+      <pair>
+        <displayed-value>Σχολή Μηχανολόγων Μηχανικών</displayed-value>
+        <stored-value>Σχολή Μηχανολόγων Μηχανικών</stored-value>
+      </pair>
+      <pair>
+        <displayed-value>Σχολή Αρχιτεκτόνων Μηχανικών</displayed-value>
+        <stored-value>Σχολή Αρχιτεκτόνων Μηχανικών</stored-value>
+      </pair>
+      <pair>
+        <displayed-value>Σχολή Πολιτικών Μηχανικών</displayed-value>
+        <stored-value>Σχολή Πολιτικών Μηχανικών</stored-value>
+      </pair>
+      <pair>
+        <displayed-value>Σχολή Χημικών Μηχανικών</displayed-value>
+        <stored-value>Σχολή Χημικών Μηχανικών</stored-value>
+      </pair>
+      <pair>
+        <displayed-value>Σχολή Αγρονόμων και Τοπογράφων Μηχανικών</displayed-value>
+        <stored-value>Σχολή Αγρονόμων και Τοπογράφων Μηχανικών</stored-value>
+      </pair>
+      <pair>
+        <displayed-value>Σχολή Μηχανικών Μεταλλείων Μεταλλουργών</displayed-value>
+        <stored-value>Σχολή Μηχανικών Μεταλλείων Μεταλλουργών</stored-value>
+      </pair>
+      <pair>
+        <displayed-value>Σχολή Ναυπηγών Μηχανολόγων Μηχανικών</displayed-value>
+        <stored-value>Σχολή Ναυπηγών Μηχανολόγων Μηχανικών</stored-value>
+      </pair>
+      <pair>
+        <displayed-value>Σχολή Εφαρμοσμένων Μαθηματικών και Φυσικών Επιστημών</displayed-value>
+        <stored-value>Σχολή Εφαρμοσμένων Μαθηματικών και Φυσικών Επιστημών</stored-value>
+      </pair>
+      <pair>
+        <displayed-value>(Other)</displayed-value>
+        <stored-value>other</stored-value>
+      </pair>
+    </value-pairs>
+
+
+  </form-value-pairs>
+
+</input-forms>

@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <document xmlns="http://di.tamu.edu/DRI/1.0/" xmlns:i18n="http://apache.org/cocoon/i18n/2.1"
 	version="1.1">
-	<body>
-		<div id="file.news.div.news" n="news" rend="primary">
-			<head>DSpace HEAL</head>
-			<p>
-				<i18n:text>xmlui.feed.general_description</i18n:text>
-			</p>
-			<p>
-				<hi rend="bold">
-					<xref target="submit">
-						<i18n:text catalogue="default">xmlui.feed.submit</i18n:text>
-					</xref>
-				</hi>
-			</p>
-		</div>
-	</body>
-	<options />
-	<meta>
-		<userMeta />
-		<pageMeta />
-		<repositoryMeta />
-	</meta>
+  <body>
+    <div id="file.news.div.news" n="news" rend="primary">
+      <head>DSpace HEAL</head>
+      <p>
+        <hi rend="bold">
+          <i18n:text>xmlui.home.head</i18n:text>
+        </hi>
+      </p>
+      <p>
+        <i18n:text>xmlui.feed.general_description</i18n:text>
+      </p>
+      <p>
+        <hi rend="bold">
+          <xref target="submit">
+            <i18n:text catalogue="default">xmlui.feed.submit</i18n:text>
+          </xref>
+        </hi>
+      </p>
+    </div>
+  </body>
+  <options />
+  <meta>
+    <userMeta />
+    <pageMeta />
+    <repositoryMeta />
+  </meta>
 </document>
