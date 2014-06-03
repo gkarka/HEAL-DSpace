@@ -116,7 +116,7 @@ public class CCLookup {
 		try {
 			JDOMXPath xp_Licenses = new JDOMXPath("//licenses/license");
 			JDOMXPath xp_LicenseID = new JDOMXPath("@id");
-			URL classUrl = new URL(this.cc_root + "/classes");
+			URL classUrl = new URL(this.cc_root + "/classes?locale=el");
 			Document classDoc = this.parser.build(classUrl);
 			// extract the identifiers and labels using XPath
 			List<Element> results = xp_Licenses.selectNodes(classDoc);
@@ -186,7 +186,7 @@ public class CCLookup {
 
 		// retrieve and parse the license class document
 		try {
-			classUrl = new URL(this.cc_root + "/license/" + license);
+			classUrl = new URL(this.cc_root + "/license/" + license + "?locale=el");
 		} catch (Exception err) {
 			// do nothing... but we should
 			return null;

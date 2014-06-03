@@ -8,8 +8,9 @@
 		<name-map collection-handle="default" form-name="heal" />
     <!--<name-map collection-handle="123456789/2" form-name="collection1Test" />
     <name-map collection-handle="123456789/83" form-name="collection1Test" />
-    <name-map collection-handle="123456789/4057" form-name="conf_paper" />
-    <name-map collection-handle="123456789/3604" form-name="journal_paper" />-->
+    <name-map collection-handle="123456789/524" form-name="article" />-->
+    <name-map collection-handle="123456789/8837" form-name="conferenceItem" />
+    <name-map collection-handle="123456789/8836" form-name="journalArticle" />
     <name-map collection-handle="123456789/321" form-name="doctoralThesis" />
     <name-map collection-handle="123456789/398" form-name="bachelorThesis" />
     <name-map collection-handle="123456789/399" form-name="masterThesis" />
@@ -37,1301 +38,1354 @@
 
 		<form name="heal">
 
-			<page number="1">
-
-        <!-- heal.type -->
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>type</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>false</repeatable>
-					<label>Είδος τεκμηρίου</label>
-					<input-type value-pairs-name="itemType">dropdown</input-type>
-					<hint>Το είδος του τεκμηρίου.</hint>
-					<required>Πρέπει να επιλέξετε το είδος του τεκμηρίου που
-						υποβάλλετε.</required>
-				</field>
-
-        <!-- dc.title -->
-				<field>
-					<!-- <dc-schema>heal</dc-schema> -->
-					<dc-schema>dc</dc-schema>
-					<dc-element>title</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Τίτλος</label>
-					<input-type>textarea</input-type>
+      <page number="1">
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>type</dc-element>
+          <repeatable>false</repeatable>
+          <label>Είδος τεκμηρίου</label>
+          <input-type value-pairs-name="itemType">dropdown</input-type>
+          <hint>Το είδος του τεκμηρίου.</hint>
+          <required>Πρέπει να επιλέξετε το είδος του τεκμηρίου που υποβάλλετε.</required>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>title</dc-element>
+          <repeatable>true</repeatable>
+          <label>Τίτλος</label>
+          <input-type>textarea</input-type>
           <hint>Ο επίσημος τίτλος του έργου σε μία ή περισσότερες γλώσσες.</hint>
-					<required>Πρέπει να εισαγάγετε τουλάχιστον έναν τίτλο για το
-						τεκμήριο που υποβάλλετε.</required>
-					<i18n>true</i18n>
-				</field>
-
-        <!-- heal.secondaryTitle -->
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>secondaryTitle</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Συμπληρωματικός/δευτερεύων τίτλος</label>
-					<input-type>textarea</input-type>
+          <required>Πρέπει να εισαγάγετε τουλάχιστον έναν τίτλο για το τεκμήριο που υποβάλλετε.</required>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>secondaryTitle</dc-element>
+          <repeatable>true</repeatable>
+          <label>Συμπληρωματικός/δευτερεύων τίτλος</label>
+          <input-type>textarea</input-type>
           <hint>Ο δευτερεύων ή συμπληρωματικός τίτλος του έργου, αν υπάρχει, σε μία ή περισσότερες γλώσσες.</hint>
-					<i18n>true</i18n>
-				</field>
-
-        <!-- dc.contributor -->
-				<field>
- 					<dc-schema>dc</dc-schema>
-					<dc-element>contributor</dc-element>
-					<dc-qualifier>author</dc-qualifier>
- 					<repeatable>true</repeatable>
-					<label>Ονόματα δημιουργών</label>
-					<input-type>name</input-type>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>contributor</dc-element>
+          <dc-qualifier>author</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Ονόματα δημιουργών</label>
+          <input-type>name</input-type>
           <hint>Τα ονόματα των δημιουργών του έργου σε μία ή περισσότερες γλώσσες.</hint>
-					<required>Πρέπει να εισαγάγετε το όνομα τουλάχιστον ενός
-						δημιουργού.</required>
-					<i18n>true</i18n>
-				</field>
-
-        <!-- heal.classification -->
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>classification</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Θεματική κατηγορία</label>
-					<!-- <input-type value-pairs-name="classificationSchemeList">qualdrop_value</input-type> -->
-					<input-type>onebox</input-type>
-					<hint> Η θεματική κατηγορία στην οποία ανήκει το έργο, π.χ.
-						Μαθηματικά, Δομική Μηχανική κτλ.
-						Μπορούν να επιλεγούν και παραπάνω
-						από μία.</hint>
-					<i18n>true</i18n>
-				</field>
-
-        <!-- dc.subject -->
-				<field>
- 					<dc-schema>dc</dc-schema>
-					<dc-element>subject</dc-element>
- 					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Λέξεις-κλειδιά</label>
-					<input-type>onebox</input-type>
-					<hint>Μια λέξη-κλειδί που περιγράφει το αντικείμενο του έργου.</hint>
-					<required>
-						Πρέπει να εισάγετε τουλάχιστον μια λέξη-κλεδί.</required>
-					<i18n>true</i18n>
-				</field>
-
-        <!-- heal.identifier -->				
-				<!--<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>identifier</dc-element>
-					<dc-qualifier>secondary</dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Αναγνωριστικά έργου</label>
-					<input-type>onebox</input-type>
-					<hint>Ένα ή περισσότερα μοναδικά αναγνωριστικά που πιθανώς
-						χαρακτηρίζουν το υποβαλλόμενο
-						τεκμήριο (π.χ. DOI για μια δημοσίευση
-						ή ISBN για ένα βιβλίο/μονογραφία).</hint>
-				</field>-->
-
-        <!-- heal.language -->
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>language</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Γλώσσα τεκμηρίου</label>
-					<input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+          <required>Πρέπει να εισαγάγετε το όνομα τουλάχιστον ενός δημιουργού.</required>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>classification</dc-element>
+          <repeatable>true</repeatable>
+          <label>Θεματική κατηγορία</label>
+          <input-type>onebox</input-type>
+          <hint>Η θεματική κατηγορία στην οποία ανήκει το έργο, π.χ. Μαθηματικά, Δομική Μηχανική κτλ. Μπορούν να επιλεγούν και παραπάνω από μία.</hint>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>subject</dc-element>
+          <repeatable>true</repeatable>
+          <label>Λέξεις-κλειδιά</label>
+          <input-type>onebox</input-type>
+          <hint>Μια λέξη-κλειδί που περιγράφει το αντικείμενο του έργου.</hint>
+          <required>Πρέπει να εισάγετε τουλάχιστον μια λέξη-κλεδί.</required>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>language</dc-element>
+          <repeatable>true</repeatable>
+          <label>Γλώσσα τεκμηρίου</label>
+          <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
           <hint>Μία ή περισσότερες γλώσσες στις οποίες είναι γραμμένο το έργο.</hint>
-				</field>
-
-        <!-- heal.access -->
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>access</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>false</repeatable>
-					<label>Δικαιώματα πρόσβασης στο τεκμήριο</label>
-					<input-type value-pairs-name="accessTypeList">dropdown</input-type>
-					<hint>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>access</dc-element>
+          <repeatable>false</repeatable>
+          <label>Δικαιώματα πρόσβασης στο τεκμήριο</label>
+          <input-type value-pairs-name="accessTypeList">dropdown</input-type>
+          <hint>
             Επιλέξτε μια από τις ακόλουθες πολιτικές πρόσβασης. Είναι προεπιλεγμένη η παγκόσμια-ελεύθερη πρόσβαση.
             Εναλλακτικά μπορείτε να επιλέξετε «ΕΜΠ πρόσβαση», ισχύει για 3 χρόνια ή «Έλλειψη πρόσβασης» ισχύει
             για 1 χρόνο και μετά γίνεται αυτόματα ΕΜΠ πρόσβαση για άλλα 3 χρόνια.
           </hint>
-					<required>Πρέπει να επιλέξετε τα δικαιώματα πρόσβασης για το
-						τεκμήριο που υποβάλλετε.</required>
-				</field>
-
-
-        <!-- heal.recordProvider -->
+          <required>Πρέπει να επιλέξετε τα δικαιώματα πρόσβασης για το τεκμήριο που υποβάλλετε.</required>
+        </field>
         <field>
           <dc-schema>heal</dc-schema>
           <dc-element>recordProvider</dc-element>
-          <dc-qualifier></dc-qualifier>
           <repeatable>false</repeatable>
           <label>Ίδρυμα του υποβάλλοντος</label>
-          <!--<input-type>onebox</input-type>-->
           <input-type value-pairs-name="institutionList">dropdown</input-type>
+          <hint>Το όνομα του ιδρύματος που διαθέτει το συγκεκριμένο τεκμήριο.</hint>
+          <required>You must enter at least one pair of institution and school/department.</required>
+          <i18n>true</i18n>
+        </field>
+      </page>
+
+      <page number="2" type-name="">
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>contributorName</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Ονόματα συντελεστών</label>
+          <input-type>name</input-type>
           <hint>
-            Το όνομα του ιδρύματος που διαθέτει το συγκεκριμένο τεκμήριο.
+            Τα ονόματα των συντελεστών του υποβαλλόμενου τεκμηρίου (ΕΚΤΟΣ
+            από
+            το επιβλέπον μέλος ΔΕΠ ή τα μέλη της εξεταστικής επιτροπής
+            μιας
+            φοιτητικής εργασίας)
           </hint>
-          <required>Πρέπει να εισαγάγετε ένα Ίδρυμα.</required>
           <i18n>true</i18n>
         </field>
 
-			</page>
-
-			<page number="2" type-name="">
-        
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>contributorName</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Ονόματα συντελεστών</label>
-					<input-type>name</input-type>
-					<hint>Τα ονόματα των συντελεστών του υποβαλλόμενου τεκμηρίου (ΕΚΤΟΣ
-						από
-						το επιβλέπον μέλος ΔΕΠ ή τα μέλη της εξεταστικής επιτροπής
-						μιας
-						φοιτητικής εργασίας)</hint>
-					<i18n>true</i18n>
-				</field>
-
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>generalDescription</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Γενική Περιγραφή / Σχόλια</label>
-					<input-type>textarea</input-type>
-					<hint>Γενική περιγραφή του υποβαλλόμενου τεκμηρίου ή συμπληρωματικά
-						σχόλια.</hint>
-					<i18n>true</i18n>
-				</field>
-
-			</page>
-
-			<page number="2" type-name="bachelorThesis">
-
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>publicationDate</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>false</repeatable>
-					<label>Ημερομηνία ολοκλήρωσης εργασίας</label>
-					<input-type>date</input-type>
-					<hint>Η ημερομηνία παρουσίασης της εργασίας.</hint>
-					<required>Πρέπει να εισαγάγετε τουλάχιστον το έτος ολοκλήρωσης της
-						εργασίας.</required>
-				</field>
-
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>abstract</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Περίληψη</label>
-					<input-type>textarea</input-type>
-					<hint>Η περίληψη της εργασίας.
-					</hint>
-					<i18n>true</i18n>
-				</field>
-
-				<!--<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>tableOfContents</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Πίνακας περιεχομένων</label>
-					<input-type>textarea</input-type>
-					<hint>Ο πίνακας περιεχομένων της εργασίας.</hint>
-					<i18n>true</i18n>
-				</field>-->
-
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>sponsor</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Χορηγός</label>
-					<input-type>textarea</input-type>
-					<hint>Μια δήλωση σχετική με πιθανούς χορηγούς που χρηματοδότησαν
-						την εκπόνηση
-						της εργασίας (π.χ. μέσω χορήγησης υποτροφίας).
-					</hint>
-					<i18n>true</i18n>
-				</field>
-
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>advisorName</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>false</repeatable>
-					<label>Όνομα επιβλέποντος</label>
-					<input-type>name</input-type>
-					<hint>Το όνομα του επιβλέποντος μέλους ΔΕΠ της εργασίας.</hint>
-					<required>Πρέπει να εισαγάγετε το όνομα του επιβλέποντος.</required>
-					<i18n>true</i18n>
-				</field>
-				
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>committeeMemberName</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Εξεταστική επιτροπή</label>
-					<input-type>name</input-type>
-					<hint>Τα ονόματα των μελών της εξεταστικής επιτροπής της
-						εργασίας.</hint>
-					<required>Πρέπει να εισαγάγετε τα ονόματα όλων των μελών
-						της
-						εξεταστικής επιτροπής της εργασίας.</required>
-					<i18n>true</i18n>
-				</field>
-
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>academicPublisherID</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Εκδίδον ίδρυμα</label>
-					<input-type value-pairs-name="institutionList">dropdown</input-type>
-					<hint>Το ίδρυμα στο οποίο εκπονήθηκε η εργασία.</hint>
-					<required>Πρέπει να επιλέξετε τουλάχιστον ένα ίδρυμα από τη λίστα.</required>
-				</field>
-
         <field>
-          <!--<dc-schema>dc</dc-schema>
-          <dc-element>contributor</dc-element>
-          <dc-qualifier>department</dc-qualifier>-->
           <dc-schema>heal</dc-schema>
-          <dc-element>academicPublisher</dc-element>
+          <dc-element>generalDescription</dc-element>
           <dc-qualifier></dc-qualifier>
-          <repeatable>false</repeatable>
-          <label>Σχολή</label>
-          <input-type value-pairs-name="ntua_departments">dropdown</input-type>
+          <repeatable>true</repeatable>
+          <label>Γενική Περιγραφή / Σχόλια</label>
+          <input-type>textarea</input-type>
           <hint>
-            Η Σχολή του ιδρύματος στο οποίο εκπονήθηκε η
-            εργασία.
+            Γενική περιγραφή του υποβαλλόμενου τεκμηρίου ή συμπληρωματικά
+            σχόλια.
           </hint>
-          <required>Πρέπει να εισαγάγετε Σχολή</required>
+          <i18n>true</i18n>
         </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>numberOfPages</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>false</repeatable>
-					<label>Αριθμός σελίδων</label>
-					<input-type>onebox</input-type>
-					<hint>Ο αριθμός σελίδων της εργασίας.</hint>
-				</field>
+      </page>
 
-				<!--<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>bibliographicCitation</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Βιβλιογραφική αναφορά</label>
-					<input-type>onebox</input-type>
-					<hint> Η συνιστώμενη μορφή αναφοράς της εργασίας. Συνήθως, οι
-						βιβλιογραφικές αναφορές δίνονται στη μορφή:
-						«Όνομα Συγγραφέα»,
-						«Τίτλος εργασίας», «Σχολή/Τμήμα», «Ίδρυμα», «Έτος».
-					</hint>
-					<i18n>true</i18n>
-				</field>
+      <page number="2" type-name="bachelorThesis">
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>contributorName</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Ονόματα συντελεστών</label>
-					<input-type>name</input-type>
-					<hint>Τα ονόματα των συντελεστών της εργασίας, αν υπάρχουν
-						(ΕΞΑΙΡΟΥΝΤΑΙ τα ονόματα του επιβλέποντος
-						και των μελών της
-						εξεταστικής επιτροπής).
-					</hint>
-					<i18n>true</i18n>
-				</field>-->
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>publicationDate</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Ημερομηνία ολοκλήρωσης εργασίας</label>
+          <input-type>date</input-type>
+          <hint>Η ημερομηνία που αναγράφεται στο εξώφυλλο της εργασίας.</hint>
+          <required>
+            Πρέπει να εισαγάγετε τουλάχιστον το έτος ολοκλήρωσης της
+            εργασίας.
+          </required>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>generalDescription</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Γενική περιγραφή / Συμπληρωματικά σχόλια</label>
-					<input-type>textarea</input-type>
-					<hint></hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>abstract</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Περίληψη</label>
+          <input-type>textarea</input-type>
+          <hint>
+            Η περίληψη της εργασίας.
+          </hint>
+          <i18n>true</i18n>
+        </field>
 
-			</page>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>tableOfContents</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Πίνακας περιεχομένων</label>
+          <input-type>textarea</input-type>
+          <hint>Ο πίνακας περιεχομένων της εργασίας.</hint>
+          <i18n>true</i18n>
+        </field>
 
-			<page number="2" type-name="masterThesis">
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>sponsor</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Χορηγός</label>
+          <input-type>textarea</input-type>
+          <hint>
+            Μια δήλωση σχετική με πιθανούς χορηγούς που χρηματοδότησαν
+            την εκπόνηση
+            της εργασίας (π.χ. μέσω χορήγησης υποτροφίας).
+          </hint>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>publicationDate</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>false</repeatable>
-					<label>Ημερομηνία ολοκλήρωσης εργασίας</label>
-					<input-type>date</input-type>
-					<hint>Η ημερομηνία παρουσίασης της εργασίας.</hint>
-					<required>Πρέπει να εισαγάγετε τουλάχιστον το έτος ολοκλήρωσης της
-						εργασίας.</required>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>advisorName</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Όνομα επιβλέποντος</label>
+          <input-type>name</input-type>
+          <hint>Το όνομα του επιβλέποντος μέλους ΔΕΠ της εργασίας.</hint>
+          <required>Πρέπει να εισαγάγετε το όνομα του επιβλέποντος.</required>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>abstract</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Περίληψη</label>
-					<input-type>textarea</input-type>
-					<hint>Η περίληψη της εργασίας.
-					</hint>
-					<i18n>true</i18n>
-				</field>
+        <!-- <field> <dc-schema>heal</dc-schema> <dc-element>advisorID</dc-element> 
+					<dc-qualifier></dc-qualifier> <repeatable>true</repeatable> <label>Αναγνωριστικό 
+					Επιβλέποντος</label> <input-type value-pairs-name="creatorIdentifierList">qualdrop_value</input-type> 
+					<hint> Το αναγνωριστικό του επιβλέποντος μιας φοιτητικής εργασίας, το οποίο 
+					μπορεί να χρησιμοποιηθεί για τον μονοσήμαντο προσδιορισμό του επιβλέποντος.</hint> 
+					</field> -->
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>committeeMemberName</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Εξεταστική επιτροπή</label>
+          <input-type>name</input-type>
+          <hint>
+            Τα ονόματα των μελών της εξεταστικής επιτροπής της
+            εργασίας.
+          </hint>
+          <required>
+            Πρέπει να εισαγάγετε τα ονόματα όλων των μελών
+            της
+            εξεταστικής επιτροπής της εργασίας.
+          </required>
+          <i18n>true</i18n>
+        </field>
 
-				<!--<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>tableOfContents</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Πίνακας περιεχομένων</label>
-					<input-type>textarea</input-type>
-					<hint>Ο πίνακας περιεχομένων της εργασίας.</hint>
-					<i18n>true</i18n>
-				</field>-->
-
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>sponsor</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Χορηγός</label>
-					<input-type>textarea</input-type>
-					<hint>Μια δήλωση σχετική με πιθανούς χορηγούς που χρηματοδότησαν
-						την εκπόνηση
-						της εργασίας (π.χ. μέσω χορήγησης υποτροφίας).
-					</hint>
-					<i18n>true</i18n>
-				</field>
-
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>advisorName</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>false</repeatable>
-					<label>Όνομα επιβλέποντος</label>
-					<input-type>name</input-type>
-					<hint>Το όνομα του επιβλέποντος μέλους ΔΕΠ της εργασίας.</hint>
-					<required>Πρέπει να εισαγάγετε το όνομα του επιβλέποντος.</required>
-					<i18n>true</i18n>
-				</field>
-
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>committeeMemberName</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Εξεταστική επιτροπή</label>
-					<input-type>name</input-type>
-					<hint>Τα ονόματα των μελών της εξεταστικής επιτροπής της
-						εργασίας.</hint>
-					<required>Πρέπει να εισαγάγετε τα ονόματα όλων των μελών
-						της
-						εξεταστικής επιτροπής της εργασίας.</required>
-					<i18n>true</i18n>
-				</field>
-
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>academicPublisherID</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Εκδίδον ίδρυμα</label>
-					<input-type value-pairs-name="institutionList">dropdown</input-type>
-					<hint>Το ίδρυμα στο οποίο εκπονήθηκε η εργασία.</hint>
-					<required>Πρέπει να επιλέξετε τουλάχιστον ένα ίδρυμα από τη λίστα.</required>
-				</field>
+        <!-- <field> <dc-schema>heal</dc-schema> <dc-element>committeeMemberID</dc-element> 
+					<dc-qualifier></dc-qualifier> <repeatable>true</repeatable> <label>Αναγνωριστικό 
+					Μέλους Εξεταστικής Επιτροπής</label> <input-type value-pairs-name="creatorIdentifierList">qualdrop_value</input-type> 
+					<hint>Το αναγνωριστικό ενός μέλους της εξεταστικής επιτροπής μιας φοιτητικής 
+					εργασίας, που μπορεί να χρησιμοποιηθεί για τον μονοσήμαντο προσδιορισμό του 
+					μέλους.</hint> </field> -->
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>academicPublisherID</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Εκδίδον ίδρυμα</label>
+          <input-type value-pairs-name="institutionList">dropdown</input-type>
+          <hint>Το ίδρυμα στο οποίο εκπονήθηκε η εργασία.</hint>
+          <required>Πρέπει να επιλέξετε τουλάχιστον ένα ίδρυμα από τη λίστα.</required>
+        </field>
 
         <field>
           <dc-schema>heal</dc-schema>
           <dc-element>academicPublisher</dc-element>
           <dc-qualifier></dc-qualifier>
-          <repeatable>false</repeatable>
-          <label>Σχολή</label>
-          <input-type value-pairs-name="ntua_departments">dropdown</input-type>
+          <repeatable>true</repeatable>
+          <label>Εκδίδον τμήμα / τομέας</label>
+          <input-type>onebox</input-type>
           <hint>
-            Η Σχολή του ιδρύματος στο οποίο εκπονήθηκε η
-            εργασία.
+            Η Σχολή / Τμήμα του ιδρύματος στο οποίο εκπονήθηκε η
+            εργασία. Αν είναι γνωστοί ο τομέας ή/και το εργαστήριο/
+            ερευνητική
+            ομάδα στα οποία εκπονήθηκε η εργασία, πρέπει να συμπληρωθούν στη
+            μορφή:
+            «Σχολή ή Τμήμα». «Τομέας». «Εργαστήριο»., π.χ. Σχολή
+            Ηλεκτρολόγων
+            Μηχανικών &amp; Μηχανικών Υπολογιστών.
+            Τομέας
+            Πληροφορικής. Εργαστήριο Συστημάτων Βάσεων Γνώσης και Δεδομένων.
           </hint>
-          <required>Πρέπει να εισαγάγετε Σχολή</required>
+          <required>Πρέπει να εισαγάγετε τουλάχιστον μία Σχολή ή Τμήμα.</required>
+          <i18n>true</i18n>
         </field>
 
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>numberOfPages</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Αριθμός σελίδων</label>
+          <input-type>onebox</input-type>
+          <hint>Ο αριθμός σελίδων της εργασίας.</hint>
+        </field>
 
         <field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>numberOfPages</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>false</repeatable>
-					<label>Αριθμός σελίδων</label>
-					<input-type>onebox</input-type>
-					<hint>Ο αριθμός σελίδων της εργασίας.</hint>
-				</field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>bibliographicCitation</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Βιβλιογραφική αναφορά</label>
+          <input-type>onebox</input-type>
+          <hint>
+            Η συνιστώμενη μορφή αναφοράς της εργασίας. Συνήθως, οι
+            βιβλιογραφικές αναφορές δίνονται στη μορφή:
+            «Όνομα Συγγραφέα»,
+            «Τίτλος εργασίας», «Σχολή/Τμήμα», «Ίδρυμα», «Έτος».
+          </hint>
+          <i18n>true</i18n>
+        </field>
 
-				<!--<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>bibliographicCitation</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Βιβλιογραφική αναφορά</label>
-					<input-type>onebox</input-type>
-					<hint> Η συνιστώμενη μορφή αναφοράς της εργασίας. Συνήθως, οι
-						βιβλιογραφικές αναφορές δίνονται στη μορφή:
-						«Όνομα Συγγραφέα»,
-						«Τίτλος εργασίας», «Σχολή/Τμήμα», «Ίδρυμα», «Έτος».
-					</hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>contributorName</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Ονόματα συντελεστών</label>
+          <input-type>name</input-type>
+          <hint>
+            Τα ονόματα των συντελεστών της εργασίας, αν υπάρχουν
+            (ΕΞΑΙΡΟΥΝΤΑΙ τα ονόματα του επιβλέποντος
+            και των μελών της
+            εξεταστικής επιτροπής).
+          </hint>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>contributorName</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Ονόματα συντελεστών</label>
-					<input-type>name</input-type>
-					<hint>Τα ονόματα των συντελεστών της εργασίας, αν υπάρχουν
-						(ΕΞΑΙΡΟΥΝΤΑΙ τα ονόματα του επιβλέποντος
-						και των μελών της
-						εξεταστικής επιτροπής).
-					</hint>
-					<i18n>true</i18n>
-				</field>-->
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>generalDescription</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Γενική περιγραφή / Συμπληρωματικά σχόλια</label>
+          <input-type>textarea</input-type>
+          <hint></hint>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>generalDescription</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Γενική περιγραφή / Συμπληρωματικά σχόλια</label>
-					<input-type>textarea</input-type>
-					<hint></hint>
-					<i18n>true</i18n>
-				</field>
+      </page>
 
-			</page>
+      <page number="2" type-name="masterThesis">
 
-			<page number="2" type-name="doctoralThesis">
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>publicationDate</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Ημερομηνία ολοκλήρωσης εργασίας</label>
+          <input-type>date</input-type>
+          <hint>Η ημερομηνία που αναγράφεται στο εξώφυλλο της εργασίας.</hint>
+          <required>
+            Πρέπει να εισαγάγετε τουλάχιστον το έτος ολοκλήρωσης της
+            εργασίας.
+          </required>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>publicationDate</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>false</repeatable>
-					<label>Ημερομηνία ολοκλήρωσης διατριβής</label>
-					<input-type>date</input-type>
-					<hint>Η ημερομηνία παρουσίασης της διατριβής.</hint>
-					<required>Πρέπει να εισαγάγετε τουλάχιστον το έτος ολοκλήρωσης της
-						διατριβής.</required>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>abstract</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Περίληψη</label>
+          <input-type>textarea</input-type>
+          <hint>
+            Η περίληψη της εργασίας.
+          </hint>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>abstract</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Περίληψη</label>
-					<input-type>textarea</input-type>
-					<hint>Η περίληψη της διατριβής.
-					</hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>tableOfContents</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Πίνακας περιεχομένων</label>
+          <input-type>textarea</input-type>
+          <hint>Ο πίνακας περιεχομένων της εργασίας.</hint>
+          <i18n>true</i18n>
+        </field>
 
-				<!--<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>tableOfContents</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Πίνακας περιεχομένων</label>
-					<input-type>textarea</input-type>
-					<hint>Ο πίνακας περιεχομένων της διατριβής.</hint>
-					<i18n>true</i18n>
-				</field>-->
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>sponsor</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Χορηγός</label>
+          <input-type>textarea</input-type>
+          <hint>
+            Μια δήλωση σχετική με πιθανούς χορηγούς που χρηματοδότησαν
+            την εκπόνηση
+            της εργασίας (π.χ. μέσω χορήγησης υποτροφίας).
+          </hint>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>sponsor</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Χορηγός</label>
-					<input-type>textarea</input-type>
-					<hint>Μια δήλωση σχετική με πιθανούς χορηγούς που χρηματοδότησαν
-						την εκπόνηση
-						της διατριβής (π.χ. μέσω χορήγησης υποτροφίας).
-					</hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>advisorName</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Όνομα επιβλέποντος</label>
+          <input-type>name</input-type>
+          <hint>Το όνομα του επιβλέποντος μέλους ΔΕΠ της εργασίας.</hint>
+          <required>Πρέπει να εισαγάγετε το όνομα του επιβλέποντος.</required>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>advisorName</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>false</repeatable>
-					<label>Όνομα επιβλέποντος</label>
-					<input-type>name</input-type>
-					<hint>Το όνομα του επιβλέποντος μέλους ΔΕΠ της διατριβής.</hint>
-					<required>Πρέπει να εισαγάγετε το όνομα του επιβλέποντος.</required>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>committeeMemberName</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Εξεταστική επιτροπή</label>
+          <input-type>name</input-type>
+          <hint>
+            Τα ονόματα των μελών της εξεταστικής επιτροπής της
+            εργασίας.
+          </hint>
+          <required>
+            Πρέπει να εισαγάγετε τα ονόματα όλων των μελών
+            της
+            εξεταστικής επιτροπής της εργασίας.
+          </required>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>committeeMemberName</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Εξεταστική επιτροπή</label>
-					<input-type>name</input-type>
-					<hint>Τα ονόματα των μελών της εξεταστικής επιτροπής της
-						διατριβής.</hint>
-					<required>Πρέπει να εισαγάγετε τα ονόματα όλων των μελών
-						της
-						εξεταστικής επιτροπής της διατριβής.</required>
-					<i18n>true</i18n>
-				</field>
-
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>academicPublisherID</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Εκδίδον ίδρυμα</label>
-					<input-type value-pairs-name="institutionList">dropdown</input-type>
-					<hint>Το ίδρυμα στο οποίο εκπονήθηκε η διατριβή.</hint>
-					<required>Πρέπει να επιλέξετε τουλάχιστον ένα ίδρυμα από τη λίστα.</required>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>academicPublisherID</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Εκδίδον ίδρυμα</label>
+          <input-type value-pairs-name="institutionList">dropdown</input-type>
+          <hint>Το ίδρυμα στο οποίο εκπονήθηκε η εργασία.</hint>
+          <required>Πρέπει να επιλέξετε τουλάχιστον ένα ίδρυμα από τη λίστα.</required>
+        </field>
 
         <field>
           <dc-schema>heal</dc-schema>
           <dc-element>academicPublisher</dc-element>
           <dc-qualifier></dc-qualifier>
-          <repeatable>false</repeatable>
-          <label>Σχολή</label>
-          <input-type value-pairs-name="ntua_departments">dropdown</input-type>
+          <repeatable>true</repeatable>
+          <label>Εκδίδον τμήμα / τομέας</label>
+          <input-type>onebox</input-type>
           <hint>
-            Η Σχολή του ιδρύματος στο οποίο εκπονήθηκε η
-            εργασία.
+            Η Σχολή / Τμήμα του ιδρύματος στο οποίο εκπονήθηκε η
+            εργασία. Αν είναι γνωστοί ο τομέας ή/και το εργαστήριο/
+            ερευνητική
+            ομάδα στα οποία εκπονήθηκε η εργασία, πρέπει να συμπληρωθούν στη
+            μορφή:
+            «Σχολή ή Τμήμα». «Τομέας». «Εργαστήριο»., π.χ. Σχολή
+            Ηλεκτρολόγων
+            Μηχανικών &amp; Μηχανικών Υπολογιστών.
+            Τομέας
+            Πληροφορικής. Εργαστήριο Συστημάτων Βάσεων Γνώσης και Δεδομένων.
           </hint>
-          <required>Πρέπει να εισαγάγετε Σχολή</required>
+          <required>Πρέπει να εισαγάγετε τουλάχιστον μία Σχολή ή Τμήμα.</required>
+          <i18n>true</i18n>
         </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>numberOfPages</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>false</repeatable>
-					<label>Αριθμός σελίδων</label>
-					<input-type>onebox</input-type>
-					<hint>Ο αριθμός σελίδων της διατριβής.</hint>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>numberOfPages</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Αριθμός σελίδων</label>
+          <input-type>onebox</input-type>
+          <hint>Ο αριθμός σελίδων της εργασίας.</hint>
+        </field>
 
-				<!--<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>bibliographicCitation</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Βιβλιογραφική αναφορά</label>
-					<input-type>onebox</input-type>
-					<hint> Η συνιστώμενη μορφή αναφοράς της διατριβής. Συνήθως, οι
-						βιβλιογραφικές αναφορές δίνονται στη μορφή:
-						«Όνομα Συγγραφέα»,
-						«Τίτλος διατριβής», «Σχολή/Τμήμα», «Ίδρυμα», «Έτος».
-					</hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>bibliographicCitation</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Βιβλιογραφική αναφορά</label>
+          <input-type>onebox</input-type>
+          <hint>
+            Η συνιστώμενη μορφή αναφοράς της εργασίας. Συνήθως, οι
+            βιβλιογραφικές αναφορές δίνονται στη μορφή:
+            «Όνομα Συγγραφέα»,
+            «Τίτλος εργασίας», «Σχολή/Τμήμα», «Ίδρυμα», «Έτος».
+          </hint>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>contributorName</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Ονόματα συντελεστών</label>
-					<input-type>name</input-type>
-					<hint>Τα ονόματα των συντελεστών της διατριβής, αν υπάρχουν
-						(ΕΞΑΙΡΟΥΝΤΑΙ τα ονόματα του επιβλέποντος
-						και των μελών της
-						εξεταστικής επιτροπής).
-					</hint>
-					<i18n>true</i18n>
-				</field>-->
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>contributorName</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Ονόματα συντελεστών</label>
+          <input-type>name</input-type>
+          <hint>
+            Τα ονόματα των συντελεστών της εργασίας, αν υπάρχουν
+            (ΕΞΑΙΡΟΥΝΤΑΙ τα ονόματα του επιβλέποντος
+            και των μελών της
+            εξεταστικής επιτροπής).
+          </hint>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>generalDescription</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Γενική περιγραφή / Συμπληρωματικά σχόλια</label>
-					<input-type>textarea</input-type>
-					<hint></hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>generalDescription</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Γενική περιγραφή / Συμπληρωματικά σχόλια</label>
+          <input-type>textarea</input-type>
+          <hint></hint>
+          <i18n>true</i18n>
+        </field>
 
-			</page>
+      </page>
 
-			<page number="2" type-name="conferenceItem">
+      <page number="2" type-name="doctoralThesis">
 
-				 <field>
-				    <dc-schema>heal</dc-schema>
-				    <dc-element>conferenceItemType</dc-element>
-				    <dc-qualifier></dc-qualifier>
-				    <repeatable>false</repeatable>
-				    <label>Είδος δημοσίευσης σε συνέδριο</label>
-				    <input-type value-pairs-name="conferenceItemTypeList">dropdown</input-type>
-				    <hint>Το είδος της δημοσίευσης που επιθυμείτε να υποβάλλετε.</hint>
-				    <required>Πρέπει να επιλέξετε το είδος της δημοσίευσης.</required>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>publicationDate</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Ημερομηνία ολοκλήρωσης διατριβής</label>
+          <input-type>date</input-type>
+          <hint>Η ημερομηνία που αναγράφεται στο εξώφυλλο της διατριβής.</hint>
+          <required>
+            Πρέπει να εισαγάγετε τουλάχιστον το έτος ολοκλήρωσης της
+            διατριβής.
+          </required>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>publicationDate</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>false</repeatable>
-					<label>Ημερομηνία δημοσίευσης</label>
-					<input-type>date</input-type>
-					<hint>Η ημερομηνία δημοσίευσης των πρακτικών του συνεδρίου. Αν το
-						συνέδριο δε δημοσιεύει πρακτικά,
-						πρέπει να εισαχθεί η ημερομηνία
-						διεξαγωγής του συνεδρίου.</hint>
-					<required>Πρέπει να εισαγάγετε τουλάχιστον το έτος δημοσίευσης.</required>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>abstract</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Περίληψη</label>
+          <input-type>textarea</input-type>
+          <hint>
+            Η περίληψη της διατριβής.
+          </hint>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>abstract</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Περίληψη</label>
-					<input-type>textarea</input-type>
-					<hint>Η περίληψη του τεκμηρίου, αν υπάρχει.
-					</hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>tableOfContents</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Πίνακας περιεχομένων</label>
+          <input-type>textarea</input-type>
+          <hint>Ο πίνακας περιεχομένων της διατριβής.</hint>
+          <i18n>true</i18n>
+        </field>
 
-				<!--<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>tableOfContents</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Πίνακας περιεχομένων</label>
-					<input-type>textarea</input-type>
-					<hint>Ο πίνακας περιεχομένων του τεκμηρίου, αν υπάρχει.</hint>
-					<i18n>true</i18n>
-				</field>-->
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>sponsor</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Χορηγός</label>
+          <input-type>textarea</input-type>
+          <hint>
+            Μια δήλωση σχετική με πιθανούς χορηγούς που χρηματοδότησαν
+            την εκπόνηση
+            της διατριβής (π.χ. μέσω χορήγησης υποτροφίας).
+          </hint>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>sponsor</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Χορηγός</label>
-					<input-type>textarea</input-type>
-					<hint>Μια δήλωση σχετική με τους χορηγούς που υποστήριξαν τη
-						συγγραφή
-						του τεκμηρίου, αν υπάρχουν.
-					</hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>advisorName</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Όνομα επιβλέποντος</label>
+          <input-type>name</input-type>
+          <hint>Το όνομα του επιβλέποντος μέλους ΔΕΠ της διατριβής.</hint>
+          <required>Πρέπει να εισαγάγετε το όνομα του επιβλέποντος.</required>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>conferenceName</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Όνομα συνεδρίου</label>
-					<input-type>onebox</input-type>
-					<hint>
-					</hint>
-					<required>Πρέπει να εισαγάγετε το όνομα του συνεδρίου.</required>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>committeeMemberName</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Εξεταστική επιτροπή</label>
+          <input-type>name</input-type>
+          <hint>
+            Τα ονόματα των μελών της εξεταστικής επιτροπής της
+            διατριβής.
+          </hint>
+          <required>
+            Πρέπει να εισαγάγετε τα ονόματα όλων των μελών
+            της
+            εξεταστικής επιτροπής της διατριβής.
+          </required>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>publisher</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Εκδότης</label>
-					<input-type>onebox</input-type>
-					<hint>Ο εκδότης των πρακτικών του συνεδρίου. Αν το συνέδριο δε
-						δημοσιεύει πρακτικά,
-						το πεδίο αυτό μένει κενό.</hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>academicPublisherID</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Εκδίδον ίδρυμα</label>
+          <input-type value-pairs-name="institutionList">dropdown</input-type>
+          <hint>Το ίδρυμα στο οποίο εκπονήθηκε η διατριβή.</hint>
+          <required>Πρέπει να επιλέξετε τουλάχιστον ένα ίδρυμα από τη λίστα.</required>
+        </field>
 
-				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>fullTextAvailability</dc-element> 
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>academicPublisher</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Εκδίδον τμήμα/τομέας</label>
+          <input-type>onebox</input-type>
+          <hint>
+            Η Σχολή/Τμήμα του ιδρύματος στο οποίο εκπονήθηκε η διατριβή.
+            Αν είναι γνωστοί ο τομέας ή/και το εργαστήριο/
+            ερευνητική ομάδα στα
+            οποία εκπονήθηκε η εργασία, πρέπει να συμπληρωθούν στη
+            μορφή:
+            «Σχολή ή Τμήμα». «Τομέας». «Εργαστήριο»., π.χ. Σχολή Ηλεκτρολόγων
+            Μηχανικών &amp; Μηχανικών Υπολογιστών.
+            Τομέας Πληροφορικής.
+            Εργαστήριο Συστημάτων Βάσεων Γνώσης και Δεδομένων.
+          </hint>
+          <required>Πρέπει να εισαγάγετε τουλάχιστον μία Σχολή ή Τμήμα.</required>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>numberOfPages</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Αριθμός σελίδων</label>
+          <input-type>onebox</input-type>
+          <hint>Ο αριθμός σελίδων της διατριβής.</hint>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>bibliographicCitation</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Βιβλιογραφική αναφορά</label>
+          <input-type>onebox</input-type>
+          <hint>
+            Η συνιστώμενη μορφή αναφοράς της διατριβής. Συνήθως, οι
+            βιβλιογραφικές αναφορές δίνονται στη μορφή:
+            «Όνομα Συγγραφέα»,
+            «Τίτλος διατριβής», «Σχολή/Τμήμα», «Ίδρυμα», «Έτος».
+          </hint>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>contributorName</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Ονόματα συντελεστών</label>
+          <input-type>name</input-type>
+          <hint>
+            Τα ονόματα των συντελεστών της διατριβής, αν υπάρχουν
+            (ΕΞΑΙΡΟΥΝΤΑΙ τα ονόματα του επιβλέποντος
+            και των μελών της
+            εξεταστικής επιτροπής).
+          </hint>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>generalDescription</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Γενική περιγραφή / Συμπληρωματικά σχόλια</label>
+          <input-type>textarea</input-type>
+          <hint></hint>
+          <i18n>true</i18n>
+        </field>
+
+      </page>
+
+      <page number="2" type-name="conferenceItem">
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>conferenceItemType</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Είδος δημοσίευσης σε συνέδριο</label>
+          <input-type value-pairs-name="conferenceItemTypeList">dropdown</input-type>
+          <hint>Το είδος της δημοσίευσης που επιθυμείτε να υποβάλετε.</hint>
+          <required>Πρέπει να επιλέξετε το είδος της δημοσίευσης.</required>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>publicationDate</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Ημερομηνία δημοσίευσης</label>
+          <input-type>date</input-type>
+          <hint>
+            Η ημερομηνία δημοσίευσης των πρακτικών του συνεδρίου. Αν το
+            συνέδριο δε δημοσιεύει πρακτικά,
+            πρέπει να εισαχθεί η ημερομηνία
+            διεξαγωγής του συνεδρίου.
+          </hint>
+          <required>Πρέπει να εισαγάγετε τουλάχιστον το έτος δημοσίευσης.</required>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>abstract</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Περίληψη</label>
+          <input-type>textarea</input-type>
+          <hint>
+            Η περίληψη του τεκμηρίου, αν υπάρχει.
+          </hint>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>tableOfContents</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Πίνακας περιεχομένων</label>
+          <input-type>textarea</input-type>
+          <hint>Ο πίνακας περιεχομένων του τεκμηρίου, αν υπάρχει.</hint>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>sponsor</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Χορηγός</label>
+          <input-type>textarea</input-type>
+          <hint>
+            Μια δήλωση σχετική με τους χορηγούς που υποστήριξαν τη
+            συγγραφή
+            του τεκμηρίου, αν υπάρχουν.
+          </hint>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>conferenceName</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Όνομα συνεδρίου</label>
+          <input-type>onebox</input-type>
+          <hint>
+          </hint>
+          <required>Πρέπει να εισαγάγετε το όνομα του συνεδρίου.</required>
+          <i18n>true</i18n>
+        </field>
+
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>publisher</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Εκδότης</label>
+          <input-type>onebox</input-type>
+          <hint>
+            Ο εκδότης των πρακτικών του συνεδρίου. Αν το συνέδριο δε
+            δημοσιεύει πρακτικά,
+            το πεδίο αυτό μένει κενό.
+          </hint>
+          <i18n>true</i18n>
+        </field>
+
+        <!-- <field> <dc-schema>heal</dc-schema> <dc-element>fullTextAvailability</dc-element> 
 					<dc-qualifier></dc-qualifier> <repeatable>false</repeatable> <label>Διαθεσιμότητα 
 					Πλήρους Κειμένου</label> <input-type value-pairs-name="fullTextAvailabilityList">list</input-type> 
 					<hint>Ένδειξη για το αν το πλήρες κείμενο της δημοσίευσης είναι διαθέσιμο 
 					ή όχι.</hint> <required>Πρέπει να επιλέξετε την τιμή της Διαθεσιμότητα Πλήρους 
 					Κειμένου.</required> </field> -->
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>bibliographicCitation</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Βιβλιογραφική αναφορά</label>
-					<input-type>onebox</input-type>
-					<hint>Η συνιστώμενη μορφή αναφοράς του τεκμηρίου. Συνήθως, οι
-						βιβλιογραφικές αναφορές δίνονται στη μορφή:
-						«Όνομα Συγγραφέα»,
-						«Τίτλος δημοσίευσης», «Όνομα συνεδρίου», «Εκδότης»,
-						«Έτος».</hint>
-					<required>Πρέπει να συμπληρώσετε το πεδίο της βιβλιογραφικής
-						αναφοράς.</required>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>bibliographicCitation</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Βιβλιογραφική αναφορά</label>
+          <input-type>onebox</input-type>
+          <hint>
+            Η συνιστώμενη μορφή αναφοράς του τεκμηρίου. Συνήθως, οι
+            βιβλιογραφικές αναφορές δίνονται στη μορφή:
+            «Όνομα Συγγραφέα»,
+            «Τίτλος δημοσίευσης», «Όνομα συνεδρίου», «Εκδότης»,
+            «Έτος».
+          </hint>
+          <required>
+            Πρέπει να συμπληρώσετε το πεδίο της βιβλιογραφικής
+            αναφοράς.
+          </required>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>contributorName</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Ονόματα συντελεστών</label>
-					<input-type>name</input-type>
-					<hint>Τα ονόματα των συντελεστών του υποβαλλόμενου τεκμηρίου.</hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>contributorName</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Ονόματα συντελεστών</label>
+          <input-type>name</input-type>
+          <hint>Τα ονόματα των συντελεστών του υποβαλλόμενου τεκμηρίου.</hint>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>generalDescription</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Γενική Περιγραφή / Συμπληρωματικά Σχόλια</label>
-					<input-type>textarea</input-type>
-					<hint></hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>generalDescription</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Γενική Περιγραφή / Συμπληρωματικά Σχόλια</label>
+          <input-type>textarea</input-type>
+          <hint></hint>
+          <i18n>true</i18n>
+        </field>
 
-			</page>
+      </page>
 
-			<page number="2" type-name="journalArticle">
+      <page number="2" type-name="journalArticle">
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>publicationDate</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>false</repeatable>
-					<label>Ημερομηνία δημοσίευσης</label>
-					<input-type>date</input-type>
-					<hint>Η ημερομηνία δημοσίευσης του άρθρου.</hint>
-					<required>Πρέπει να εισαγάγετε τουλάχιστον το έτος δημοσίευσης.</required>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>publicationDate</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Ημερομηνία δημοσίευσης</label>
+          <input-type>date</input-type>
+          <hint>Η ημερομηνία δημοσίευσης του άρθρου.</hint>
+          <required>Πρέπει να εισαγάγετε τουλάχιστον το έτος δημοσίευσης.</required>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>abstract</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Περίληψη</label>
-					<input-type>textarea</input-type>
-					<hint>Η περίληψη του άρθρου.
-					</hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>abstract</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Περίληψη</label>
+          <input-type>textarea</input-type>
+          <hint>
+            Η περίληψη του άρθρου.
+          </hint>
+          <i18n>true</i18n>
+        </field>
 
-				<!--<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>tableOfContents</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Περίληψη</label>
-					<input-type>textarea</input-type>
-					<hint>Ο πίνακας περιεχομένων του άρθρου.</hint>
-					<i18n>true</i18n>
-				</field>-->
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>tableOfContents</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Περίληψη</label>
+          <input-type>textarea</input-type>
+          <hint>Ο πίνακας περιεχομένων του άρθρου.</hint>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>sponsor</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Χορηγός</label>
-					<input-type>textarea</input-type>
-					<hint>Μια δήλωση σχετική με τους χορηγούς που υποστήριξαν τη
-						συγγραφή
-						του άρθρου, αν υπάρχουν.
-					</hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>sponsor</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Χορηγός</label>
+          <input-type>textarea</input-type>
+          <hint>
+            Μια δήλωση σχετική με τους χορηγούς που υποστήριξαν τη
+            συγγραφή
+            του άρθρου, αν υπάρχουν.
+          </hint>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>publisher</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Εκδότης</label>
-					<input-type>onebox</input-type>
-					<hint>Ο εκδότης του περιοδικού στο οποίο δημοσιεύθηκε το
-						υποβαλλόμενο άρθρο.</hint>
-					<required>Πρέπει να εισαγάγετε τον εκδότη του άρθρου.</required>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>publisher</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Εκδότης</label>
+          <input-type>onebox</input-type>
+          <hint>
+            Ο εκδότης του περιοδικού στο οποίο δημοσιεύθηκε το
+            υποβαλλόμενο άρθρο.
+          </hint>
+          <required>Πρέπει να εισαγάγετε τον εκδότη του άρθρου.</required>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>journalName</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Όνομα περιοδικού</label>
-					<input-type>onebox</input-type>
-					<hint>
-					</hint>
-					<required>Πρέπει να εισαγάγετε το όνομα του περιοδικού.</required>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>journalName</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Όνομα περιοδικού</label>
+          <input-type>onebox</input-type>
+          <hint>
+          </hint>
+          <required>Πρέπει να εισαγάγετε το όνομα του περιοδικού.</required>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>journalType</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>false</repeatable>
-					<label>Είδος περιοδικού</label>
-					<input-type value-pairs-name="journalTypeList">dropdown</input-type>
-					<hint>Διάκριση του περιοδικού με βάση την ύπαρξη διαδικασίας κρίσης
-						για υποβαλλόμενα άρθρα.</hint>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>journalType</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Είδος περιοδικού</label>
+          <input-type value-pairs-name="journalTypeList">dropdown</input-type>
+          <hint>
+            Διάκριση του περιοδικού με βάση την ύπαρξη διαδικασίας κρίσης
+            για υποβαλλόμενα άρθρα.
+          </hint>
+        </field>
 
-				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>fullTextAvailability</dc-element> 
+        <!-- <field> <dc-schema>heal</dc-schema> <dc-element>fullTextAvailability</dc-element> 
 					<dc-qualifier></dc-qualifier> <repeatable>false</repeatable> <label>Διαθεσιμότητα 
 					Πλήρους Κειμένου</label> <input-type value-pairs-name="fullTextAvailabilityList">list</input-type> 
 					<hint> Ένδειξη για το αν το πλήρες κείμενο της δημοσίευσης είναι διαθέσιμο 
 					ή όχι.</hint> <required>Πρέπει να επιλέξετε τη Διαθεσιμότητα Πλήρους Κειμένου.</required> 
 					</field> -->
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>bibliographicCitation</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Βιβλιογραφική αναφορά</label>
-					<input-type>onebox</input-type>
-					<hint>Η συνιστώμενη μορφή αναφοράς του άρθρου. Συνήθως, οι
-						βιβλιογραφικές αναφορές δίνονται στη μορφή:
-						«Όνομα Συγγραφέα»,
-						«Τίτλος άρθρου», «Όνομα περιοδικού», «Τόμος
-						(τεύχος)», «Εύρος
-						σελίδων», «Εκδότης», «Έτος».</hint>
-					<required>Πρέπει να συμπληρώσετε το πεδίο της βιβλιογραφικής
-						αναφοράς.</required>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>bibliographicCitation</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Βιβλιογραφική αναφορά</label>
+          <input-type>onebox</input-type>
+          <hint>
+            Η συνιστώμενη μορφή αναφοράς του άρθρου. Συνήθως, οι
+            βιβλιογραφικές αναφορές δίνονται στη μορφή:
+            «Όνομα Συγγραφέα»,
+            «Τίτλος άρθρου», «Όνομα περιοδικού», «Τόμος
+            (τεύχος)», «Εύρος
+            σελίδων», «Εκδότης», «Έτος».
+          </hint>
+          <required>
+            Πρέπει να συμπληρώσετε το πεδίο της βιβλιογραφικής
+            αναφοράς.
+          </required>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>contributorName</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Ονόματα συντελεστών</label>
-					<input-type>name</input-type>
-					<hint>Τα ονόματα των συντελεστών του υποβαλλόμενου άρθρου.</hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>contributorName</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Ονόματα συντελεστών</label>
+          <input-type>name</input-type>
+          <hint>Τα ονόματα των συντελεστών του υποβαλλόμενου άρθρου.</hint>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>generalDescription</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Γενική Περιγραφή / Συμπληρωματικά Σχόλια</label>
-					<input-type>textarea</input-type>
-					<hint></hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>generalDescription</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Γενική Περιγραφή / Συμπληρωματικά Σχόλια</label>
+          <input-type>textarea</input-type>
+          <hint></hint>
+          <i18n>true</i18n>
+        </field>
 
-			</page>
+      </page>
 
-			<page number="2" type-name="bookChapter">
+      <page number="2" type-name="bookChapter">
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>publicationDate</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>false</repeatable>
-					<label>Ημερομηνία δημοσίευσης</label>
-					<input-type>date</input-type>
-					<hint>Η ημερομηνία δημοσίευσης του κεφαλαίου.</hint>
-					<required>Πρέπει να εισαγάγετε τουλάχιστον το έτος δημοσίευσης.</required>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>publicationDate</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Ημερομηνία δημοσίευσης</label>
+          <input-type>date</input-type>
+          <hint>Η ημερομηνία δημοσίευσης του κεφαλαίου.</hint>
+          <required>Πρέπει να εισαγάγετε τουλάχιστον το έτος δημοσίευσης.</required>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>abstract</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Περίληψη</label>
-					<input-type>textarea</input-type>
-					<hint>Η περίληψη του κεφαλαίου, αν υπάρχει.
-					</hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>abstract</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Περίληψη</label>
+          <input-type>textarea</input-type>
+          <hint>
+            Η περίληψη του κεφαλαίου, αν υπάρχει.
+          </hint>
+          <i18n>true</i18n>
+        </field>
 
-				<!--<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>tableOfContents</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Πίνακας περιεχομένων</label>
-					<input-type>textarea</input-type>
-					<hint>Ο πίνακας περιεχομένων του κεφαλαίου, αν υπάρχει.</hint>
-					<i18n>true</i18n>
-				</field>-->
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>tableOfContents</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Πίνακας περιεχομένων</label>
+          <input-type>textarea</input-type>
+          <hint>Ο πίνακας περιεχομένων του κεφαλαίου, αν υπάρχει.</hint>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>sponsor</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Χορηγός</label>
-					<input-type>textarea</input-type>
-					<hint>Μια δήλωση σχετική με τους χορηγούς που υποστήριξαν τη
-						συγγραφή
-						του κεφαλαίου, αν υπάρχουν.
-					</hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>sponsor</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Χορηγός</label>
+          <input-type>textarea</input-type>
+          <hint>
+            Μια δήλωση σχετική με τους χορηγούς που υποστήριξαν τη
+            συγγραφή
+            του κεφαλαίου, αν υπάρχουν.
+          </hint>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>bookName</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>false</repeatable>
-					<label>Όνομα βιβλίου</label>
-					<input-type>onebox</input-type>
-					<hint> Το όνομα του βιβλίου, του οποίου το κεφάλαιο αποτελεί μέρος.
-					</hint>
-					<required>Πρέπει να εισαγάγετε το όνομα του βιβλίου.</required>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>bookName</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Όνομα βιβλίου</label>
+          <input-type>onebox</input-type>
+          <hint>
+            Το όνομα του βιβλίου, του οποίου το κεφάλαιο αποτελεί μέρος.
+          </hint>
+          <required>Πρέπει να εισαγάγετε το όνομα του βιβλίου.</required>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>publisher</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Εκδότης</label>
-					<input-type>onebox</input-type>
-					<hint>Ο εκδότης του βιβλίου</hint>
-					<required>Πρέπει να εισαγάγετε τον εκδότη του βιβλίου.</required>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>publisher</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Εκδότης</label>
+          <input-type>onebox</input-type>
+          <hint>Ο εκδότης του βιβλίου</hint>
+          <required>Πρέπει να εισαγάγετε τον εκδότη του βιβλίου.</required>
+          <i18n>true</i18n>
+        </field>
 
-				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>fullTextAvailability</dc-element> 
+        <!-- <field> <dc-schema>heal</dc-schema> <dc-element>fullTextAvailability</dc-element> 
 					<dc-qualifier></dc-qualifier> <repeatable>false</repeatable> <label>Διαθεσιμότητα 
 					Πλήρους Κειμένου</label> <input-type value-pairs-name="fullTextAvailabilityList">list</input-type> 
 					<hint>Ένδειξη για το αν το πλήρες κείμενο της δημοσίευσης είναι διαθέσιμο 
 					ή όχι</hint> <required>Πρέπει να επιλέξετε την τιμή της Διαθεσιμότητα Πλήρους 
 					Κειμένου.</required> </field> -->
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>bibliographicCitation</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Βιβλιογραφική αναφορά</label>
-					<input-type>onebox</input-type>
-					<hint> Η συνιστώμενη μορφή αναφοράς του κεφαλαίου. Συνήθως, οι
-						βιβλιογραφικές αναφορές δίνονται στη μορφή:
-						«Όνομα Συγγραφέα»,
-						«Τίτλος κεφαλαίου», «Όνομα βιβλίου», «Εύρος σελίδων»,
-						«Εκδότης»,
-						«Έτος».</hint>
-					<required>Πρέπει να συμπληρώσετε το πεδίο της βιβλιογραφικής
-						αναφοράς.</required>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>bibliographicCitation</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Βιβλιογραφική αναφορά</label>
+          <input-type>onebox</input-type>
+          <hint>
+            Η συνιστώμενη μορφή αναφοράς του κεφαλαίου. Συνήθως, οι
+            βιβλιογραφικές αναφορές δίνονται στη μορφή:
+            «Όνομα Συγγραφέα»,
+            «Τίτλος κεφαλαίου», «Όνομα βιβλίου», «Εύρος σελίδων»,
+            «Εκδότης»,
+            «Έτος».
+          </hint>
+          <required>
+            Πρέπει να συμπληρώσετε το πεδίο της βιβλιογραφικής
+            αναφοράς.
+          </required>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>contributorName</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Ονόματα συντελεστών</label>
-					<input-type>name</input-type>
-					<hint>Τα ονόματα των συντελεστών του υποβαλλόμενου κεφαλαίου.</hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>contributorName</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Ονόματα συντελεστών</label>
+          <input-type>name</input-type>
+          <hint>Τα ονόματα των συντελεστών του υποβαλλόμενου κεφαλαίου.</hint>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>generalDescription</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Γενική Περιγραφή / Συμπληρωματικά Σχόλια</label>
-					<input-type>textarea</input-type>
-					<hint></hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>generalDescription</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Γενική Περιγραφή / Συμπληρωματικά Σχόλια</label>
+          <input-type>textarea</input-type>
+          <hint></hint>
+          <i18n>true</i18n>
+        </field>
 
-			</page>
+      </page>
 
-			<page number="2" type-name="book">
+      <page number="2" type-name="book">
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>publicationDate</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>false</repeatable>
-					<label>Ημερομηνία έκδοσης</label>
-					<input-type>date</input-type>
-					<hint>Η ημερομηνία έκδοσης του βιβλίου.</hint>
-					<required>Πρέπει να εισαγάγετε τουλάχιστον το έτος έκδοσης.</required>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>publicationDate</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Ημερομηνία έκδοσης</label>
+          <input-type>date</input-type>
+          <hint>Η ημερομηνία έκδοσης του βιβλίου.</hint>
+          <required>Πρέπει να εισαγάγετε τουλάχιστον το έτος έκδοσης.</required>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>abstract</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Περίληψη</label>
-					<input-type>textarea</input-type>
-					<hint>Η περίληψη του βιβλίου.
-					</hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>abstract</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Περίληψη</label>
+          <input-type>textarea</input-type>
+          <hint>
+            Η περίληψη του βιβλίου.
+          </hint>
+          <i18n>true</i18n>
+        </field>
 
-				<!--<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>tableOfContents</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Πίνακας περιεχομένων</label>
-					<input-type>textarea</input-type>
-					<hint>Ο πίνακας περιεχομένων του βιβλίου.</hint>
-					<i18n>true</i18n>
-				</field>-->
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>tableOfContents</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Πίνακας περιεχομένων</label>
+          <input-type>textarea</input-type>
+          <hint>Ο πίνακας περιεχομένων του βιβλίου.</hint>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>sponsor</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Χορηγός</label>
-					<input-type>textarea</input-type>
-					<hint>Μια δήλωση σχετική με τους χορηγούς που υποστήριξαν τη
-						συγγραφή του
-						βιβλίου, αν υπάρχουν.
-					</hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>sponsor</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Χορηγός</label>
+          <input-type>textarea</input-type>
+          <hint>
+            Μια δήλωση σχετική με τους χορηγούς που υποστήριξαν τη
+            συγγραφή του
+            βιβλίου, αν υπάρχουν.
+          </hint>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>bookEdition</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>false</repeatable>
-					<label>Έκδοση βιβλίου</label>
-					<input-type>onebox</input-type>
-					<hint>Η έκδοση του βιβλίου, εκφρασμένη ως ένας ακέραιος αριθμός.
-					</hint>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>bookEdition</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Έκδοση βιβλίου</label>
+          <input-type>onebox</input-type>
+          <hint>
+            Η έκδοση του βιβλίου, εκφρασμένη ως ένας ακέραιος αριθμός.
+          </hint>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>numberOfPages</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>false</repeatable>
-					<label>Αριθμός σελίδων</label>
-					<input-type>onebox</input-type>
-					<hint> Ο συνολικός αριθμός σελίδων του βιβλίου.</hint>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>numberOfPages</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Αριθμός σελίδων</label>
+          <input-type>onebox</input-type>
+          <hint> Ο συνολικός αριθμός σελίδων του βιβλίου.</hint>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>bookSeries</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Σειρά βιβλίου</label>
-					<input-type>onebox</input-type>
-					<hint> Η σειρά της οποίας το βιβλίο αποτελεί μέρος.</hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>bookSeries</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Σειρά βιβλίου</label>
+          <input-type>onebox</input-type>
+          <hint> Η σειρά της οποίας το βιβλίο αποτελεί μέρος.</hint>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>publisher</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Εκδότης</label>
-					<input-type>onebox</input-type>
-					<hint>Ο εκδότης του βιβλίου.</hint>
-					<required>Πρέπει να εισαγάγετε τον εκδότη του βιβλίου.</required>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>publisher</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Εκδότης</label>
+          <input-type>onebox</input-type>
+          <hint>Ο εκδότης του βιβλίου.</hint>
+          <required>Πρέπει να εισαγάγετε τον εκδότη του βιβλίου.</required>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>bibliographicCitation</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Βιβλιογραφική αναφορά</label>
-					<input-type>onebox</input-type>
-					<hint>Η συνιστώμενη μορφή αναφοράς του κεφαλαίου. Συνήθως, οι
-						βιβλιογραφικές αναφορές δίνονται στη μορφή:
-						«Όνομα Συγγραφέα»,
-						«Όνομα βιβλίου», «Σειρά», «Εκδότης», «Έτος».</hint>
-					<required>Πρέπει να συμπληρώσετε το πεδίο της βιβλιογραφικής
-						αναφοράς.</required>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>bibliographicCitation</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Βιβλιογραφική αναφορά</label>
+          <input-type>onebox</input-type>
+          <hint>
+            Η συνιστώμενη μορφή αναφοράς του κεφαλαίου. Συνήθως, οι
+            βιβλιογραφικές αναφορές δίνονται στη μορφή:
+            «Όνομα Συγγραφέα»,
+            «Όνομα βιβλίου», «Σειρά», «Εκδότης», «Έτος».
+          </hint>
+          <required>
+            Πρέπει να συμπληρώσετε το πεδίο της βιβλιογραφικής
+            αναφοράς.
+          </required>
+          <i18n>true</i18n>
+        </field>
 
-				<!-- <field> <dc-schema>heal</dc-schema> <dc-element>fullTextAvailability</dc-element> 
+        <!-- <field> <dc-schema>heal</dc-schema> <dc-element>fullTextAvailability</dc-element> 
 					<dc-qualifier></dc-qualifier> <repeatable>false</repeatable> <label>Διαθεσιμότητα 
 					Πλήρους Κειμένου</label> <input-type value-pairs-name="fullTextAvailabilityList">list</input-type> 
 					<hint> Ένδειξη για το αν το πλήρες κείμενο της δημοσίευσης είναι διαθέσιμο 
 					ή όχι.</hint> <required>Πρέπει να επιλέξετε την τιμή της Διαθεσιμότητας Πλήρους 
 					Κειμένου.</required> </field> -->
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>contributorName</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Ονόματα συντελεστών</label>
-					<input-type>name</input-type>
-					<hint>Τα ονόματα των συντελεστών του υποβαλλόμενου βιβλίου.</hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>contributorName</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Ονόματα συντελεστών</label>
+          <input-type>name</input-type>
+          <hint>Τα ονόματα των συντελεστών του υποβαλλόμενου βιβλίου.</hint>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>generalDescription</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Γενική Περιγραφή / Συμπληρωματικά Σχόλια</label>
-					<input-type>textarea</input-type>
-					<hint></hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>generalDescription</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Γενική Περιγραφή / Συμπληρωματικά Σχόλια</label>
+          <input-type>textarea</input-type>
+          <hint></hint>
+          <i18n>true</i18n>
+        </field>
 
-			</page>
+      </page>
 
-			<page number="2" type-name="learningMaterial">
+      <page number="2" type-name="learningMaterial">
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>learningResourceType</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>false</repeatable>
-					<label>Είδος εκπαιδευτικού υλικού</label>
-					<input-type value-pairs-name="learningResourceTypeList">dropdown</input-type>
-					<hint>Το είδος του εκπαιδευτικού υλικού.</hint>
-					<required>Πρέπει να επιλέξετε το είδος εκπαιδευτικού
-						υλικού που
-						υποβάλλετε.</required>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>learningResourceType</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Είδος εκπαιδευτικού υλικού</label>
+          <input-type value-pairs-name="learningResourceTypeList">dropdown</input-type>
+          <hint>Το είδος του εκπαιδευτικού υλικού.</hint>
+          <required>
+            Πρέπει να επιλέξετε το είδος εκπαιδευτικού
+            υλικού που
+            υποβάλλετε.
+          </required>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>academicPublisherID</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Εκδίδον ίδρυμα</label>
-					<input-type value-pairs-name="institutionList">dropdown</input-type>
-					<hint>Το ίδρυμα, στο πλαίσιο της εκπαιδευτικής διαδικασίας του
-						οποίου χρησιμοποιείται το παρόν υλικό.</hint>
-					<required>Πρέπει να επιλέξετε ένα ίδρυμα από τη λίστα.</required>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>academicPublisherID</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Εκδίδον ίδρυμα</label>
+          <input-type value-pairs-name="institutionList">dropdown</input-type>
+          <hint>
+            Το ίδρυμα, στο πλαίσιο της εκπαιδευτικής διαδικασίας του
+            οποίου χρησιμοποιείται το παρόν υλικό.
+          </hint>
+          <required>Πρέπει να επιλέξετε ένα ίδρυμα από τη λίστα.</required>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>academicPublisher</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Εκδίδον τμήμα</label>
-					<input-type>onebox</input-type>
-					<hint>Η Σχολή/Τμήμα του ιδρύματος στο πλαίσιο της εκπαιδευτικής
-						διαδικασίας του οποίου χρησιμοποιείται το παρόν υλικό.
-					</hint>
-					<!-- <required>Πρέπει να εισαγάγετε τουλάχιστον μια Σχολή/Τμήμα.</required> -->
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>academicPublisher</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Εκδίδον τμήμα</label>
+          <input-type>onebox</input-type>
+          <hint>
+            Η Σχολή/Τμήμα του ιδρύματος στο πλαίσιο της εκπαιδευτικής
+            διαδικασίας του οποίου χρησιμοποιείται το παρόν υλικό.
+          </hint>
+          <!-- <required>Πρέπει να εισαγάγετε τουλάχιστον μια Σχολή/Τμήμα.</required> -->
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>dateCreated</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>false</repeatable>
-					<label>Ημερομηνία δημιουργίας</label>
-					<input-type>date</input-type>
-					<hint>Η ημερομηνία δημιουργίας του εκπαιδευτικού υλικού.</hint>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>dateCreated</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Ημερομηνία δημιουργίας</label>
+          <input-type>date</input-type>
+          <hint>Η ημερομηνία δημιουργίας του εκπαιδευτικού υλικού.</hint>
+        </field>
 
-				<!--<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>tableOfContents</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Πίνακας περιεχομένων</label>
-					<input-type>textarea</input-type>
-					<hint>Ο πίνακας περιεχομένων του υλικού, αν υπάρχει.</hint>
-					<i18n>true</i18n>
-				</field>-->
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>tableOfContents</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Πίνακας περιεχομένων</label>
+          <input-type>textarea</input-type>
+          <hint>Ο πίνακας περιεχομένων του υλικού, αν υπάρχει.</hint>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>courseDetails</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Λεπτομέρειες μαθήματος</label>
-					<input-type>textarea</input-type>
-					<hint>Λεπτομέρειες για το μάθημα το οποίο υποστηρίζει το
-						παρόν
-						εκπαιδευτικό υλικό. Η τιμή του πεδίου
-						περιλαμβάνει το όνομα του
-						μαθήματος, το εξάμηνο
-						διδασκαλίας, καθώς και το επίπεδο σπουδών
-						(προπτυχιακό
-						ή μεταπτυχιακό), στη μορφή «Όνομα μαθήματος»
-						[«Εξάμηνο», «Επίπεδο»], π.χ. Διαφορικές
-						Εξισώσεις [3ο εξάμηνο,
-						προπτυχιακό].
-					</hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>courseDetails</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Λεπτομέρειες μαθήματος</label>
+          <input-type>textarea</input-type>
+          <hint>
+            Λεπτομέρειες για το μάθημα το οποίο υποστηρίζει το
+            παρόν
+            εκπαιδευτικό υλικό. Η τιμή του πεδίου
+            περιλαμβάνει το όνομα του
+            μαθήματος, το εξάμηνο
+            διδασκαλίας, καθώς και το επίπεδο σπουδών
+            (προπτυχιακό
+            ή μεταπτυχιακό), στη μορφή «Όνομα μαθήματος»
+            [«Εξάμηνο», «Επίπεδο»], π.χ. Διαφορικές
+            Εξισώσεις [3ο εξάμηνο,
+            προπτυχιακό].
+          </hint>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>contributorName</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Ονόματα συντελεστών</label>
-					<input-type>name</input-type>
-					<hint>Τα ονόματα των συντελεστών του υλικού, αν υπάρχουν.
-					</hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>contributorName</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Ονόματα συντελεστών</label>
+          <input-type>name</input-type>
+          <hint>
+            Τα ονόματα των συντελεστών του υλικού, αν υπάρχουν.
+          </hint>
+          <i18n>true</i18n>
+        </field>
 
-				<field>
-					<dc-schema>heal</dc-schema>
-					<dc-element>generalDescription</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<repeatable>true</repeatable>
-					<label>Γενική περιγραφή / Συμπληρωματικά σχόλια</label>
-					<input-type>textarea</input-type>
-					<hint></hint>
-					<i18n>true</i18n>
-				</field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>generalDescription</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Γενική περιγραφή / Συμπληρωματικά σχόλια</label>
+          <input-type>textarea</input-type>
+          <hint></hint>
+          <i18n>true</i18n>
+        </field>
 
-			</page>
-
+      </page>
+      
 		</form>
-
     <form name="bachelorThesis">
       <page number="1">
         <field>
@@ -1380,6 +1434,7 @@
           <label>Θεματική κατηγορία</label>
           <input-type>onebox</input-type>
           <hint>Η θεματική κατηγορία στην οποία ανήκει το έργο, π.χ. Μαθηματικά, Δομική Μηχανική κτλ. Μπορούν να επιλεγούν και παραπάνω από μία.</hint>
+          <required>Πρέπει να εισαγάγετε τουλάχιστον μία θεματική κατηγορία.</required>
           <i18n>true</i18n>
         </field>
         <field>
@@ -1556,6 +1611,7 @@
           <label>Θεματική κατηγορία</label>
           <input-type>onebox</input-type>
           <hint>Η θεματική κατηγορία στην οποία ανήκει το έργο, π.χ. Μαθηματικά, Δομική Μηχανική κτλ. Μπορούν να επιλεγούν και παραπάνω από μία.</hint>
+          <required>Πρέπει να εισαγάγετε τουλάχιστον μία θεματική κατηγορία.</required>
           <i18n>true</i18n>
         </field>
         <field>
@@ -1732,6 +1788,7 @@
           <label>Θεματική κατηγορία</label>
           <input-type>onebox</input-type>
           <hint>Η θεματική κατηγορία στην οποία ανήκει το έργο, π.χ. Μαθηματικά, Δομική Μηχανική κτλ. Μπορούν να επιλεγούν και παραπάνω από μία.</hint>
+          <required>Πρέπει να εισαγάγετε τουλάχιστον μία θεματική κατηγορία.</required>
           <i18n>true</i18n>
         </field>
         <field>
@@ -1777,6 +1834,537 @@
         </field>
       </page>
       <page number="2" type-name="doctoralThesis">
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>publicationDate</dc-element>
+          <repeatable>false</repeatable>
+          <label>Ημερομηνία ολοκλήρωσης εργασίας</label>
+          <input-type>date</input-type>
+          <hint>Η ημερομηνία παρουσίασης της εργασίας.</hint>
+          <required>Πρέπει να εισαγάγετε τουλάχιστον το έτος ολοκλήρωσης της εργασίας.</required>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>abstract</dc-element>
+          <repeatable>true</repeatable>
+          <label>Περίληψη</label>
+          <input-type>textarea</input-type>
+          <hint>Η περίληψη της εργασίας.</hint>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>sponsor</dc-element>
+          <repeatable>true</repeatable>
+          <label>Χορηγός</label>
+          <input-type>textarea</input-type>
+          <hint>Μια δήλωση σχετική με πιθανούς χορηγούς που χρηματοδότησαν την εκπόνηση της εργασίας (π.χ. μέσω χορήγησης υποτροφίας).</hint>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>advisorName</dc-element>
+          <repeatable>false</repeatable>
+          <label>Όνομα επιβλέποντος</label>
+          <input-type>name</input-type>
+          <hint>Το όνομα του επιβλέποντος μέλους ΔΕΠ της εργασίας.</hint>
+          <required>Πρέπει να εισαγάγετε το όνομα του επιβλέποντος.</required>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>committeeMemberName</dc-element>
+          <repeatable>true</repeatable>
+          <label>Εξεταστική επιτροπή</label>
+          <input-type>name</input-type>
+          <hint>Τα ονόματα των μελών της εξεταστικής επιτροπής της εργασίας.</hint>
+          <required>Πρέπει να εισαγάγετε τα ονόματα όλων των μελών της εξεταστικής επιτροπής της εργασίας.</required>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>academicPublisherID</dc-element>
+          <repeatable>false</repeatable>
+          <label>Εκδίδον ίδρυμα</label>
+          <input-type value-pairs-name="institutionList">dropdown</input-type>
+          <hint>Το ίδρυμα στο οποίο εκπονήθηκε η εργασία.</hint>
+          <required>Πρέπει να επιλέξετε ένα ίδρυμα από τη λίστα.</required>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>academicPublisher</dc-element>
+          <repeatable>false</repeatable>
+          <label>Σχολή</label>
+          <input-type value-pairs-name="ntua_departments">dropdown</input-type>
+          <hint>Η Σχολή του ιδρύματος στο οποίο εκπονήθηκε η εργασία.</hint>
+          <required>Πρέπει να εισαγάγετε Σχολή</required>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>numberOfPages</dc-element>
+          <repeatable>false</repeatable>
+          <label>Αριθμός σελίδων</label>
+          <input-type>onebox</input-type>
+          <hint>The thesis' number of pages.</hint>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>generalDescription</dc-element>
+          <repeatable>true</repeatable>
+          <label>Γενική περιγραφή / Συμπληρωματικά σχόλια</label>
+          <input-type>textarea</input-type>
+          <i18n>true</i18n>
+        </field>
+      </page>
+    </form>
+    <form name="conferenceItem">
+      <page number="1">
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>type</dc-element>
+          <repeatable>false</repeatable>
+          <label>Είδος τεκμηρίου</label>
+          <input-type value-pairs-name="itemType-conferenceItem">dropdown</input-type>
+          <hint>Το είδος του τεκμηρίου.</hint>
+          <required>Πρέπει να επιλέξετε το είδος του τεκμηρίου που υποβάλλετε.</required>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>title</dc-element>
+          <repeatable>true</repeatable>
+          <label>Τίτλος</label>
+          <input-type>textarea</input-type>
+          <hint>Ο επίσημος τίτλος του έργου σε μία ή περισσότερες γλώσσες.</hint>
+          <required>Πρέπει να εισαγάγετε τουλάχιστον έναν τίτλο για το τεκμήριο που υποβάλλετε.</required>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>secondaryTitle</dc-element>
+          <repeatable>true</repeatable>
+          <label>Συμπληρωματικός/δευτερεύων τίτλος</label>
+          <input-type>textarea</input-type>
+          <hint>Ο δευτερεύων ή συμπληρωματικός τίτλος του έργου, αν υπάρχει, σε μία ή περισσότερες γλώσσες.</hint>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>contributor</dc-element>
+          <dc-qualifier>author</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Ονόματα δημιουργών</label>
+          <input-type>name</input-type>
+          <hint>Τα ονόματα των δημιουργών του έργου σε μία ή περισσότερες γλώσσες.</hint>
+          <required>Πρέπει να εισαγάγετε το όνομα τουλάχιστον ενός δημιουργού.</required>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>classification</dc-element>
+          <repeatable>true</repeatable>
+          <label>Θεματική κατηγορία</label>
+          <input-type>onebox</input-type>
+          <hint>Η θεματική κατηγορία στην οποία ανήκει το έργο, π.χ. Μαθηματικά, Δομική Μηχανική κτλ. Μπορούν να επιλεγούν και παραπάνω από μία.</hint>
+          <required>Πρέπει να εισαγάγετε τουλάχιστον μία θεματική κατηγορία.</required>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>subject</dc-element>
+          <repeatable>true</repeatable>
+          <label>Λέξεις-κλειδιά</label>
+          <input-type>onebox</input-type>
+          <hint>Μια λέξη-κλειδί που περιγράφει το αντικείμενο του έργου.</hint>
+          <required>Πρέπει να εισάγετε τουλάχιστον μια λέξη-κλεδί.</required>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>language</dc-element>
+          <repeatable>true</repeatable>
+          <label>Γλώσσα τεκμηρίου</label>
+          <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+          <hint>Μία ή περισσότερες γλώσσες στις οποίες είναι γραμμένο το έργο.</hint>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>access</dc-element>
+          <repeatable>false</repeatable>
+          <label>Δικαιώματα πρόσβασης στο τεκμήριο</label>
+          <input-type value-pairs-name="accessTypeList">dropdown</input-type>
+          <hint>
+            Επιλέξτε μια από τις ακόλουθες πολιτικές πρόσβασης. Είναι προεπιλεγμένη η παγκόσμια-ελεύθερη πρόσβαση.
+            Εναλλακτικά μπορείτε να επιλέξετε «ΕΜΠ πρόσβαση», ισχύει για 3 χρόνια ή «Έλλειψη πρόσβασης» ισχύει
+            για 1 χρόνο και μετά γίνεται αυτόματα ΕΜΠ πρόσβαση για άλλα 3 χρόνια.
+          </hint>
+          <required>Πρέπει να επιλέξετε τα δικαιώματα πρόσβασης για το τεκμήριο που υποβάλλετε.</required>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>recordProvider</dc-element>
+          <repeatable>false</repeatable>
+          <label>Ίδρυμα του υποβάλλοντος</label>
+          <input-type value-pairs-name="institutionList">dropdown</input-type>
+          <hint>Το όνομα του ιδρύματος που διαθέτει το συγκεκριμένο τεκμήριο.</hint>
+          <required>You must enter at least one pair of institution and school/department.</required>
+          <i18n>true</i18n>
+        </field>
+      </page>
+      <page number="2" type-name="conferenceItem">
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>publicationDate</dc-element>
+          <repeatable>false</repeatable>
+          <label>Ημερομηνία ολοκλήρωσης εργασίας</label>
+          <input-type>date</input-type>
+          <hint>Η ημερομηνία παρουσίασης της εργασίας.</hint>
+          <required>Πρέπει να εισαγάγετε τουλάχιστον το έτος ολοκλήρωσης της εργασίας.</required>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>abstract</dc-element>
+          <repeatable>true</repeatable>
+          <label>Περίληψη</label>
+          <input-type>textarea</input-type>
+          <hint>Η περίληψη της εργασίας.</hint>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>sponsor</dc-element>
+          <repeatable>true</repeatable>
+          <label>Χορηγός</label>
+          <input-type>textarea</input-type>
+          <hint>Μια δήλωση σχετική με πιθανούς χορηγούς που χρηματοδότησαν την εκπόνηση της εργασίας (π.χ. μέσω χορήγησης υποτροφίας).</hint>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>advisorName</dc-element>
+          <repeatable>false</repeatable>
+          <label>Όνομα επιβλέποντος</label>
+          <input-type>name</input-type>
+          <hint>Το όνομα του επιβλέποντος μέλους ΔΕΠ της εργασίας.</hint>
+          <required>Πρέπει να εισαγάγετε το όνομα του επιβλέποντος.</required>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>committeeMemberName</dc-element>
+          <repeatable>true</repeatable>
+          <label>Εξεταστική επιτροπή</label>
+          <input-type>name</input-type>
+          <hint>Τα ονόματα των μελών της εξεταστικής επιτροπής της εργασίας.</hint>
+          <required>Πρέπει να εισαγάγετε τα ονόματα όλων των μελών της εξεταστικής επιτροπής της εργασίας.</required>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>academicPublisherID</dc-element>
+          <repeatable>false</repeatable>
+          <label>Εκδίδον ίδρυμα</label>
+          <input-type value-pairs-name="institutionList">dropdown</input-type>
+          <hint>Το ίδρυμα στο οποίο εκπονήθηκε η εργασία.</hint>
+          <required>Πρέπει να επιλέξετε ένα ίδρυμα από τη λίστα.</required>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>academicPublisher</dc-element>
+          <repeatable>false</repeatable>
+          <label>Σχολή</label>
+          <input-type value-pairs-name="ntua_departments">dropdown</input-type>
+          <hint>Η Σχολή του ιδρύματος στο οποίο εκπονήθηκε η εργασία.</hint>
+          <required>Πρέπει να εισαγάγετε Σχολή</required>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>numberOfPages</dc-element>
+          <repeatable>false</repeatable>
+          <label>Αριθμός σελίδων</label>
+          <input-type>onebox</input-type>
+          <hint>The thesis' number of pages.</hint>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>generalDescription</dc-element>
+          <repeatable>true</repeatable>
+          <label>Γενική περιγραφή / Συμπληρωματικά σχόλια</label>
+          <input-type>textarea</input-type>
+          <i18n>true</i18n>
+        </field>
+      </page>
+    </form>
+    <form name="journalArticle">
+      <page number="1">
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>type</dc-element>
+          <repeatable>false</repeatable>
+          <label>Είδος τεκμηρίου</label>
+          <input-type value-pairs-name="itemType-journalArticle">dropdown</input-type>
+          <hint>Το είδος του τεκμηρίου.</hint>
+          <required>Πρέπει να επιλέξετε το είδος του τεκμηρίου που υποβάλλετε.</required>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>title</dc-element>
+          <repeatable>true</repeatable>
+          <label>Τίτλος</label>
+          <input-type>textarea</input-type>
+          <hint>Ο επίσημος τίτλος του έργου σε μία ή περισσότερες γλώσσες.</hint>
+          <required>Πρέπει να εισαγάγετε τουλάχιστον έναν τίτλο για το τεκμήριο που υποβάλλετε.</required>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>secondaryTitle</dc-element>
+          <repeatable>true</repeatable>
+          <label>Συμπληρωματικός/δευτερεύων τίτλος</label>
+          <input-type>textarea</input-type>
+          <hint>Ο δευτερεύων ή συμπληρωματικός τίτλος του έργου, αν υπάρχει, σε μία ή περισσότερες γλώσσες.</hint>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>contributor</dc-element>
+          <dc-qualifier>author</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Ονόματα δημιουργών</label>
+          <input-type>name</input-type>
+          <hint>Τα ονόματα των δημιουργών του έργου σε μία ή περισσότερες γλώσσες.</hint>
+          <required>Πρέπει να εισαγάγετε το όνομα τουλάχιστον ενός δημιουργού.</required>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>classification</dc-element>
+          <repeatable>true</repeatable>
+          <label>Θεματική κατηγορία</label>
+          <input-type>onebox</input-type>
+          <hint>Η θεματική κατηγορία στην οποία ανήκει το έργο, π.χ. Μαθηματικά, Δομική Μηχανική κτλ. Μπορούν να επιλεγούν και παραπάνω από μία.</hint>
+          <required>Πρέπει να εισαγάγετε τουλάχιστον μία θεματική κατηγορία.</required>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>subject</dc-element>
+          <repeatable>true</repeatable>
+          <label>Λέξεις-κλειδιά</label>
+          <input-type>onebox</input-type>
+          <hint>Μια λέξη-κλειδί που περιγράφει το αντικείμενο του έργου.</hint>
+          <required>Πρέπει να εισάγετε τουλάχιστον μια λέξη-κλεδί.</required>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>language</dc-element>
+          <repeatable>true</repeatable>
+          <label>Γλώσσα τεκμηρίου</label>
+          <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+          <hint>Μία ή περισσότερες γλώσσες στις οποίες είναι γραμμένο το έργο.</hint>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>access</dc-element>
+          <repeatable>false</repeatable>
+          <label>Δικαιώματα πρόσβασης στο τεκμήριο</label>
+          <input-type value-pairs-name="accessTypeList">dropdown</input-type>
+          <hint>
+            Επιλέξτε μια από τις ακόλουθες πολιτικές πρόσβασης. Είναι προεπιλεγμένη η παγκόσμια-ελεύθερη πρόσβαση.
+            Εναλλακτικά μπορείτε να επιλέξετε «ΕΜΠ πρόσβαση», ισχύει για 3 χρόνια ή «Έλλειψη πρόσβασης» ισχύει
+            για 1 χρόνο και μετά γίνεται αυτόματα ΕΜΠ πρόσβαση για άλλα 3 χρόνια.
+          </hint>
+          <required>Πρέπει να επιλέξετε τα δικαιώματα πρόσβασης για το τεκμήριο που υποβάλλετε.</required>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>recordProvider</dc-element>
+          <repeatable>false</repeatable>
+          <label>Ίδρυμα του υποβάλλοντος</label>
+          <input-type value-pairs-name="institutionList">dropdown</input-type>
+          <hint>Το όνομα του ιδρύματος που διαθέτει το συγκεκριμένο τεκμήριο.</hint>
+          <required>You must enter at least one pair of institution and school/department.</required>
+          <i18n>true</i18n>
+        </field>
+      </page>
+      <page number="2" type-name="journalArticle">
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>publicationDate</dc-element>
+          <repeatable>false</repeatable>
+          <label>Ημερομηνία ολοκλήρωσης εργασίας</label>
+          <input-type>date</input-type>
+          <hint>Η ημερομηνία παρουσίασης της εργασίας.</hint>
+          <required>Πρέπει να εισαγάγετε τουλάχιστον το έτος ολοκλήρωσης της εργασίας.</required>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>abstract</dc-element>
+          <repeatable>true</repeatable>
+          <label>Περίληψη</label>
+          <input-type>textarea</input-type>
+          <hint>Η περίληψη της εργασίας.</hint>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>sponsor</dc-element>
+          <repeatable>true</repeatable>
+          <label>Χορηγός</label>
+          <input-type>textarea</input-type>
+          <hint>Μια δήλωση σχετική με πιθανούς χορηγούς που χρηματοδότησαν την εκπόνηση της εργασίας (π.χ. μέσω χορήγησης υποτροφίας).</hint>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>advisorName</dc-element>
+          <repeatable>false</repeatable>
+          <label>Όνομα επιβλέποντος</label>
+          <input-type>name</input-type>
+          <hint>Το όνομα του επιβλέποντος μέλους ΔΕΠ της εργασίας.</hint>
+          <required>Πρέπει να εισαγάγετε το όνομα του επιβλέποντος.</required>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>committeeMemberName</dc-element>
+          <repeatable>true</repeatable>
+          <label>Εξεταστική επιτροπή</label>
+          <input-type>name</input-type>
+          <hint>Τα ονόματα των μελών της εξεταστικής επιτροπής της εργασίας.</hint>
+          <required>Πρέπει να εισαγάγετε τα ονόματα όλων των μελών της εξεταστικής επιτροπής της εργασίας.</required>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>academicPublisherID</dc-element>
+          <repeatable>false</repeatable>
+          <label>Εκδίδον ίδρυμα</label>
+          <input-type value-pairs-name="institutionList">dropdown</input-type>
+          <hint>Το ίδρυμα στο οποίο εκπονήθηκε η εργασία.</hint>
+          <required>Πρέπει να επιλέξετε ένα ίδρυμα από τη λίστα.</required>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>academicPublisher</dc-element>
+          <repeatable>false</repeatable>
+          <label>Σχολή</label>
+          <input-type value-pairs-name="ntua_departments">dropdown</input-type>
+          <hint>Η Σχολή του ιδρύματος στο οποίο εκπονήθηκε η εργασία.</hint>
+          <required>Πρέπει να εισαγάγετε Σχολή</required>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>numberOfPages</dc-element>
+          <repeatable>false</repeatable>
+          <label>Αριθμός σελίδων</label>
+          <input-type>onebox</input-type>
+          <hint>The thesis' number of pages.</hint>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>generalDescription</dc-element>
+          <repeatable>true</repeatable>
+          <label>Γενική περιγραφή / Συμπληρωματικά σχόλια</label>
+          <input-type>textarea</input-type>
+          <i18n>true</i18n>
+        </field>
+      </page>
+    </form>
+    <form name="learningMaterial">
+      <page number="1">
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>type</dc-element>
+          <repeatable>false</repeatable>
+          <label>Είδος τεκμηρίου</label>
+          <input-type value-pairs-name="itemType-learningMaterial">dropdown</input-type>
+          <hint>Το είδος του τεκμηρίου.</hint>
+          <required>Πρέπει να επιλέξετε το είδος του τεκμηρίου που υποβάλλετε.</required>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>title</dc-element>
+          <repeatable>true</repeatable>
+          <label>Τίτλος</label>
+          <input-type>textarea</input-type>
+          <hint>Ο επίσημος τίτλος του έργου σε μία ή περισσότερες γλώσσες.</hint>
+          <required>Πρέπει να εισαγάγετε τουλάχιστον έναν τίτλο για το τεκμήριο που υποβάλλετε.</required>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>secondaryTitle</dc-element>
+          <repeatable>true</repeatable>
+          <label>Συμπληρωματικός/δευτερεύων τίτλος</label>
+          <input-type>textarea</input-type>
+          <hint>Ο δευτερεύων ή συμπληρωματικός τίτλος του έργου, αν υπάρχει, σε μία ή περισσότερες γλώσσες.</hint>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>contributor</dc-element>
+          <dc-qualifier>author</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Ονόματα δημιουργών</label>
+          <input-type>name</input-type>
+          <hint>Τα ονόματα των δημιουργών του έργου σε μία ή περισσότερες γλώσσες.</hint>
+          <required>Πρέπει να εισαγάγετε το όνομα τουλάχιστον ενός δημιουργού.</required>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>classification</dc-element>
+          <repeatable>true</repeatable>
+          <label>Θεματική κατηγορία</label>
+          <input-type>onebox</input-type>
+          <hint>Η θεματική κατηγορία στην οποία ανήκει το έργο, π.χ. Μαθηματικά, Δομική Μηχανική κτλ. Μπορούν να επιλεγούν και παραπάνω από μία.</hint>
+          <required>Πρέπει να εισαγάγετε τουλάχιστον μία θεματική κατηγορία.</required>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>subject</dc-element>
+          <repeatable>true</repeatable>
+          <label>Λέξεις-κλειδιά</label>
+          <input-type>onebox</input-type>
+          <hint>Μια λέξη-κλειδί που περιγράφει το αντικείμενο του έργου.</hint>
+          <required>Πρέπει να εισάγετε τουλάχιστον μια λέξη-κλεδί.</required>
+          <i18n>true</i18n>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>language</dc-element>
+          <repeatable>true</repeatable>
+          <label>Γλώσσα τεκμηρίου</label>
+          <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+          <hint>Μία ή περισσότερες γλώσσες στις οποίες είναι γραμμένο το έργο.</hint>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>access</dc-element>
+          <repeatable>false</repeatable>
+          <label>Δικαιώματα πρόσβασης στο τεκμήριο</label>
+          <input-type value-pairs-name="accessTypeList">dropdown</input-type>
+          <hint>
+            Επιλέξτε μια από τις ακόλουθες πολιτικές πρόσβασης. Είναι προεπιλεγμένη η παγκόσμια-ελεύθερη πρόσβαση.
+            Εναλλακτικά μπορείτε να επιλέξετε «ΕΜΠ πρόσβαση», ισχύει για 3 χρόνια ή «Έλλειψη πρόσβασης» ισχύει
+            για 1 χρόνο και μετά γίνεται αυτόματα ΕΜΠ πρόσβαση για άλλα 3 χρόνια.
+          </hint>
+          <required>Πρέπει να επιλέξετε τα δικαιώματα πρόσβασης για το τεκμήριο που υποβάλλετε.</required>
+        </field>
+        <field>
+          <dc-schema>heal</dc-schema>
+          <dc-element>recordProvider</dc-element>
+          <repeatable>false</repeatable>
+          <label>Ίδρυμα του υποβάλλοντος</label>
+          <input-type value-pairs-name="institutionList">dropdown</input-type>
+          <hint>Το όνομα του ιδρύματος που διαθέτει το συγκεκριμένο τεκμήριο.</hint>
+          <required>You must enter at least one pair of institution and school/department.</required>
+          <i18n>true</i18n>
+        </field>
+      </page>
+      <page number="2" type-name="learningMaterial">
         <field>
           <dc-schema>heal</dc-schema>
           <dc-element>publicationDate</dc-element>
@@ -1942,7 +2530,25 @@
         <stored-value>doctoralThesis</stored-value>
       </pair>
     </value-pairs>
-
+    <value-pairs value-pairs-name="itemType-conferenceItem" dc-term="type">
+      <pair>
+        <displayed-value>Δημοσίευση σε συνέδριο</displayed-value>
+        <stored-value>conferenceItem</stored-value>
+      </pair>
+    </value-pairs>
+    <value-pairs value-pairs-name="itemType-journalArticle" dc-term="type">
+      <pair>
+        <displayed-value>Δημοσίευση σε περιοδικό</displayed-value>
+        <stored-value>journalArticle</stored-value>
+      </pair>
+    </value-pairs>
+    <value-pairs value-pairs-name="itemType-learningMaterial" dc-term="type">
+      <pair>
+        <displayed-value>Διάλεξη</displayed-value>
+        <stored-value>learningMaterial</stored-value>
+      </pair>
+    </value-pairs>
+    
     <value-pairs value-pairs-name="classificationSchemeList"
 			dc-term="classification">
 

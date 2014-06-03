@@ -133,6 +133,8 @@
           <input-type>onebox</input-type>
           <hint>The thematic category under which the subject of the work can be classified, e.g. Mathematics, Structural engineering etc.</hint>
           <hint-el>Η θεματική κατηγορία στην οποία ανήκει το έργο, π.χ. Μαθηματικά, Δομική Μηχανική κτλ. Μπορούν να επιλεγούν και παραπάνω από μία.</hint-el>
+          <required>You must enter at least one subject classification.</required>
+          <required-el>Πρέπει να εισαγάγετε τουλάχιστον μία θεματική κατηγορία.</required-el>
           <i18n>true</i18n>
         </field>
 
@@ -146,7 +148,8 @@
           <input-type>onebox</input-type>
           <hint>A keyword describing the subject of the item.</hint>
           <hint-el>Μια λέξη-κλειδί που περιγράφει το αντικείμενο του έργου.</hint-el>
-          <required>You must enter at least 5 keyword in Greek and 5 keywords in English.</required>
+          <!--<required>You must enter at least 5 keywords in Greek and 5 keywords in English.</required>-->
+          <required>You must enter at least one keywords.</required>
           <required-el>Πρέπει να εισάγετε τουλάχιστον μια λέξη-κλεδί.</required-el>
           <i18n>true</i18n>
         </field>

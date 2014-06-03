@@ -65,20 +65,19 @@ let main argv =
         InputFormsConfig.Form(itemTypeName, [| itemTypeName |> page1 lang ; page2 |])
                 
     
-    let itemTypes = ["bachelorThesis";"masterThesis";"doctoralThesis"]    
     
     let generateForms lang fldNames =
-        Seq.map (fun i -> createForm lang i fldNames)
+        Seq.map (fun i -> createForm lang i fldNames)    
 
+    let forms lang itemTypes fieldNames = itemTypes |> generateForms lang fieldNames
+
+    let itemTypes = ["bachelorThesis";"masterThesis";"doctoralThesis";"conferenceItem";"journalArticle";"learningMaterial"]    
     let fieldNames = ["publicationDate";"abstract";"sponsor";"advisorName";"committeeMemberName";"academicPublisherID";"academicPublisher";"numberOfPages";"generalDescription"]
-
-
-    let forms lang = itemTypes |> generateForms lang fieldNames
-
+       
     let writeFile lang = 
         use wr = new StreamWriter("../../../../dspace/config/input-forms_" + lang + ".temp.xml", false)
-        let f = forms lang |> Seq.toArray
-        let formDef = InputFormsConfig.FormDefinitions(f)        
+        let f = forms lang itemTypes fieldNames |> Seq.toArray
+        let formDef = InputFormsConfig.FormDefinitions(f)
         wr.Write(formDef);
         wr.Close();
     
