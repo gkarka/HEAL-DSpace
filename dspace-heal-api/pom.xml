@@ -25,6 +25,11 @@
 			<id>psiegman-snapshots</id>
 			<url>https://github.com/psiegman/mvn-repo/raw/master/snapshots</url>
 		</repository>
+				<repository>
+			<id>jlangdetect-googlecode</id>
+			<name>JLangDetect Maven repository</name>
+			<url>https://jlangdetect.googlecode.com/svn/repo</url>
+		</repository>
 	</repositories>
 
 	<!-- Runtime and Compile Time dependencies for DSpace. -->
@@ -277,6 +282,41 @@
 			<artifactId>xsom</artifactId>
 			<version>20110809</version>
 		</dependency>
+				<dependency>
+			<groupId>org.apache.jena</groupId>
+			<artifactId>jena-arq</artifactId>
+			<version>2.9.4</version>
+		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.slf4j</groupId> -->
+<!-- 			<artifactId>slf4j-api</artifactId> -->
+<!-- 			<version>1.5.6</version> -->
+<!-- 		</dependency> -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>1.5.6</version>
+		</dependency>
+				<dependency>
+			<groupId>me.champeau.jlangdetect</groupId>
+			<artifactId>jlangdetect-extra</artifactId>
+			<version>0.3</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.sun.jmx</groupId>
+					<artifactId>jmxri</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jdmk</groupId>
+					<artifactId>jmxtools</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.jms</groupId>
+					<artifactId>jms</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
 
 		<!-- END aanagnostopoulos -->
 	</dependencies>

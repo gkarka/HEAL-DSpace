@@ -3,7 +3,10 @@
  */
 package gr.heal.rdfSearch.service;
 
-import gr.heal.rdfSearch.domain.ResultSet;
+import java.util.List;
+
+import gr.heal.rdfSearch.domain.SKOSConcept;
+import gr.heal.rdfSearch.domain.SKOSConceptScheme;
 
 /**
  * @author aanagnostopoulos
@@ -11,6 +14,7 @@ import gr.heal.rdfSearch.domain.ResultSet;
  */
 public interface IRdfSearchService {
 
-	ResultSet search(String term) throws Exception;
+	List<SKOSConcept> search(String term, String scheme) throws Exception;
 	
+	List<SKOSConceptScheme> fetchSchemes() throws Exception;
 }

@@ -4,10 +4,9 @@
 package gr.heal.dspace.app.xmlui.aspect.rdf.json;
 
 import gr.heal.dspace.submit.step.ProcessMetadataStep;
-import gr.heal.rdfSearch.domain.ResultRow;
-import gr.heal.rdfSearch.domain.ResultSet;
+import gr.heal.rdfSearch.domain.SKOSConcept;
+import gr.heal.rdfSearch.domain.SKOSConceptScheme;
 import gr.heal.rdfSearch.service.IRdfSearchService;
-import gr.heal.rdfSearch.service.RdfSearchServiceImpl;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -25,7 +24,6 @@ import org.apache.cocoon.environment.SourceResolver;
 import org.apache.cocoon.reading.AbstractReader;
 import org.apache.log4j.Logger;
 import org.dspace.utils.DSpace;
-import org.json.JSONArray;
 import org.json.JSONStringer;
 import org.json.JSONWriter;
 import org.xml.sax.SAXException;
@@ -54,46 +52,60 @@ public class JSONRdfKeywordSearcher extends AbstractReader implements
 	}
 
 	@Override
-	public void setup(SourceResolver resolver, Map objectModel, String src,
-			Parameters par) throws ProcessingException, SAXException,
-			IOException {
+	public void setup(SourceResolver resolver, Map objectModel, String src, Parameters par)
+			throws ProcessingException, SAXException, IOException {
 
 		// Retrieve all the given parameters
 		Request request = ObjectModelHelper.getRequest(objectModel);
 		this.response = ObjectModelHelper.getResponse(objectModel);
 
-		String term = request.getParameter("term");
-
 		try {
-			ResultSet resultSet = getSearchService().search(term);
-			log.info(resultSet.getResultRows());
+			String term = request.getParameter("term");
+			String scheme = request.getParameter("vocab");
+			String getSchemes = request.getParameter("getSchemes");
 
-			List<ResultRow> resultRows = resultSet.getResultRows();
+			// String scheme = "http://id.loc.gov/authorities/subjects";
+			// List<ResultRow> resultRows = resultSet.getResultRows();
 			// convert to JSON
-			 JSONWriter jsonWriter = new JSONStringer().array();
-			 
-			 for(ResultRow resultRow: resultRows) {
-				 jsonWriter.object();
-				 jsonWriter.key("label");
-				 jsonWriter.value(resultRow.getValue()+ProcessMetadataStep.SOURCE_PREFIX+resultRow.getShortForm()+ProcessMetadataStep.SOURCE_SUFFIX);
-				 jsonWriter.key("value");
-				 jsonWriter.value(resultRow.getValue()+ProcessMetadataStep.SOURCE_PREFIX+resultRow.getLongForm()+ProcessMetadataStep.SOURCE_SUFFIX);
-				 jsonWriter.endObject();
-			 }
-			 jsonWriter.endArray();
-			 
-			 // convert String into InputStream
-			 JSONStream = new
-			 ByteArrayInputStream(jsonWriter.toString().getBytes());
+			JSONWriter jsonWriter = new JSONStringer().array();
+			if (!"1".equals(getSchemes)) {
+				List<SKOSConcept> concepts =
+						getSearchService().search(term, "".equals(scheme) ? null : scheme);
+				// log.info(resultSet.getResultRows());
+				for (SKOSConcept concept : concepts) {
+					log.info(concept.getPrefLabel());
+					jsonWriter.object();
+					jsonWriter.key("label");
+					jsonWriter.value(concept.getPrefLabel());
+					jsonWriter.key("value");
+					jsonWriter.value(concept.getPrefLabel() + ProcessMetadataStep.SOURCE_PREFIX
+							+ concept.getUri() + ProcessMetadataStep.SOURCE_SUFFIX);
+					jsonWriter.key("scheme");
+					jsonWriter.value(concept.getInScheme().getPrefLabel());
+					jsonWriter.endObject();
+				}
+				jsonWriter.endArray();
+			} else {
+				log.info("Fetching schemes");
+				List<SKOSConceptScheme> schemes = getSearchService().fetchSchemes();
+				for (SKOSConceptScheme conceptScheme : schemes) {
+					jsonWriter.object();
+					jsonWriter.key("label");
+					jsonWriter.value(conceptScheme.getPrefLabel());
+					jsonWriter.key("value");
+					jsonWriter.value(conceptScheme.getUri());
+					jsonWriter.endObject();
+				}
+				jsonWriter.endArray();
+			}
+			// convert String into InputStream
+			JSONStream = new ByteArrayInputStream(jsonWriter.toString().getBytes());
 
 		} catch (Exception e) {
-			log.error(
-					"Error while retrieving JSON string for RDF auto complete",
-					e);
+			log.error("Error while retrieving JSON string for RDF auto complete", e);
 		}
 
 		log.info(request.getParameters());
-
 	}
 
 	/*
