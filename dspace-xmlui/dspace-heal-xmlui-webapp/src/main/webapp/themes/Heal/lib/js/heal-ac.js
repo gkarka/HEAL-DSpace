@@ -5,7 +5,7 @@ function createSelect(acElement, serviceURI, healpUrl) {
 			+ '<select class="ds-select-field ds-select-scheme"' + 'id="'
 			+ selectElementID + '">' + '</label>';
 
-	acElement.parent().after(labelElement);
+	acElement.parent().before(labelElement);
 	var selectElement = $('#' + selectElementID);
 
 	selectElement.append("<option value=''> All schemes </option>");
@@ -19,7 +19,7 @@ function createSelect(acElement, serviceURI, healpUrl) {
 		});
 	});
 
-	selectElement.css({'width': 200});
+	selectElement.css({'width': 150});
 	
 	acElement.autocomplete().data("autocomplete")._renderItem = function(ul,
 			item) {
@@ -30,7 +30,7 @@ function createSelect(acElement, serviceURI, healpUrl) {
 	
 	var redirectElementID = acElement.attr("id") + "_button";
 	
-	var redirectString = "<label class='ds-composite-component'><button id='" + redirectElementID + "'> ? </button></label>";
+	var redirectString = "<label class='ds-composite-component'><button id='" + redirectElementID + "' class='ds-button-field' style='margin-top:5px'> ? </button></label>";
 	
 	acElement.parent().after(redirectString);
 	
