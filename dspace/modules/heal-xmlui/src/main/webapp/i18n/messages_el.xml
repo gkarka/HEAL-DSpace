@@ -60,8 +60,9 @@
 	<!--
 		This section is for feed syndications (RSS, atom, etc)
 	-->
-  <message key="xmlui.home.head">Καλώς ήρθατε στην Ψηφιακή Βιβλιοθήκη του Εθνικού Μετσόβιου Πολυτεχνείου</message>
-	<message key="xmlui.feed.general_description">Μέσω του DSpace@NTUA συλλέγεται, αποθηκεύεται, ευρετηριάζεται, διατηρείται και διανέμεται ψηφιακά το ερευνητικό έργο των μελών της Ακαδημαϊκής Κοινότητας του ΕΜΠ. Συγκεκριμένα λειτουργεί ως Ιδρυματικό Αποθετήριο για τις διπλωματικές και μεταπτυχιακές εργασίες, διδακτορικές διατριβές, καθώς και τις δημοσιεύσεις σε περιοδικά και πρακτικά συνεδρίων των μελών ΔΕΠ. Επίσης περιλαμβάνεται ψηφιοποιημένο υλικό (βιβλία και περιοδικά) από την Ιστορική Βιβλιοθήκη του ΕΜΠ.</message>
+  <message key="xmlui.home.head">Καλώς ήρθατε στο Ψηφιακό Αποθετήριο της Κεντρικής Βιβλιοθήκης του ΕΜΠ</message>
+	<!--<message key="xmlui.feed.general_description">Μέσω του DSpace@NTUA συλλέγεται, αποθηκεύεται, ευρετηριάζεται, διατηρείται και διανέμεται ψηφιακά το ερευνητικό έργο των μελών της Ακαδημαϊκής Κοινότητας του ΕΜΠ. Συγκεκριμένα λειτουργεί ως Ιδρυματικό Αποθετήριο για τις διπλωματικές και μεταπτυχιακές εργασίες, διδακτορικές διατριβές, καθώς και τις δημοσιεύσεις σε περιοδικά και πρακτικά συνεδρίων των μελών ΔΕΠ. Επίσης περιλαμβάνεται ψηφιοποιημένο υλικό (βιβλία και περιοδικά) από την Ιστορική Βιβλιοθήκη του ΕΜΠ.</message>-->  
+  <message key="xmlui.feed.general_description">Μέσω του DSpace@NTUA συλλέγεται, αποθηκεύεται, ευρετηριάζεται, διατηρείται και διανέμεται ψηφιακά το ερευνητικό έργο των μελών της Ακαδημαϊκής Κοινότητας του ΕΜΠ. Συγκεκριμένα λειτουργεί ως Ιδρυματικό Αποθετήριο για τις διπλωματικές και μεταπτυχιακές εργασίες, διδακτορικές διατριβές, καθώς και τις δημοσιεύσεις σε περιοδικά και πρακτικά συνεδρίων των μελών ΔΕΠ. Επίσης περιλαμβάνεται ψηφιοποιημένο υλικό (βιβλία και περιοδικά) από την Ιστορική Βιβλιοθήκη του ΕΜΠ.</message>
   <message key="xmlui.feed.header">RSS Feeds</message>
 	<message key="xmlui.feed.logo_title">Κανάλι Εικόνων</message>
 	<message key="xmlui.feed.untitled">Χωρίς Τίτλο</message>
@@ -447,7 +448,7 @@
 	<!-- org.dspace.app.xmlui.eperson.RegistrationFinished.java -->
 	<message key="xmlui.EPerson.RegistrationFinished.title">Η εγγραφή ολοκληρώθηκε</message>
 	<message key="xmlui.EPerson.RegistrationFinished.head">Η εγγραφή ολοκληρώθηκε</message>
-	<message key="xmlui.EPerson.RegistrationFinished.para1">Είστε τώρα εγγεγραμμένος για να χρησιμοποείτε το σύστημα του DSpace.  Μπορείτε να εγγραφείτε σε συλλογές για να λαμβάνετε ενημερώσεις μέσω ηλεκτρονικού ταχυδρομείου σχετικά νέα τεκμήρια.</message>
+	<message key="xmlui.EPerson.RegistrationFinished.para1">Είστε τώρα εγγεγραμμένος για να χρησιμοποιείτε το σύστημα του DSpace.  Μπορείτε να εγγραφείτε σε συλλογές για να λαμβάνετε ενημερώσεις μέσω ηλεκτρονικού ταχυδρομείου σχετικά με νέα τεκμήρια.</message>
 
 	<!-- org.dspace.app.xmlui.eperson.ResetPassword.java -->
 	<message key="xmlui.EPerson.ResetPassword.title">Επαναφορά κωδικού</message>
@@ -485,7 +486,7 @@
 	<!-- org.dspace.app.xmlui.eperson.VerifyEmail.java -->
 	<message key="xmlui.EPerson.VerifyEmail.title">Η επιβεβαίωση θα σταλεί μέσω ηλεκτρονικού ταχυδρομείου</message>
 	<message key="xmlui.EPerson.VerifyEmail.head">Η επιβεβαίωση θα σταλεί μέσω ηλεκτρονικού ταχυδρομείου</message>
-	<message key="xmlui.EPerson.VerifyEmail.para">Έχει σταλεί μέσω Ηλεκτρονικού Ταχυδρομείου σε{0} περιλαμβάνοντας ειδικό URL και περαιτέρω οδηγίες.</message>
+	<message key="xmlui.EPerson.VerifyEmail.para">Έχει σταλεί μέσω Ηλεκτρονικού Ταχυδρομείου στη διεύθυνση {0} περιλαμβάνοντας ειδικό URL και περαιτέρω οδηγίες.</message>
 
 
 
@@ -513,7 +514,7 @@
 	<message key="xmlui.Submission.general.submission.previous">&lt; Προηγούμενο</message>
 	<message key="xmlui.Submission.general.submission.save">Αποθήκευση &amp; Έξοδος</message>
 	<message key="xmlui.Submission.general.submission.next">Επόμενο &gt;</message>
-	<message key="xmlui.Submission.general.submission.complete">Η διαδικασία υποβολής ολοκληρώθηκε</message>
+	<message key="xmlui.Submission.general.submission.complete">Ολοκλήρωση διαδικασίας υποβολής</message>
 	<message key="xmlui.Submission.general.workflow.title">Υποβολή τεκμηρίου</message>
 	<message key="xmlui.Submission.general.workflow.trail">Υποβολή τεκμηρίου</message>
 	<message key="xmlui.Submission.general.workflow.head">Υποβολή Τεκμηρίου</message>
@@ -724,8 +725,8 @@
 
 	<!-- org.dspace.app.xmlui.Submission.submit.LicenseStep -->
 	<message key="xmlui.Submission.submit.LicenseStep.head">Διανομή άδειας</message>
-	<message key="xmlui.Submission.submit.LicenseStep.info1"><strong>Υπάρχει ένα τελευταίο βήμα:</strong> Για να μπορέσει το DSpace να ξαναφτιάξει, να μεταφράσει και να διανείμει την υποβολή σας σε όλο τον κόσμο, πρέπει να συμφωνήσετε με τους παρακάτω όρους.</message>
-	<message key="xmlui.Submission.submit.LicenseStep.info2">Χορηγήστε την τυπική άδεια διανομής επιλέγοντας 'Χορηγώ την Άδεια'; και μετά κλικάρετ 'Η διαδικασία υποβολής ολοκληρώθηκε'.</message>
+	<message key="xmlui.Submission.submit.LicenseStep.info1"><strong>Υπάρχει ένα τελευταίο βήμα:</strong></message>
+	<message key="xmlui.Submission.submit.LicenseStep.info2">Χορηγήστε την τυπική άδεια διανομής επιλέγοντας 'Χορηγώ την Άδεια' και μετά κλικάρετε 'Η διαδικασία υποβολής ολοκληρώθηκε'.</message>
 	<message key="xmlui.Submission.submit.LicenseStep.info3">Εάν έχετε ερωτήσεις σχετικά με την άδεια παρακαλώ επικοινωνήστε με τον διαχειρηστή του συστήματος.</message>
 	<message key="xmlui.Submission.submit.LicenseStep.decision_label">Άδεια διανομής</message>
 	<message key="xmlui.Submission.submit.LicenseStep.decision_checkbox">Χορηγώ της Άδεια</message>

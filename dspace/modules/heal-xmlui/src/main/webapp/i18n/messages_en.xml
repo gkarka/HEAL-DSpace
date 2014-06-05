@@ -60,8 +60,9 @@
 	<!--
 		This section is for feed syndications (RSS, atom, etc)
 	-->
-	<message key="xmlui.feed.general_description">Καλώς ήρθατε στο Ψηφιακό Αποθετήριο της Κεντρικής Βιβλιοθήκης του ΕΜΠ. Μέσω του DSpace@NTUA συλλέγεται, αποθηκεύεται, ευρετηριάζεται, διατηρείται και διανέμεται ψηφιακά το ερευνητικό έργο των μελών της Ακαδημαϊκής Κοινότητας του ΕΜΠ. Συγκεκριμένα λειτουργεί ως Ιδρυματικό Αποθετήριο για τις διπλωματικές και μεταπτυχιακές εργασίες, διδακτορικές διατριβές, καθώς και τις δημοσιεύσεις σε περιοδικά και πρακτικά συνεδρίων των μελών ΔΕΠ. Επίσης περιλαμβάνεται ψηφιοποιημένο υλικό (βιβλία και περιοδικά) από την Ιστορική Βιβλιοθήκη του ΕΜΠ.</message>
-    <message key="xmlui.feed.header">RSS Feeds</message>
+  <message key="xmlui.home.head">Welcome to the Digital Library of National Technical University of Athens.</message>
+	<message key="xmlui.feed.general_description">NTUA’s Central Library through the use of DSpace@NTUA will collect, store, index, maintain and distribute the research work of the members of its academic community in digital form. Specifically, it is an Institutional Repository for dissertations, postgraduate theses and doctoral dissertations, as well as journal publications and conference presentations and proceedings of the faculty members. DSpace@NTUA will also include digitized material (books and magazines) from NTUA’s Historical Library.</message>
+  <message key="xmlui.feed.header">RSS Feeds</message>
 	<message key="xmlui.feed.logo_title">The Channel Image</message>
 	<message key="xmlui.feed.untitled">Untitled</message>
   <message key="xmlui.feed.submit">Start new submission</message>
