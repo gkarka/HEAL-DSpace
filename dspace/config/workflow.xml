@@ -46,8 +46,17 @@
         <roles>
             <role id="reviewer" name="Reviewer" scope="item" />
             <role id="reviewmanagers" name="ReviewManagers" scope="repository"/>
+            <role id="editor" name="Editor" scope="repository" description="The people responsible for this step are able to edit the metadata of incoming submissions, and then accept or reject them."/>
         </roles>
 
+        <step id="editstep" role="editor" userSelectionMethod="claimaction">
+          <outcomes>
+            <step status="0">selectReviewerStep</step>
+          </outcomes>
+          <actions>
+            <action id="editaction"/>
+          </actions>
+        </step>
 
         <step id="selectReviewerStep" role="reviewmanagers" userSelectionMethod="claimaction">
             <outcomes>
