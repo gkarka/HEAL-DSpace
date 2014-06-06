@@ -42,7 +42,7 @@
     </workflow>
 
     <!--Workflow where a reviewManager can select a single review who will then either accept/reject the item-->
-    <workflow id="selectSingleReviewer" start="selectReviewerStep">
+    <workflow id="selectSingleReviewer" start="editstep">
         <roles>
             <role id="reviewer" name="Reviewer" scope="item" />
             <role id="reviewmanagers" name="ReviewManagers" scope="repository"/>
