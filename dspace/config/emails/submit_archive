@@ -4,18 +4,18 @@
 # {1}  Name of collection
 # {2}  handle 
 #
-Subject: DSpace: Submission Approved and Archived 
+Subject: DSpace: Η υποβολή έχει εγκριθεί και αρχειοθετηθεί 
 
-You submitted: {0}
+Έχετε υποβάλλει: {0}
 
-To collection: {1}
+Στη συλλογή: {1}
 
-Your submission has been accepted and archived in DSpace,
-and it has been assigned the following identifier:
+Η υποβολή σας έχει εγκριθεί και αρχειοθετηθεί στο DSpace,
+και της έχει δοθεί το ακόλουθο αναγνωριστικό:
 {2}
 
-Please use this identifier when citing your submission.
+Παρακαλώ χρήσιμοποιείστε αυτό το αναγνωριστικό όταν χρησιμοποιείτε την εργασία σας ως βιβλιογραφική αναφορά.
 
-Many thanks!
+Ευχαριστούμε!
 
-DSpace
+Η Ομάδα του DSpace

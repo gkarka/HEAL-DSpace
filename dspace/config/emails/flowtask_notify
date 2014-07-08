@@ -7,17 +7,16 @@
 # {4}  Task result
 # {5}  Workflow action taken
 #
-Subject: DSpace: Curation Task Report
+Subject: DSpace: Αναφορά ανάληψης υποβολής
 
-Title:         {0}
-Collection:    {1}
-Submitted by:  {2}
+Τίτλος:          {0}
+Συλλογή:         {1}
+Υποβλήθηκε από:  {2}
 
-Curation task {3} has been performed
-with the following result:
+Η ανάληωη της υποβολής {3} έχει γίνει με το ακόλουθο αποτέλεσμα:
 
 {4}
 
-Action taken on the submission: {5}
+Ενέργειες που έγιναν κατά την υποβολή: {5}
 
-DSpace
+Η Ομάδα του DSpace

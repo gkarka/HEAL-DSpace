@@ -8,3 +8,5 @@ Servers/
 DSpaceHeal.sln
 h
 pom.xml.orig
+bin
+obj
