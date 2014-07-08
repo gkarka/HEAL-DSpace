@@ -281,6 +281,18 @@
                     <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
                     <xsl:text>/lib/js/modernizr-1.7.min.js</xsl:text>
                 </xsl:attribute>&#160;</script>
+                
+<!--                 Added by pstav 			-->
+	        <script type="text/javascript">
+		        <xsl:attribute name="src">
+		            <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+		            <xsl:text>/themes/</xsl:text>
+		            <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
+		            <xsl:text>/lib/js/heal-ac.js</xsl:text>
+		        </xsl:attribute>&#160;
+			</script>
+<!--                 Added by pstav 			-->
+			
 
             <!-- Add the title in -->
             <xsl:variable name="page_title" select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='title']" />
@@ -739,13 +751,21 @@
         <script type="text/javascript">
         <xsl:text>
 			$(function() {
-					$( "#aspect_submission_StepTransformer_field_dc_subject" ).autocomplete({
-						source: "</xsl:text><xsl:value-of select="concat($context-path,'/JSON/rdf/search/keywords')"/><xsl:text>",
+					var acelem = $( "#aspect_submission_StepTransformer_field_dc_subject" );
+					var serviceURI = "</xsl:text><xsl:value-of select="concat($context-path,'/JSON/rdf/search/keywords')"/><xsl:text>"
+					var selectElement = createSelect(acelem, serviceURI, "</xsl:text><xsl:value-of select="$rdfSearch.healpUrl"/><xsl:text>");
+					acelem.autocomplete({
+						source: function(request, response) { 
+							var qualifier = $('#' + getSelect(acelem)).val(); 
+							$.getJSON(serviceURI, { vocab: qualifier, term: request.term }, response); }, 
 						minLength: 3,
 						open: function() { 
 					        $('#aspect_submission_StepTransformer_field_dc_subject').autocomplete("widget").width(600) 
 					    }  
 					});
+					$( acelem ).parent().parent().find( '.ds-interpreted-field' ).each(function() {
+  						 	 $(this).html(updateLabel($(this).text()));
+						});				
 				});</xsl:text>        
         </script>
 		</xsl:if>        
@@ -753,16 +773,24 @@
         <script type="text/javascript">
         <xsl:text>
 			$(function() {
-					$( "#aspect_submission_StepTransformer_field_heal_classification" ).autocomplete({
-						source: "</xsl:text><xsl:value-of select="concat($context-path,'/JSON/rdf/search/keywords')"/><xsl:text>",
+					var acelem = $( "#aspect_submission_StepTransformer_field_heal_classification" );
+					var serviceURI = "</xsl:text><xsl:value-of select="concat($context-path,'/JSON/rdf/search/keywords')"/><xsl:text>"
+					var selectElement = createSelect(acelem, serviceURI, "</xsl:text><xsl:value-of select="$rdfSearch.healpUrl"/><xsl:text>");
+					acelem.autocomplete({
+						source: function(request, response) { 
+							var qualifier = $('#' + getSelect(acelem)).val(); 
+							$.getJSON(serviceURI, { vocab: qualifier, term: request.term }, response); }, 
 						minLength: 3,
 						open: function() { 
 					        $('#aspect_submission_StepTransformer_field_heal_classification').autocomplete("widget").width(600) 
 					    }  
 					});
-				});</xsl:text>        
+					$( acelem ).parent().parent().find( '.ds-interpreted-field' ).each(function() {
+  						 	 $(this).html(updateLabel($(this).text()));
+						});	
+				});</xsl:text>         
         </script>
-		</xsl:if>        
+		</xsl:if>
         <!-- END aanagnostopoulos -->
         
     </xsl:template>
