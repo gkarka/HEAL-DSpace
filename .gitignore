@@ -1,4 +1,6 @@
 target
+packages
+dspace-1.8.2-build
 .project
 .settings
 .classpath
@@ -10,3 +12,5 @@ h
 pom.xml.orig
 bin
 obj
+dspace/config/input-forms_el.temp.xml
+dspace/config/input-forms_en.temp.xml
