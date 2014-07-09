@@ -1379,7 +1379,7 @@
       </page>
       
 		</form>
-    <form name="bachelorThesis">
+   <form name="bachelorThesis">
     <page number="1">
       <field>
         <dc-schema>heal</dc-schema>
@@ -1436,8 +1436,8 @@
         <repeatable>true</repeatable>
         <label>Λέξεις-κλειδιά</label>
         <input-type>onebox</input-type>
-        <hint>Μια λέξη-κλειδί που περιγράφει το αντικείμενο του έργου.</hint>
-        <required>Πρέπει να εισάγετε τουλάχιστον μια λέξη-κλεδί.</required>
+        <hint>5 λέξεις-κλειδιά στα ελληνικά και 5 στα αγγλικά που περιγράφουν το αντικείμενο του έργου.</hint>
+        <required>Πρέπει να εισάγετε τουλάχιστον 5 λέξεις-κλεδιά.</required>
         <i18n>true</i18n>
       </field>
       <field>
@@ -1540,6 +1540,15 @@
         <required>Πρέπει να εισαγάγετε Σχολή</required>
       </field>
       <field>
+        <dc-schema>dc</dc-schema>
+        <dc-element>contributor</dc-element>
+        <dc-qualifier>department</dc-qualifier>
+        <repeatable>false</repeatable>
+        <label>Τομέας - Εργαστήριο</label>
+        <input-type>onebox</input-type>
+        <hint>Ο Τομέας ή το Εργαστήριο του ιδρύματος στο οποίο εκπονήθηκε η εργασία.</hint>
+      </field>
+      <field>
         <dc-schema>heal</dc-schema>
         <dc-element>numberOfPages</dc-element>
         <repeatable>false</repeatable>
@@ -1614,8 +1623,8 @@
         <repeatable>true</repeatable>
         <label>Λέξεις-κλειδιά</label>
         <input-type>onebox</input-type>
-        <hint>Μια λέξη-κλειδί που περιγράφει το αντικείμενο του έργου.</hint>
-        <required>Πρέπει να εισάγετε τουλάχιστον μια λέξη-κλεδί.</required>
+        <hint>5 λέξεις-κλειδιά στα ελληνικά και 5 στα αγγλικά που περιγράφουν το αντικείμενο του έργου.</hint>
+        <required>Πρέπει να εισάγετε τουλάχιστον 5 λέξεις-κλεδιά.</required>
         <i18n>true</i18n>
       </field>
       <field>
@@ -1718,6 +1727,15 @@
         <required>Πρέπει να εισαγάγετε Σχολή</required>
       </field>
       <field>
+        <dc-schema>dc</dc-schema>
+        <dc-element>contributor</dc-element>
+        <dc-qualifier>department</dc-qualifier>
+        <repeatable>false</repeatable>
+        <label>Τομέας - Εργαστήριο</label>
+        <input-type>onebox</input-type>
+        <hint>Ο Τομέας ή το Εργαστήριο του ιδρύματος στο οποίο εκπονήθηκε η εργασία.</hint>
+      </field>
+      <field>
         <dc-schema>heal</dc-schema>
         <dc-element>numberOfPages</dc-element>
         <repeatable>false</repeatable>
@@ -1792,8 +1810,8 @@
         <repeatable>true</repeatable>
         <label>Λέξεις-κλειδιά</label>
         <input-type>onebox</input-type>
-        <hint>Μια λέξη-κλειδί που περιγράφει το αντικείμενο του έργου.</hint>
-        <required>Πρέπει να εισάγετε τουλάχιστον μια λέξη-κλεδί.</required>
+        <hint>5 λέξεις-κλειδιά στα ελληνικά και 5 στα αγγλικά που περιγράφουν το αντικείμενο του έργου.</hint>
+        <required>Πρέπει να εισάγετε τουλάχιστον 5 λέξεις-κλεδιά.</required>
         <i18n>true</i18n>
       </field>
       <field>
@@ -1896,6 +1914,15 @@
         <required>Πρέπει να εισαγάγετε Σχολή</required>
       </field>
       <field>
+        <dc-schema>dc</dc-schema>
+        <dc-element>contributor</dc-element>
+        <dc-qualifier>department</dc-qualifier>
+        <repeatable>false</repeatable>
+        <label>Τομέας - Εργαστήριο</label>
+        <input-type>onebox</input-type>
+        <hint>Ο Τομέας ή το Εργαστήριο του ιδρύματος στο οποίο εκπονήθηκε η εργασία.</hint>
+      </field>
+      <field>
         <dc-schema>heal</dc-schema>
         <dc-element>numberOfPages</dc-element>
         <repeatable>false</repeatable>
@@ -1970,8 +1997,8 @@
         <repeatable>true</repeatable>
         <label>Λέξεις-κλειδιά</label>
         <input-type>onebox</input-type>
-        <hint>Μια λέξη-κλειδί που περιγράφει το αντικείμενο του έργου.</hint>
-        <required>Πρέπει να εισάγετε τουλάχιστον μια λέξη-κλεδί.</required>
+        <hint>5 λέξεις-κλειδιά στα ελληνικά και 5 στα αγγλικά που περιγράφουν το αντικείμενο του έργου.</hint>
+        <required>Πρέπει να εισάγετε τουλάχιστον 5 λέξεις-κλεδιά.</required>
         <i18n>true</i18n>
       </field>
       <field>
@@ -2074,6 +2101,15 @@
         <required>Πρέπει να εισαγάγετε Σχολή</required>
       </field>
       <field>
+        <dc-schema>dc</dc-schema>
+        <dc-element>contributor</dc-element>
+        <dc-qualifier>department</dc-qualifier>
+        <repeatable>false</repeatable>
+        <label>Τομέας - Εργαστήριο</label>
+        <input-type>onebox</input-type>
+        <hint>Ο Τομέας ή το Εργαστήριο του ιδρύματος στο οποίο εκπονήθηκε η εργασία.</hint>
+      </field>
+      <field>
         <dc-schema>heal</dc-schema>
         <dc-element>numberOfPages</dc-element>
         <repeatable>false</repeatable>
@@ -2148,8 +2184,8 @@
         <repeatable>true</repeatable>
         <label>Λέξεις-κλειδιά</label>
         <input-type>onebox</input-type>
-        <hint>Μια λέξη-κλειδί που περιγράφει το αντικείμενο του έργου.</hint>
-        <required>Πρέπει να εισάγετε τουλάχιστον μια λέξη-κλεδί.</required>
+        <hint>5 λέξεις-κλειδιά στα ελληνικά και 5 στα αγγλικά που περιγράφουν το αντικείμενο του έργου.</hint>
+        <required>Πρέπει να εισάγετε τουλάχιστον 5 λέξεις-κλεδιά.</required>
         <i18n>true</i18n>
       </field>
       <field>
@@ -2252,6 +2288,15 @@
         <required>Πρέπει να εισαγάγετε Σχολή</required>
       </field>
       <field>
+        <dc-schema>dc</dc-schema>
+        <dc-element>contributor</dc-element>
+        <dc-qualifier>department</dc-qualifier>
+        <repeatable>false</repeatable>
+        <label>Τομέας - Εργαστήριο</label>
+        <input-type>onebox</input-type>
+        <hint>Ο Τομέας ή το Εργαστήριο του ιδρύματος στο οποίο εκπονήθηκε η εργασία.</hint>
+      </field>
+      <field>
         <dc-schema>heal</dc-schema>
         <dc-element>numberOfPages</dc-element>
         <repeatable>false</repeatable>
@@ -2326,8 +2371,8 @@
         <repeatable>true</repeatable>
         <label>Λέξεις-κλειδιά</label>
         <input-type>onebox</input-type>
-        <hint>Μια λέξη-κλειδί που περιγράφει το αντικείμενο του έργου.</hint>
-        <required>Πρέπει να εισάγετε τουλάχιστον μια λέξη-κλεδί.</required>
+        <hint>5 λέξεις-κλειδιά στα ελληνικά και 5 στα αγγλικά που περιγράφουν το αντικείμενο του έργου.</hint>
+        <required>Πρέπει να εισάγετε τουλάχιστον 5 λέξεις-κλεδιά.</required>
         <i18n>true</i18n>
       </field>
       <field>
@@ -2428,6 +2473,15 @@
         <input-type value-pairs-name="ntua_departments">dropdown</input-type>
         <hint>Η Σχολή του ιδρύματος στο οποίο εκπονήθηκε η εργασία.</hint>
         <required>Πρέπει να εισαγάγετε Σχολή</required>
+      </field>
+      <field>
+        <dc-schema>dc</dc-schema>
+        <dc-element>contributor</dc-element>
+        <dc-qualifier>department</dc-qualifier>
+        <repeatable>false</repeatable>
+        <label>Τομέας - Εργαστήριο</label>
+        <input-type>onebox</input-type>
+        <hint>Ο Τομέας ή το Εργαστήριο του ιδρύματος στο οποίο εκπονήθηκε η εργασία.</hint>
       </field>
       <field>
         <dc-schema>heal</dc-schema>
@@ -2656,12 +2710,12 @@
     <value-pairs value-pairs-name="accessTypeList" dc-term="access">
 
       <pair>
-        <displayed-value>Δημόσια διαθέσιμο</displayed-value>
+        <displayed-value>Παγκόσμια (ελεύθερη) πρόσβαση</displayed-value>
         <stored-value>free</stored-value>
       </pair>
 
       <pair>
-        <displayed-value>Διαθέσιμο σε χρήστες με IP του ιδρύματος</displayed-value>
+        <displayed-value>ΕΜΠ πρόσβαση</displayed-value>
         <stored-value>campus</stored-value>
       </pair>
 
@@ -2671,7 +2725,7 @@
       </pair> -->
 
       <pair>
-        <displayed-value>Χρονικός αποκλεισμός</displayed-value>
+        <displayed-value>Έλλειψη πρόσβασης</displayed-value>
         <stored-value>embargo</stored-value>
       </pair>
 

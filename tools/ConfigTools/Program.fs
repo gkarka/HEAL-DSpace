@@ -72,7 +72,7 @@ let main argv =
     let forms lang itemTypes fieldNames = itemTypes |> generateForms lang fieldNames
 
     let itemTypes = ["bachelorThesis";"masterThesis";"doctoralThesis";"conferenceItem";"journalArticle";"learningMaterial"]    
-    let fieldNames = ["publicationDate";"abstract";"sponsor";"advisorName";"committeeMemberName";"academicPublisherID";"academicPublisher";"numberOfPages";"generalDescription"]
+    let fieldNames = ["publicationDate";"abstract";"sponsor";"advisorName";"committeeMemberName";"academicPublisherID";"academicPublisher";"contributor";"numberOfPages";"generalDescription"]
        
     let writeFile lang = 
         use wr = new StreamWriter("../../../../dspace/config/input-forms_" + lang + ".temp.xml", false)

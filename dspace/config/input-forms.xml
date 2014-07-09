@@ -1500,8 +1500,8 @@
           <repeatable>true</repeatable>
           <label>Keywords</label>
           <input-type>onebox</input-type>
-          <hint>A keyword describing the subject of the item.</hint>
-          <required>You must enter at least one keywords.</required>
+          <hint>5 keywords in english and 5 in greek describing the subject of the item.</hint>
+          <required>You must enter at least 5 keywords.</required>
           <i18n>true</i18n>
         </field>
         <field>
@@ -1609,6 +1609,15 @@
           <required>You must enter a value for the publishing school.</required>
         </field>
         <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>contributor</dc-element>
+          <dc-qualifier>department</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Department - Lab</label>
+          <input-type>onebox</input-type>
+          <hint>The department or laboratory of the institution the thesis was carried out in.</hint>
+        </field>
+        <field>
           <dc-schema>heal</dc-schema>
           <dc-element>numberOfPages</dc-element>
           <repeatable>false</repeatable>
@@ -1683,8 +1692,8 @@
           <repeatable>true</repeatable>
           <label>Keywords</label>
           <input-type>onebox</input-type>
-          <hint>A keyword describing the subject of the item.</hint>
-          <required>You must enter at least one keywords.</required>
+          <hint>5 keywords in english and 5 in greek describing the subject of the item.</hint>
+          <required>You must enter at least 5 keywords.</required>
           <i18n>true</i18n>
         </field>
         <field>
@@ -1792,6 +1801,15 @@
           <required>You must enter a value for the publishing school.</required>
         </field>
         <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>contributor</dc-element>
+          <dc-qualifier>department</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Department - Lab</label>
+          <input-type>onebox</input-type>
+          <hint>The department or laboratory of the institution the thesis was carried out in.</hint>
+        </field>
+        <field>
           <dc-schema>heal</dc-schema>
           <dc-element>numberOfPages</dc-element>
           <repeatable>false</repeatable>
@@ -1866,8 +1884,8 @@
           <repeatable>true</repeatable>
           <label>Keywords</label>
           <input-type>onebox</input-type>
-          <hint>A keyword describing the subject of the item.</hint>
-          <required>You must enter at least one keywords.</required>
+          <hint>5 keywords in english and 5 in greek describing the subject of the item.</hint>
+          <required>You must enter at least 5 keywords.</required>
           <i18n>true</i18n>
         </field>
         <field>
@@ -1975,6 +1993,15 @@
           <required>You must enter a value for the publishing school.</required>
         </field>
         <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>contributor</dc-element>
+          <dc-qualifier>department</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Department - Lab</label>
+          <input-type>onebox</input-type>
+          <hint>The department or laboratory of the institution the thesis was carried out in.</hint>
+        </field>
+        <field>
           <dc-schema>heal</dc-schema>
           <dc-element>numberOfPages</dc-element>
           <repeatable>false</repeatable>
@@ -2049,8 +2076,8 @@
           <repeatable>true</repeatable>
           <label>Keywords</label>
           <input-type>onebox</input-type>
-          <hint>A keyword describing the subject of the item.</hint>
-          <required>You must enter at least one keywords.</required>
+          <hint>5 keywords in english and 5 in greek describing the subject of the item.</hint>
+          <required>You must enter at least 5 keywords.</required>
           <i18n>true</i18n>
         </field>
         <field>
@@ -2158,6 +2185,15 @@
           <required>You must enter a value for the publishing school.</required>
         </field>
         <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>contributor</dc-element>
+          <dc-qualifier>department</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Department - Lab</label>
+          <input-type>onebox</input-type>
+          <hint>The department or laboratory of the institution the thesis was carried out in.</hint>
+        </field>
+        <field>
           <dc-schema>heal</dc-schema>
           <dc-element>numberOfPages</dc-element>
           <repeatable>false</repeatable>
@@ -2232,8 +2268,8 @@
           <repeatable>true</repeatable>
           <label>Keywords</label>
           <input-type>onebox</input-type>
-          <hint>A keyword describing the subject of the item.</hint>
-          <required>You must enter at least one keywords.</required>
+          <hint>5 keywords in english and 5 in greek describing the subject of the item.</hint>
+          <required>You must enter at least 5 keywords.</required>
           <i18n>true</i18n>
         </field>
         <field>
@@ -2341,6 +2377,15 @@
           <required>You must enter a value for the publishing school.</required>
         </field>
         <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>contributor</dc-element>
+          <dc-qualifier>department</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Department - Lab</label>
+          <input-type>onebox</input-type>
+          <hint>The department or laboratory of the institution the thesis was carried out in.</hint>
+        </field>
+        <field>
           <dc-schema>heal</dc-schema>
           <dc-element>numberOfPages</dc-element>
           <repeatable>false</repeatable>
@@ -2415,8 +2460,8 @@
           <repeatable>true</repeatable>
           <label>Keywords</label>
           <input-type>onebox</input-type>
-          <hint>A keyword describing the subject of the item.</hint>
-          <required>You must enter at least one keywords.</required>
+          <hint>5 keywords in english and 5 in greek describing the subject of the item.</hint>
+          <required>You must enter at least 5 keywords.</required>
           <i18n>true</i18n>
         </field>
         <field>
@@ -2522,6 +2567,15 @@
           <input-type value-pairs-name="ntua_departments">dropdown</input-type>
           <hint>The school of the institution the thesis was carried out in.</hint>
           <required>You must enter a value for the publishing school.</required>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>contributor</dc-element>
+          <dc-qualifier>department</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Department - Lab</label>
+          <input-type>onebox</input-type>
+          <hint>The department or laboratory of the institution the thesis was carried out in.</hint>
         </field>
         <field>
           <dc-schema>heal</dc-schema>
@@ -2757,17 +2811,17 @@
 			</pair>
 
 			<pair>
-				<displayed-value>Institutional IP-based access</displayed-value>
+				<displayed-value>NTUA access</displayed-value>
 				<stored-value>campus</stored-value>
 			</pair>
 
-			<pair>
+			<!--<pair>
 				<displayed-value>Accessible to logged-in DSpace users</displayed-value>
 				<stored-value>account</stored-value>
-			</pair>
+			</pair>-->
 
 			<pair>
-				<displayed-value>Embargo (6 months)</displayed-value>
+				<displayed-value>Embargo</displayed-value>
 				<stored-value>embargo</stored-value>
 			</pair>
 

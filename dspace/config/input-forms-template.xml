@@ -146,11 +146,11 @@
           <label>Keywords</label>
           <label-el>Λέξεις-κλειδιά</label-el>
           <input-type>onebox</input-type>
-          <hint>A keyword describing the subject of the item.</hint>
-          <hint-el>Μια λέξη-κλειδί που περιγράφει το αντικείμενο του έργου.</hint-el>
+          <hint>5 keywords in english and 5 in greek describing the subject of the item.</hint>
+          <hint-el>5 λέξεις-κλειδιά στα ελληνικά και 5 στα αγγλικά που περιγράφουν το αντικείμενο του έργου.</hint-el>
           <!--<required>You must enter at least 5 keywords in Greek and 5 keywords in English.</required>-->
-          <required>You must enter at least one keywords.</required>
-          <required-el>Πρέπει να εισάγετε τουλάχιστον μια λέξη-κλεδί.</required-el>
+          <required>You must enter at least 5 keywords.</required>
+          <required-el>Πρέπει να εισάγετε τουλάχιστον 5 λέξεις-κλεδιά.</required-el>
           <i18n>true</i18n>
         </field>
 
@@ -322,6 +322,17 @@
           <hint-el>Η Σχολή του ιδρύματος στο οποίο εκπονήθηκε η εργασία.</hint-el>
           <required>You must enter a value for the publishing school.</required>
           <required-el>Πρέπει να εισαγάγετε Σχολή</required-el>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>contributor</dc-element>
+          <dc-qualifier>department</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Department - Lab</label>
+          <label-el>Τομέας - Εργαστήριο</label-el>
+          <input-type>onebox</input-type>
+          <hint>The department or laboratory of the institution the thesis was carried out in.</hint>
+          <hint-el>Ο Τομέας ή το Εργαστήριο του ιδρύματος στο οποίο εκπονήθηκε η εργασία.</hint-el>          
         </field>
 
         <field>
