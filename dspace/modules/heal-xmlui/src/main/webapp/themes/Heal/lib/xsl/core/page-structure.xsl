@@ -20,17 +20,17 @@
 -->
 
 <xsl:stylesheet xmlns:i18n="http://apache.org/cocoon/i18n/2.1"
-	xmlns:dri="http://di.tamu.edu/DRI/1.0/"
-	xmlns:mets="http://www.loc.gov/METS/"
-	xmlns:xlink="http://www.w3.org/TR/xlink/"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
-	xmlns:dim="http://www.dspace.org/xmlns/dspace/dim"
-	xmlns:xhtml="http://www.w3.org/1999/xhtml"
-	xmlns:mods="http://www.loc.gov/mods/v3"
-	xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dri="http://di.tamu.edu/DRI/1.0/"
+  xmlns:mets="http://www.loc.gov/METS/"
+  xmlns:xlink="http://www.w3.org/TR/xlink/"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
+  xmlns:dim="http://www.dspace.org/xmlns/dspace/dim"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:mods="http://www.loc.gov/mods/v3"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
     xmlns:confman="org.dspace.core.ConfigurationManager"
-	xmlns="http://www.w3.org/1999/xhtml"
-	exclude-result-prefixes="i18n dri mets xlink xsl dim xhtml mods dc confman">
+  xmlns="http://www.w3.org/1999/xhtml"
+  exclude-result-prefixes="i18n dri mets xlink xsl dim xhtml mods dc confman">
 
   <xsl:output indent="yes"/>
 
@@ -287,6 +287,18 @@
           <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
           <xsl:text>/lib/js/modernizr-1.7.min.js</xsl:text>
         </xsl:attribute>&#160;</script>
+
+
+      <!--                 Added by pstav 			-->
+      <script type="text/javascript">
+        <xsl:attribute name="src">
+          <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+          <xsl:text>/themes/</xsl:text>
+          <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
+          <xsl:text>/lib/js/heal-ac.js</xsl:text>
+        </xsl:attribute>&#160;
+      </script>
+      <!--                 Added by pstav 			-->
 
       <!-- Add the title in -->
       <xsl:variable name="page_title" select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='title']" />
@@ -780,7 +792,8 @@
           </div>
         </xsl:when>
         <xsl:when test="starts-with($request-uri, 'page/submission-guide')">
-          <xsl:copy-of select="document('../../../../../static/help/submission.html')" />        
+          <!--<xsl:copy-of select="document('../../../../../static/help/submission.html')" />-->
+          <xsl:copy-of select="document('../../../../../static/help/etd_directions.html')" />
         </xsl:when>
         <xsl:when test="starts-with($request-uri, 'page/help')">
           <xsl:copy-of select="document('../../../../../static/help/help.html')" />        
@@ -926,29 +939,45 @@
     <xsl:if test="/dri:document/dri:body/dri:div/dri:list[@type='form']/dri:item/dri:field[@id='aspect.submission.StepTransformer.field.dc_subject']">
       <script type="text/javascript">
         <xsl:text>
-			$(function() {
-					$( "#aspect_submission_StepTransformer_field_dc_subject" ).autocomplete({
-						source: "</xsl:text><xsl:value-of select="concat($context-path,'/JSON/rdf/search/keywords')"/><xsl:text>",
-						minLength: 3,
-						open: function() { 
-					        $('#aspect_submission_StepTransformer_field_dc_subject').autocomplete("widget").width(600) 
-					    }  
-					});
-				});</xsl:text>
+      $(function() {
+           var acelem = $( "#aspect_submission_StepTransformer_field_dc_subject" );
+ 			     var serviceURI = "</xsl:text><xsl:value-of select="concat($context-path,'/JSON/rdf/search/keywords')"/><xsl:text>"
+ 				   var selectElement = createSelect(acelem, serviceURI, "</xsl:text><xsl:value-of select="$rdfSearch.healpUrl"/><xsl:text>");
+ 				   acelem.autocomplete({
+ 					   source: function(request, response) { 
+ 						   var qualifier = $('#' + getSelect(acelem)).val(); 
+ 						   $.getJSON(serviceURI, { vocab: qualifier, term: request.term }, response); }, 
+             minLength: 3,
+              open: function() { 
+                    $('#aspect_submission_StepTransformer_field_dc_subject').autocomplete("widget").width(600) 
+                }  
+           });
+           $( acelem ).parent().parent().find( '.ds-interpreted-field' ).each(function() {
+   			     $(this).html(updateLabel($(this).text()));
+ 				   });
+        });</xsl:text>
       </script>
     </xsl:if>
     <xsl:if test="/dri:document/dri:body/dri:div/dri:list[@type='form']/dri:item/dri:field[@id='aspect.submission.StepTransformer.field.heal_classification']">
       <script type="text/javascript">
         <xsl:text>
-			$(function() {
-					$( "#aspect_submission_StepTransformer_field_heal_classification" ).autocomplete({
-						source: "</xsl:text><xsl:value-of select="concat($context-path,'/JSON/rdf/search/keywords')"/><xsl:text>",
-						minLength: 3,
-						open: function() { 
-					        $('#aspect_submission_StepTransformer_field_heal_classification').autocomplete("widget").width(600) 
-					    }  
-					});
-				});</xsl:text>
+      $(function() {
+          var acelem = $( "#aspect_submission_StepTransformer_field_heal_classification" );
+ 					var serviceURI = "</xsl:text><xsl:value-of select="concat($context-path,'/JSON/rdf/search/keywords')"/><xsl:text>"
+ 					var selectElement = createSelect(acelem, serviceURI, "</xsl:text><xsl:value-of select="$rdfSearch.healpUrl"/><xsl:text>");
+ 					acelem.autocomplete({
+ 						source: function(request, response) { 
+ 							  var qualifier = $('#' + getSelect(acelem)).val(); 
+ 							  $.getJSON(serviceURI, { vocab: qualifier, term: request.term }, response); },   						
+            minLength: 3,
+            open: function() { 
+                  $('#aspect_submission_StepTransformer_field_heal_classification').autocomplete("widget").width(600) 
+            }  
+          });
+          $( acelem ).parent().parent().find( '.ds-interpreted-field' ).each(function() {
+   					 	 $(this).html(updateLabel($(this).text()));
+ 					});	
+        });</xsl:text>
       </script>
     </xsl:if>
     <!-- END aanagnostopoulos -->
