@@ -1442,7 +1442,7 @@
 
 
     </form>
-    
+
     <form name="bachelorThesis">
       <page number="1">
         <field>
@@ -1558,6 +1558,7 @@
           <label>Abstract</label>
           <input-type>textarea</input-type>
           <hint>The abstract of the thesis.</hint>
+          <required>You must enter the abstract.</required>
           <i18n>true</i18n>
         </field>
         <field>
@@ -1740,6 +1741,7 @@
           <label>Abstract</label>
           <input-type>textarea</input-type>
           <hint>The abstract of the thesis.</hint>
+          <required>You must enter the abstract.</required>
           <i18n>true</i18n>
         </field>
         <field>
@@ -1922,6 +1924,7 @@
           <label>Abstract</label>
           <input-type>textarea</input-type>
           <hint>The abstract of the thesis.</hint>
+          <required>You must enter the abstract.</required>
           <i18n>true</i18n>
         </field>
         <field>
@@ -2104,6 +2107,7 @@
           <label>Abstract</label>
           <input-type>textarea</input-type>
           <hint>The abstract of the thesis.</hint>
+          <required>You must enter the abstract.</required>
           <i18n>true</i18n>
         </field>
         <field>
@@ -2286,6 +2290,7 @@
           <label>Abstract</label>
           <input-type>textarea</input-type>
           <hint>The abstract of the thesis.</hint>
+          <required>You must enter the abstract.</required>
           <i18n>true</i18n>
         </field>
         <field>
@@ -2468,6 +2473,7 @@
           <label>Abstract</label>
           <input-type>textarea</input-type>
           <hint>The abstract of the thesis.</hint>
+          <required>You must enter the abstract.</required>
           <i18n>true</i18n>
         </field>
         <field>

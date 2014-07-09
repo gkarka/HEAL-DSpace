@@ -249,6 +249,8 @@
           <hint>The abstract of the thesis.</hint>
           <hint-el>Η περίληψη της εργασίας.</hint-el>
           <i18n>true</i18n>
+          <required>You must enter the abstract.</required>
+          <required-el>Πρέπει να εισαγάγετε την περίληψη.</required-el>
         </field>
 
         <field>
