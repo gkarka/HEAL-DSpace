@@ -936,7 +936,7 @@
 
     <!-- modified by aanagnostopoulos: added external autocomplete service (Triple store)-->
 
-    <xsl:if test="/dri:document/dri:body/dri:div/dri:list[@type='form']/dri:item/dri:field[@id='aspect.submission.StepTransformer.field.dc_subject']">
+    <!--<xsl:if test="/dri:document/dri:body/dri:div/dri:list[@type='form']/dri:item/dri:field[@id='aspect.submission.StepTransformer.field.dc_subject']">
       <script type="text/javascript">
         <xsl:text>
       $(function() {
@@ -957,7 +957,7 @@
  				   });
         });</xsl:text>
       </script>
-    </xsl:if>
+    </xsl:if>-->
     <xsl:if test="/dri:document/dri:body/dri:div/dri:list[@type='form']/dri:item/dri:field[@id='aspect.submission.StepTransformer.field.heal_classification']">
       <script type="text/javascript">
         <xsl:text>
