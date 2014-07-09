@@ -1614,7 +1614,7 @@
           <repeatable>false</repeatable>
           <label>Number of Pages</label>
           <input-type>onebox</input-type>
-          <hint>Ο αριθμός σελίδων της εργασίας.</hint>
+          <hint>The thesis' number of pages.</hint>
         </field>
         <field>
           <dc-schema>heal</dc-schema>
@@ -1797,7 +1797,7 @@
           <repeatable>false</repeatable>
           <label>Number of Pages</label>
           <input-type>onebox</input-type>
-          <hint>Ο αριθμός σελίδων της εργασίας.</hint>
+          <hint>The thesis' number of pages.</hint>
         </field>
         <field>
           <dc-schema>heal</dc-schema>
@@ -1980,7 +1980,7 @@
           <repeatable>false</repeatable>
           <label>Number of Pages</label>
           <input-type>onebox</input-type>
-          <hint>Ο αριθμός σελίδων της εργασίας.</hint>
+          <hint>The thesis' number of pages.</hint>
         </field>
         <field>
           <dc-schema>heal</dc-schema>
@@ -2163,7 +2163,7 @@
           <repeatable>false</repeatable>
           <label>Number of Pages</label>
           <input-type>onebox</input-type>
-          <hint>Ο αριθμός σελίδων της εργασίας.</hint>
+          <hint>The thesis' number of pages.</hint>
         </field>
         <field>
           <dc-schema>heal</dc-schema>
@@ -2346,7 +2346,7 @@
           <repeatable>false</repeatable>
           <label>Number of Pages</label>
           <input-type>onebox</input-type>
-          <hint>Ο αριθμός σελίδων της εργασίας.</hint>
+          <hint>The thesis' number of pages.</hint>
         </field>
         <field>
           <dc-schema>heal</dc-schema>
@@ -2529,7 +2529,7 @@
           <repeatable>false</repeatable>
           <label>Number of Pages</label>
           <input-type>onebox</input-type>
-          <hint>Ο αριθμός σελίδων της εργασίας.</hint>
+          <hint>The thesis' number of pages.</hint>
         </field>
         <field>
           <dc-schema>heal</dc-schema>

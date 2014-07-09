@@ -331,9 +331,9 @@
           <repeatable>false</repeatable>
           <label>Number of Pages</label>
           <label-el>Αριθμός σελίδων</label-el>
-          <input-type>onebox</input-type>
-          <hint>Ο αριθμός σελίδων της εργασίας.</hint>
-          <hint-el>The thesis' number of pages.</hint-el>
+          <input-type>onebox</input-type>          
+          <hint>The thesis' number of pages.</hint>
+          <hint-el>Ο αριθμός σελίδων της εργασίας.</hint-el>
         </field>        
 
         <field>
