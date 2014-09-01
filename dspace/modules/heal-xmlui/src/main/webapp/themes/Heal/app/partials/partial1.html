@@ -1,5 +1,27 @@
-<h1 ng-bind="toc.book._name"></h1>
-<div>
-    <img src="/xmlui/bitstream/handle/123456789/8/{{book.bitstreamName}}?page={{book.page}}" style="width: 99%;" />
+﻿<div class="page-header">
+    <h3>
+        <page-link page="0" text="{{toc.book._name}}"></page-link>
+    </h3>
 </div>
-{{toc.book}}
+<div class="row">
+    <div class="col-md-2">
+        <h4>Περιεχόμενα</h4>
+        <ul class="list-group">
+            <li ng-repeat="chapter in toc.book.chapter" ng-class="{ 'list-group-item' : true, 'list-group-item-info' : isActive(chapter.pageRange) }">
+                <span class="badge">{{chapter._pageStart}}</span>
+                <page-link page="{{chapter.pageRange._start}}" text="{{chapter._title}}"></page-link>
+            </li>
+        </ul>        
+    </div>
+    <div class="col-md-9">        
+        <div class="btn-group btn-group-sm btn-group-justified">
+            <button type="button" class="btn" ng-click="prev()">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </button>
+            <button type="button" class="btn" ng-click="next()">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </button>
+        </div>
+        <img ng-src="{{page.imageUrl}}" class="img-responsive img-thumbnail" />
+    </div>
+</div>

@@ -3,23 +3,21 @@
 
 /* Controllers */
 
-angular.module('dspace.controllers', []).
-  controller('pageController', ['$scope', 'book', 'toc', function ($scope, book, toc) {
-      $scope.book = book;
-      $scope.toc = toc;
-      
-      //book.then(function (b) { $scope.book.toc = b.toc; });
-      // "/xmlui/bitstream/handle/123456789/8/S0001098.xml?sequence=7"
-  }])
-  .controller('MyCtrl2', [function() {
-
-  }]);
-  
-function fileController($scope, Restangular) {
-	$scope.test = "test2";
-	$scope.OpenFile = function($event) {
-		alert('open file');
-		$event.stopPropagation();
-		//return false;
-	}
-};
+angular.module('dspace.controllers', [])
+    .controller('bookController', ['$scope', '$location', 'bookService', 'toc', 'page', function ($scope, $location, bookService, toc, page) {
+        $scope.toc = toc;
+        $scope.page = page;
+    
+        $scope.isActive = function (pageRange) {
+            return page.number >= pageRange._start && page.number <= pageRange._end;
+        };
+        $scope.prev = function () {
+            var num = new Number(page.number);
+            $location.path(bookService.getPagePath(num - 1));
+        };
+        $scope.next = function () {
+            var num = new Number(page.number);
+            $location.path(bookService.getPagePath(num + 1));
+        };
+    }]);
+    
