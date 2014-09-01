@@ -830,14 +830,15 @@
     </xsl:variable>
 
     <xsl:variable name="protocol">
-      <xsl:choose>
+      <!--<xsl:choose>
         <xsl:when test="starts-with(confman:getProperty('dspace.baseUrl'), 'https://')">
           <xsl:text>https://</xsl:text>
         </xsl:when>
         <xsl:otherwise>
           <xsl:text>http://</xsl:text>
         </xsl:otherwise>
-      </xsl:choose>
+      </xsl:choose>-->
+      <xsl:text>//</xsl:text>
     </xsl:variable>
     <script type="text/javascript" src="{concat($protocol, 'ajax.googleapis.com/ajax/libs/jquery/', $jqueryVersion ,'/jquery.min.js')}">&#160;</script>
 
