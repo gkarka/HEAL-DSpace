@@ -32,7 +32,7 @@ config(['$routeProvider', function($routeProvider) {
     //$routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
     $routeProvider.otherwise({redirectTo: '/'});
 }]).
-config(['RestangularProvider', function (RestangularProvider) {    
-    RestangularProvider.setBaseUrl('/heal-xmlui');
-    //RestangularProvider.setResponseInterceptor(function (data, operation, what, url, response, deferred) {
+run(['$location', 'Restangular', function ($location, Restangular) {
+    var baseUrl = $location.absUrl().substring(0, $location.absUrl().indexOf('/themes/'));    
+    Restangular.setBaseUrl(baseUrl);    
 }]);
