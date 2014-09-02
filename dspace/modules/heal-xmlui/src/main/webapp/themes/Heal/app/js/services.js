@@ -7,7 +7,7 @@
 // In this case it is a simple value service.
 angular.module('dspace.services', ['restangular']).
     value('version', '0.1').
-    factory('bookService', ['$route', 'Restangular', function ($route, Restangular) {
+    factory('bookService', ['$route', '$location', 'Restangular', function ($route, $location, Restangular) {
         var bitstream = Restangular.all('bitstream/handle/123456789'); // /38141/S0001300.xml').get()
         var _toc = {};
     
@@ -43,7 +43,8 @@ angular.module('dspace.services', ['restangular']).
 
         
         var _getPageImageUrl = function (pageNum) {
-            return '/heal-xmlui/bitstream/handle/123456789/' + $route.current.params.handle + '/' + $route.current.params.bsname + '?page=' + pageNum;
+            var baseUrl = $location.absUrl().substring(0, $location.absUrl().indexOf('/themes/'));
+            return baseUrl + '/bitstream/handle/123456789/' + $route.current.params.handle + '/' + $route.current.params.bsname + '?page=' + pageNum;
         };
 
         return {
