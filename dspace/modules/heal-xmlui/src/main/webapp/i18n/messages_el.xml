@@ -477,7 +477,7 @@
 	<message key="xmlui.EPerson.StartRegistration.reset_password_for">Επαναφορά κωδικού για</message>
 	<message key="xmlui.EPerson.StartRegistration.submit_reset">Επαναφορά κωδικού</message>
 	<message key="xmlui.EPerson.StartRegistration.head2">Εγγραφή νέου χρήστη</message>
-	<message key="xmlui.EPerson.StartRegistration.para2">Δημιουργήστε ένα λογαριασμό για ενημερώση εμπλουτισμού συλλογών, και υποβολή νέων τεκμηρίων στο DSpace.</message>
+	<message key="xmlui.EPerson.StartRegistration.para2">Δημιουργήστε ένα λογαριασμό για ενημέρωση και υποβολή νέων τεκμηρίων στο DSpace.</message>
 	<message key="xmlui.EPerson.StartRegistration.email_address">Διεύθυνση Ηλεκτρονικού Ταχυδρομείου</message>
 	<message key="xmlui.EPerson.StartRegistration.email_address_help">Αυτή η διεύθυνση θα επιβεβαιωθεί και θα χρησιμοποιηθεί σαν όνομα χρήστη.</message>
 	<message key="xmlui.EPerson.StartRegistration.error_bad_email">Αδυναμία αποστολής μηνύματος ηλεκτρονικού ταχυδρομείου σε αυτή την διεύθυνση.</message>
