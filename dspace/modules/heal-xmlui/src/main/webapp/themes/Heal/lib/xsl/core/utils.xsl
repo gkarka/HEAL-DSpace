@@ -31,6 +31,16 @@
 
     <xsl:output indent="yes"/>
 
+    <xsl:template match="dri:xref" mode="summaryList">
+      <li class="ds-artifact-item community">
+        <div class="artifact-title">
+          <a href="{@target}" target="_new">
+            <xsl:value-of select="."/>
+          </a>  
+        </div>        
+      </li>
+    </xsl:template>
+  
     <!--added classes to differentiate between collections, communities and items-->
     <xsl:template match="dri:reference" mode="summaryList">
         <xsl:variable name="externalMetadataURL">

@@ -28,6 +28,26 @@
   <xsl:template match="dri:item/dri:field[@id='aspect.discovery.SimpleSearch.field.scope']">
   </xsl:template>
 
+  <!--<xsl:template match="dri:body/dri:div[@n='community-view']">
+  </xsl:template>-->
+
+  <!--<xsl:template match="dri:referenceSet">
+  </xsl:template>-->
+
+  <xsl:template match="dri:referenceSet[dri:reference/@url = '/metadata/handle/123456789/474/mets.xml']">
+    <referenceSet type="summaryList" rend="hierarchy">
+      <head>
+        <i18n:text catalogue="default">xmlui.ArtifactBrowser.CommunityViewer.head_sub_communities</i18n:text>
+      </head>
+      <reference type="DSpace Community" url="/metadata/handle/123456789/483/mets.xml" repositoryID="123456789"/>
+      <reference type="DSpace Community" url="/metadata/handle/123456789/482/mets.xml" repositoryID="123456789"/>      
+      <xref target="http://journals.lib.ntua.gr/index.php/pyrforos">
+        Πυρφόρος
+      </xref>      
+    </referenceSet>
+  </xsl:template>
+
+
 
   <xsl:template match="dri:options">
     <xsl:copy>
