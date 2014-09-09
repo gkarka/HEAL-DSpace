@@ -1,4 +1,4 @@
-# Registration notification email
+ο»Ώ# Registration notification email
 #
 # Parameters: {0} The name of the DSpace instance
 #             {1} The URL of the DSpace instance 
@@ -8,10 +8,10 @@
 #
 # See org.dspace.core.Email for information on the format of this file.
 #
-Subject: DSpace: Ειδοποίηση εγγραφής
+Subject: DSpace: Ξ•ΞΉΞ΄ΞΏΟ€ΞΏΞ―Ξ·ΟƒΞ· ΞµΞ³Ξ³ΟΞ±Ο†Ξ®Ο‚
 
-Ένας νέος χρήστης έκανε εγγραφή σε {0} στο/η {1}:
+ΞΞ½Ξ±Ο‚ Ξ½Ξ­ΞΏΟ‚ Ο‡ΟΞ®ΟƒΟ„Ξ·Ο‚ Ξ­ΞΊΞ±Ξ½Ξµ ΞµΞ³Ξ³ΟΞ±Ο†Ξ® ΟƒΞµ {0} ΟƒΟ„ΞΏ/Ξ· {1}:
 
-Όνομα:                  {2}
+ΞΞ½ΞΏΞΌΞ±:                  {2}
 Email:                  {3}
-Ημερομηνία:             {4}
+Ξ—ΞΌΞµΟΞΏΞΌΞ·Ξ½Ξ―Ξ±:             {4}

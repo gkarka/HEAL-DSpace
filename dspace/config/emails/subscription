@@ -1,12 +1,12 @@
-# E-mail sent to DSpace users when new items appear in collections they are
+ο»Ώ# E-mail sent to DSpace users when new items appear in collections they are
 # subscribed to
 #
 # Parameters: {0} is the details of the new collections and items
 # See org.dspace.core.Email for information on the format of this file.
 #
-Subject: Εγγραφή στο DSpace
-Νέα τεκμήρια είναι διαθέσιμα στις συλλογές που έχετε εγγραφεί:
+Subject: Ξ•Ξ³Ξ³ΟΞ±Ο†Ξ® ΟƒΟ„ΞΏ DSpace
+ΞΞ­Ξ± Ο„ΞµΞΊΞΌΞ®ΟΞΉΞ± ΞµΞ―Ξ½Ξ±ΞΉ Ξ΄ΞΉΞ±ΞΈΞ­ΟƒΞΉΞΌΞ± ΟƒΟ„ΞΉΟ‚ ΟƒΟ…Ξ»Ξ»ΞΏΞ³Ξ­Ο‚ Ο€ΞΏΟ… Ξ­Ο‡ΞµΟ„Ξµ ΞµΞ³Ξ³ΟΞ±Ο†ΞµΞ―:
 
 {0}
 
-Η Ομάδα του DSpace
+Ξ— ΞΞΌΞ¬Ξ΄Ξ± Ο„ΞΏΟ… DSpace

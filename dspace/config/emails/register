@@ -1,15 +1,15 @@
-# E-mail sent to DSpace users when they register for an account
+ο»Ώ# E-mail sent to DSpace users when they register for an account
 #
 # Parameters: {0} is expanded to a special registration URL
 #
 # See org.dspace.core.Email for information on the format of this file.
 #
-Subject: Δημιουργία Λογαριαστού DSpace 
-Για να ολοκληρώσετε τη δημιουργία λογαριασμού στο DSpace, παρακαλώ επιλέξτε τον ακόλουθο σύνδεσμο:
+Subject: Ξ”Ξ·ΞΌΞΉΞΏΟ…ΟΞ³Ξ―Ξ± Ξ›ΞΏΞ³Ξ±ΟΞΉΞ±ΟƒΟ„ΞΏΟ DSpace 
+Ξ“ΞΉΞ± Ξ½Ξ± ΞΏΞ»ΞΏΞΊΞ»Ξ·ΟΟΟƒΞµΟ„Ξµ Ο„Ξ· Ξ΄Ξ·ΞΌΞΉΞΏΟ…ΟΞ³Ξ―Ξ± Ξ»ΞΏΞ³Ξ±ΟΞΉΞ±ΟƒΞΌΞΏΟ ΟƒΟ„ΞΏ DSpace, Ο€Ξ±ΟΞ±ΞΊΞ±Ξ»Ο ΞµΟ€ΞΉΞ»Ξ­ΞΎΟ„Ξµ Ο„ΞΏΞ½ Ξ±ΞΊΟΞ»ΞΏΟ…ΞΈΞΏ ΟƒΟΞ½Ξ΄ΞµΟƒΞΌΞΏ:
 
   {0}
 
-Εάν χρειάζεστε βοήθεια με το λογαριασμό σας, παρακαλώ επικοινωνήστε στο 
-dspace_admin@lib.ntua.gr ή καλέστε μας στο 210-772 4017.
+Ξ•Ξ¬Ξ½ Ο‡ΟΞµΞΉΞ¬Ξ¶ΞµΟƒΟ„Ξµ Ξ²ΞΏΞ®ΞΈΞµΞΉΞ± ΞΌΞµ Ο„ΞΏ Ξ»ΞΏΞ³Ξ±ΟΞΉΞ±ΟƒΞΌΟ ΟƒΞ±Ο‚, Ο€Ξ±ΟΞ±ΞΊΞ±Ξ»Ο ΞµΟ€ΞΉΞΊΞΏΞΉΞ½Ο‰Ξ½Ξ®ΟƒΟ„Ξµ ΟƒΟ„ΞΏ 
+dspace_admin@lib.ntua.gr Ξ® ΞΊΞ±Ξ»Ξ­ΟƒΟ„Ξµ ΞΌΞ±Ο‚ ΟƒΟ„ΞΏ 210-772 4017.
 
-Η Ομάδα του DSpace
+Ξ— ΞΞΌΞ¬Ξ΄Ξ± Ο„ΞΏΟ… DSpace

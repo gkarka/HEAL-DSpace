@@ -76,10 +76,10 @@
         <aspect name="Submission and Workflow" path="resource://aspects/Submission/" />
 	    <aspect name="Statistics" path="resource://aspects/Statistics/" />
 	    
-		<!--
+		
 		<aspect name="Original Workflow" path="resource://aspects/Workflow/" />
-		-->
-		<aspect name="XMLWorkflow" path="resource://aspects/XMLWorkflow/" />		
+		
+		<!--<aspect name="XMLWorkflow" path="resource://aspects/XMLWorkflow/" />-->		
 		
         <!--
             To enable Discovery, uncomment this Aspect that will enable it
