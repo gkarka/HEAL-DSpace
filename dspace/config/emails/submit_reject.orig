@@ -1,0 +1,22 @@
+# Rejection email message
+#
+# {0}  Title of submission
+# {1}  Name of collection
+# {2}  Name of the rejector
+# {3}  Reason for the rejection
+# {4}  Link to 'My DSpace' page
+#
+Subject: DSpace: Η υποβολή έχει αποριφθεί
+
+Έχετε υποβάλλει: {0}
+
+Στη συλλογή: {1}
+
+Η υποβολή έχει αποριφθεί από {2}
+Με την ακόλουθη εξήγηση:
+
+{3}
+
+Η υποβολή σας δεν έχει διαγραφεί.Μπορείτε να έχετε πρόσβαση από τη σελίδα "My DSpace": {4}
+
+Η Ομάδα του DSpace

@@ -1,0 +1,23 @@
+# Workflow task email message
+#
+# {0}  Title of submission
+# {1}  Name of collection
+# {2}  submitter's name
+# {3}  Description of task
+# {4}  link to 'my DSpace' page 
+#
+Subject: DSpace: Υπάρχει μια νέα υποβολή
+
+Ένα νέο τεκμήριο υποβλήθηκε:
+
+Τίτλος:        {0}
+Συλλογή:   {1}
+Υποβλήθηκε από: {2}
+
+{3}
+
+Για να το διεκπεραιώσετε, παρακαλώ επισκεφτείτε τη σελίδα του "My DSpace":  {4}
+
+Ευχαριστούμε!
+
+Η ομάδα του DSpace
