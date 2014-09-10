@@ -715,7 +715,7 @@
 	<!-- org.dspace.app.xmlui.Submission.submit.CCLicenseStep -->
         <message key="xmlui.Submission.submit.CCLicenseStep.ccws_error">Εμφάνιση σφάλματος ... {0}</message>
         <message key="xmlui.Submission.submit.CCLicenseStep.head">Χορήγηση Άδειας</message>
-        <message key="xmlui.Submission.submit.CCLicenseStep.info1">Εάν θέλετε μπορείτε να προσθέσετε μια άδεια<a href="http://creativecommons.org/">Creative Commons</a> για το τεκμήριο. <strong>Οι άδειες Creative Commons καθορίζουν πώς θα χρησιμοποιήσουν οι αναγνώστες την εργασίας σας.</strong></message>
+        <message key="xmlui.Submission.submit.CCLicenseStep.info1">Εάν θέλετε μπορείτε να προσθέσετε μια άδεια <a href="http://creativecommons.org/"> Creative Commons</a> για το τεκμήριο. <strong>Οι άδειες Creative Commons καθορίζουν πώς θα χρησιμοποιήσουν οι αναγνώστες την εργασίας σας.</strong></message>
         <message key="xmlui.Submission.submit.CCLicenseStep.submit_choose_creative_commons">Επιλογή άδειας</message>
         <message key="xmlui.Submission.submit.CCLicenseStep.submit_to_creative_commons">Επισκεφθείτε τη σελίδα του Creative Commons για να επιλέξετε είδος άδειας</message>
         <message key="xmlui.Submission.submit.CCLicenseStep.license">Είδος άδειας</message>
