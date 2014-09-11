@@ -1243,7 +1243,7 @@
 	<message key="xmlui.administrative.item.general.template_head">Επεξεργασία πρότυπου τεκμηρίου για Συλλογή: {0}</message>
 	<message key="xmlui.administrative.item.general.option_head">Επεξεργασία τεκμηρίου</message>
 	<message key="xmlui.administrative.item.general.option_status">Κατάσταση τεκμηρίου</message>
-	<message key="xmlui.administrative.item.general.option_bitstreams">Αρχείο τεκμηρίου</message>
+	<message key="xmlui.administrative.item.general.option_bitstreams">Αρχεία τεκμηρίου</message>
 	<message key="xmlui.administrative.item.general.option_metadata">Μεταδεδομένα τεκμηρίου</message>
 	<message key="xmlui.administrative.item.general.option_view">Προβολή τεκμηρίου</message>
         <message key="xmlui.administrative.item.general.option_curate">Επιμέλεια</message>
@@ -1322,8 +1322,8 @@
     <message key="xmlui.administrative.item.EditBitstreamForm.name_help">Μετονομάστε το αρχείο. Σημειώστε ότι αυτό θα αλλάξει το URL του αρχείου που εμφανίζεται, αλλά οι παλιές συνδέσεις θα εξακολουθήσουν να αντιστοιχούν όσο το αναγνωριστικό σειράς δεν θα αλλάξει.</message>
 
 	<!-- org.dspace.app.xmlui.administrative.item.EditItemBitstreamsForm -->
-	<message key="xmlui.administrative.item.EditItemBitstreamsForm.title">Αρχείο τεκμηρίου</message>
-	<message key="xmlui.administrative.item.EditItemBitstreamsForm.trail">Αρχείο τεκμηρίου</message>
+	<message key="xmlui.administrative.item.EditItemBitstreamsForm.title">Αρχεία τεκμηρίου</message>
+	<message key="xmlui.administrative.item.EditItemBitstreamsForm.trail">Αρχεία τεκμηρίου</message>
 	<message key="xmlui.administrative.item.EditItemBitstreamsForm.head1">Αρχεία</message>
 	<message key="xmlui.administrative.item.EditItemBitstreamsForm.column1"></message>
 	<message key="xmlui.administrative.item.EditItemBitstreamsForm.column2">Όνομα</message>
