@@ -278,15 +278,15 @@
 	<message key="xmlui.ArtifactBrowser.RestrictedItem.head_community">Αυτή η κοινότητα έχει περιορισμούς</message>
 	<message key="xmlui.ArtifactBrowser.RestrictedItem.head_collection">Αυτή η συλλογή έχει περιορισμούς</message>
 	<message key="xmlui.ArtifactBrowser.RestrictedItem.head_item">Αυτό το τεκμήριο έχει περιορισμούς</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.head_bitstream">Η ροή δεδομένων έχει περιορισμούς</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.head_bitstream">Το αρχείο έχει περιορισμούς</message>
 	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_resource">Δεν είστε πιτοποιημένος χρήστης για να έχετε πρόσβαση σε πηγή που έχει περιορισμό</message>
 	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_community">Δεν είστε πιτοποιημένος χρήστης για να έχετε πρόσβαση σε κοινότητα που έχει περιορισμό<b>{0}</b>.</message>
 	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_collection">Δεν είστε πιτοποιημένος χρήστης για να έχετε πρόσβαση σε συλλογή που έχει περιορισμό <b>{0}</b>.</message>
 	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_item">Δεν είστε πιτοποιημένος χρήστης για να έχετε πρόσβαση σε τεκμήριο που έχει περιορισμό <b>{0}</b>.</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_bitstream">Δεν έχετε πιτοποίηση για να έχετε πρόσβαση σε ροή δεδομένων που έχει περιορισμούς <b>{0}</b>.</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_bitstream">Δεν έχετε πιτοποίηση για να έχετε πρόσβαση σε αρχείο που έχει περιορισμούς <b>{0}</b>.</message>
 	<message key="xmlui.ArtifactBrowser.RestrictedItem.type_collection">συλλογή</message>
 	<message key="xmlui.ArtifactBrowser.RestrictedItem.type_community">κοινότητα</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.type_bitstream">ροή δεδομένων</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.type_bitstream">αρχείο</message>
 	<message key="xmlui.ArtifactBrowser.RestrictedItem.type_item">τεκμήριο</message>
 	<message key="xmlui.ArtifactBrowser.RestrictedItem.type_resource">πηγή</message>
 	<message key="xmlui.ArtifactBrowser.RestrictedItem.unknown">άγνωστο</message>
@@ -802,10 +802,10 @@
 	<message key="xmlui.administrative.FlowItemUtils.item_reinstated">Το τεκμήριο αποκαταστάθηκε.</message>
 	<message key="xmlui.administrative.FlowItemUtils.item_moved">Το τεκμήριο μετακινήθηκε.</message>
 	<message key="xmlui.administrative.FlowItemUtils.item_move_failed">Ο επιλεγμένος προορισμός συλλογής δεν βρέθηκε.</message>
-	<message key="xmlui.administrative.FlowItemUtils.bitstream_added">Η νέα ροή δεδομένων ανέβηκε με επιτυχία.</message>
+	<message key="xmlui.administrative.FlowItemUtils.bitstream_added">Το νέο αρχείο ανέβηκε με επιτυχία.</message>
 	<message key="xmlui.administrative.FlowItemUtils.bitstream_failed">Σφάλμα κατά το ανέβασμα του αρχείου.</message>
-	<message key="xmlui.administrative.FlowItemUtils.bitstream_updated">Η ροή δεδομένων ανανεώθηκε.</message>
-	<message key="xmlui.administrative.FlowItemUtils.bitstream_delete">Η επιλεγμένη ροή δεδομένων διαγάφθηκε.</message>
+	<message key="xmlui.administrative.FlowItemUtils.bitstream_updated">Το αρχείο ανανεώθηκε.</message>
+	<message key="xmlui.administrative.FlowItemUtils.bitstream_delete">Το επιλεγμένο αρχείο διαγάφθηκε.</message>
 	<message key="xmlui.administrative.FlowMapperUtils.map_items">Το τεκμήριο αντιστοιχήθηκε επιτυχώς.</message>
 	<message key="xmlui.administrative.FlowMapperUtils.unmaped_items">Το τεκμήριο αποσυνδέθηκε.</message>
 
@@ -1014,10 +1014,10 @@
 	<message key="xmlui.administrative.registries.general.metadata_registry_trail">Μητρώο Μεταδεδομένων</message>
 
 	<!-- org.dspace.app.xmlui.administrative.registries.DeleteBitstreamFormatsConfirm.java -->
-	<message key="xmlui.administrative.registries.DeleteBitstreamFormatsConfirm.title">Διαγραφή Μορφής Ροής Δεδομένων</message>
-	<message key="xmlui.administrative.registries.DeleteBitstreamFormatsConfirm.trail">Διαγραφή Μορφής Ροής Δεδομένων</message>
+	<message key="xmlui.administrative.registries.DeleteBitstreamFormatsConfirm.title">Διαγραφή Μορφής Αρχείου</message>
+	<message key="xmlui.administrative.registries.DeleteBitstreamFormatsConfirm.trail">Διαγραφή Μορφής Αρχείου</message>
 	<message key="xmlui.administrative.registries.DeleteBitstreamFormatsConfirm.head">Επιβεβαίωση Διαγραφής</message>
-	<message key="xmlui.administrative.registries.DeleteBitstreamFormatsConfirm.para1">Είστε σίγουροι ότι το μορφότυπο μπορεί να διαγραφεί; Τυχόν υπάρχουσες ροές δεδομένων αυτού του μορφοτύπου θα επαναφερθούν σε άγνωστη μορφή ροής δεδομένων.</message>
+	<message key="xmlui.administrative.registries.DeleteBitstreamFormatsConfirm.para1">Είστε σίγουροι ότι το μορφότυπο μπορεί να διαγραφεί; Τυχόν υπάρχοντα αρχεία με αυτό το μορφότυπο θα επαναφερθούν σε άγνωστη μορφή αρχείου.</message>
 	<message key="xmlui.administrative.registries.DeleteBitstreamFormatsConfirm.column1">ID</message>
 	<message key="xmlui.administrative.registries.DeleteBitstreamFormatsConfirm.column2">Τύπος MIME</message>
 	<message key="xmlui.administrative.registries.DeleteBitstreamFormatsConfirm.column3">Όνομα</message>
@@ -1045,11 +1045,11 @@
 	<message key="xmlui.administrative.registries.DeleteMetadataSchemaConfirm.column3">Όνομα</message>
 
 	<!-- org.dspace.app.xmlui.administrative.registries.EditBitstreamFormat.java -->
-	<message key="xmlui.administrative.registries.EditBitstreamFormat.title">Μορφότυπο Ροής Δεδομένων</message>
-	<message key="xmlui.administrative.registries.EditBitstreamFormat.trail">Μορφότυπο Ροής Δεδομένων</message>
-	<message key="xmlui.administrative.registries.EditBitstreamFormat.head1">Νέο μορφότυπο Ροής Δεδομένων</message>
-	<message key="xmlui.administrative.registries.EditBitstreamFormat.head2">Μορφότυπο ροής δεδομένων: {0}</message>
-	<message key="xmlui.administrative.registries.EditBitstreamFormat.para1">Δώστε περιγραφικά μεταδεδομένα σχετικά με το μορφότυπο ροής δεδομένων που ακολουθεί. Ενώ το όνομα του μορφοτύπου πρέπει να είναι μοναδικό, ο τύπος MIME δεν χρειάζεται να είναι. Μπορείτε να έχετε ξεχωριστά μητρώα μορφοτύπων για διαφορετικές εκδόσεις του Microsoft Word, ακόμα και αν ο τύπος MIME θα είναι ίδιος για κάθε από αυτά.</message>
+	<message key="xmlui.administrative.registries.EditBitstreamFormat.title">Μορφότυπο Αρχείου</message>
+	<message key="xmlui.administrative.registries.EditBitstreamFormat.trail">Μορφότυπο Αρχείου</message>
+	<message key="xmlui.administrative.registries.EditBitstreamFormat.head1">Νέο μορφότυπο Αρχείου</message>
+	<message key="xmlui.administrative.registries.EditBitstreamFormat.head2">Μορφότυπο αρχείου: {0}</message>
+	<message key="xmlui.administrative.registries.EditBitstreamFormat.para1">Δώστε περιγραφικά μεταδεδομένα σχετικά με το μορφότυπο αρχείου που ακολουθεί. Ενώ το όνομα του μορφοτύπου πρέπει να είναι μοναδικό, ο τύπος MIME δεν χρειάζεται να είναι. Μπορείτε να έχετε ξεχωριστά μητρώα μορφοτύπων για διαφορετικές εκδόσεις του Microsoft Word, ακόμα και αν ο τύπος MIME θα είναι ίδιος για κάθε από αυτά.</message>
 	<message key="xmlui.administrative.registries.EditBitstreamFormat.name">Όνομα</message>
 	<message key="xmlui.administrative.registries.EditBitstreamFormat.name_help">Μοναδικό όνομα για αυτό το μορφότυπο, (π.χ. Microsoft Word XP ή Microsoft Word 2000)</message>
 	<message key="xmlui.administrative.registries.EditBitstreamFormat.name_error">Το όνομα του πεδίου είναι υποχρεωτικό.</message>
@@ -1096,9 +1096,9 @@
 
 	<!-- org.dspace.app.xmlui.administrative.registries.FormatRegistryMain.java -->
 	<message key="xmlui.administrative.registries.FormatRegistryMain.title">Μητρώο Μορφοτύπου</message>
-	<message key="xmlui.administrative.registries.FormatRegistryMain.head">Μητρώου μορφοτύπου ροής δεδομένων</message>
-	<message key="xmlui.administrative.registries.FormatRegistryMain.para1">Αυτή η λίστα των μορφοτύπων ροής δεδομένων περιέχει πληροφορίες για γνωστά μορφότυπα και για το επίπεδο υποστηριξής τους. Μπορείτε να επεξεργαστείτε μορφότυπα με αυτό το εργαλείο. Τα μορφότυπα που χαρακτηρίζονται ως 'εσωτερικά' είναι κρυφά απο το χρήστη, και χρησιμοποιούνται μόνο για διαχειριστικό σκοπό.</message>
-	<message key="xmlui.administrative.registries.FormatRegistryMain.new_link">Νέα μορφότυπα ροής δεδομένων</message>
+	<message key="xmlui.administrative.registries.FormatRegistryMain.head">Μητρώο μορφοτύπου αρχείου</message>
+	<message key="xmlui.administrative.registries.FormatRegistryMain.para1">Αυτή η λίστα των μορφοτύπων αρχείου περιέχει πληροφορίες για γνωστά μορφότυπα και για το επίπεδο υποστηριξής τους. Μπορείτε να επεξεργαστείτε μορφότυπα με αυτό το εργαλείο. Τα μορφότυπα που χαρακτηρίζονται ως 'εσωτερικά' είναι κρυφά απο το χρήστη, και χρησιμοποιούνται μόνο για διαχειριστικό σκοπό.</message>
+	<message key="xmlui.administrative.registries.FormatRegistryMain.new_link">Νέα μορφότυπα αρχείου</message>
 	<message key="xmlui.administrative.registries.FormatRegistryMain.column1"></message>
 	<message key="xmlui.administrative.registries.FormatRegistryMain.column2">ID</message>
 	<message key="xmlui.administrative.registries.FormatRegistryMain.column3">Όνομα</message>
@@ -1180,14 +1180,14 @@
 	<message key="xmlui.administrative.authorization.EditItemPolicies.title">Επεξεργασία Πολιτικών Τεκμηρίου</message>
 	<message key="xmlui.administrative.authorization.EditItemPolicies.trail">Λίστα Πολιτικών</message>
 	<message key="xmlui.administrative.authorization.EditItemPolicies.main_head">Πολιτικές για Τεκμήρια{0} (ID={1})</message>
-	<message key="xmlui.administrative.authorization.EditItemPolicies.main_para1">Με αυτό τον τρόπο μπορείτε να δείτε και να μεταβάλλετε τις πολιτικές ενός τεκμηρίου, καθώς και να μεταβάλλετε τις πολιτικές επιμέρους στοιχείων των τεκμηρίων: ροή δεδομένων και πακέτο. Εν συντομία, ένα τεκμήριο είναι ένας υποδοχέας πακέτων, και τα πακέτα είναι υποδοχείς ροών δεδομένων. Οι Υποδοχείς συνήθως έχουν πολιτικές ΠΡΟΣΘΗΚΗ/ΑΦΑΙΡΕΣΗ/ΑΝΑΓΝΩΣΗ/ΣΥΝΤΑΞΗ, ενώ οι ροές δεδομένων έχουν πολιτικές μόνο για ΑΝΑΓΝΩΣΗ/ΣΥΝΤΑΞΗ.</message>
-	<message key="xmlui.administrative.authorization.EditItemPolicies.main_para2">Θα παρατηρήσετε ένα επιπλέον πακέτο και ροή δεδομένων για κάθε τεκμήριο που θα περιέχει την άδεια κειμένου.</message>
+	<message key="xmlui.administrative.authorization.EditItemPolicies.main_para1">Με αυτό τον τρόπο μπορείτε να δείτε και να μεταβάλλετε τις πολιτικές ενός τεκμηρίου, καθώς και να μεταβάλλετε τις πολιτικές επιμέρους στοιχείων των τεκμηρίων: αρχείο και πακέτο. Εν συντομία, ένα τεκμήριο είναι ένας υποδοχέας πακέτων, και τα πακέτα είναι υποδοχείς αρχείων. Οι Υποδοχείς συνήθως έχουν πολιτικές ΠΡΟΣΘΗΚΗ/ΑΦΑΙΡΕΣΗ/ΑΝΑΓΝΩΣΗ/ΣΥΝΤΑΞΗ, ενώ τα αρχεία έχουν πολιτικές μόνο για ΑΝΑΓΝΩΣΗ/ΣΥΝΤΑΞΗ.</message>
+	<message key="xmlui.administrative.authorization.EditItemPolicies.main_para2">Θα παρατηρήσετε ένα επιπλέον πακέτο και ένα αρχείο για κάθε τεκμήριο που θα περιέχει την άδεια κειμένου.</message>
 	<message key="xmlui.administrative.authorization.EditItemPolicies.subhead_item">Πολιτικές τεκμηρίου</message>
 	<message key="xmlui.administrative.authorization.EditItemPolicies.subhead_bundle">Πολιτικές για Πακέτα {0} ({1})</message>
-	<message key="xmlui.administrative.authorization.EditItemPolicies.subhead_bitstream">Ροή δεδομένων {0} ({1})</message>
+	<message key="xmlui.administrative.authorization.EditItemPolicies.subhead_bitstream">Αρχείο {0} ({1})</message>
 	<message key="xmlui.administrative.authorization.EditItemPolicies.add_itemPolicy_link">Προσθήκη νέας πολιτικής τεκμηρίου</message>
 	<message key="xmlui.administrative.authorization.EditItemPolicies.add_bundlePolicy_link">Προσθήκη νέας πολιτικής για πακέτα</message>
-	<message key="xmlui.administrative.authorization.EditItemPolicies.add_bitstreamPolicy_link">Προσθήκη νέας πολιτικής για ροή δεδομένων</message>
+	<message key="xmlui.administrative.authorization.EditItemPolicies.add_bitstreamPolicy_link">Προσθήκη νέας πολιτικής για αρχείο</message>
 
 	<message key="xmlui.administrative.authorization.EditContainerPolicies.no_policies">δεν βρέθηκαν πολιτικές για αυτά τα τεκμήρια.</message>
 
@@ -1243,16 +1243,16 @@
 	<message key="xmlui.administrative.item.general.template_head">Επεξεργασία πρότυπου τεκμηρίου για Συλλογή: {0}</message>
 	<message key="xmlui.administrative.item.general.option_head">Επεξεργασία τεκμηρίου</message>
 	<message key="xmlui.administrative.item.general.option_status">Κατάσταση τεκμηρίου</message>
-	<message key="xmlui.administrative.item.general.option_bitstreams">Ροή δεδομένων τεκμηρίου</message>
+	<message key="xmlui.administrative.item.general.option_bitstreams">Αρχείο τεκμηρίου</message>
 	<message key="xmlui.administrative.item.general.option_metadata">Μεταδεδομένα τεκμηρίου</message>
 	<message key="xmlui.administrative.item.general.option_view">Προβολή τεκμηρίου</message>
         <message key="xmlui.administrative.item.general.option_curate">Επιμέλεια</message>
         <message key="xmlui.administrative.item.general.option_queue">Σε αναμονή</message>
 
 	<!-- org.dspace.app.xmlui.administrative.item.AddBitstreamForm -->
-	<message key="xmlui.administrative.item.AddBitstreamForm.title">Ανέβασμα Ροής Δεδομένων</message>
-	<message key="xmlui.administrative.item.AddBitstreamForm.trail">Ανέβασμα ροής δεδομένων</message>
-	<message key="xmlui.administrative.item.AddBitstreamForm.head1">Ανέβασμα νέας ροής δεδομένων</message>
+	<message key="xmlui.administrative.item.AddBitstreamForm.title">Ανέβασμα Αρχείου</message>
+	<message key="xmlui.administrative.item.AddBitstreamForm.trail">Ανέβασμα αρχείου</message>
+	<message key="xmlui.administrative.item.AddBitstreamForm.head1">Ανέβασμα νέου αρχείου</message>
 	<message key="xmlui.administrative.item.AddBitstreamForm.bundle_label">Πακέτο</message>
 	<message key="xmlui.administrative.item.AddBitstreamForm.bundle.ORIGINAL">Αρχείο Περιεχομένου(default)</message>
 	<message key="xmlui.administrative.item.AddBitstreamForm.bundle.METADATA">Αρχείο Μεταδεδομένων</message>
@@ -1267,13 +1267,13 @@
 	<message key="xmlui.administrative.item.AddBitstreamForm.description_label">Περιγραφή</message>
 	<message key="xmlui.administrative.item.AddBitstreamForm.description_help">Προαιρετικά, δώστε μια σύντομη περιγραφή του του αρχείου, για παράδειγμα "<i>Κύριο άρθρο</i>", ή "<i>Πειραματικά δεδομένα</i>".</message>
 	<message key="xmlui.administrative.item.AddBitstreamForm.submit_upload">Ανέβασμα</message>
-	<message key="xmlui.administrative.item.AddBitstreamForm.no_bundles">Χρειάζεστε προνόμια "ΠΡΟΣΘΗΚΗ" και "ΣΥΝΤΑΞΗ" σε τουλάχιστον ένα πακέτο για να μπορείτε να ανεβάσετε νέες ροές δεδομένων.</message>
+	<message key="xmlui.administrative.item.AddBitstreamForm.no_bundles">Χρειάζεστε προνόμια "ΠΡΟΣΘΗΚΗ" και "ΣΥΝΤΑΞΗ" σε τουλάχιστον ένα πακέτο για να μπορείτε να ανεβάσετε νέα αρχεία.</message>
 
 	<!-- org.dspace.app.xmlui.administrative.item.DeleteBitstreamConfirm -->
 	<message key="xmlui.administrative.item.DeleteBitstreamConfirm.title">Επιβεβαίωση Διαγραφής</message>
 	<message key="xmlui.administrative.item.DeleteBitstreamConfirm.trail">Επιβεβαίωση διαγραφής</message>
 	<message key="xmlui.administrative.item.DeleteBitstreamConfirm.head1">Επιβεβαίωση Διαγραφής</message>
-	<message key="xmlui.administrative.item.DeleteBitstreamConfirm.para1">Θέλετε σίγουρα να διαγράψετε αυτή τη ροή δεδομένων:</message>
+	<message key="xmlui.administrative.item.DeleteBitstreamConfirm.para1">Θέλετε σίγουρα να διαγράψετε αυτό το αρχείο:</message>
 	<message key="xmlui.administrative.item.DeleteBitstreamConfirm.column1">Όνομα</message>
 	<message key="xmlui.administrative.item.DeleteBitstreamConfirm.column2">Περιγραφή</message>
 	<message key="xmlui.administrative.item.DeleteBitstreamConfirm.column3">Μορφότυπο</message>
@@ -1303,11 +1303,11 @@
     <message key="xmlui.administrative.item.MoveItemForm.inherit_policies_help">Κληρονόμηση προκαθορισμένων πολιτικών της συλλογής προορισμού</message>
 
 	<!-- org.dspace.app.xmlui.administrative.item.EditBitstreamForm -->
-	<message key="xmlui.administrative.item.EditBitstreamForm.title">Επεξεργασία Ροής Δεδομένων</message>
-	<message key="xmlui.administrative.item.EditBitstreamForm.trail">Επεξεργασία ροής δεδομένων</message>
-	<message key="xmlui.administrative.item.EditBitstreamForm.head1">Επεξεργασία Ροής Δεδομένων</message>
+	<message key="xmlui.administrative.item.EditBitstreamForm.title">Επεξεργασία Αρχείου</message>
+	<message key="xmlui.administrative.item.EditBitstreamForm.trail">Επεξεργασία αρχείου</message>
+	<message key="xmlui.administrative.item.EditBitstreamForm.head1">Επεξεργασία Αρχείου</message>
 	<message key="xmlui.administrative.item.EditBitstreamForm.file_label">Αρχείο</message>
-	<message key="xmlui.administrative.item.EditBitstreamForm.primary_label">Κύρια ροή δεδομένων</message>
+	<message key="xmlui.administrative.item.EditBitstreamForm.primary_label">Κυρίως αρχείο</message>
 	<message key="xmlui.administrative.item.EditBitstreamForm.primary_option_yes">ναι</message>
 	<message key="xmlui.administrative.item.EditBitstreamForm.primary_option_no">όχι</message>
 	<message key="xmlui.administrative.item.EditBitstreamForm.description_label">Περιγραφή</message>
@@ -1319,12 +1319,12 @@
 	<message key="xmlui.administrative.item.EditBitstreamForm.user_label">Άλλο Μορφότυπο</message>
 	<message key="xmlui.administrative.item.EditBitstreamForm.user_help">Η εφαρμογή που χρησιμοποιείτε για να δημιουργήσετε το αρχείο, και τον αριθμό έκδοσης(για παράδειγμα, "<i>ACMESoft SuperApp version 1.5</i>").</message>
     <message key="xmlui.administrative.item.EditBitstreamForm.name_label">Όνομα αρχείου:</message>
-    <message key="xmlui.administrative.item.EditBitstreamForm.name_help">Μετονομάστε το αρχείο για αυτή τη ροή δεδομένων. Σημειώστε ότι αυτό θα αλλάξει το URL της ροής δεδομένων που εμφανίζεται, αλλά οι παλιές συνδέσεις θα εξακολουθήσουν να αντιστοιχούν όσο το αναγνωριστικό σειράς δεν θα αλλάξει.</message>
+    <message key="xmlui.administrative.item.EditBitstreamForm.name_help">Μετονομάστε το αρχείο. Σημειώστε ότι αυτό θα αλλάξει το URL του αρχείου που εμφανίζεται, αλλά οι παλιές συνδέσεις θα εξακολουθήσουν να αντιστοιχούν όσο το αναγνωριστικό σειράς δεν θα αλλάξει.</message>
 
 	<!-- org.dspace.app.xmlui.administrative.item.EditItemBitstreamsForm -->
-	<message key="xmlui.administrative.item.EditItemBitstreamsForm.title">Ροή δεδομένων τεκμηρίου</message>
-	<message key="xmlui.administrative.item.EditItemBitstreamsForm.trail">Ροή δεδομένων τεκμηρίου</message>
-	<message key="xmlui.administrative.item.EditItemBitstreamsForm.head1">Ροές δεδομένων</message>
+	<message key="xmlui.administrative.item.EditItemBitstreamsForm.title">Αρχείο τεκμηρίου</message>
+	<message key="xmlui.administrative.item.EditItemBitstreamsForm.trail">Αρχείο τεκμηρίου</message>
+	<message key="xmlui.administrative.item.EditItemBitstreamsForm.head1">Αρχεία</message>
 	<message key="xmlui.administrative.item.EditItemBitstreamsForm.column1"></message>
 	<message key="xmlui.administrative.item.EditItemBitstreamsForm.column2">Όνομα</message>
 	<message key="xmlui.administrative.item.EditItemBitstreamsForm.column3">Περιγραφή</message>
@@ -1335,11 +1335,11 @@
 	<message key="xmlui.administrative.item.EditItemBitstreamsForm.bundle_label"><strong>Πακέτο: {0}</strong></message>
 	<message key="xmlui.administrative.item.EditItemBitstreamsForm.primary_label"> (πρωτεύον) </message>
 	<message key="xmlui.administrative.item.EditItemBitstreamsForm.view_link">προβολή</message>
-	<message key="xmlui.administrative.item.EditItemBitstreamsForm.submit_add">Ανέβασμα νέας ροής δεδομένων</message>
-	<message key="xmlui.administrative.item.EditItemBitstreamsForm.submit_delete">Διαγραφή ροής δεδομένων</message>
-	<message key="xmlui.administrative.item.EditItemBitstreamsForm.submit_reorder">Ανανέωση σειράς ροής δεδομένων</message>
-	<message key="xmlui.administrative.item.EditItemBitstreamsForm.no_upload">Χρειάζεστε προνόμια "ΠΡΟΣΘΗΚΗ" και "ΣΥΝΤΑΞΗ" του τεκμηρίου και των πακέτων για να μπορέσετε να ανεβάσετε νέες ροές δεδομένων.</message>
-	<message key="xmlui.administrative.item.EditItemBitstreamsForm.no_remove">Μόνο ο Διαχειριστής του Συστήματος μπορεί να διαγράψει τη ροή δεδομένων / τα αρχεία.</message>
+	<message key="xmlui.administrative.item.EditItemBitstreamsForm.submit_add">Ανέβασμα νέου αρχείου</message>
+	<message key="xmlui.administrative.item.EditItemBitstreamsForm.submit_delete">Διαγραφή αρχείου</message>
+	<message key="xmlui.administrative.item.EditItemBitstreamsForm.submit_reorder">Ανανέωση σειράς αρχείου</message>
+	<message key="xmlui.administrative.item.EditItemBitstreamsForm.no_upload">Χρειάζεστε προνόμια "ΠΡΟΣΘΗΚΗ" και "ΣΥΝΤΑΞΗ" του τεκμηρίου και των πακέτων για να μπορέσετε να ανεβάσετε νέα αρχεία.</message>
+	<message key="xmlui.administrative.item.EditItemBitstreamsForm.no_remove">Μόνο ο Διαχειριστής του Συστήματος μπορεί να διαγράψει αρχεία.</message>
 	<message key="xmlui.administrative.item.EditItemBitstreamsForm.previous_order">Προηγούμενο:</message>
 	<message key="xmlui.administrative.item.EditItemBitstreamsForm.order_up">Μετακίνηση πάνω</message>
 	<message key="xmlui.administrative.item.EditItemBitstreamsForm.order_down">Μετακίνηση κάτω</message>
@@ -1362,7 +1362,7 @@
 	<!-- org.dspace.app.xmlui.administrative.item.EditItemStatusForm -->
 	<message key="xmlui.administrative.item.EditItemStatusForm.title">Κατάσταση Τεκμηρίου</message>
 	<message key="xmlui.administrative.item.EditItemStatusForm.trail">Κατάσταση τεκμηρίου</message>
-	<message key="xmlui.administrative.item.EditItemStatusForm.para1">Καλωσήρθαρε στη σελίδα διαχείρισης του τεκμηρίου. Από εδώ μπορείτε να αποσύρετε, να αποκαταστήσει, να μετακινήσετε ή να διαγράψετε το τεκμήριο. Μπορείτε επίσης να ενημερώσετε ή να προσθέσετε νέα μεταδεδομένα / ροές δεδομένων στις υπόλοιπες καρτέλες.</message>
+	<message key="xmlui.administrative.item.EditItemStatusForm.para1">Καλωσήρθαρε στη σελίδα διαχείρισης του τεκμηρίου. Από εδώ μπορείτε να αποσύρετε, να αποκαταστήσει, να μετακινήσετε ή να διαγράψετε το τεκμήριο. Μπορείτε επίσης να ενημερώσετε ή να προσθέσετε νέα μεταδεδομένα / αρχεία στις υπόλοιπες καρτέλες.</message>
 	<message key="xmlui.administrative.item.EditItemStatusForm.label_id">Εσωτερικό ID τεκμηρίου</message>
 	<message key="xmlui.administrative.item.EditItemStatusForm.label_handle">Αναγνωστικό</message>
 	<message key="xmlui.administrative.item.EditItemStatusForm.label_modified">Τελευταία τροποποίηση</message>
@@ -1501,7 +1501,7 @@
 	<message key="xmlui.administrative.collection.AssignCollectionRoles.help_submitters">E-People και Ομάδες που έχουν δικαίωμα να υποβάλουν νέα στοιχεία σε αυτή τη συλλογή.</message>
 	<message key="xmlui.administrative.collection.AssignCollectionRoles.help_default_read">E-People και Ομάδες που μπορούν να έχουν πρόσβαση ανάγνωσης σε νέα στοιχεία που υποβάλλονται σε αυτή τη συλλογή. Αλλαγές σε αυτό το ρόλο δεν γίνονται αναδρομικά. Τα υπάρχοντα στο σύστημα τεκμήρια θα εξακολουθήσουν να είναι ορατά από εκείνους που είχαν πρόσβαση ανάγνωσης κατά τη στιγμή της προσθήκης τους.</message>
 	<message key="xmlui.administrative.collection.AssignCollectionRoles.default_read_custom">Αυτή η συλλογή χρησιμοποιεί παραμετροποιημένες προκαθορισμένες ρυθμίσεις.</message>
-	<message key="xmlui.administrative.collection.AssignCollectionRoles.default_read_anonymous">Η Προεπιλογή ανάγνωσης για εισερχόμενο τεκμήριο και ροή δεδομένων έχει οριστεί σε Ανώνυμο.</message>
+	<message key="xmlui.administrative.collection.AssignCollectionRoles.default_read_anonymous">Η Προεπιλογή ανάγνωσης για εισερχόμενο τεκμήριο και αρχείο έχει οριστεί σε Ανώνυμο.</message>
 	<message key="xmlui.administrative.collection.AssignCollectionRoles.edit_authorization">Επεξεργασία πολιτικών πρόσβασης άμεσα.</message>
 	<message key="xmlui.administrative.collection.AssignCollectionRoles.role_name">Ρόλος</message>
 	<message key="xmlui.administrative.collection.AssignCollectionRoles.role_group">Συνεργαζόμενη ομάδα</message>
@@ -1587,7 +1587,7 @@
 	<message key="xmlui.administrative.collection.SetupCollectionHarvestingForm.label_harvest_level">Το περιεχόμενο αντλήθηκε</message>
 	<message key="xmlui.administrative.collection.SetupCollectionHarvestingForm.label_harvest_level">Το περιεχόμενο αντλήθηκε</message>
 	<message key="xmlui.administrative.collection.SetupCollectionHarvestingForm.option_md_only">Συγκομιδή μόνο μεταδεδομένων.</message>
-	<message key="xmlui.administrative.collection.SetupCollectionHarvestingForm.option_md_and_ref">Συγκομιδή μεταδεδομένων και αναφορές στη ροή δεδομένων (απαιτείται ORE υποστήριξη).</message>
+	<message key="xmlui.administrative.collection.SetupCollectionHarvestingForm.option_md_and_ref">Συγκομιδή μεταδεδομένων και αναφορές στο αρχείο (απαιτείται ORE υποστήριξη).</message>
 	<message key="xmlui.administrative.collection.SetupCollectionHarvestingForm.option_md_and_bs">Συγκομιδή μεταδεδομένων και ροών δεδομένων (απαιτείται ORE υποστήριξη)</message>
 	<message key="xmlui.administrative.collection.SetupCollectionHarvestingForm.submit_test">Δοκιμαστικές ρυθμίσεις</message>
 
@@ -1606,8 +1606,8 @@
 	<message key="xmlui.administrative.collection.EditCollectionHarvestingForm.harvest_status_oai_error">Σφάλμα OAI συνέβει κατά τη διάρκεια της τελευταίας συγκομιδής</message>
 	<message key="xmlui.administrative.collection.EditCollectionHarvestingForm.harvest_status_unknown_error">Απρόσμενο σφάλμα συνέβει κατά τη διάρκεια της τελευταίας συγκομιδής</message>
 	<message key="xmlui.administrative.collection.EditCollectionHarvestingForm.option_md_only">Μόνο μεταδεδομενα συγκομιδής.</message>
-	<message key="xmlui.administrative.collection.EditCollectionHarvestingForm.option_md_and_ref">Μεταδεδομένα συγκομιδής και αναφοράς στη ροή δεδομένων.</message>
-	<message key="xmlui.administrative.collection.EditCollectionHarvestingForm.option_md_and_bs">Μεταδεδομένα συγκομιδής και ροής δεδομένων (πλήρης επανάληψη).</message>
+	<message key="xmlui.administrative.collection.EditCollectionHarvestingForm.option_md_and_ref">Μεταδεδομένα συγκομιδής και αναφοράς στο αρχείο.</message>
+	<message key="xmlui.administrative.collection.EditCollectionHarvestingForm.option_md_and_bs">Μεταδεδομένα συγκομιδής και αρχείου (πλήρης επανάληψη).</message>
 	<message key="xmlui.administrative.collection.EditCollectionHarvestingForm.submit_change_settings">Αλλαγή Ρυθμίσεων</message>
 	<message key="xmlui.administrative.collection.EditCollectionHarvestingForm.submit_import_now">Εισαγωγή τώρα</message>
 	<message key="xmlui.administrative.collection.EditCollectionHarvestingForm.submit_reimport_collection">Επαναφορά και ξαναεισαγωγή Συλλογής</message>
@@ -1646,7 +1646,7 @@
 	<message key="xmlui.administrative.community.AssignCommunityRoles.create">Δημιουργία...</message>
 	<message key="xmlui.administrative.community.AssignCommunityRoles.help_admins">Οι διαχειριστές της κοινότητας μπορούν να δημιουργήσουν υποκοινότητες ή συλλογές, και να διχειρίζονται ή να αναθέτουν τη διαχείρηση αυτών των υποκοινότητων ή συλλογών. Επιπλέον, αυτοί αποφασίζουν ποιοι μπορούν να υποβάλουν τεκμήρια σε κάθε υποσυλλογή, να επεξεργάζονται μεταδεδομένα τεκμηρίων (μετά την υποβολή), και να προσθέτουν (αντιστοιχούν) τεκμήρια που ήδη υπάρχουν από άλλες συλλογές (που υπόκεινται σε εξουσιοδότηση).</message>
 	<message key="xmlui.administrative.community.AssignCommunityRoles.default_read_custom">Αυτή η κοινότητα χρησιμοποιεί παραμετροποιημένες προκαθορισμένες ρυθμίσεις. </message>
-	<message key="xmlui.administrative.community.AssignCommunityRoles.default_read_anonymous">Η Προεπιλογή ανάγνωσης για εισερχόμενο τεκμήριο και ροή δεδομένων έχει οριστεί σε Ανώνυμο.</message>
+	<message key="xmlui.administrative.community.AssignCommunityRoles.default_read_anonymous">Η Προεπιλογή ανάγνωσης για εισερχόμενο τεκμήριο και αρχείο έχει οριστεί σε Ανώνυμο.</message>
 	<message key="xmlui.administrative.community.AssignCommunityRoles.edit_authorizations">Επεξεργασία πολιτικών πρόσβασης άμεσα.</message>
 	<message key="xmlui.administrative.community.AssignCommunityRoles.role_name">Ρόλος</message>
 	<message key="xmlui.administrative.community.AssignCommunityRoles.role_group">Συνεργαζόμενη ομάδα</message>
