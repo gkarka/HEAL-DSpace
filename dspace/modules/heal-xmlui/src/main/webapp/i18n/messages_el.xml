@@ -219,7 +219,7 @@
 	<message key="xmlui.ArtifactBrowser.Contact.title">Επικοινωνήστε μαζί μας</message>
 	<message key="xmlui.ArtifactBrowser.Contact.trail">Επικοινωνήστε μαζί μας</message>
 	<message key="xmlui.ArtifactBrowser.Contact.head">Επικοινωνήστε μαζί μας</message>
-	<message key="xmlui.ArtifactBrowser.Contact.para1">Μπορείτε να επικοινωνήσετε με τον{ους} διαχειρηστές με:</message>
+	<message key="xmlui.ArtifactBrowser.Contact.para1">Μπορείτε να επικοινωνήσετε με τον διαχειριστή με:</message>
 	<message key="xmlui.ArtifactBrowser.Contact.feedback_label">On-line φόρμα</message>
 	<message key="xmlui.ArtifactBrowser.Contact.feedback_link">Παρατηρήσεις</message>
 	<message key="xmlui.ArtifactBrowser.Contact.email">Ηλεκτρονικό Ταχυδρομείο</message>
@@ -228,7 +228,7 @@
 	<message key="xmlui.ArtifactBrowser.FeedbackForm.title">Γράψτε παρατηρήσεις</message>
 	<message key="xmlui.ArtifactBrowser.FeedbackForm.trail">Γράψτε παρατηρήσεις</message>
 	<message key="xmlui.ArtifactBrowser.FeedbackForm.head">Γράψτε παρατηρήσεις</message>
-	<message key="xmlui.ArtifactBrowser.FeedbackForm.para1">Ευχαριστούμε που γράψατε τις παρατηρήσεις σας για το DSpace. Εκτιμούμε τα σχόλια σας!</message>
+	<message key="xmlui.ArtifactBrowser.FeedbackForm.para1">Εδώ μπορείτε να γράψετε τις παρατηρήσεις σας για το DSpace. Εκτιμούμε τα σχόλια σας!</message>
 	<message key="xmlui.ArtifactBrowser.FeedbackForm.email">Το Ηλεκτρονικό σας Ταχυδρομείο</message>
 	<message key="xmlui.ArtifactBrowser.FeedbackForm.email_help">Αυτή η διεύθυνση θα χρησιμοποιηθεί για να παρακολουθούμε τις παρατηρήσεις σας.</message>
 	<message key="xmlui.ArtifactBrowser.FeedbackForm.comments">Σχόλια</message>
@@ -238,7 +238,7 @@
 	<message key="xmlui.ArtifactBrowser.FeedbackSent.title">Γράψτε παρατηρήσεις</message>
 	<message key="xmlui.ArtifactBrowser.FeedbackSent.trail">Γράψτε παρατηρήσεις</message>
 	<message key="xmlui.ArtifactBrowser.FeedbackSent.head">Γράψτε παρατηρήσεις</message>
-	<message key="xmlui.ArtifactBrowser.FeedbackSent.para1">Λάβαμε τα σχολία σας.</message>
+	<message key="xmlui.ArtifactBrowser.FeedbackSent.para1">Ευχαριστούμε που γράψατε τις παρατηρήσεις σας για το DSpace.</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.FrontPageSearch.java -->
 	<message key="xmlui.ArtifactBrowser.FrontPageSearch.head">Αναζήτηση στο DSpace</message>
