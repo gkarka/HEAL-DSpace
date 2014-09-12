@@ -279,11 +279,11 @@
 	<message key="xmlui.ArtifactBrowser.RestrictedItem.head_collection">Αυτή η συλλογή έχει περιορισμούς</message>
 	<message key="xmlui.ArtifactBrowser.RestrictedItem.head_item">Αυτό το τεκμήριο έχει περιορισμούς</message>
 	<message key="xmlui.ArtifactBrowser.RestrictedItem.head_bitstream">Το αρχείο έχει περιορισμούς</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_resource">Δεν είστε πιτοποιημένος χρήστης για να έχετε πρόσβαση σε πηγή που έχει περιορισμό</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_community">Δεν είστε πιτοποιημένος χρήστης για να έχετε πρόσβαση σε κοινότητα που έχει περιορισμό<b>{0}</b>.</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_collection">Δεν είστε πιτοποιημένος χρήστης για να έχετε πρόσβαση σε συλλογή που έχει περιορισμό <b>{0}</b>.</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_item">Δεν είστε πιτοποιημένος χρήστης για να έχετε πρόσβαση σε τεκμήριο που έχει περιορισμό <b>{0}</b>.</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_bitstream">Δεν έχετε πιτοποίηση για να έχετε πρόσβαση σε αρχείο που έχει περιορισμούς <b>{0}</b>.</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_resource">Δεν είστε πιστοποιημένος χρήστης για να έχετε πρόσβαση σε πηγή που έχει περιορισμό</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_community">Δεν είστε πιστοποιημένος χρήστης για να έχετε πρόσβαση σε κοινότητα που έχει περιορισμό <b> {0}</b>.</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_collection">Δεν είστε πιστοποιημένος χρήστης για να έχετε πρόσβαση σε συλλογή που έχει περιορισμό <b> {0}</b>.</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_item">Δεν είστε πιστοποιημένος χρήστης για να έχετε πρόσβαση σε τεκμήριο που έχει περιορισμό <b> {0}</b>.</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_bitstream">Δεν έχετε πιτοποίηση για να έχετε πρόσβαση σε αρχείο που έχει περιορισμούς <b> {0}</b>.</message>
 	<message key="xmlui.ArtifactBrowser.RestrictedItem.type_collection">συλλογή</message>
 	<message key="xmlui.ArtifactBrowser.RestrictedItem.type_community">κοινότητα</message>
 	<message key="xmlui.ArtifactBrowser.RestrictedItem.type_bitstream">αρχείο</message>
