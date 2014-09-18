@@ -417,7 +417,7 @@ public class BitstreamReader extends AbstractReader implements Recyclable
 					
 					if (page == null || page == "")
 					{
-						String redictURL = request.getContextPath() + "/themes/Heal/app/book.html#/" + item.getHandle().substring(item.getHandle().lastIndexOf("/")) + "/" + bitstreamName + "/14";
+						String redictURL = request.getContextPath() + "/themes/Heal/app/book.html#/" + item.getHandle().substring(item.getHandle().lastIndexOf("/")) + "/" + bitstreamName;
                         HttpServletResponse httpResponse = 
                         		(HttpServletResponse)objectModel.get(HttpEnvironment.HTTP_RESPONSE_OBJECT);
                         httpResponse.sendRedirect(redictURL);
