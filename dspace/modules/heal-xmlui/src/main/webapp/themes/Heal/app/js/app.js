@@ -22,9 +22,11 @@ config(['$routeProvider', function($routeProvider) {
                     return bookService.getToc();
                 },
                 page: function ($route, bookService) {
+                    var pg = 0;
+                    if ($route.current.params.page) pg = $route.current.params.page;                    
                     return {
-                        number: $route.current.params.page,
-                        imageUrl: bookService.getPageImageUrl($route.current.params.page)
+                        number: pg,
+                        imageUrl: bookService.getPageImageUrl(pg)
                     };
                 }                
             }

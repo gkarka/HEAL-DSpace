@@ -9,14 +9,24 @@ angular.module('dspace.controllers', [])
         $scope.page = page;
         $scope.index = 0;
 
-        $scope.isActive = function (pageRange) {
+        $scope.isActive = function (pageRange, singlePageRange) {
+            if (singlePageRange) {
+                return page.number == singlePageRange._num;                
+            }
             return page.number >= pageRange._start && page.number <= pageRange._end;
         };
+
+        $scope.getPageStart = function (chapter) {
+            if (chapter.page) return chapter.page._num;
+            return chapter.pageRange._start;
+        };
+
         $scope.prev = function () {
             if ($scope.index == 0) return;
 
-            var num = new Number(page.number);
-            $location.path(bookService.getPagePath(num - 1));
+            $scope.index = $scope.index - 1;
+            var num = $scope.pages[$scope.index];
+            $location.path(bookService.getPagePath(num));
         };
         $scope.next = function () {
             if ($scope.index + 1 == $scope.pages.length) return;
@@ -33,6 +43,10 @@ angular.module('dspace.controllers', [])
                     return _.map(chapter.pageRange, function (pageRange) {
                         return _.range(new Number(pageRange._start).valueOf(), new Number(pageRange._end).valueOf(), 1);
                     });
+                }
+                else if (chapter.page) {
+                    var n = new Number(chapter.page._num).valueOf();
+                    return [n];
                 }
                 else {
                     return _.range(new Number(chapter.pageRange._start).valueOf(), new Number(chapter.pageRange._end).valueOf(), 1);
