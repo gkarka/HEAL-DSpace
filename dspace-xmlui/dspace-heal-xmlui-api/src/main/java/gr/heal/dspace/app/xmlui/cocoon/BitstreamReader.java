@@ -417,6 +417,11 @@ public class BitstreamReader extends AbstractReader implements Recyclable
 					
 					if (page == null || page == "")
 					{
+						String redictURL = request.getContextPath() + "/themes/Heal/app/book.html#/" + itemID + "/" + bitstreamName + "/14";
+                        HttpServletResponse httpResponse = 
+                        		(HttpServletResponse)objectModel.get(HttpEnvironment.HTTP_RESPONSE_OBJECT);
+                        httpResponse.sendRedirect(redictURL);
+						
 						page = "0";
 					}
 					log.debug("Retrieving bitstream...");
