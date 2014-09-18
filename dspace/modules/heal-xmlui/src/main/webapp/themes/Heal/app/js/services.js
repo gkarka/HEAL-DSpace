@@ -23,8 +23,7 @@ angular.module('dspace.services', ['restangular']).
                 _bitstreamName = $route.current.params.bsname;
                 _tocName = _bitstreamName.replace('.kar', '.xml');
 
-                _toc.book = {}
-                _getBitstream(_handleId, _tocName)
+                _toc.book = _getBitstream(_handleId, _tocName)
                     .then(function (res) {
                         _toc.book = x2js.xml_str2json(res).book;
                     });                
