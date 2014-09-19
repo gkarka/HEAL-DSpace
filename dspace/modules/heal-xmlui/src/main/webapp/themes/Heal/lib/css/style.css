@@ -1268,3 +1268,9 @@ li.ds-form-item .ds-select-lang{
     overflow: auto;
     max-height: 32em;    
 }
+
+
+form.navigation > p.ds-paragraph > input[type=text], select {
+    display: block;    
+    width: 250px;
+}
