@@ -1,0 +1,24 @@
+User-agent: *
+
+Sitemap: http://dspace.lib.ntua.gr/htmlmap
+
+Disallow: */discover
+Disallow: /search-filter
+Disallow: */ETDFree-policy.xml
+Disallow: */NTUA-policy.xml
+Disallow: */ETDRestricted-policy.xml
+Disallow: /oai
+# Uncomment the following line ONLY if sitemaps.org or HTML sitemaps are used
+# and you have verified that your site is being indexed correctly.
+Disallow: /browse
+Disallow: /bitstream
+
+# You also may wish to disallow access to the following paths, in order
+# to stop web spiders from accessing user-based content:
+Disallow: /advanced-search
+Disallow: /contact
+Disallow: /feedback
+Disallow: /forgot
+Disallow: /login
+Disallow: /register
+Disallow: */search
