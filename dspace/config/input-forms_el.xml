@@ -349,11 +349,11 @@
 					<dc-schema>heal</dc-schema>
 					<dc-element>advisorName</dc-element>
 					<dc-qualifier></dc-qualifier>
-					<repeatable>false</repeatable>
+					<repeatable>true</repeatable>
 					<label>Όνομα επιβλέποντος</label>
 					<input-type>name</input-type>
-					<hint>Το όνομα του επιβλέποντος μέλους ΔΕΠ της εργασίας.</hint>
-					<required>Πρέπει να εισαγάγετε το όνομα του επιβλέποντος.</required>
+					<hint>Το όνομα του/των επιβλέποντος/επιβλεπόντων μέλους/μελών ΔΕΠ της εργασίας.</hint>
+					<required>Πρέπει να εισαγάγετε το όνομα του/των επιβλέποντος/επιβλεπόντων.</required>
 					<i18n>true</i18n>
 				</field>
 

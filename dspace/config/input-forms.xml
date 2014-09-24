@@ -358,13 +358,13 @@
 					<dc-schema>heal</dc-schema>
 					<dc-element>advisorName</dc-element>
 					<dc-qualifier></dc-qualifier>
-					<repeatable>false</repeatable>
+					<repeatable>true</repeatable>
 					<label>Advisor name</label>
 					<input-type>name</input-type>
 					<hint>
-						The name of the thesis' advisor.</hint>
+						The name of the thesis' advisor(-s).</hint>
 					<required>
-						You must enter the name of the advisor</required>
+						You must enter the name of the advisor (or advisors)</required>
 					<i18n>true</i18n>
 				</field>
 
