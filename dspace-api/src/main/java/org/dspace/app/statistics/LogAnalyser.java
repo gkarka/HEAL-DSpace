@@ -7,6 +7,7 @@
  */
 package org.dspace.app.statistics;
 
+import org.dspace.content.MetadataSchema;
 import org.dspace.core.ConfigurationManager;
 import org.dspace.core.Context;
 import org.dspace.core.LogManager;
@@ -1174,8 +1175,12 @@ public class LogAnalyser
                         "AND metadata_field_id = (" +
                         " SELECT metadata_field_id " +
                         " FROM metadatafieldregistry " +
-                        " WHERE element = 'type' " +
-                        " AND qualifier IS NULL) ";
+                        " WHERE metadata_schema_id = (" +
+                        "  SELECT metadata_schema_id" +
+                        "   FROM MetadataSchemaRegistry" +
+                        "   WHERE short_id = '" + MetadataSchema.DC_SCHEMA + "')" +
+                        "  AND element = 'type' " +
+                        "  AND qualifier IS NULL) ";
         }
         
         // start the date constraint query buffer
