@@ -44,13 +44,16 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.Namespace;
 import org.jdom.input.SAXBuilder;
+import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
 import com.sun.xml.xsom.XSAttGroupDecl;
 import com.sun.xml.xsom.XSElementDecl;
 import com.sun.xml.xsom.XSModelGroupDecl;
 import com.sun.xml.xsom.XSParticle;
 import com.sun.xml.xsom.XSSchema;
+import com.sun.xml.xsom.XSSchemaSet;
 import com.sun.xml.xsom.XSTerm;
 import com.sun.xml.xsom.parser.XSOMParser;
 
@@ -161,6 +164,8 @@ public class HEALQDCCrosswalk extends SelfNamedPlugin implements
 	private Map<String, String[]> itemTypeHierarchyMap = new HashMap<String, String[]>();
 
 	private String institutionAcronym = null;
+	
+	private XSSchema schema = null;
 	/* END aanagnostopoulos */
 
 	/**
@@ -362,6 +367,21 @@ public class HEALQDCCrosswalk extends SelfNamedPlugin implements
 				new String[] { "learningMaterialContent" });
 		itemTypeHierarchyMap.put("dataset", new String[] {});
 		itemTypeHierarchyMap.put("other", new String[] {});
+		
+		//parse HEAL XSD
+		XSOMParser parser = new XSOMParser();
+		try {
+			String schemaURL = schemaLocation.split(" ")[1];
+			log.error(schemaURL);
+			parser.parse(new URL(schemaURL));
+			XSSchemaSet result2 = parser.getResult();
+			log.error(result2);
+			schema = result2.getSchema(1);
+			log.error(schema);
+		} catch (SAXException e) {
+			log.error(e);
+			throw new CrosswalkException(e);
+		}
 		/* END aanagnostopoulos */
 	}
 
@@ -786,16 +806,6 @@ public class HEALQDCCrosswalk extends SelfNamedPlugin implements
 			}
 		}
 		/* modified by aanagnostopoulos */
-
-		XSOMParser parser = new XSOMParser();
-		XSSchema schema = null;
-		try {
-			parser.parse(new URL(schemaLocation.split(" ")[1]));
-			schema = parser.getResult().getSchema(1);
-		} catch (SAXException e) {
-			log.error(e);
-			throw new CrosswalkException(e);
-		}
 
 		//custom handling for 'heal.dateAvailable', since it's required by the XSD
 		Element dateAvailableElement = null;
