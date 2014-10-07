@@ -236,7 +236,7 @@ public class UploadStep extends AbstractSubmissionStep
                 file.addError(T_upload_error);
             }
             
-            if (this.errorFlag == org.dspace.submit.step.UploadStep.STATUS_NO_VISIBLE_FILES_ERROR)
+            if (this.errorFlag == gr.heal.dspace.submit.step.UploadStep.STATUS_NO_VISIBLE_FILES_ERROR)
             {
                 file.addError(T_no_visible_files_error);
             }
