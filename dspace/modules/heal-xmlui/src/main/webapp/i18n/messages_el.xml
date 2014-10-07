@@ -654,6 +654,7 @@
 	<message key="xmlui.Submission.submit.UploadStep.file_help">Επιλέξτε το αρχείο που επιθυμείτε από τον υπολογιστή σας.</message>
 	<message key="xmlui.Submission.submit.UploadStep.file_error">Το τεκμήριο πρέπει να περιέχει τουλάχιστον ένα αρχείο.</message>
 	<message key="xmlui.Submission.submit.UploadStep.upload_error">Υπήρξε πρόβλημα κατά το ανέβασμα του αρχείου σας. Είτε το όνομα του αρχείου που δώσατε ήταν λάθος, είτε υπήρχε πρόβλημα με το δίκτυο που εμπόδισε το αρχείο να ανέβει σωστά, είτε έχετε προσπαθήσει να ανεβάσετε ένα αρχείο του οποίου το μορφότυπο είναι για εσωτερική χρήση του συστήματος. Παρακαλώ προσπαθήστε ξανά.</message>
+  <message key="xmlui.Submission.submit.UploadStep.no_visible_files_error">ΠΡΟΣΟΧΗ! Το πρωτεύον PDF αρχείο δεν μπορεί να είναι κρυφό. Βεβαιωθείτε ότι έχετε επιλέξει το αρχείο PDF να μην είναι κρυφό.</message>
 	<message key="xmlui.Submission.submit.UploadStep.virus_error">Το αρχείο δεν ανέβηκε καθώς φαίνεται ότι περιέχει ιό. Παρακαλώ επικοινωνήστε με τον διαχειριστή του συστήματος.</message>
     <message key="xmlui.Submission.submit.UploadStep.virus_checker_error">Ένα τεχνικό πρόβλημα προέκυψε κατά τη διαδικασία ανίχνευσης ιών. Παρακαλώ επικοινωνήστε με τον διαχειριστή του συστήματος.</message>
     <message key="xmlui.Submission.submit.UploadStep.description">Περιγραφή Αρχείου</message>

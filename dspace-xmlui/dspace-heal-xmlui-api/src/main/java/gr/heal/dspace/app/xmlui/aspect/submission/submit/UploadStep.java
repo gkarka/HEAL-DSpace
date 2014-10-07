@@ -71,6 +71,8 @@ public class UploadStep extends AbstractSubmissionStep
         message("xmlui.Submission.submit.UploadStep.file_error");
     protected static final Message T_upload_error =
         message("xmlui.Submission.submit.UploadStep.upload_error");
+    protected static final Message T_no_visible_files_error = 
+    		message("xmlui.Submission.submit.UploadStep.no_visible_files_error");
 
     protected static final Message T_virus_checker_error =
         message("xmlui.Submission.submit.UploadStep.virus_checker_error");
@@ -232,6 +234,11 @@ public class UploadStep extends AbstractSubmissionStep
             if (this.errorFlag == org.dspace.submit.step.UploadStep.STATUS_UPLOAD_ERROR)
             {
                 file.addError(T_upload_error);
+            }
+            
+            if (this.errorFlag == org.dspace.submit.step.UploadStep.STATUS_NO_VISIBLE_FILES_ERROR)
+            {
+                file.addError(T_no_visible_files_error);
             }
 
             // if virus checking was attempted and failed in error then let the user know

@@ -90,6 +90,8 @@ public class UploadStep extends AbstractProcessingStep
 
     // return from editing file information
     public static final int STATUS_EDIT_COMPLETE = 25;
+    
+    public static final int STATUS_NO_VISIBLE_FILES_ERROR = 33;
 
     /** log4j logger */
     private static Logger log = Logger.getLogger(UploadStep.class);
@@ -477,7 +479,7 @@ public class UploadStep extends AbstractProcessingStep
                 //attempt to get "hidden" from attribute first, then direct from a parameter
                 String hidden = (String)request.getAttribute(param +"-hidden");
                 log.info(hidden);
-                if(hidden ==null ||hidden .length()==0)
+                if (hidden == null || hidden.length() == 0)
                 {
                     hidden =  request.getParameter("hidden");
                     log.info(request.getParameter("hidden"));
@@ -505,8 +507,15 @@ public class UploadStep extends AbstractProcessingStep
                 //modified by aanagnostopoulos
                 //store bitstream under "LICENSE" or "ORIGINAL" bundle, depending on 'hidden' parameter
                 String bundle = "ORIGINAL"; //use "ORIGINAL" bundle, by default
-                if(hidden.equalsIgnoreCase("HIDDEN")) {
-                	//use "LICENSE" bundle
+                if (hidden.equalsIgnoreCase("HIDDEN")) {                	
+                	
+                	Bundle[] originalBundles = item.getBundles("ORIGINAL");
+                	if (originalBundles.length < 1 || originalBundles[0].getBitstreams().length < 1)
+                	{
+                		log.warn("Attempt to upload hidden file while no visible file exists in original bundle");
+                		return STATUS_NO_VISIBLE_FILES_ERROR;
+                	}                	
+                	
                 	bundle = "HIDDEN";
                 }
             	// do we already have a bundle?
