@@ -545,6 +545,7 @@
 	<message key="xmlui.Submission.Submissions.workflow_column3">Τεκμήριο</message>
 	<message key="xmlui.Submission.Submissions.workflow_column4">Συλλογή</message>
 	<message key="xmlui.Submission.Submissions.workflow_column5">Υποβάλλων</message>
+  <message key="xmlui.Submission.Submissions.workflow_column6">Σχολή</message>
 	<message key="xmlui.Submission.Submissions.workflow_submit_return">Επιστρέψτε επιλεγμένες εργασίες στην αποθήκη εργασιών</message>
 	<message key="xmlui.Submission.Submissions.workflow_info2">Δεν σας έχουν ανατεθεί εργασίες</message>
 	<message key="xmlui.Submission.Submissions.workflow_head3">Εργασίες στην αποθήκη εργασιών</message>
