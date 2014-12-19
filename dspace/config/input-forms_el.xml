@@ -1731,9 +1731,9 @@
         <dc-element>contributor</dc-element>
         <dc-qualifier>department</dc-qualifier>
         <repeatable>false</repeatable>
-        <label>Τομέας - Εργαστήριο</label>
+        <label>Τίτλος Μεταπτυχιακού Προγράμματος:</label>
         <input-type>onebox</input-type>
-        <hint>Ο Τομέας ή το Εργαστήριο του ιδρύματος στο οποίο εκπονήθηκε η εργασία.</hint>
+        <hint>Ο Τίτλος του Μεταπτυχιακού / Διατμηματικού Προγράμματος Σπουδών.</hint>
       </field>
       <field>
         <dc-schema>heal</dc-schema>
