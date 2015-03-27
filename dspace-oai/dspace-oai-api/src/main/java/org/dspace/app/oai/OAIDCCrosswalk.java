@@ -52,7 +52,7 @@ public class OAIDCCrosswalk extends Crosswalk
     private static final String[] oaidcElement = new String[] { "title",
             "creator", "subject", "description", "publisher", "contributor",
             "date", "type", "format", "identifier", "source", "language",
-            "relation", "coverage", "rights" };
+            "relation", "coverage", "rights", "audience" };
 
     /** Location of config file */
     private static final String configFilePath = ConfigurationManager
@@ -162,10 +162,15 @@ public class OAIDCCrosswalk extends Crosswalk
                 {
                     String converterName = null;
                     IConverter converter = null;
-                    Matcher converterMatcher = converterPattern.matcher(mdString);
-                    if (converterMatcher.matches())
-                    {
-                        converterName = converterMatcher.group(1);
+//                    Matcher converterMatcher = converterPattern.matcher(mdString);
+//                    if (converterMatcher.matches())
+//                    {
+//                        converterName = converterMatcher.group(1);
+                    if(mdString.contains(".*")) {
+                    	converterName = mdString.substring(0, mdString.lastIndexOf(".*"));
+                    }else {
+                    	converterName = mdString;
+                    }
                         converter = (IConverter) PluginManager.getNamedPlugin(
                                 IConverter.class, converterName);
                         if (converter == null)
@@ -176,7 +181,7 @@ public class OAIDCCrosswalk extends Crosswalk
                                             + converterName + " for metadata "
                                             + mdString));
                         }
-                    }
+//                    }
 
                     DCValue[] dcValues;
                     if (converterName != null)
@@ -188,6 +193,34 @@ public class OAIDCCrosswalk extends Crosswalk
                     {
                         dcValues = item.getMetadata(mdString);
                     }
+
+                    /* modified by aanagnostopoulos */
+                    if(dcValues.length==0) {
+                    	//Interpolate some default values for OpenAire compliance
+                    	DCValue dcValue = new DCValue();
+                    	dcValues = new DCValue[] {dcValue};
+                    	if(element.equals("coverage")) {
+                    		dcValue.schema="dc";
+                    		dcValue.value = "GR";
+                    	}else if(element.equals("rights")) {
+                    		dcValue.schema="heal";
+                    		dcValue.element="access";
+                    		dcValue.value = "free";
+                    	}else if (element.equals("audience")) {
+                    		dcValue.schema="dc";
+                    		dcValue.value = "Other";
+                    	}else if (element.equals("contributor")) {
+                    		dcValue.schema="dc";
+                    		dcValue.value = "N/A";
+                    	}else if(element.equals("format")) {
+                    		dcValue.schema="dc";
+                    		dcValue.value="";
+                    	}else if(element.equals("type")) {
+                    		dcValue.schema="dc";
+                    		dcValue.value="info:eu-repo/semantics/other";
+                    	}
+                    }
+                    /* END aanagnostopoulos */
 
                     try
                     {
