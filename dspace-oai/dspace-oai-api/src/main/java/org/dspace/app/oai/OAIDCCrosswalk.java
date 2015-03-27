@@ -49,10 +49,12 @@ public class OAIDCCrosswalk extends Crosswalk
     // Patter to extract the converter name if any
     private static final Pattern converterPattern = Pattern.compile(".*\\((.*)\\)");
 
+    /* modified by aanagnostopoulos */
     private static final String[] oaidcElement = new String[] { "title",
             "creator", "subject", "description", "publisher", "contributor",
             "date", "type", "format", "identifier", "source", "language",
             "relation", "coverage", "rights", "audience" };
+    /* END aanagnostopoulos */
 
     /** Location of config file */
     private static final String configFilePath = ConfigurationManager
@@ -162,15 +164,10 @@ public class OAIDCCrosswalk extends Crosswalk
                 {
                     String converterName = null;
                     IConverter converter = null;
-//                    Matcher converterMatcher = converterPattern.matcher(mdString);
-//                    if (converterMatcher.matches())
-//                    {
-//                        converterName = converterMatcher.group(1);
-                    if(mdString.contains(".*")) {
-                    	converterName = mdString.substring(0, mdString.lastIndexOf(".*"));
-                    }else {
-                    	converterName = mdString;
-                    }
+                    Matcher converterMatcher = converterPattern.matcher(mdString);
+                    if (converterMatcher.matches())
+                    {
+                        converterName = converterMatcher.group(1);
                         converter = (IConverter) PluginManager.getNamedPlugin(
                                 IConverter.class, converterName);
                         if (converter == null)
@@ -181,7 +178,7 @@ public class OAIDCCrosswalk extends Crosswalk
                                             + converterName + " for metadata "
                                             + mdString));
                         }
-//                    }
+                    }
 
                     DCValue[] dcValues;
                     if (converterName != null)
@@ -199,27 +196,12 @@ public class OAIDCCrosswalk extends Crosswalk
                     	//Interpolate some default values for OpenAire compliance
                     	DCValue dcValue = new DCValue();
                     	dcValues = new DCValue[] {dcValue};
-                    	if(element.equals("coverage")) {
-                    		dcValue.schema="dc";
-                    		dcValue.value = "GR";
-                    	}else if(element.equals("rights")) {
+                    	if(element.equals("rights")) {
                     		dcValue.schema="heal";
                     		dcValue.element="access";
                     		dcValue.value = "free";
-                    	}else if (element.equals("audience")) {
-                    		dcValue.schema="dc";
-                    		dcValue.value = "Other";
-                    	}else if (element.equals("contributor")) {
-                    		dcValue.schema="dc";
-                    		dcValue.value = "N/A";
-                    	}else if(element.equals("format")) {
-                    		dcValue.schema="dc";
-                    		dcValue.value="";
-                    	}else if(element.equals("type")) {
-                    		dcValue.schema="dc";
-                    		dcValue.value="info:eu-repo/semantics/other";
                     	}
-                    }
+                    	}
                     /* END aanagnostopoulos */
 
                     try
