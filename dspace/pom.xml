@@ -80,7 +80,7 @@
 		<profile>
 			<id>production</id>
 			<properties>		
-				<dspace.dir>/dspacenew</dspace.dir>
+				<dspace.dir>/dspace2</dspace.dir>
 				<dspace.hostname>dspace.lib.ntua.gr</dspace.hostname>
 				<dspace.port>8088</dspace.port>
 										
