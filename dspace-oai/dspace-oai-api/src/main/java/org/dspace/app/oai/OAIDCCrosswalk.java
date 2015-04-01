@@ -49,10 +49,12 @@ public class OAIDCCrosswalk extends Crosswalk
     // Patter to extract the converter name if any
     private static final Pattern converterPattern = Pattern.compile(".*\\((.*)\\)");
 
+    /* modified by aanagnostopoulos */
     private static final String[] oaidcElement = new String[] { "title",
             "creator", "subject", "description", "publisher", "contributor",
             "date", "type", "format", "identifier", "source", "language",
-            "relation", "coverage", "rights" };
+            "relation", "coverage", "rights", "audience" };
+    /* END aanagnostopoulos */
 
     /** Location of config file */
     private static final String configFilePath = ConfigurationManager
@@ -188,6 +190,19 @@ public class OAIDCCrosswalk extends Crosswalk
                     {
                         dcValues = item.getMetadata(mdString);
                     }
+
+                    /* modified by aanagnostopoulos */
+                    if(dcValues.length==0) {
+                    	//Interpolate some default values for OpenAire compliance
+                    	DCValue dcValue = new DCValue();
+                    	dcValues = new DCValue[] {dcValue};
+                    	if(element.equals("rights")) {
+                    		dcValue.schema="heal";
+                    		dcValue.element="access";
+                    		dcValue.value = "free";
+                    	}
+                    	}
+                    /* END aanagnostopoulos */
 
                     try
                     {
