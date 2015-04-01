@@ -41,7 +41,7 @@
 				<version>2.0.2</version>
 				<configuration>
 					<debug>true</debug>
-					<showDeprecation>false</showDeprecation>
+					<showDeprecation>true</showDeprecation>
 				</configuration>
 			</plugin>
 			<plugin>
