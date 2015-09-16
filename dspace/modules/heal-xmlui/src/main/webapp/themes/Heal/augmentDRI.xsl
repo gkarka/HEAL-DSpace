@@ -77,7 +77,7 @@
         </item>      
         <item>
           <xref>
-            <xsl:attribute name="target"><xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>/static/submission_guide_bachelorsThesis.pdf</xsl:attribute>
+            <xsl:attribute name="target"><xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>/static/help/submission_guide_bachelorsThesis.pdf</xsl:attribute>
             <i18n:text>xmlui.guide.screenshots_bachelorThesis</i18n:text>
           </xref>
         </item>
