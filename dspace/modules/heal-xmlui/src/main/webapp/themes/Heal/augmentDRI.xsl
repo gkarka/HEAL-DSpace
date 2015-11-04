@@ -81,6 +81,12 @@
             <i18n:text>xmlui.guide.screenshots_bachelorThesis</i18n:text>
           </xref>
         </item>
+        <item>
+          <xref>
+            <xsl:attribute name="target"><xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>/static/help/access_policies.pdf</xsl:attribute>
+            <i18n:text>xmlui.guide.access_policies</i18n:text>
+          </xref>
+        </item>
       </list>
       
         <list id="externalLinks" n="externalLinks">
