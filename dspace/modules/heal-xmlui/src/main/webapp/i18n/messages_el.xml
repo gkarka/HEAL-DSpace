@@ -613,7 +613,7 @@
 	<message key="xmlui.Submission.submit.SelectCollection.collection_default">Επιλέξτε μια συλλογή...</message>
 
 	<!-- org.dspace.app.xmlui.Submission.submit.SaveOrRemoveStep -->
-	<message key="xmlui.Submission.submit.SaveOrRemoveStep.head">Αποθήκευση ή ακύρωση της υποβοολής σας?</message>
+	<message key="xmlui.Submission.submit.SaveOrRemoveStep.head">Αποθήκευση ή ακύρωση της υποβολής σας?</message>
 	<message key="xmlui.Submission.submit.SaveOrRemoveStep.info1">Θέλετε να αφαιρεθεί η υποβολή ή θέλετε να συνεχίσετε να την επεξεργάζεστε αργότερα; Μπορείτε να επιστρέψετε στην διαδικασία υποβολής εάν επιλέξετε "Έξοδος" κατά λάθος.</message>
 	<message key="xmlui.Submission.submit.SaveOrRemoveStep.submit_back">Συνεχίστε την υποβολή</message>
 	<message key="xmlui.Submission.submit.SaveOrRemoveStep.submit_save">Αποθήκευση, θα συνεχίσω την επεξεργασία αργότερα</message>
@@ -731,7 +731,7 @@
 	<message key="xmlui.Submission.submit.LicenseStep.info2">Χορηγήστε την τυπική άδεια διανομής επιλέγοντας 'Χορηγώ την Άδεια' και μετά κλικάρετε 'Ολοκλήρωση διαδικασίας υποβολής'.</message>
 	<message key="xmlui.Submission.submit.LicenseStep.info3">Εάν έχετε ερωτήσεις σχετικά με την άδεια παρακαλώ επικοινωνήστε με τον διαχειριστή του συστήματος.</message>
 	<message key="xmlui.Submission.submit.LicenseStep.decision_label">Άδεια διανομής</message>
-	<message key="xmlui.Submission.submit.LicenseStep.decision_checkbox">Χορηγώ της Άδεια</message>
+	<message key="xmlui.Submission.submit.LicenseStep.decision_checkbox">Χορηγώ την Άδεια</message>
 	<message key="xmlui.Submission.submit.LicenseStep.decision_error">Πρέπει να χορηγήσετε την άδεια για να ολοκληρώσετε την υποβολή. Εάν δεν μπορείτε να χορηγήσετε την άδεια αυτή τη στιγμή, μπορείτε να αποθηκεύσετε την εργασία σας και να επιστρέψετε αργότερα ή να αφαιρέσετε την υποβολή επιλέγοντας το κουμπί "Αποθήκευση και Έξοδος".</message>
 
 	<!-- org.dspace.app.xmlui.Submission.submit.RemovedStep -->
